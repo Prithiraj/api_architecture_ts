@@ -1,0 +1,14 @@
+import { {{# schemas}}{{apitablename}}, {{/schemas}} } from 'src/schemas/dbschemas/mapper';
+
+{{# schemas }}
+export const {{apitablename}}_ajv = {
+  {{# columnInfoList}}
+  {{apicolname}}: {
+    name: {{apitablename}}.{{apicolname}}.key,
+    api: { type: '{{ajvtype}}' },{{# foreignkey}}
+    fk: '{{foreignkey}}',{{/foreignkey}}
+  },
+  {{/columnInfoList}}
+};
+
+{{/schemas}}

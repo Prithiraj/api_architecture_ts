@@ -1,0 +1,9 @@
+{{# schemas}}
+export const {{apitablename}} = {
+  {{# columnInfoList}}
+  {{apicolname}}: {
+    key: '{{apicolname}}', dbKey: '{{dbcolname}}', type: '{{type}}', required: {{#notnull}}true{{/notnull}}{{^notnull}}false{{/notnull}}, foreignkey: '{{foreignkey}}',
+  },
+  {{/columnInfoList}}
+};
+{{/schemas}}
