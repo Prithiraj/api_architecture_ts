@@ -3,7 +3,6 @@
 from connect import connect_sqlalc
 from marshmallow import Schema, fields
 
-
 # from sort_schema import SortSchema
 # from typescript_gen import TypescriptGen
 
@@ -139,12 +138,103 @@ class TableInfo:
 				AND f.attnum > 0 ) src ) data
 			where rnk=1 ORDER BY number;"""
         engine = connect_sqlalc()
+        table_info = []
+        fk_list = []
         result = ""
         with engine.connect() as connection:
             result = connection.execute(query)
-        return result.fetchall()
-    
+        return result.fetchall()	
 
+    def get_table_info(self, tablename, schemaname='public'):
+        query = f"""select number, name, attnum, notnullval, atttypmod,type, primarykey,uniquekey,foreignkey,foreignkey_fieldnum, foreignkey_connnum from
+			(select *, 
+				rank() over (partition by name order by foreignkey asc) as rnk from 
+			(SELECT  
+				f.attnum AS number,  
+				f.attname AS name,  
+				f.attnum,  
+				f.attnotnull AS notnullval,  
+				f.atttypmod,
+				pg_catalog.format_type(f.atttypid,f.atttypmod) AS type,  
+				CASE  
+					WHEN p.contype = 'p' THEN 't'  
+					ELSE 'f'  
+				END AS primarykey,  
+				CASE  
+					WHEN p.contype = 'u' THEN 't'  
+					ELSE 'f'
+				END AS uniquekey,
+				CASE
+					WHEN p.contype = 'f' THEN g.relname
+				END AS foreignkey,
+				CASE
+					WHEN p.contype = 'f' THEN p.confkey
+				END AS foreignkey_fieldnum,
+				CASE
+					WHEN p.contype = 'f' THEN p.conkey
+				END AS foreignkey_connnum
+			FROM pg_attribute f  
+				JOIN pg_class c ON c.oid = f.attrelid  
+				JOIN pg_type t ON t.oid = f.atttypid  
+				LEFT JOIN pg_attrdef d ON d.adrelid = c.oid AND d.adnum = f.attnum  
+				LEFT JOIN pg_namespace n ON n.oid = c.relnamespace  
+				LEFT JOIN pg_constraint p ON p.conrelid = c.oid AND f.attnum = ANY (p.conkey)  
+				LEFT JOIN pg_class AS g ON p.confrelid = g.oid  
+			WHERE c.relkind = 'r'::char  
+				AND n.nspname = '{schemaname}'  -- Replace with Schema name  
+				AND c.relname = '{tablename}'  -- Replace with table name  # bridge_contact_loan
+				AND f.attnum > 0 ) src ) data
+			where rnk=1 ORDER BY number;"""
+        engine = connect_sqlalc()
+        table_info = []
+        fk_list = []
+        with engine.connect() as connection:
+            result = connection.execute(query)
+            for row in result:
+                name = row["name"]
+                notnull = row["notnullval"]
+                _type = row["type"]
+                primarykey = row["primarykey"]
+                foreignkey = row["foreignkey"]
+
+                colInfo = ColumnInfo(
+                    name, 
+                    notnull, 
+                    _type, 
+                    primarykey, 
+                    foreignkey
+                )
+
+                if bool(row["foreignkey"]):
+                    fk_list.append(row["foreignkey"])
+
+                table_info.append(colInfo)
+        columnInfoList = ColumnInfoList(table_info, fk_list, tablename) 
+        return columnInfoList
+    
+    
+    def get_table_info_opt(self, tablename, result):
+        table_info = []
+        fk_list = []
+        for row in result:
+            name = row["name"]
+            print(name)
+            notnull = row["notnullval"]
+            _type = row["type"]
+            primarykey = row["primarykey"]
+            foreignkey = row["foreignkey"]
+            colInfo = ColumnInfo(
+				name, 
+				notnull, 
+				_type, 
+				primarykey, 
+				foreignkey
+			)
+            if bool(row["foreignkey"]):
+                fk_list.append(row["foreignkey"])
+            table_info.append(colInfo)
+        columnInfoList = ColumnInfoList(table_info, fk_list, tablename) 
+        return columnInfoList 
     
 if __name__ == "__main__":
     

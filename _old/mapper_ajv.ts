@@ -5,42 +5,42 @@ import {
   persons,
   stripeSubscriptionItem,
   theme,
-  user,
-  events,
+  engagement,
   loLeadSource,
   account,
   contactTag,
   property,
   elementVersion,
-  contactStatus,
-  contactCustomField,
-  pageVersion,
-  engagement,
+  events,
   loSubscription,
   loSubscriptionDailyStats,
-  loan,
+  template,
+  contactCustomField,
+  pageVersion,
+  user,
+  loLeadRaw,
+  contactStatus,
+  bridgeSectionLifecycle,
   templateVersion,
   organization,
+  page,
   partner,
-  loLeadRaw,
-  template,
-  contact,
   element,
-  incomeSource,
   loLead,
   templateDependency,
-  bridgeContactPartner,
-  elementtotemplateVersion,
-  bridgeContactContact,
-  bridgeContactTag,
-  bridgeContactUser,
-  bridgeSectionLifecycle,
-  page,
   routing,
-  contactOtherAssociates,
-  contactCustomFieldValue,
-  bridgeContactLoan,
   links,
+  elementtotemplateVersion,
+  contact,
+  contactCustomFieldValue,
+  loan,
+  contactOtherAssociates,
+  bridgeContactTag,
+  incomeSource,
+  bridgeContactPartner,
+  bridgeContactLoan,
+  bridgeContactContact,
+  bridgeContactUser,
 } from 'src/schemas/mapper';
 
 export const contactCustomFieldSection_ajv = {
@@ -270,266 +270,169 @@ export const theme_ajv = {
     required: true,
   },
 };
-export const user_ajv = {
-  id: {
-    name: user.id.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  userType: {
-    name: user.userType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createdBy: {
-    name: user.createdBy.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  createTime: {
-    name: user.createTime.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  createRequest: {
-    name: user.createRequest.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  updatedBy: {
-    name: user.updatedBy.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updateTime: {
-    name: user.updateTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updateRequest: {
-    name: user.updateRequest.key,
-    api: { type: 'string' },
-    required: false,
-  },
-};
-export const events_ajv = {
-  eventAction: {
-    name: events.eventAction.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventCategory: {
-    name: events.eventCategory.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventClass: {
-    name: events.eventClass.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventCode: {
-    name: events.eventCode.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventData: {
-    name: events.eventData.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventGroup: {
-    name: events.eventGroup.key,
+export const engagement_ajv = {
+  parentId: {
+    name: engagement.parentId.key,
     api: { type: 'string' },
     required: false,
   },
   eventId: {
-    name: events.eventId.key,
+    name: engagement.eventId.key,
     api: { type: 'string' },
     required: true,
   },
-  eventName: {
-    name: events.eventName.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventProvider: {
-    name: events.eventProvider.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventSeverity: {
-    name: events.eventSeverity.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventType: {
-    name: events.eventType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  message: {
-    name: events.message.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  outcome: {
-    name: events.outcome.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  parentId: {
-    name: events.parentId.key,
-    api: { type: 'string' },
-    required: false,
-  },
   rawBucket: {
-    name: events.rawBucket.key,
+    name: engagement.rawBucket.key,
     api: { type: 'string' },
     required: false,
   },
   rawPath: {
-    name: events.rawPath.key,
+    name: engagement.rawPath.key,
     api: { type: 'string' },
     required: false,
   },
-  reason: {
-    name: events.reason.key,
+  eventClass: {
+    name: engagement.eventClass.key,
     api: { type: 'string' },
     required: false,
   },
-  createTime: {
-    name: events.createTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  endTime: {
-    name: events.endTime.key,
+  eventType: {
+    name: engagement.eventType.key,
     api: { type: 'string' },
     required: false,
   },
   eventTime: {
-    name: events.eventTime.key,
+    name: engagement.eventTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createTime: {
+    name: engagement.createTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventProvider: {
+    name: engagement.eventProvider.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventAction: {
+    name: engagement.eventAction.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventName: {
+    name: engagement.eventName.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventGroup: {
+    name: engagement.eventGroup.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventCategory: {
+    name: engagement.eventCategory.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventCode: {
+    name: engagement.eventCode.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventSeverity: {
+    name: engagement.eventSeverity.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  outcome: {
+    name: engagement.outcome.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  message: {
+    name: engagement.message.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  reason: {
+    name: engagement.reason.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  timezone: {
+    name: engagement.timezone.key,
     api: { type: 'string' },
     required: false,
   },
   startTime: {
-    name: events.startTime.key,
+    name: engagement.startTime.key,
     api: { type: 'string' },
     required: false,
   },
-  destinationId: {
-    name: events.destinationId.key,
+  endTime: {
+    name: engagement.endTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventData: {
+    name: engagement.eventData.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  channelId: {
+    name: engagement.channelId.key,
     api: { type: 'string' },
     required: false,
   },
   channelType: {
-    name: events.channelType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  destinationLocation: {
-    name: events.destinationLocation.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  destinationType: {
-    name: events.destinationType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  deviceIp: {
-    name: events.deviceIp.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  deviceLocationCity: {
-    name: events.deviceLocationCity.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  deviceLocationContinent: {
-    name: events.deviceLocationContinent.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  deviceLocationCoordinatesLat: {
-    name: events.deviceLocationCoordinatesLat.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  deviceLocationCoordinatesLon: {
-    name: events.deviceLocationCoordinatesLon.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  deviceLocationCountry: {
-    name: events.deviceLocationCountry.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  deviceLocationZip: {
-    name: events.deviceLocationZip.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  deviceTimezone: {
-    name: events.deviceTimezone.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  deviceType: {
-    name: events.deviceType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  referralId: {
-    name: events.referralId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  referralType: {
-    name: events.referralType.key,
+    name: engagement.channelType.key,
     api: { type: 'string' },
     required: false,
   },
   resourceId: {
-    name: events.resourceId.key,
+    name: engagement.resourceId.key,
     api: { type: 'string' },
     required: false,
   },
   resourceType: {
-    name: events.resourceType.key,
+    name: engagement.resourceType.key,
     api: { type: 'string' },
     required: false,
   },
   sourceId: {
-    name: events.sourceId.key,
+    name: engagement.sourceId.key,
     api: { type: 'string' },
     required: false,
   },
   sourceType: {
-    name: events.sourceType.key,
+    name: engagement.sourceType.key,
     api: { type: 'string' },
     required: false,
   },
   userAgent: {
-    name: events.userAgent.key,
+    name: engagement.userAgent.key,
     api: { type: 'string' },
     required: false,
   },
   userId: {
-    name: events.userId.key,
+    name: engagement.userId.key,
     api: { type: 'string' },
     required: false,
   },
   userPool: {
-    name: events.userPool.key,
+    name: engagement.userPool.key,
     api: { type: 'string' },
     required: false,
   },
   userType: {
-    name: events.userType.key,
+    name: engagement.userType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  testCol01: {
+    name: engagement.testCol01.key,
     api: { type: 'string' },
     required: false,
   },
@@ -540,18 +443,13 @@ export const loLeadSource_ajv = {
     api: { type: 'string' },
     required: true,
   },
-  color: {
-    name: loLeadSource.color.key,
-    api: { type: 'string' },
-    required: true,
-  },
   productId: {
     name: loLeadSource.productId.key,
     api: { type: 'string' },
     required: false,
   },
-  tileColor: {
-    name: loLeadSource.tileColor.key,
+  tileDescription: {
+    name: loLeadSource.tileDescription.key,
     api: { type: 'string' },
     required: true,
   },
@@ -575,24 +473,19 @@ export const loLeadSource_ajv = {
     api: { type: 'string' },
     required: false,
   },
-  active: {
-    name: loLeadSource.active.key,
-    api: { type: 'boolean' },
-    required: true,
-  },
   callcenter: {
     name: loLeadSource.callcenter.key,
     api: { type: 'string' },
     required: true,
   },
-  dedicatedCallcenter: {
-    name: loLeadSource.dedicatedCallcenter.key,
-    api: { type: 'boolean' },
-    required: true,
-  },
   notificationEmails: {
     name: loLeadSource.notificationEmails.key,
     api: { type: 'array' },
+    required: false,
+  },
+  order: {
+    name: loLeadSource.order.key,
+    api: { type: 'integer' },
     required: false,
   },
 };
@@ -763,11 +656,6 @@ export const property_ajv = {
     api: { type: 'number' },
     required: false,
   },
-  postal: {
-    name: property.postal.key,
-    api: { type: 'string' },
-    required: false,
-  },
   createdBy: {
     name: property.createdBy.key,
     api: { type: 'string' },
@@ -872,72 +760,599 @@ export const elementVersion_ajv = {
     required: true,
   },
 };
-export const contactStatus_ajv = {
-  id: {
-    name: contactStatus.id.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  accountId: {
-    name: contactStatus.accountId.key,
-    api: { type: 'string' },
-    fk: 'account_ajv',
-    required: true,
-  },
-  name: {
-    name: contactStatus.name.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  order: {
-    name: contactStatus.order.key,
-    api: { type: 'integer' },
-    required: true,
-  },
-  createdBy: {
-    name: contactStatus.createdBy.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  createTime: {
-    name: contactStatus.createTime.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  createRequest: {
-    name: contactStatus.createRequest.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  updatedBy: {
-    name: contactStatus.updatedBy.key,
+export const events_ajv = {
+  eventAction: {
+    name: events.eventAction.key,
     api: { type: 'string' },
     required: false,
   },
-  updateTime: {
-    name: contactStatus.updateTime.key,
+  eventCategory: {
+    name: events.eventCategory.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventClass: {
+    name: events.eventClass.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventCode: {
+    name: events.eventCode.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventData: {
+    name: events.eventData.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventGroup: {
+    name: events.eventGroup.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventId: {
+    name: events.eventId.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  eventName: {
+    name: events.eventName.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventProvider: {
+    name: events.eventProvider.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventSeverity: {
+    name: events.eventSeverity.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventType: {
+    name: events.eventType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  message: {
+    name: events.message.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  outcome: {
+    name: events.outcome.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  parentId: {
+    name: events.parentId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  rawBucket: {
+    name: events.rawBucket.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  rawPath: {
+    name: events.rawPath.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  reason: {
+    name: events.reason.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  timezone: {
+    name: events.timezone.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createTime: {
+    name: events.createTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  endTime: {
+    name: events.endTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  eventTime: {
+    name: events.eventTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  startTime: {
+    name: events.startTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  destinationId: {
+    name: events.destinationId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  channelId: {
+    name: events.channelId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  channelType: {
+    name: events.channelType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  destinationLocation: {
+    name: events.destinationLocation.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  destinationType: {
+    name: events.destinationType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  deviceIp: {
+    name: events.deviceIp.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  deviceLocationCity: {
+    name: events.deviceLocationCity.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  deviceLocationContinent: {
+    name: events.deviceLocationContinent.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  deviceLocationCoordinatesLat: {
+    name: events.deviceLocationCoordinatesLat.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  deviceLocationCoordinatesLon: {
+    name: events.deviceLocationCoordinatesLon.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  deviceLocationCountry: {
+    name: events.deviceLocationCountry.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  deviceLocationZip: {
+    name: events.deviceLocationZip.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  deviceTimezone: {
+    name: events.deviceTimezone.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  deviceType: {
+    name: events.deviceType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  referralId: {
+    name: events.referralId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  referralType: {
+    name: events.referralType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  resourceId: {
+    name: events.resourceId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  resourceType: {
+    name: events.resourceType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  sourceId: {
+    name: events.sourceId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  userAgent: {
+    name: events.userAgent.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  userId: {
+    name: events.userId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  userPool: {
+    name: events.userPool.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  userType: {
+    name: events.userType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+};
+export const loSubscription_ajv = {
+  id: {
+    name: loSubscription.id.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  stripeSubscription: {
+    name: loSubscription.stripeSubscription.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  stripePaymentIntent: {
+    name: loSubscription.stripePaymentIntent.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  autoBilling: {
+    name: loSubscription.autoBilling.key,
+    api: { type: 'boolean' },
+    required: false,
+  },
+  boberdooBalance: {
+    name: loSubscription.boberdooBalance.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  bundleTitle: {
+    name: loSubscription.bundleTitle.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  cancelTime: {
+    name: loSubscription.cancelTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  companyId: {
+    name: loSubscription.companyId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createdBy: {
+    name: loSubscription.createdBy.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createRequest: {
+    name: loSubscription.createRequest.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  currentStep: {
+    name: loSubscription.currentStep.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  dailyBudgetLimit: {
+    name: loSubscription.dailyBudgetLimit.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  dailyUnitLimit: {
+    name: loSubscription.dailyUnitLimit.key,
+    api: { type: 'integer' },
+    required: false,
+  },
+  deactivateReason: {
+    name: loSubscription.deactivateReason.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  inactive: {
+    name: loSubscription.inactive.key,
+    api: { type: 'boolean' },
+    required: false,
+  },
+  price: {
+    name: loSubscription.price.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  productId: {
+    name: loSubscription.productId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  transferPriceSubscriptionItemId: {
+    name: loSubscription.transferPriceSubscriptionItemId.key,
+    api: { type: 'string' },
+    fk: 'stripeSubscriptionItem_ajv',
+    required: false,
+  },
+  updateRequest: {
+    name: loSubscription.updateRequest.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  activeLeadTransfer: {
+    name: loSubscription.activeLeadTransfer.key,
+    api: { type: 'boolean' },
+    required: false,
+  },
+  agentState: {
+    name: loSubscription.agentState.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  creditStatus: {
+    name: loSubscription.creditStatus.key,
+    api: { type: 'array' },
+    required: false,
+  },
+  scheduleDays: {
+    name: loSubscription.scheduleDays.key,
+    api: { type: 'array' },
+    required: false,
+  },
+  scheduleFrom: {
+    name: loSubscription.scheduleFrom.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  timeZone: {
+    name: loSubscription.timeZone.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  primaryPhone: {
+    name: loSubscription.primaryPhone.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  secondaryPhoneType: {
+    name: loSubscription.secondaryPhoneType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  secondaryPhoneVerified: {
+    name: loSubscription.secondaryPhoneVerified.key,
+    api: { type: 'boolean' },
+    required: false,
+  },
+  addressCity: {
+    name: loSubscription.addressCity.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  addressCountry: {
+    name: loSubscription.addressCountry.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  addressStreet: {
+    name: loSubscription.addressStreet.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  addressStreet2: {
+    name: loSubscription.addressStreet2.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  addressZip: {
+    name: loSubscription.addressZip.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  preferredmeetingplaceCountry: {
+    name: loSubscription.preferredmeetingplaceCountry.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  preferredmeetingplaceStreet: {
+    name: loSubscription.preferredmeetingplaceStreet.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  preferredmeetingplaceStreet3: {
+    name: loSubscription.preferredmeetingplaceStreet3.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  county: {
+    name: loSubscription.county.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  preferredcommunicationscheduleFrom: {
+    name: loSubscription.preferredcommunicationscheduleFrom.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  preferredcommunicationscheduleTo: {
+    name: loSubscription.preferredcommunicationscheduleTo.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  infoPhone: {
+    name: loSubscription.infoPhone.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  infoName: {
+    name: loSubscription.infoName.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  leadType: {
+    name: loSubscription.leadType.key,
+    api: { type: 'array' },
+    required: false,
+  },
+  transactionType: {
+    name: loSubscription.transactionType.key,
+    api: { type: 'array' },
+    required: false,
+  },
+  loanType: {
+    name: loSubscription.loanType.key,
+    api: { type: 'array' },
+    required: false,
+  },
+  totalMatchAmount: {
+    name: loSubscription.totalMatchAmount.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  totalLeadsMatched: {
+    name: loSubscription.totalLeadsMatched.key,
+    api: { type: 'integer' },
+    required: false,
+  },
+  totalCredited: {
+    name: loSubscription.totalCredited.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  leadCategory: {
+    name: loSubscription.leadCategory.key,
+    api: { type: 'array' },
+    required: false,
+  },
+};
+export const loSubscriptionDailyStats_ajv = {
+  loSubscriptionId: {
+    name: loSubscriptionDailyStats.loSubscriptionId.key,
+    api: { type: 'string' },
+    fk: 'loSubscription_ajv',
+    required: true,
+  },
+  totalMatchAmount: {
+    name: loSubscriptionDailyStats.totalMatchAmount.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  totalTransferAmount: {
+    name: loSubscriptionDailyStats.totalTransferAmount.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  totalLeadsMatched: {
+    name: loSubscriptionDailyStats.totalLeadsMatched.key,
+    api: { type: 'integer' },
+    required: false,
+  },
+  totalLeadsTransfered: {
+    name: loSubscriptionDailyStats.totalLeadsTransfered.key,
+    api: { type: 'integer' },
+    required: false,
+  },
+  createdBy: {
+    name: loSubscriptionDailyStats.createdBy.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createRequest: {
+    name: loSubscriptionDailyStats.createRequest.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createTime: {
+    name: loSubscriptionDailyStats.createTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updatedBy: {
+    name: loSubscriptionDailyStats.updatedBy.key,
     api: { type: 'string' },
     required: false,
   },
   updateRequest: {
-    name: contactStatus.updateRequest.key,
+    name: loSubscriptionDailyStats.updateRequest.key,
     api: { type: 'string' },
     required: false,
   },
-  isConverted: {
-    name: contactStatus.isConverted.key,
-    api: { type: 'boolean' },
+  updateTime: {
+    name: loSubscriptionDailyStats.updateTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  statsDate: {
+    name: loSubscriptionDailyStats.statsDate.key,
+    api: { type: 'string' },
     required: true,
   },
-  statusLifecycleId: {
-    name: contactStatus.statusLifecycleId.key,
+};
+export const template_ajv = {
+  accountId: {
+    name: template.accountId.key,
     api: { type: 'string' },
-    fk: 'contactStatusLifecycle_ajv',
+    fk: 'account_ajv',
+    required: true,
+  },
+  id: {
+    name: template.id.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  type: {
+    name: template.type.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  name: {
+    name: template.name.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  data: {
+    name: template.data.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  createTime: {
+    name: template.createTime.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  thumbnail: {
+    name: template.thumbnail.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  createdBy: {
+    name: template.createdBy.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  updateRequest: {
+    name: template.updateRequest.key,
+    api: { type: 'string' },
     required: false,
   },
-  isDeleted: {
-    name: contactStatus.isDeleted.key,
-    api: { type: 'boolean' },
+  updateTime: {
+    name: template.updateTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updatedBy: {
+    name: template.updatedBy.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createRequest: {
+    name: template.createRequest.key,
+    api: { type: 'string' },
     required: true,
   },
 };
@@ -1073,628 +1488,429 @@ export const pageVersion_ajv = {
     required: true,
   },
 };
-export const engagement_ajv = {
-  parentId: {
-    name: engagement.parentId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventId: {
-    name: engagement.eventId.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  rawBucket: {
-    name: engagement.rawBucket.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  rawPath: {
-    name: engagement.rawPath.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventClass: {
-    name: engagement.eventClass.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventType: {
-    name: engagement.eventType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventTime: {
-    name: engagement.eventTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createTime: {
-    name: engagement.createTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventProvider: {
-    name: engagement.eventProvider.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventAction: {
-    name: engagement.eventAction.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventName: {
-    name: engagement.eventName.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventGroup: {
-    name: engagement.eventGroup.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventCategory: {
-    name: engagement.eventCategory.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventCode: {
-    name: engagement.eventCode.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventSeverity: {
-    name: engagement.eventSeverity.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  outcome: {
-    name: engagement.outcome.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  message: {
-    name: engagement.message.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  reason: {
-    name: engagement.reason.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  timezone: {
-    name: engagement.timezone.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  startTime: {
-    name: engagement.startTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  endTime: {
-    name: engagement.endTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  eventData: {
-    name: engagement.eventData.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  channelId: {
-    name: engagement.channelId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  channelType: {
-    name: engagement.channelType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  resourceId: {
-    name: engagement.resourceId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  resourceType: {
-    name: engagement.resourceType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  sourceId: {
-    name: engagement.sourceId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  sourceType: {
-    name: engagement.sourceType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  userAgent: {
-    name: engagement.userAgent.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  userId: {
-    name: engagement.userId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  userPool: {
-    name: engagement.userPool.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  userType: {
-    name: engagement.userType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  testCol01: {
-    name: engagement.testCol01.key,
-    api: { type: 'string' },
-    required: false,
-  },
-};
-export const loSubscription_ajv = {
+export const user_ajv = {
   id: {
-    name: loSubscription.id.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  stripeSubscription: {
-    name: loSubscription.stripeSubscription.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  stripePaymentIntent: {
-    name: loSubscription.stripePaymentIntent.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  autoBilling: {
-    name: loSubscription.autoBilling.key,
-    api: { type: 'boolean' },
-    required: false,
-  },
-  boberdooBalance: {
-    name: loSubscription.boberdooBalance.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  cancelTime: {
-    name: loSubscription.cancelTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createdBy: {
-    name: loSubscription.createdBy.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createRequest: {
-    name: loSubscription.createRequest.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createTime: {
-    name: loSubscription.createTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  dailyBudgetLimit: {
-    name: loSubscription.dailyBudgetLimit.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  dailyUnitLimit: {
-    name: loSubscription.dailyUnitLimit.key,
-    api: { type: 'integer' },
-    required: false,
-  },
-  deactivateTime: {
-    name: loSubscription.deactivateTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  deactivateReason: {
-    name: loSubscription.deactivateReason.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  inactive: {
-    name: loSubscription.inactive.key,
-    api: { type: 'boolean' },
-    required: false,
-  },
-  priceSubscriptionItemId: {
-    name: loSubscription.priceSubscriptionItemId.key,
-    api: { type: 'string' },
-    fk: 'stripeSubscriptionItem_ajv',
-    required: false,
-  },
-  productId: {
-    name: loSubscription.productId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  transferPrice: {
-    name: loSubscription.transferPrice.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  transferPriceSubscriptionItemId: {
-    name: loSubscription.transferPriceSubscriptionItemId.key,
-    api: { type: 'string' },
-    fk: 'stripeSubscriptionItem_ajv',
-    required: false,
-  },
-  updateRequest: {
-    name: loSubscription.updateRequest.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updateTime: {
-    name: loSubscription.updateTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  activeLeadTransfer: {
-    name: loSubscription.activeLeadTransfer.key,
-    api: { type: 'boolean' },
-    required: false,
-  },
-  callCenterService: {
-    name: loSubscription.callCenterService.key,
-    api: { type: 'array' },
-    required: false,
-  },
-  scheduleDays: {
-    name: loSubscription.scheduleDays.key,
-    api: { type: 'array' },
-    required: false,
-  },
-  scheduleFrom: {
-    name: loSubscription.scheduleFrom.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  timeZone: {
-    name: loSubscription.timeZone.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  primaryPhone: {
-    name: loSubscription.primaryPhone.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  secondaryPhoneType: {
-    name: loSubscription.secondaryPhoneType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  secondaryPhoneVerified: {
-    name: loSubscription.secondaryPhoneVerified.key,
-    api: { type: 'boolean' },
-    required: false,
-  },
-  addressCity: {
-    name: loSubscription.addressCity.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  addressState: {
-    name: loSubscription.addressState.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  addressStreet2: {
-    name: loSubscription.addressStreet2.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  addressStreet3: {
-    name: loSubscription.addressStreet3.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  preferredmeetingplaceCity: {
-    name: loSubscription.preferredmeetingplaceCity.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  preferredmeetingplaceState: {
-    name: loSubscription.preferredmeetingplaceState.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  preferredmeetingplaceStreet2: {
-    name: loSubscription.preferredmeetingplaceStreet2.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  preferredmeetingplaceZip: {
-    name: loSubscription.preferredmeetingplaceZip.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  preferredcommunicationscheduleDays: {
-    name: loSubscription.preferredcommunicationscheduleDays.key,
-    api: { type: 'array' },
-    required: false,
-  },
-  preferredcommunicationscheduleTo: {
-    name: loSubscription.preferredcommunicationscheduleTo.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  infoPhone: {
-    name: loSubscription.infoPhone.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  infoWebsite: {
-    name: loSubscription.infoWebsite.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  transactionType: {
-    name: loSubscription.transactionType.key,
-    api: { type: 'array' },
-    required: false,
-  },
-  loanType: {
-    name: loSubscription.loanType.key,
-    api: { type: 'array' },
-    required: false,
-  },
-  totalMatchAmount: {
-    name: loSubscription.totalMatchAmount.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  totalLeadsMatched: {
-    name: loSubscription.totalLeadsMatched.key,
-    api: { type: 'integer' },
-    required: false,
-  },
-  totalCredited: {
-    name: loSubscription.totalCredited.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  leadCategory: {
-    name: loSubscription.leadCategory.key,
-    api: { type: 'array' },
-    required: false,
-  },
-};
-export const loSubscriptionDailyStats_ajv = {
-  loSubscriptionId: {
-    name: loSubscriptionDailyStats.loSubscriptionId.key,
-    api: { type: 'string' },
-    fk: 'loSubscription_ajv',
-    required: true,
-  },
-  totalMatchAmount: {
-    name: loSubscriptionDailyStats.totalMatchAmount.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  totalTransferAmount: {
-    name: loSubscriptionDailyStats.totalTransferAmount.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  totalLeadsMatched: {
-    name: loSubscriptionDailyStats.totalLeadsMatched.key,
-    api: { type: 'integer' },
-    required: false,
-  },
-  totalLeadsTransfered: {
-    name: loSubscriptionDailyStats.totalLeadsTransfered.key,
-    api: { type: 'integer' },
-    required: false,
-  },
-  createdBy: {
-    name: loSubscriptionDailyStats.createdBy.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createRequest: {
-    name: loSubscriptionDailyStats.createRequest.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createTime: {
-    name: loSubscriptionDailyStats.createTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updatedBy: {
-    name: loSubscriptionDailyStats.updatedBy.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updateRequest: {
-    name: loSubscriptionDailyStats.updateRequest.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updateTime: {
-    name: loSubscriptionDailyStats.updateTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  statsDate: {
-    name: loSubscriptionDailyStats.statsDate.key,
-    api: { type: 'string' },
-    required: true,
-  },
-};
-export const loan_ajv = {
-  id: {
-    name: loan.id.key,
+    name: user.id.key,
     api: { type: 'string' },
     required: true,
   },
   accountId: {
-    name: loan.accountId.key,
+    name: user.accountId.key,
     api: { type: 'string' },
     fk: 'account_ajv',
     required: true,
   },
-  loanOfficerId: {
-    name: loan.loanOfficerId.key,
-    api: { type: 'string' },
-    fk: 'user_ajv',
-    required: false,
-  },
-  addressId: {
-    name: loan.addressId.key,
-    api: { type: 'string' },
-    fk: 'property_ajv',
-    required: false,
-  },
-  purpose: {
-    name: loan.purpose.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  type: {
-    name: loan.type.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  product: {
-    name: loan.product.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  amount: {
-    name: loan.amount.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  interestRate: {
-    name: loan.interestRate.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  term: {
-    name: loan.term.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  downPayment: {
-    name: loan.downPayment.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  remainingTerm: {
-    name: loan.remainingTerm.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  notes: {
-    name: loan.notes.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  propertyOccupancy: {
-    name: loan.propertyOccupancy.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  mortgageInsurance: {
-    name: loan.mortgageInsurance.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  status: {
-    name: loan.status.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  closingDate: {
-    name: loan.closingDate.key,
+  userType: {
+    name: user.userType.key,
     api: { type: 'string' },
     required: false,
   },
   createdBy: {
-    name: loan.createdBy.key,
+    name: user.createdBy.key,
     api: { type: 'string' },
     required: true,
   },
   createTime: {
-    name: loan.createTime.key,
+    name: user.createTime.key,
     api: { type: 'string' },
     required: true,
   },
   createRequest: {
-    name: loan.createRequest.key,
+    name: user.createRequest.key,
     api: { type: 'string' },
     required: true,
   },
   updatedBy: {
-    name: loan.updatedBy.key,
+    name: user.updatedBy.key,
     api: { type: 'string' },
     required: false,
   },
   updateTime: {
-    name: loan.updateTime.key,
+    name: user.updateTime.key,
     api: { type: 'string' },
     required: false,
   },
   updateRequest: {
-    name: loan.updateRequest.key,
+    name: user.updateRequest.key,
     api: { type: 'string' },
     required: false,
   },
-  remainingValue: {
-    name: loan.remainingValue.key,
+};
+export const loLeadRaw_ajv = {
+  id: {
+    name: loLeadRaw.id.key,
+    api: { type: 'integer' },
+    required: true,
+  },
+  cost: {
+    name: loLeadRaw.cost.key,
     api: { type: 'number' },
     required: false,
   },
-  amortization: {
-    name: loan.amortization.key,
+  allowedTimesSold: {
+    name: loLeadRaw.allowedTimesSold.key,
+    api: { type: 'integer' },
+    required: false,
+  },
+  returnHashType: {
+    name: loLeadRaw.returnHashType.key,
     api: { type: 'string' },
     required: false,
   },
-  desiredOrCurrent: {
-    name: loan.desiredOrCurrent.key,
+  returnHashValueType: {
+    name: loLeadRaw.returnHashValueType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  skipPartnerId: {
+    name: loLeadRaw.skipPartnerId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  returnBestPrice: {
+    name: loLeadRaw.returnBestPrice.key,
+    api: { type: 'integer' },
+    required: false,
+  },
+  type: {
+    name: loLeadRaw.type.key,
+    api: { type: 'integer' },
+    required: false,
+  },
+  testLead: {
+    name: loLeadRaw.testLead.key,
+    api: { type: 'integer' },
+    required: false,
+  },
+  skipXsl: {
+    name: loLeadRaw.skipXsl.key,
+    api: { type: 'integer' },
+    required: false,
+  },
+  redirectUrl: {
+    name: loLeadRaw.redirectUrl.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  ipAddress: {
+    name: loLeadRaw.ipAddress.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  src: {
+    name: loLeadRaw.src.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  subId: {
+    name: loLeadRaw.subId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  optout: {
+    name: loLeadRaw.optout.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  uniqueIdentifier: {
+    name: loLeadRaw.uniqueIdentifier.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  tcpaConsent: {
+    name: loLeadRaw.tcpaConsent.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  tcpaLanguage: {
+    name: loLeadRaw.tcpaLanguage.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  trustedFormUrl: {
+    name: loLeadRaw.trustedFormUrl.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  leadidToken: {
+    name: loLeadRaw.leadidToken.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  firstName: {
+    name: loLeadRaw.firstName.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  address: {
+    name: loLeadRaw.address.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  state: {
+    name: loLeadRaw.state.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  zip: {
+    name: loLeadRaw.zip.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  primaryPhone: {
+    name: loLeadRaw.primaryPhone.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  secondaryPhone: {
+    name: loLeadRaw.secondaryPhone.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  email: {
+    name: loLeadRaw.email.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  downPayment: {
+    name: loLeadRaw.downPayment.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  foundHome: {
+    name: loLeadRaw.foundHome.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  movingDate: {
+    name: loLeadRaw.movingDate.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  loanType: {
+    name: loLeadRaw.loanType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  productType: {
+    name: loLeadRaw.productType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  cashOutAmount: {
+    name: loLeadRaw.cashOutAmount.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  dob: {
+    name: loLeadRaw.dob.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  propertyType: {
+    name: loLeadRaw.propertyType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  refiGoal: {
+    name: loLeadRaw.refiGoal.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  workingWithAnAgent: {
+    name: loLeadRaw.workingWithAnAgent.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  bankruptcyLast7Years: {
+    name: loLeadRaw.bankruptcyLast7Years.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  creditStatus: {
+    name: loLeadRaw.creditStatus.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  loanValue: {
+    name: loLeadRaw.loanValue.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  homeValue: {
+    name: loLeadRaw.homeValue.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  firstMortgageRate: {
+    name: loLeadRaw.firstMortgageRate.key,
+    api: { type: 'integer' },
+    required: false,
+  },
+  secondMortgage: {
+    name: loLeadRaw.secondMortgage.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  secondMortgageBalance: {
+    name: loLeadRaw.secondMortgageBalance.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  ltv: {
+    name: loLeadRaw.ltv.key,
+    api: { type: 'integer' },
+    required: false,
+  },
+  ssn: {
+    name: loLeadRaw.ssn.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  mode: {
+    name: loLeadRaw.mode.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  status: {
+    name: loLeadRaw.status.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createTime: {
+    name: loLeadRaw.createTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createdBy: {
+    name: loLeadRaw.createdBy.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updateTime: {
+    name: loLeadRaw.updateTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updatedBy: {
+    name: loLeadRaw.updatedBy.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  loLeadId: {
+    name: loLeadRaw.loLeadId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  extraData: {
+    name: loLeadRaw.extraData.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  subscriptionId: {
+    name: loLeadRaw.subscriptionId.key,
+    api: { type: 'string' },
+    fk: 'loSubscription_ajv',
+    required: false,
+  },
+  billingStatus: {
+    name: loLeadRaw.billingStatus.key,
+    api: { type: 'string' },
+    required: false,
+  },
+};
+export const contactStatus_ajv = {
+  id: {
+    name: contactStatus.id.key,
     api: { type: 'string' },
     required: true,
   },
-  desiredCashOutAmount: {
-    name: loan.desiredCashOutAmount.key,
-    api: { type: 'number' },
-    required: false,
+  accountId: {
+    name: contactStatus.accountId.key,
+    api: { type: 'string' },
+    fk: 'account_ajv',
+    required: true,
   },
-  desiredDownPayment: {
-    name: loan.desiredDownPayment.key,
-    api: { type: 'number' },
-    required: false,
+  name: {
+    name: contactStatus.name.key,
+    api: { type: 'string' },
+    required: true,
   },
-  loanPropertyType: {
-    name: loan.loanPropertyType.key,
+  order: {
+    name: contactStatus.order.key,
+    api: { type: 'integer' },
+    required: true,
+  },
+  createdBy: {
+    name: contactStatus.createdBy.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  createTime: {
+    name: contactStatus.createTime.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  createRequest: {
+    name: contactStatus.createRequest.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  updatedBy: {
+    name: contactStatus.updatedBy.key,
     api: { type: 'string' },
     required: false,
   },
-  loanUnits: {
-    name: loan.loanUnits.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  timeline: {
-    name: loan.timeline.key,
+  updateTime: {
+    name: contactStatus.updateTime.key,
     api: { type: 'string' },
     required: false,
+  },
+  updateRequest: {
+    name: contactStatus.updateRequest.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  isConverted: {
+    name: contactStatus.isConverted.key,
+    api: { type: 'boolean' },
+    required: true,
+  },
+  statusLifecycleId: {
+    name: contactStatus.statusLifecycleId.key,
+    api: { type: 'string' },
+    fk: 'contactStatusLifecycle_ajv',
+    required: false,
+  },
+  isDeleted: {
+    name: contactStatus.isDeleted.key,
+    api: { type: 'boolean' },
+    required: true,
+  },
+};
+export const bridgeSectionLifecycle_ajv = {
+  id: {
+    name: bridgeSectionLifecycle.id.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  accountId: {
+    name: bridgeSectionLifecycle.accountId.key,
+    api: { type: 'string' },
+    fk: 'account_ajv',
+    required: true,
+  },
+  customFieldSectionId: {
+    name: bridgeSectionLifecycle.customFieldSectionId.key,
+    api: { type: 'string' },
+    fk: 'contactCustomFieldSection_ajv',
+    required: true,
+  },
+  lifecycleId: {
+    name: bridgeSectionLifecycle.lifecycleId.key,
+    api: { type: 'string' },
+    fk: 'contactStatusLifecycle_ajv',
+    required: true,
   },
 };
 export const templateVersion_ajv = {
@@ -1830,6 +2046,91 @@ export const organization_ajv = {
     required: false,
   },
 };
+export const page_ajv = {
+  accountId: {
+    name: page.accountId.key,
+    api: { type: 'string' },
+    fk: 'account_ajv',
+    required: true,
+  },
+  id: {
+    name: page.id.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  name: {
+    name: page.name.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  body: {
+    name: page.body.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  templateId: {
+    name: page.templateId.key,
+    api: { type: 'string' },
+    fk: 'template_ajv',
+    required: false,
+  },
+  latestTemplate: {
+    name: page.latestTemplate.key,
+    api: { type: 'string' },
+    fk: 'templateVersion_ajv',
+    required: false,
+  },
+  path: {
+    name: page.path.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createTime: {
+    name: page.createTime.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  headerMeta: {
+    name: page.headerMeta.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  themeId: {
+    name: page.themeId.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  createdBy: {
+    name: page.createdBy.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  updateRequest: {
+    name: page.updateRequest.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updateTime: {
+    name: page.updateTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updatedBy: {
+    name: page.updatedBy.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createRequest: {
+    name: page.createRequest.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  type: {
+    name: page.type.key,
+    api: { type: 'string' },
+    required: true,
+  },
+};
 export const partner_ajv = {
   id: {
     name: partner.id.key,
@@ -1920,354 +2221,466 @@ export const partner_ajv = {
     required: false,
   },
 };
-export const loLeadRaw_ajv = {
-  id: {
-    name: loLeadRaw.id.key,
-    api: { type: 'integer' },
-    required: true,
-  },
-  cost: {
-    name: loLeadRaw.cost.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  allowedTimesSold: {
-    name: loLeadRaw.allowedTimesSold.key,
-    api: { type: 'integer' },
-    required: false,
-  },
-  returnHashType: {
-    name: loLeadRaw.returnHashType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  skipPartnerId: {
-    name: loLeadRaw.skipPartnerId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  returnBestPrice: {
-    name: loLeadRaw.returnBestPrice.key,
-    api: { type: 'integer' },
-    required: false,
-  },
-  srcId: {
-    name: loLeadRaw.srcId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  testLead: {
-    name: loLeadRaw.testLead.key,
-    api: { type: 'integer' },
-    required: false,
-  },
-  skipXsl: {
-    name: loLeadRaw.skipXsl.key,
-    api: { type: 'integer' },
-    required: false,
-  },
-  redirectUrl: {
-    name: loLeadRaw.redirectUrl.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  ipAddress: {
-    name: loLeadRaw.ipAddress.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  src: {
-    name: loLeadRaw.src.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  landingPage: {
-    name: loLeadRaw.landingPage.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  subId: {
-    name: loLeadRaw.subId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  pubId: {
-    name: loLeadRaw.pubId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  optout: {
-    name: loLeadRaw.optout.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  uniqueIdentifier: {
-    name: loLeadRaw.uniqueIdentifier.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  userAgent: {
-    name: loLeadRaw.userAgent.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  tcpaLanguage: {
-    name: loLeadRaw.tcpaLanguage.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  leadidToken: {
-    name: loLeadRaw.leadidToken.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  firstName: {
-    name: loLeadRaw.firstName.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  lastName: {
-    name: loLeadRaw.lastName.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  city: {
-    name: loLeadRaw.city.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  zip: {
-    name: loLeadRaw.zip.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  primaryPhone: {
-    name: loLeadRaw.primaryPhone.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  secondaryPhone: {
-    name: loLeadRaw.secondaryPhone.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  estimatedPurchasePrice: {
-    name: loLeadRaw.estimatedPurchasePrice.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  downPayment: {
-    name: loLeadRaw.downPayment.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  movingDate: {
-    name: loLeadRaw.movingDate.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  newPropertyZip: {
-    name: loLeadRaw.newPropertyZip.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  loanType: {
-    name: loLeadRaw.loanType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  productType: {
-    name: loLeadRaw.productType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  cashOutAmount: {
-    name: loLeadRaw.cashOutAmount.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  propertyType: {
-    name: loLeadRaw.propertyType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  propertyUse: {
-    name: loLeadRaw.propertyUse.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  refiGoal: {
-    name: loLeadRaw.refiGoal.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  workingWithAnAgent: {
-    name: loLeadRaw.workingWithAnAgent.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  bankruptcyLast7Years: {
-    name: loLeadRaw.bankruptcyLast7Years.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  foreclosureLast7Years: {
-    name: loLeadRaw.foreclosureLast7Years.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  creditStatus: {
-    name: loLeadRaw.creditStatus.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  loanValue: {
-    name: loLeadRaw.loanValue.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  firstMortgageBalance: {
-    name: loLeadRaw.firstMortgageBalance.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  firstMortgageRate: {
-    name: loLeadRaw.firstMortgageRate.key,
-    api: { type: 'integer' },
-    required: false,
-  },
-  secondMortgage: {
-    name: loLeadRaw.secondMortgage.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  secondMortgageBalance: {
-    name: loLeadRaw.secondMortgageBalance.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  secondMortgageRate: {
-    name: loLeadRaw.secondMortgageRate.key,
-    api: { type: 'integer' },
-    required: false,
-  },
-  ssn: {
-    name: loLeadRaw.ssn.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  mode: {
-    name: loLeadRaw.mode.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  status: {
-    name: loLeadRaw.status.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createTime: {
-    name: loLeadRaw.createTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createdBy: {
-    name: loLeadRaw.createdBy.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updateRequest: {
-    name: loLeadRaw.updateRequest.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updatedBy: {
-    name: loLeadRaw.updatedBy.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  reason: {
-    name: loLeadRaw.reason.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  loLeadId: {
-    name: loLeadRaw.loLeadId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  subscriptionId: {
-    name: loLeadRaw.subscriptionId.key,
-    api: { type: 'string' },
-    fk: 'loSubscription_ajv',
-    required: false,
-  },
-  billingStatus: {
-    name: loLeadRaw.billingStatus.key,
-    api: { type: 'string' },
-    required: false,
-  },
-};
-export const template_ajv = {
+export const element_ajv = {
   accountId: {
-    name: template.accountId.key,
+    name: element.accountId.key,
     api: { type: 'string' },
     fk: 'account_ajv',
     required: true,
   },
-  id: {
-    name: template.id.key,
+  latestVersion: {
+    name: element.latestVersion.key,
     api: { type: 'string' },
-    required: true,
+    fk: 'elementVersion_ajv',
+    required: false,
   },
-  type: {
-    name: template.type.key,
+  templateId: {
+    name: element.templateId.key,
+    api: { type: 'string' },
+    fk: 'template_ajv',
+    required: false,
+  },
+  id: {
+    name: element.id.key,
     api: { type: 'string' },
     required: true,
   },
   name: {
-    name: template.name.key,
+    name: element.name.key,
     api: { type: 'string' },
     required: true,
   },
   data: {
-    name: template.data.key,
+    name: element.data.key,
     api: { type: 'string' },
     required: true,
   },
   createTime: {
-    name: template.createTime.key,
+    name: element.createTime.key,
     api: { type: 'string' },
     required: true,
   },
-  thumbnail: {
-    name: template.thumbnail.key,
+  type: {
+    name: element.type.key,
     api: { type: 'string' },
     required: true,
   },
   createdBy: {
-    name: template.createdBy.key,
+    name: element.createdBy.key,
     api: { type: 'string' },
     required: true,
   },
   updateRequest: {
-    name: template.updateRequest.key,
+    name: element.updateRequest.key,
     api: { type: 'string' },
     required: false,
   },
   updateTime: {
-    name: template.updateTime.key,
+    name: element.updateTime.key,
     api: { type: 'string' },
     required: false,
   },
   updatedBy: {
-    name: template.updatedBy.key,
+    name: element.updatedBy.key,
     api: { type: 'string' },
     required: false,
   },
   createRequest: {
-    name: template.createRequest.key,
+    name: element.createRequest.key,
     api: { type: 'string' },
+    required: true,
+  },
+};
+export const loLead_ajv = {
+  id: {
+    name: loLead.id.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  assignmentId: {
+    name: loLead.assignmentId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  billed: {
+    name: loLead.billed.key,
+    api: { type: 'boolean' },
+    required: true,
+  },
+  boberdooId: {
+    name: loLead.boberdooId.key,
+    api: { type: 'integer' },
+    required: false,
+  },
+  callCenterService: {
+    name: loLead.callCenterService.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  companyId: {
+    name: loLead.companyId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  creditStatus: {
+    name: loLead.creditStatus.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  email: {
+    name: loLead.email.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  firstName: {
+    name: loLead.firstName.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  language: {
+    name: loLead.language.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  ownerId: {
+    name: loLead.ownerId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  phone: {
+    name: loLead.phone.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  productId: {
+    name: loLead.productId.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  provider: {
+    name: loLead.provider.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  vendor: {
+    name: loLead.vendor.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  secondaryPhone: {
+    name: loLead.secondaryPhone.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  source: {
+    name: loLead.source.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  subscriptionId: {
+    name: loLead.subscriptionId.key,
+    api: { type: 'string' },
+    fk: 'loSubscription_ajv',
+    required: true,
+  },
+  price: {
+    name: loLead.price.key,
+    api: { type: 'number' },
+    required: true,
+  },
+  transferStatus: {
+    name: loLead.transferStatus.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  leadType: {
+    name: loLead.leadType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  addressCity: {
+    name: loLead.addressCity.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  addressCountry: {
+    name: loLead.addressCountry.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  addressState: {
+    name: loLead.addressState.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  addressStreet: {
+    name: loLead.addressStreet.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  addressStreet2: {
+    name: loLead.addressStreet2.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  addressStreet3: {
+    name: loLead.addressStreet3.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  addressZip: {
+    name: loLead.addressZip.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  loanInterestRate: {
+    name: loLead.loanInterestRate.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  loanMonthlyPayment: {
+    name: loLead.loanMonthlyPayment.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  loanTransactionType: {
+    name: loLead.loanTransactionType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  loanType: {
+    name: loLead.loanType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createRequest: {
+    name: loLead.createRequest.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createTime: {
+    name: loLead.createTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updatedBy: {
+    name: loLead.updatedBy.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updateRequest: {
+    name: loLead.updateRequest.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updateTime: {
+    name: loLead.updateTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  loLeadRawId: {
+    name: loLead.loLeadRawId.key,
+    api: { type: 'integer' },
+    fk: 'loLeadRaw_ajv',
+    required: false,
+  },
+  loanRange: {
+    name: loLead.loanRange.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  creditedTransferPrice: {
+    name: loLead.creditedTransferPrice.key,
+    api: { type: 'number' },
+    required: true,
+  },
+  refundedPrice: {
+    name: loLead.refundedPrice.key,
+    api: { type: 'number' },
+    required: true,
+  },
+  refundedTransferPrice: {
+    name: loLead.refundedTransferPrice.key,
+    api: { type: 'number' },
+    required: true,
+  },
+  transferDate: {
+    name: loLead.transferDate.key,
+    api: { type: 'string' },
+    required: false,
+  },
+};
+export const templateDependency_ajv = {
+  id: {
+    name: templateDependency.id.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  accountId: {
+    name: templateDependency.accountId.key,
+    api: { type: 'string' },
+    fk: 'account_ajv',
+    required: true,
+  },
+  templateId: {
+    name: templateDependency.templateId.key,
+    api: { type: 'string' },
+    fk: 'template_ajv',
+    required: true,
+  },
+  version: {
+    name: templateDependency.version.key,
+    api: { type: 'string' },
+    fk: 'templateVersion_ajv',
+    required: true,
+  },
+  createTime: {
+    name: templateDependency.createTime.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  createdBy: {
+    name: templateDependency.createdBy.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  updateRequest: {
+    name: templateDependency.updateRequest.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updateTime: {
+    name: templateDependency.updateTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updatedBy: {
+    name: templateDependency.updatedBy.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createRequest: {
+    name: templateDependency.createRequest.key,
+    api: { type: 'string' },
+    required: true,
+  },
+};
+export const routing_ajv = {
+  accountId: {
+    name: routing.accountId.key,
+    api: { type: 'string' },
+    fk: 'account_ajv',
+    required: true,
+  },
+  subdomain: {
+    name: routing.subdomain.key,
+    api: { type: 'string' },
+    fk: 'account_ajv',
+    required: false,
+  },
+  path: {
+    name: routing.path.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  resourceId: {
+    name: routing.resourceId.key,
+    api: { type: 'string' },
+    fk: 'page_ajv',
+    required: true,
+  },
+  createTime: {
+    name: routing.createTime.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  createdBy: {
+    name: routing.createdBy.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  updateRequest: {
+    name: routing.updateRequest.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updateTime: {
+    name: routing.updateTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updatedBy: {
+    name: routing.updatedBy.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createRequest: {
+    name: routing.createRequest.key,
+    api: { type: 'string' },
+    required: true,
+  },
+};
+export const links_ajv = {
+  id: {
+    name: links.id.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  accountId: {
+    name: links.accountId.key,
+    api: { type: 'string' },
+    fk: 'account_ajv',
+    required: true,
+  },
+  sourceId: {
+    name: links.sourceId.key,
+    api: { type: 'string' },
+    fk: 'page_ajv',
+    required: true,
+  },
+  destinationId: {
+    name: links.destinationId.key,
+    api: { type: 'string' },
+    fk: 'page_ajv',
+    required: true,
+  },
+  createTime: {
+    name: links.createTime.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  updateRequest: {
+    name: links.updateRequest.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updateTime: {
+    name: links.updateTime.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  updatedBy: {
+    name: links.updatedBy.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createRequest: {
+    name: links.createRequest.key,
+    api: { type: 'string' },
+    required: true,
+  },
+};
+export const elementtotemplateVersion_ajv = {
+  A: {
+    name: elementtotemplateVersion.A.key,
+    api: { type: 'string' },
+    fk: 'element_ajv',
+    required: true,
+  },
+  B: {
+    name: elementtotemplateVersion.B.key,
+    api: { type: 'string' },
+    fk: 'templateVersion_ajv',
     required: true,
   },
 };
@@ -2483,72 +2896,250 @@ export const contact_ajv = {
     required: false,
   },
 };
-export const element_ajv = {
+export const contactCustomFieldValue_ajv = {
   accountId: {
-    name: element.accountId.key,
+    name: contactCustomFieldValue.accountId.key,
     api: { type: 'string' },
     fk: 'account_ajv',
     required: true,
   },
-  latestVersion: {
-    name: element.latestVersion.key,
+  contactId: {
+    name: contactCustomFieldValue.contactId.key,
     api: { type: 'string' },
-    fk: 'elementVersion_ajv',
-    required: false,
+    fk: 'contact_ajv',
+    required: true,
   },
-  templateId: {
-    name: element.templateId.key,
+  customFieldId: {
+    name: contactCustomFieldValue.customFieldId.key,
     api: { type: 'string' },
-    fk: 'template_ajv',
-    required: false,
+    fk: 'contactCustomField_ajv',
+    required: true,
+  },
+  value: {
+    name: contactCustomFieldValue.value.key,
+    api: { type: 'string' },
+    required: true,
   },
   id: {
-    name: element.id.key,
+    name: contactCustomFieldValue.id.key,
     api: { type: 'string' },
     required: true,
   },
-  name: {
-    name: element.name.key,
+};
+export const loan_ajv = {
+  id: {
+    name: loan.id.key,
     api: { type: 'string' },
     required: true,
   },
-  data: {
-    name: element.data.key,
+  accountId: {
+    name: loan.accountId.key,
+    api: { type: 'string' },
+    fk: 'account_ajv',
+    required: true,
+  },
+  loanOfficerId: {
+    name: loan.loanOfficerId.key,
+    api: { type: 'string' },
+    fk: 'user_ajv',
+    required: false,
+  },
+  addressId: {
+    name: loan.addressId.key,
+    api: { type: 'string' },
+    fk: 'property_ajv',
+    required: false,
+  },
+  purpose: {
+    name: loan.purpose.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  type: {
+    name: loan.type.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  product: {
+    name: loan.product.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  amount: {
+    name: loan.amount.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  interestRate: {
+    name: loan.interestRate.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  term: {
+    name: loan.term.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  downPayment: {
+    name: loan.downPayment.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  remainingTerm: {
+    name: loan.remainingTerm.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  notes: {
+    name: loan.notes.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  propertyOccupancy: {
+    name: loan.propertyOccupancy.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  mortgageInsurance: {
+    name: loan.mortgageInsurance.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  status: {
+    name: loan.status.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  closingDate: {
+    name: loan.closingDate.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  createdBy: {
+    name: loan.createdBy.key,
     api: { type: 'string' },
     required: true,
   },
   createTime: {
-    name: element.createTime.key,
+    name: loan.createTime.key,
     api: { type: 'string' },
     required: true,
   },
-  type: {
-    name: element.type.key,
+  createRequest: {
+    name: loan.createRequest.key,
     api: { type: 'string' },
     required: true,
   },
-  createdBy: {
-    name: element.createdBy.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  updateRequest: {
-    name: element.updateRequest.key,
+  updatedBy: {
+    name: loan.updatedBy.key,
     api: { type: 'string' },
     required: false,
   },
   updateTime: {
-    name: element.updateTime.key,
+    name: loan.updateTime.key,
     api: { type: 'string' },
     required: false,
   },
-  updatedBy: {
-    name: element.updatedBy.key,
+  updateRequest: {
+    name: loan.updateRequest.key,
     api: { type: 'string' },
     required: false,
   },
-  createRequest: {
-    name: element.createRequest.key,
+  remainingValue: {
+    name: loan.remainingValue.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  amortization: {
+    name: loan.amortization.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  desiredOrCurrent: {
+    name: loan.desiredOrCurrent.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  desiredCashOutAmount: {
+    name: loan.desiredCashOutAmount.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  desiredDownPayment: {
+    name: loan.desiredDownPayment.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  loanPropertyType: {
+    name: loan.loanPropertyType.key,
+    api: { type: 'string' },
+    required: false,
+  },
+  loanUnits: {
+    name: loan.loanUnits.key,
+    api: { type: 'number' },
+    required: false,
+  },
+  timeline: {
+    name: loan.timeline.key,
+    api: { type: 'string' },
+    required: false,
+  },
+};
+export const contactOtherAssociates_ajv = {
+  id: {
+    name: contactOtherAssociates.id.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  contactId: {
+    name: contactOtherAssociates.contactId.key,
+    api: { type: 'string' },
+    fk: 'contact_ajv',
+    required: true,
+  },
+  associateName: {
+    name: contactOtherAssociates.associateName.key,
+    api: { type: 'string' },
+    required: true,
+  },
+};
+export const bridgeContactTag_ajv = {
+  contactId: {
+    name: bridgeContactTag.contactId.key,
+    api: { type: 'string' },
+    fk: 'contact_ajv',
+    required: true,
+  },
+  tagId: {
+    name: bridgeContactTag.tagId.key,
+    api: { type: 'string' },
+    fk: 'contactTag_ajv',
+    required: true,
+  },
+  accountId: {
+    name: bridgeContactTag.accountId.key,
+    api: { type: 'string' },
+    fk: 'account_ajv',
+    required: true,
+  },
+  assignedBy: {
+    name: bridgeContactTag.assignedBy.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  assignTime: {
+    name: bridgeContactTag.assignTime.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  assignRequest: {
+    name: bridgeContactTag.assignRequest.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  id: {
+    name: bridgeContactTag.id.key,
     api: { type: 'string' },
     required: true,
   },
@@ -2669,289 +3260,6 @@ export const incomeSource_ajv = {
     required: false,
   },
 };
-export const loLead_ajv = {
-  id: {
-    name: loLead.id.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  assignmentId: {
-    name: loLead.assignmentId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  billed: {
-    name: loLead.billed.key,
-    api: { type: 'boolean' },
-    required: true,
-  },
-  boberdooId: {
-    name: loLead.boberdooId.key,
-    api: { type: 'integer' },
-    required: false,
-  },
-  callCenterService: {
-    name: loLead.callCenterService.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  companyId: {
-    name: loLead.companyId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  creditStatus: {
-    name: loLead.creditStatus.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  email: {
-    name: loLead.email.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  firstName: {
-    name: loLead.firstName.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  language: {
-    name: loLead.language.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  lastName: {
-    name: loLead.lastName.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  ownerId: {
-    name: loLead.ownerId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  phone: {
-    name: loLead.phone.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  productId: {
-    name: loLead.productId.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  provider: {
-    name: loLead.provider.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  vendor: {
-    name: loLead.vendor.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  source: {
-    name: loLead.source.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  price: {
-    name: loLead.price.key,
-    api: { type: 'number' },
-    required: true,
-  },
-  transferPrice: {
-    name: loLead.transferPrice.key,
-    api: { type: 'number' },
-    required: true,
-  },
-  transferStatus: {
-    name: loLead.transferStatus.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  leadType: {
-    name: loLead.leadType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  leadCategory: {
-    name: loLead.leadCategory.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  addressCity: {
-    name: loLead.addressCity.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  addressState: {
-    name: loLead.addressState.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  addressStreet: {
-    name: loLead.addressStreet.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  addressStreet2: {
-    name: loLead.addressStreet2.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  addressStreet3: {
-    name: loLead.addressStreet3.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  addressZip: {
-    name: loLead.addressZip.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  loanDownPayment: {
-    name: loLead.loanDownPayment.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  loanInterestRate: {
-    name: loLead.loanInterestRate.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  loanMonthlyPayment: {
-    name: loLead.loanMonthlyPayment.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  loanPurchasePrice: {
-    name: loLead.loanPurchasePrice.key,
-    api: { type: 'number' },
-    required: false,
-  },
-  loanType: {
-    name: loLead.loanType.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createdBy: {
-    name: loLead.createdBy.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createRequest: {
-    name: loLead.createRequest.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createTime: {
-    name: loLead.createTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updatedBy: {
-    name: loLead.updatedBy.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updateRequest: {
-    name: loLead.updateRequest.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updateTime: {
-    name: loLead.updateTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  loLeadRawId: {
-    name: loLead.loLeadRawId.key,
-    api: { type: 'integer' },
-    fk: 'loLeadRaw_ajv',
-    required: false,
-  },
-  loanRange: {
-    name: loLead.loanRange.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  creditedPrice: {
-    name: loLead.creditedPrice.key,
-    api: { type: 'number' },
-    required: true,
-  },
-  creditedTransferPrice: {
-    name: loLead.creditedTransferPrice.key,
-    api: { type: 'number' },
-    required: true,
-  },
-  refundedPrice: {
-    name: loLead.refundedPrice.key,
-    api: { type: 'number' },
-    required: true,
-  },
-  refundedTransferPrice: {
-    name: loLead.refundedTransferPrice.key,
-    api: { type: 'number' },
-    required: true,
-  },
-};
-export const templateDependency_ajv = {
-  id: {
-    name: templateDependency.id.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  accountId: {
-    name: templateDependency.accountId.key,
-    api: { type: 'string' },
-    fk: 'account_ajv',
-    required: true,
-  },
-  templateId: {
-    name: templateDependency.templateId.key,
-    api: { type: 'string' },
-    fk: 'template_ajv',
-    required: true,
-  },
-  version: {
-    name: templateDependency.version.key,
-    api: { type: 'string' },
-    fk: 'templateVersion_ajv',
-    required: true,
-  },
-  createTime: {
-    name: templateDependency.createTime.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  createdBy: {
-    name: templateDependency.createdBy.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  updateRequest: {
-    name: templateDependency.updateRequest.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updateTime: {
-    name: templateDependency.updateTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updatedBy: {
-    name: templateDependency.updatedBy.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createRequest: {
-    name: templateDependency.createRequest.key,
-    api: { type: 'string' },
-    required: true,
-  },
-};
 export const bridgeContactPartner_ajv = {
   id: {
     name: bridgeContactPartner.id.key,
@@ -2993,372 +3301,6 @@ export const bridgeContactPartner_ajv = {
   },
   assignRequest: {
     name: bridgeContactPartner.assignRequest.key,
-    api: { type: 'string' },
-    required: true,
-  },
-};
-export const elementtotemplateVersion_ajv = {
-  A: {
-    name: elementtotemplateVersion.A.key,
-    api: { type: 'string' },
-    fk: 'element_ajv',
-    required: true,
-  },
-  B: {
-    name: elementtotemplateVersion.B.key,
-    api: { type: 'string' },
-    fk: 'templateVersion_ajv',
-    required: true,
-  },
-};
-export const bridgeContactContact_ajv = {
-  contactId: {
-    name: bridgeContactContact.contactId.key,
-    api: { type: 'string' },
-    fk: 'contact_ajv',
-    required: true,
-  },
-  accountId: {
-    name: bridgeContactContact.accountId.key,
-    api: { type: 'string' },
-    fk: 'account_ajv',
-    required: true,
-  },
-  assignedTo: {
-    name: bridgeContactContact.assignedTo.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  relationship: {
-    name: bridgeContactContact.relationship.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  assignedBy: {
-    name: bridgeContactContact.assignedBy.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  assignTime: {
-    name: bridgeContactContact.assignTime.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  assignRequest: {
-    name: bridgeContactContact.assignRequest.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  id: {
-    name: bridgeContactContact.id.key,
-    api: { type: 'string' },
-    required: true,
-  },
-};
-export const bridgeContactTag_ajv = {
-  contactId: {
-    name: bridgeContactTag.contactId.key,
-    api: { type: 'string' },
-    fk: 'contact_ajv',
-    required: true,
-  },
-  tagId: {
-    name: bridgeContactTag.tagId.key,
-    api: { type: 'string' },
-    fk: 'contactTag_ajv',
-    required: true,
-  },
-  accountId: {
-    name: bridgeContactTag.accountId.key,
-    api: { type: 'string' },
-    fk: 'account_ajv',
-    required: true,
-  },
-  assignedBy: {
-    name: bridgeContactTag.assignedBy.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  assignTime: {
-    name: bridgeContactTag.assignTime.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  assignRequest: {
-    name: bridgeContactTag.assignRequest.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  id: {
-    name: bridgeContactTag.id.key,
-    api: { type: 'string' },
-    required: true,
-  },
-};
-export const bridgeContactUser_ajv = {
-  contactId: {
-    name: bridgeContactUser.contactId.key,
-    api: { type: 'string' },
-    fk: 'contact_ajv',
-    required: true,
-  },
-  userId: {
-    name: bridgeContactUser.userId.key,
-    api: { type: 'string' },
-    fk: 'user_ajv',
-    required: true,
-  },
-  accountId: {
-    name: bridgeContactUser.accountId.key,
-    api: { type: 'string' },
-    fk: 'account_ajv',
-    required: true,
-  },
-  assignedBy: {
-    name: bridgeContactUser.assignedBy.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  assignTime: {
-    name: bridgeContactUser.assignTime.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  assignRequest: {
-    name: bridgeContactUser.assignRequest.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  id: {
-    name: bridgeContactUser.id.key,
-    api: { type: 'string' },
-    required: true,
-  },
-};
-export const bridgeSectionLifecycle_ajv = {
-  id: {
-    name: bridgeSectionLifecycle.id.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  accountId: {
-    name: bridgeSectionLifecycle.accountId.key,
-    api: { type: 'string' },
-    fk: 'account_ajv',
-    required: true,
-  },
-  customFieldSectionId: {
-    name: bridgeSectionLifecycle.customFieldSectionId.key,
-    api: { type: 'string' },
-    fk: 'contactCustomFieldSection_ajv',
-    required: true,
-  },
-  lifecycleId: {
-    name: bridgeSectionLifecycle.lifecycleId.key,
-    api: { type: 'string' },
-    fk: 'contactStatusLifecycle_ajv',
-    required: true,
-  },
-};
-export const page_ajv = {
-  accountId: {
-    name: page.accountId.key,
-    api: { type: 'string' },
-    fk: 'account_ajv',
-    required: true,
-  },
-  id: {
-    name: page.id.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  name: {
-    name: page.name.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  body: {
-    name: page.body.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  templateId: {
-    name: page.templateId.key,
-    api: { type: 'string' },
-    fk: 'template_ajv',
-    required: false,
-  },
-  latestTemplate: {
-    name: page.latestTemplate.key,
-    api: { type: 'string' },
-    fk: 'templateVersion_ajv',
-    required: false,
-  },
-  path: {
-    name: page.path.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createTime: {
-    name: page.createTime.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  headerMeta: {
-    name: page.headerMeta.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  themeId: {
-    name: page.themeId.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  createdBy: {
-    name: page.createdBy.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  updateRequest: {
-    name: page.updateRequest.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updateTime: {
-    name: page.updateTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updatedBy: {
-    name: page.updatedBy.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createRequest: {
-    name: page.createRequest.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  category: {
-    name: page.category.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  ownerId: {
-    name: page.ownerId.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  status: {
-    name: page.status.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  type: {
-    name: page.type.key,
-    api: { type: 'string' },
-    required: true,
-  },
-};
-export const routing_ajv = {
-  accountId: {
-    name: routing.accountId.key,
-    api: { type: 'string' },
-    fk: 'account_ajv',
-    required: true,
-  },
-  subdomain: {
-    name: routing.subdomain.key,
-    api: { type: 'string' },
-    fk: 'account_ajv',
-    required: false,
-  },
-  path: {
-    name: routing.path.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  resourceId: {
-    name: routing.resourceId.key,
-    api: { type: 'string' },
-    fk: 'page_ajv',
-    required: true,
-  },
-  createTime: {
-    name: routing.createTime.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  createdBy: {
-    name: routing.createdBy.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  updateRequest: {
-    name: routing.updateRequest.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updateTime: {
-    name: routing.updateTime.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  updatedBy: {
-    name: routing.updatedBy.key,
-    api: { type: 'string' },
-    required: false,
-  },
-  createRequest: {
-    name: routing.createRequest.key,
-    api: { type: 'string' },
-    required: true,
-  },
-};
-export const contactOtherAssociates_ajv = {
-  id: {
-    name: contactOtherAssociates.id.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  contactId: {
-    name: contactOtherAssociates.contactId.key,
-    api: { type: 'string' },
-    fk: 'contact_ajv',
-    required: true,
-  },
-  associateName: {
-    name: contactOtherAssociates.associateName.key,
-    api: { type: 'string' },
-    required: true,
-  },
-};
-export const contactCustomFieldValue_ajv = {
-  accountId: {
-    name: contactCustomFieldValue.accountId.key,
-    api: { type: 'string' },
-    fk: 'account_ajv',
-    required: true,
-  },
-  contactId: {
-    name: contactCustomFieldValue.contactId.key,
-    api: { type: 'string' },
-    fk: 'contact_ajv',
-    required: true,
-  },
-  customFieldId: {
-    name: contactCustomFieldValue.customFieldId.key,
-    api: { type: 'string' },
-    fk: 'contactCustomField_ajv',
-    required: true,
-  },
-  value: {
-    name: contactCustomFieldValue.value.key,
-    api: { type: 'string' },
-    required: true,
-  },
-  id: {
-    name: contactCustomFieldValue.id.key,
     api: { type: 'string' },
     required: true,
   },
@@ -3408,57 +3350,86 @@ export const bridgeContactLoan_ajv = {
     required: true,
   },
 };
-export const links_ajv = {
-  id: {
-    name: links.id.key,
+export const bridgeContactContact_ajv = {
+  contactId: {
+    name: bridgeContactContact.contactId.key,
     api: { type: 'string' },
+    fk: 'contact_ajv',
     required: true,
   },
   accountId: {
-    name: links.accountId.key,
+    name: bridgeContactContact.accountId.key,
     api: { type: 'string' },
     fk: 'account_ajv',
     required: true,
   },
-  sourceId: {
-    name: links.sourceId.key,
-    api: { type: 'string' },
-    fk: 'page_ajv',
-    required: true,
-  },
-  destinationId: {
-    name: links.destinationId.key,
-    api: { type: 'string' },
-    fk: 'page_ajv',
-    required: true,
-  },
-  createTime: {
-    name: links.createTime.key,
+  assignedTo: {
+    name: bridgeContactContact.assignedTo.key,
     api: { type: 'string' },
     required: true,
   },
-  createdBy: {
-    name: links.createdBy.key,
+  relationship: {
+    name: bridgeContactContact.relationship.key,
     api: { type: 'string' },
     required: true,
   },
-  updateRequest: {
-    name: links.updateRequest.key,
+  assignedBy: {
+    name: bridgeContactContact.assignedBy.key,
     api: { type: 'string' },
-    required: false,
+    required: true,
   },
-  updateTime: {
-    name: links.updateTime.key,
+  assignTime: {
+    name: bridgeContactContact.assignTime.key,
     api: { type: 'string' },
-    required: false,
+    required: true,
   },
-  updatedBy: {
-    name: links.updatedBy.key,
+  assignRequest: {
+    name: bridgeContactContact.assignRequest.key,
     api: { type: 'string' },
-    required: false,
+    required: true,
   },
-  createRequest: {
-    name: links.createRequest.key,
+  id: {
+    name: bridgeContactContact.id.key,
+    api: { type: 'string' },
+    required: true,
+  },
+};
+export const bridgeContactUser_ajv = {
+  contactId: {
+    name: bridgeContactUser.contactId.key,
+    api: { type: 'string' },
+    fk: 'contact_ajv',
+    required: true,
+  },
+  userId: {
+    name: bridgeContactUser.userId.key,
+    api: { type: 'string' },
+    fk: 'user_ajv',
+    required: true,
+  },
+  accountId: {
+    name: bridgeContactUser.accountId.key,
+    api: { type: 'string' },
+    fk: 'account_ajv',
+    required: true,
+  },
+  assignedBy: {
+    name: bridgeContactUser.assignedBy.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  assignTime: {
+    name: bridgeContactUser.assignTime.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  assignRequest: {
+    name: bridgeContactUser.assignRequest.key,
+    api: { type: 'string' },
+    required: true,
+  },
+  id: {
+    name: bridgeContactUser.id.key,
     api: { type: 'string' },
     required: true,
   },
