@@ -2,82 +2,8 @@
 # from code_generatory import CodeGenerator
 from connect import connect_sqlalc
 from marshmallow import Schema, fields
-
-
-# from sort_schema import SortSchema
-# from typescript_gen import TypescriptGen
-
-def remove_special_chars(name, delimiter):
-    camel_case = name
-    if name.find(delimiter)>=1:
-        chunks = name.split(delimiter)
-        for i in range(len(chunks)):
-            if i == 0:
-                camel_case = chunks[i].lower()
-            else:
-                camel_case += chunks[i][0].upper() + chunks[i][1:]
-    if name.find(delimiter) == 0:
-        camel_case = name[1:]
-    return camel_case
-
-def to_camel_case(name):
-    while name.find("_")!=-1 or name.find(".")!=-1 or name.find("-")!=-1:
-        name = remove_special_chars(name, "_")
-        name = remove_special_chars(name, ".")
-        name = remove_special_chars(name, "-")
-        
-    return name
-
-def to_ajv_type(_type):
-    if _type[-2:] == '[]':
-        return 'array'
+from utils.utilities import remove_special_chars, to_camel_case, to_ajv_type
     
-    elif _type[:3].lower() in ['int', 'sma', 'big']:
-        return 'integer'
-    
-    elif _type[:3].lower() in ['dou', 'num']:
-        return 'number'
-   
-    elif _type[:4].lower() == 'bool':
-        return 'boolean'
-    
-    else:
-        return 'string'
-    
-        
-class ColumnInfoSchema(Schema):
-	apicolname = fields.String()
-	dbcolname = fields.String()
-	notnull = fields.Boolean()
-	type = fields.String()
-	ajvtype = fields.String()
-	primarykey = fields.String()
-	foreignkey = fields.String()	
-
-class ColumnInfoListSchema(Schema):
-    columnInfoList = fields.List(fields.Nested(ColumnInfoSchema))
-    fk_list = fields.List(fields.String())
-    apitablename = fields.String()
-    dbtablename= fields.String()
-
-class ColumnInfo:
-    def __init__(self, columnname, notnull, type, primarykey, foreignkey ):
-        self.apicolname: str = to_camel_case(columnname)
-        self.dbcolname: str = columnname
-        self.notnull: bool = notnull
-        self.type: str = type
-        self.ajvtype: str = to_ajv_type(type) 
-        self.primarykey = primarykey
-        self.foreignkey = to_camel_case(foreignkey) if bool(foreignkey) else ""
-
-        
-class ColumnInfoList:
-    def __init__(self, columnInfoList, fk_list, relname):
-        self.columnInfoList = columnInfoList
-        self.fk_list = fk_list
-        self.apitablename = to_camel_case(relname)
-        self.dbtablename = relname
-        
 class TableInfo:
     def __init__(self,schemaname):
         self.tables = []
@@ -92,7 +18,7 @@ class TableInfo:
             for row in result:
                 self.tables.append(row['tablename'])
                 
-        print(len(self.tables))
+        # print(len(self.tables))
 
         return self.tables
     
@@ -145,46 +71,8 @@ class TableInfo:
         return result.fetchall()
     
 
-    
 if __name__ == "__main__":
     
-    # tableInfo = TableInfo()
-    # tables = tableInfo.get_tables('public')
-    # items = TableInfo.get_all_table_info('public')
-    # schemas = []
-    # for tablename in tables:
-    #     table_info = []
-    #     fk_list = []
-    #     for item in items:
-    #         name = item["name"]
-    #         notnull = item["notnullval"]
-    #         _type = item["type"]
-    #         primarykey = item["primarykey"]
-    #         foreignkey = item["foreignkey"]
-    #         colInfo = ColumnInfo(
-	# 			name,
-	# 			notnull,
-	# 			_type,
-	# 			primarykey,
-	# 			foreignkey
-	# 		)
-    #         if bool(item["foreignkey"]):
-    #             fk_list.append(item["foreignkey"])
-    #         table_info.append(colInfo)
-    #     columnInfoList = ColumnInfoList(table_info, fk_list, tablename)
-    #     schema = CodeGenerator.code_gen(columnInfoList)
-    #     schemas.append(columnInfoList)
-        
-    # sortSchema = SortSchema()
-    # sorted_schema = sortSchema.sortSchema(schemas)
-    
-    # with open('schema.json', 'w') as f:
-    #     f.write(json.dumps(sorted_schema))	
-    
-    # typescriptGen = TypescriptGen()
-    # typescriptGen.genTypeScript(sorted_schema)
-        
-
     print(to_camel_case("summary_line"))   
     print(to_camel_case("_lanes")) 
     print(to_camel_case("_Hello_brot.her_good_morning"))

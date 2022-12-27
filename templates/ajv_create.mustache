@@ -1,0 +1,16 @@
+import ajvInstance from '../ajv-instance';
+import { {{apitablename}}_ajv } from '../mapper_ajv';
+
+
+const {{apitablename}}_schema = {
+  type: 'object',
+  properties: {
+    {{# columnInfoList}}
+    {{apicolname}}: {{apitablename}}_ajv.{{apicolname}}.api,
+    {{/columnInfoList}}
+  },
+  required: [],
+  additionalProperties: false,
+};
+
+export default ajvInstance.compile({{apitablename}}_schema);

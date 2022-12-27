@@ -7,6 +7,7 @@ class SortSchema():
 			order_by_dep = []
 			for x in schemas:
 				if len(x['fk_list']) == 0:
+					del x['fk_list']
 					order_by_dep.append(x)
 					schemas.remove(x)
 			# print(len(order_by_dep))
@@ -23,6 +24,7 @@ class SortSchema():
 
 					if schema not in order_by_dep:
 						if len(schema["fk_list"])==0:
+							del schema["fk_list"]
 							order_by_dep.append(schema)
 							schemas.remove(schema)
 							# schema["fk_list"].remove(schema["relname"])

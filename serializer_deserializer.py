@@ -1,5 +1,5 @@
-from get_table_info import ColumnInfo, ColumnInfoList, ColumnInfoListSchema, ColumnInfoSchema
-
+# from get_table_info import ColumnInfo, ColumnInfoList, ColumnInfoListSchema, ColumnInfoSchema
+from pyschemas.generator.tables import ColumnInfo, ColumnInfoList, ColumnInfoListSchema
 
 class SerializerDeserializer:
     

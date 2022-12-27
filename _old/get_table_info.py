@@ -6,76 +6,76 @@ from marshmallow import Schema, fields
 # from sort_schema import SortSchema
 # from typescript_gen import TypescriptGen
 
-def remove_special_chars(name, delimiter):
-    camel_case = name
-    if name.find(delimiter)>=1:
-        chunks = name.split(delimiter)
-        for i in range(len(chunks)):
-            if i == 0:
-                camel_case = chunks[i].lower()
-            else:
-                camel_case += chunks[i][0].upper() + chunks[i][1:]
-    if name.find(delimiter) == 0:
-        camel_case = name[1:]
-    return camel_case
+# def remove_special_chars(name, delimiter):
+#     camel_case = name
+#     if name.find(delimiter)>=1:
+#         chunks = name.split(delimiter)
+#         for i in range(len(chunks)):
+#             if i == 0:
+#                 camel_case = chunks[i].lower()
+#             else:
+#                 camel_case += chunks[i][0].upper() + chunks[i][1:]
+#     if name.find(delimiter) == 0:
+#         camel_case = name[1:]
+#     return camel_case
 
-def to_camel_case(name):
-    while name.find("_")!=-1 or name.find(".")!=-1 or name.find("-")!=-1:
-        name = remove_special_chars(name, "_")
-        name = remove_special_chars(name, ".")
-        name = remove_special_chars(name, "-")
+# def to_camel_case(name):
+#     while name.find("_")!=-1 or name.find(".")!=-1 or name.find("-")!=-1:
+#         name = remove_special_chars(name, "_")
+#         name = remove_special_chars(name, ".")
+#         name = remove_special_chars(name, "-")
         
-    return name
+#     return name
 
-def to_ajv_type(_type):
-    if _type[-2:] == '[]':
-        return 'array'
+# def to_ajv_type(_type):
+#     if _type[-2:] == '[]':
+#         return 'array'
     
-    elif _type[:3].lower() in ['int', 'sma', 'big']:
-        return 'integer'
+#     elif _type[:3].lower() in ['int', 'sma', 'big']:
+#         return 'integer'
     
-    elif _type[:3].lower() in ['dou', 'num']:
-        return 'number'
+#     elif _type[:3].lower() in ['dou', 'num']:
+#         return 'number'
    
-    elif _type[:4].lower() == 'bool':
-        return 'boolean'
+#     elif _type[:4].lower() == 'bool':
+#         return 'boolean'
     
-    else:
-        return 'string'
+#     else:
+#         return 'string'
     
         
-class ColumnInfoSchema(Schema):
-	apicolname = fields.String()
-	dbcolname = fields.String()
-	notnull = fields.Boolean()
-	type = fields.String()
-	ajvtype = fields.String()
-	primarykey = fields.String()
-	foreignkey = fields.String()	
+# class ColumnInfoSchema(Schema):
+# 	apicolname = fields.String()
+# 	dbcolname = fields.String()
+# 	notnull = fields.Boolean()
+# 	type = fields.String()
+# 	ajvtype = fields.String()
+# 	primarykey = fields.String()
+# 	foreignkey = fields.String()	
 
-class ColumnInfoListSchema(Schema):
-    columnInfoList = fields.List(fields.Nested(ColumnInfoSchema))
-    fk_list = fields.List(fields.String())
-    apitablename = fields.String()
-    dbtablename= fields.String()
+# class ColumnInfoListSchema(Schema):
+#     columnInfoList = fields.List(fields.Nested(ColumnInfoSchema))
+#     fk_list = fields.List(fields.String())
+#     apitablename = fields.String()
+#     dbtablename= fields.String()
 
-class ColumnInfo:
-    def __init__(self, columnname, notnull, type, primarykey, foreignkey ):
-        self.apicolname: str = to_camel_case(columnname)
-        self.dbcolname: str = columnname
-        self.notnull: bool = notnull
-        self.type: str = type
-        self.ajvtype: str = to_ajv_type(type) 
-        self.primarykey = primarykey
-        self.foreignkey = to_camel_case(foreignkey) if bool(foreignkey) else ""
+# class ColumnInfo:
+#     def __init__(self, columnname, notnull, type, primarykey, foreignkey ):
+#         self.apicolname: str = to_camel_case(columnname)
+#         self.dbcolname: str = columnname
+#         self.notnull: bool = notnull
+#         self.type: str = type
+#         self.ajvtype: str = to_ajv_type(type) 
+#         self.primarykey = primarykey
+#         self.foreignkey = to_camel_case(foreignkey) if bool(foreignkey) else ""
 
         
-class ColumnInfoList:
-    def __init__(self, columnInfoList, fk_list, relname):
-        self.columnInfoList = columnInfoList
-        self.fk_list = fk_list
-        self.apitablename = to_camel_case(relname)
-        self.dbtablename = relname
+# class ColumnInfoList:
+#     def __init__(self, columnInfoList, fk_list, relname):
+#         self.columnInfoList = columnInfoList
+#         self.fk_list = fk_list
+#         self.apitablename = to_camel_case(relname)
+#         self.dbtablename = relname
         
 class TableInfo:
     def __init__(self,schemaname):

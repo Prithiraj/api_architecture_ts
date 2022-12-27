@@ -6,18 +6,32 @@ class TypescriptGen:
         pass
     
     def genTypeScript(self, schemas):
-        with open('template.mustache', 'r') as f:
+        with open('templates/template.mustache', 'r') as f:
             data = chevron.render(f, schemas)
             
-            with open('mapper.ts', 'w') as tsf:
+            with open('schemas/mapper.ts', 'w') as tsf:
                 tsf.write(data)
                 
-        with open('ajv_type.mustache', 'r') as f:
+        with open('templates/ajv_type.mustache', 'r') as f:
             data = chevron.render(f, schemas)
             
-            with open('mapper_ajv.ts', 'w') as tsf:
+            with open('schemas/mapper_ajv.ts', 'w') as tsf:
                 tsf.write(data)
-
+        
+        for schema in schemas["schemas"]:
+            # print(schema)
+            with open('templates/ajv_create.mustache', 'r') as asf:
+                data = chevron.render(asf, schema)
+                
+                with open('schemas/ajv_schemas_create/'+schema["apitablename"]+'.ts', 'w') as tsf:
+                    tsf.write(data)
+                    
+            with open('templates/ajv_update.mustache', 'r') as asf:
+                data = chevron.render(asf, schema)
+                
+                with open('schemas/ajv_schemas_update/'+schema["apitablename"]+'.ts', 'w') as tsf:
+                    tsf.write(data)
+            
 
 if __name__ == "__main__":
     data = ""

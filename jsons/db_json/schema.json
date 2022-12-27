@@ -1,0 +1,6886 @@
+{
+	"schemas": [
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "lifecycleName",
+					"foreignkey": "",
+					"dbcolname": "lifecycle_name",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "isDeleted",
+					"foreignkey": "",
+					"dbcolname": "is_deleted",
+					"type": "boolean",
+					"notnull": true,
+					"ajvtype": "boolean"
+				}
+			],
+			"apitablename": "contactStatusLifecycle",
+			"dbtablename": "contact_status_lifecycle"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "account",
+			"dbtablename": "account"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "character varying(100)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "sectionName",
+					"foreignkey": "",
+					"dbcolname": "section_name",
+					"type": "character varying(255)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "isDeleted",
+					"foreignkey": "",
+					"dbcolname": "is_deleted",
+					"type": "boolean",
+					"notnull": true,
+					"ajvtype": "boolean"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "character varying(100)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "character varying(100)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "character varying(100)",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "character varying(100)",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "contactCustomFieldSection",
+			"dbtablename": "contact_custom_field_section"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "character varying(36)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "checksum",
+					"foreignkey": "",
+					"dbcolname": "checksum",
+					"type": "character varying(64)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "finishedAt",
+					"foreignkey": "",
+					"dbcolname": "finished_at",
+					"type": "timestamp with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "migrationName",
+					"foreignkey": "",
+					"dbcolname": "migration_name",
+					"type": "character varying(255)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "logs",
+					"foreignkey": "",
+					"dbcolname": "logs",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "rolledBackAt",
+					"foreignkey": "",
+					"dbcolname": "rolled_back_at",
+					"type": "timestamp with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "startedAt",
+					"foreignkey": "",
+					"dbcolname": "started_at",
+					"type": "timestamp with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "appliedStepsCount",
+					"foreignkey": "",
+					"dbcolname": "applied_steps_count",
+					"type": "integer",
+					"notnull": true,
+					"ajvtype": "integer"
+				}
+			],
+			"apitablename": "prismaMigrations",
+			"dbtablename": "_prisma_migrations"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "personid",
+					"foreignkey": "",
+					"dbcolname": "personid",
+					"type": "integer",
+					"notnull": true,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "lastname",
+					"foreignkey": "",
+					"dbcolname": "lastname",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "firstname",
+					"foreignkey": "",
+					"dbcolname": "firstname",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "address",
+					"foreignkey": "",
+					"dbcolname": "address",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "city",
+					"foreignkey": "",
+					"dbcolname": "city",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "persons",
+			"dbtablename": "persons"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "stripePrice",
+					"foreignkey": "",
+					"dbcolname": "stripe_price",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "isTransferPrice",
+					"foreignkey": "",
+					"dbcolname": "is_transfer_price",
+					"type": "boolean",
+					"notnull": false,
+					"ajvtype": "boolean"
+				}
+			],
+			"apitablename": "stripeSubscriptionItem",
+			"dbtablename": "stripe_subscription_item"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "name",
+					"foreignkey": "",
+					"dbcolname": "name",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "theme",
+					"foreignkey": "",
+					"dbcolname": "theme",
+					"type": "jsonb",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "theme",
+			"dbtablename": "theme"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "parentId",
+					"foreignkey": "",
+					"dbcolname": "parent_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "t",
+					"apicolname": "eventId",
+					"foreignkey": "",
+					"dbcolname": "event_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "rawBucket",
+					"foreignkey": "",
+					"dbcolname": "raw_bucket",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "rawPath",
+					"foreignkey": "",
+					"dbcolname": "raw_path",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventClass",
+					"foreignkey": "",
+					"dbcolname": "event_class",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventType",
+					"foreignkey": "",
+					"dbcolname": "event_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventTime",
+					"foreignkey": "",
+					"dbcolname": "event_time",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventProvider",
+					"foreignkey": "",
+					"dbcolname": "event_provider",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventAction",
+					"foreignkey": "",
+					"dbcolname": "event_action",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventName",
+					"foreignkey": "",
+					"dbcolname": "event_name",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventGroup",
+					"foreignkey": "",
+					"dbcolname": "event_group",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventCategory",
+					"foreignkey": "",
+					"dbcolname": "event_category",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventCode",
+					"foreignkey": "",
+					"dbcolname": "event_code",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventSeverity",
+					"foreignkey": "",
+					"dbcolname": "event_severity",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "outcome",
+					"foreignkey": "",
+					"dbcolname": "outcome",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "message",
+					"foreignkey": "",
+					"dbcolname": "message",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "reason",
+					"foreignkey": "",
+					"dbcolname": "reason",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "timezone",
+					"foreignkey": "",
+					"dbcolname": "timezone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "startTime",
+					"foreignkey": "",
+					"dbcolname": "start_time",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "endTime",
+					"foreignkey": "",
+					"dbcolname": "end_time",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventData",
+					"foreignkey": "",
+					"dbcolname": "event_data",
+					"type": "jsonb",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "channelId",
+					"foreignkey": "",
+					"dbcolname": "channel.id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "channelType",
+					"foreignkey": "",
+					"dbcolname": "channel.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "resourceId",
+					"foreignkey": "",
+					"dbcolname": "resource.id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "resourceType",
+					"foreignkey": "",
+					"dbcolname": "resource.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "sourceId",
+					"foreignkey": "",
+					"dbcolname": "source.id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "sourceType",
+					"foreignkey": "",
+					"dbcolname": "source.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "userAgent",
+					"foreignkey": "",
+					"dbcolname": "user.agent",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "userId",
+					"foreignkey": "",
+					"dbcolname": "user.id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "userPool",
+					"foreignkey": "",
+					"dbcolname": "user.pool",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "userType",
+					"foreignkey": "",
+					"dbcolname": "user.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "testCol01",
+					"foreignkey": "",
+					"dbcolname": "test_col_01",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "engagement",
+			"dbtablename": "engagement"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "color",
+					"foreignkey": "",
+					"dbcolname": "color",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "productId",
+					"foreignkey": "",
+					"dbcolname": "product_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "tileColor",
+					"foreignkey": "",
+					"dbcolname": "tile_color",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "tileDescription",
+					"foreignkey": "",
+					"dbcolname": "tile_description",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "tileHighlights",
+					"foreignkey": "",
+					"dbcolname": "tile_highlights",
+					"type": "text[]",
+					"notnull": false,
+					"ajvtype": "array"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "title",
+					"foreignkey": "",
+					"dbcolname": "title",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "active",
+					"foreignkey": "",
+					"dbcolname": "active",
+					"type": "boolean",
+					"notnull": true,
+					"ajvtype": "boolean"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "callcenter",
+					"foreignkey": "",
+					"dbcolname": "callcenter",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "dedicatedCallcenter",
+					"foreignkey": "",
+					"dbcolname": "dedicated_callcenter",
+					"type": "boolean",
+					"notnull": true,
+					"ajvtype": "boolean"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "notificationEmails",
+					"foreignkey": "",
+					"dbcolname": "notification_emails",
+					"type": "text[]",
+					"notnull": false,
+					"ajvtype": "array"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "order",
+					"foreignkey": "",
+					"dbcolname": "order",
+					"type": "integer",
+					"notnull": false,
+					"ajvtype": "integer"
+				}
+			],
+			"apitablename": "loLeadSource",
+			"dbtablename": "lo_lead_source"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "type",
+					"foreignkey": "",
+					"dbcolname": "type",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "name",
+					"foreignkey": "",
+					"dbcolname": "name",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "data",
+					"foreignkey": "",
+					"dbcolname": "data",
+					"type": "jsonb",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "thumbnail",
+					"foreignkey": "",
+					"dbcolname": "thumbnail",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "template",
+			"dbtablename": "template"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "integer",
+					"notnull": true,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventCategoryName",
+					"foreignkey": "",
+					"dbcolname": "event_category_name",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventTargetedToTableName",
+					"foreignkey": "",
+					"dbcolname": "event_targeted_to_table_name",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventCategoryDescription",
+					"foreignkey": "",
+					"dbcolname": "event_category_description",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdAt",
+					"foreignkey": "",
+					"dbcolname": "created_at",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedAt",
+					"foreignkey": "",
+					"dbcolname": "updated_at",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "eventCategory",
+			"dbtablename": "event_category"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "version",
+					"foreignkey": "",
+					"dbcolname": "version",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "type",
+					"foreignkey": "",
+					"dbcolname": "type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "name",
+					"foreignkey": "",
+					"dbcolname": "name",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "data",
+					"foreignkey": "",
+					"dbcolname": "data",
+					"type": "jsonb",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "templateVersion",
+			"dbtablename": "template_version"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "name",
+					"foreignkey": "",
+					"dbcolname": "name",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "order",
+					"foreignkey": "",
+					"dbcolname": "order",
+					"type": "integer",
+					"notnull": true,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "contactTag",
+			"dbtablename": "contact_tag"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "version",
+					"foreignkey": "",
+					"dbcolname": "version",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "pageId",
+					"foreignkey": "",
+					"dbcolname": "page_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "name",
+					"foreignkey": "",
+					"dbcolname": "name",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "body",
+					"foreignkey": "",
+					"dbcolname": "body",
+					"type": "jsonb",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "pageVersion",
+			"dbtablename": "page_version"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "type",
+					"foreignkey": "",
+					"dbcolname": "type",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "street1",
+					"foreignkey": "",
+					"dbcolname": "street_1",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "street2",
+					"foreignkey": "",
+					"dbcolname": "street_2",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "city",
+					"foreignkey": "",
+					"dbcolname": "city",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "state",
+					"foreignkey": "",
+					"dbcolname": "state",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "country",
+					"foreignkey": "",
+					"dbcolname": "country",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "taxes",
+					"foreignkey": "",
+					"dbcolname": "taxes",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "miscExp",
+					"foreignkey": "",
+					"dbcolname": "misc_exp",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "rentalIncome",
+					"foreignkey": "",
+					"dbcolname": "rental_income",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "squareFootage",
+					"foreignkey": "",
+					"dbcolname": "square_footage",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "bedrooms",
+					"foreignkey": "",
+					"dbcolname": "bedrooms",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "baths",
+					"foreignkey": "",
+					"dbcolname": "baths",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "postal",
+					"foreignkey": "",
+					"dbcolname": "postal",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "actualValue",
+					"foreignkey": "",
+					"dbcolname": "actual_value",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "hazardInsurance",
+					"foreignkey": "",
+					"dbcolname": "hazard_insurance",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "propertyUnits",
+					"foreignkey": "",
+					"dbcolname": "property_units",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "propertyOccupancy",
+					"foreignkey": "",
+					"dbcolname": "property_occupancy",
+					"type": "character varying(50)",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "property",
+			"dbtablename": "property"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "version",
+					"foreignkey": "",
+					"dbcolname": "version",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "elementId",
+					"foreignkey": "",
+					"dbcolname": "element_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "name",
+					"foreignkey": "",
+					"dbcolname": "name",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "data",
+					"foreignkey": "",
+					"dbcolname": "data",
+					"type": "jsonb",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "elementVersion",
+			"dbtablename": "element_version"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "eventAction",
+					"foreignkey": "",
+					"dbcolname": "event_action",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventCategory",
+					"foreignkey": "",
+					"dbcolname": "event_category",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventClass",
+					"foreignkey": "",
+					"dbcolname": "event_class",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventCode",
+					"foreignkey": "",
+					"dbcolname": "event_code",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventData",
+					"foreignkey": "",
+					"dbcolname": "event_data",
+					"type": "jsonb",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventGroup",
+					"foreignkey": "",
+					"dbcolname": "event_group",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "t",
+					"apicolname": "eventId",
+					"foreignkey": "",
+					"dbcolname": "event_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventName",
+					"foreignkey": "",
+					"dbcolname": "event_name",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventProvider",
+					"foreignkey": "",
+					"dbcolname": "event_provider",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventSeverity",
+					"foreignkey": "",
+					"dbcolname": "event_severity",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "message",
+					"foreignkey": "",
+					"dbcolname": "message",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "outcome",
+					"foreignkey": "",
+					"dbcolname": "outcome",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "parentId",
+					"foreignkey": "",
+					"dbcolname": "parent_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "rawBucket",
+					"foreignkey": "",
+					"dbcolname": "raw_bucket",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "rawPath",
+					"foreignkey": "",
+					"dbcolname": "raw_path",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "reason",
+					"foreignkey": "",
+					"dbcolname": "reason",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "timezone",
+					"foreignkey": "",
+					"dbcolname": "timezone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "endTime",
+					"foreignkey": "",
+					"dbcolname": "end_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventTime",
+					"foreignkey": "",
+					"dbcolname": "event_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "startTime",
+					"foreignkey": "",
+					"dbcolname": "start_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "destinationId",
+					"foreignkey": "",
+					"dbcolname": "destination.id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "channelId",
+					"foreignkey": "",
+					"dbcolname": "channel.id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "channelType",
+					"foreignkey": "",
+					"dbcolname": "channel.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "destinationLocation",
+					"foreignkey": "",
+					"dbcolname": "destination.location",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "destinationType",
+					"foreignkey": "",
+					"dbcolname": "destination.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceIp",
+					"foreignkey": "",
+					"dbcolname": "device.ip",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceLocationCity",
+					"foreignkey": "",
+					"dbcolname": "device.location.city",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceLocationContinent",
+					"foreignkey": "",
+					"dbcolname": "device.location.continent",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceLocationCoordinatesLat",
+					"foreignkey": "",
+					"dbcolname": "device.location.coordinates.lat",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceLocationCoordinatesLon",
+					"foreignkey": "",
+					"dbcolname": "device.location.coordinates.lon",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceLocationCountry",
+					"foreignkey": "",
+					"dbcolname": "device.location.country",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceTimezone",
+					"foreignkey": "",
+					"dbcolname": "device.timezone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceType",
+					"foreignkey": "",
+					"dbcolname": "device.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "referralId",
+					"foreignkey": "",
+					"dbcolname": "referral.id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "referralType",
+					"foreignkey": "",
+					"dbcolname": "referral.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "resourceId",
+					"foreignkey": "",
+					"dbcolname": "resource.id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "resourceType",
+					"foreignkey": "",
+					"dbcolname": "resource.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "sourceId",
+					"foreignkey": "",
+					"dbcolname": "source.id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "sourceType",
+					"foreignkey": "",
+					"dbcolname": "source.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "userAgent",
+					"foreignkey": "",
+					"dbcolname": "user.agent",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "userId",
+					"foreignkey": "",
+					"dbcolname": "user.id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "userPool",
+					"foreignkey": "",
+					"dbcolname": "user.pool",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "userType",
+					"foreignkey": "",
+					"dbcolname": "user.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "events",
+			"dbtablename": "events"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "stripeSubscription",
+					"foreignkey": "",
+					"dbcolname": "stripe_subscription",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "stripeStatus",
+					"foreignkey": "",
+					"dbcolname": "stripe_status",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "autoBilling",
+					"foreignkey": "",
+					"dbcolname": "auto_billing",
+					"type": "boolean",
+					"notnull": false,
+					"ajvtype": "boolean"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "boberdooBalance",
+					"foreignkey": "",
+					"dbcolname": "boberdoo_balance",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "cancelTime",
+					"foreignkey": "",
+					"dbcolname": "cancel_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "companyId",
+					"foreignkey": "",
+					"dbcolname": "company_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "currentStep",
+					"foreignkey": "",
+					"dbcolname": "current_step",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "dailyBudgetLimit",
+					"foreignkey": "",
+					"dbcolname": "daily_budget_limit",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "dailyUnitLimit",
+					"foreignkey": "",
+					"dbcolname": "daily_unit_limit",
+					"type": "integer",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deactivateReason",
+					"foreignkey": "",
+					"dbcolname": "deactivate_reason",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "inactive",
+					"foreignkey": "",
+					"dbcolname": "inactive",
+					"type": "boolean",
+					"notnull": false,
+					"ajvtype": "boolean"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "price",
+					"foreignkey": "",
+					"dbcolname": "price",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "productId",
+					"foreignkey": "",
+					"dbcolname": "product_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "transferPrice",
+					"foreignkey": "",
+					"dbcolname": "transfer_price",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "activeLeadTransfer",
+					"foreignkey": "",
+					"dbcolname": "active_lead_transfer",
+					"type": "boolean",
+					"notnull": false,
+					"ajvtype": "boolean"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "callCenterService",
+					"foreignkey": "",
+					"dbcolname": "call_center_service",
+					"type": "text[]",
+					"notnull": false,
+					"ajvtype": "array"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "creditStatus",
+					"foreignkey": "",
+					"dbcolname": "credit_status",
+					"type": "text[]",
+					"notnull": false,
+					"ajvtype": "array"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "scheduleFrom",
+					"foreignkey": "",
+					"dbcolname": "schedule.from",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "scheduleTo",
+					"foreignkey": "",
+					"dbcolname": "schedule.to",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "primaryPhoneType",
+					"foreignkey": "",
+					"dbcolname": "primary_phone_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "primaryPhoneVerified",
+					"foreignkey": "",
+					"dbcolname": "primary_phone_verified",
+					"type": "boolean",
+					"notnull": false,
+					"ajvtype": "boolean"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "secondaryPhoneType",
+					"foreignkey": "",
+					"dbcolname": "secondary_phone_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "secondaryPhoneVerified",
+					"foreignkey": "",
+					"dbcolname": "secondary_phone_verified",
+					"type": "boolean",
+					"notnull": false,
+					"ajvtype": "boolean"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressCity",
+					"foreignkey": "",
+					"dbcolname": "address.city",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressState",
+					"foreignkey": "",
+					"dbcolname": "address.state",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressStreet",
+					"foreignkey": "",
+					"dbcolname": "address.street",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressStreet3",
+					"foreignkey": "",
+					"dbcolname": "address.street3",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "preferredmeetingplaceCity",
+					"foreignkey": "",
+					"dbcolname": "preferred_meeting_place.city",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "preferredmeetingplaceCountry",
+					"foreignkey": "",
+					"dbcolname": "preferred_meeting_place.country",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "preferredmeetingplaceStreet",
+					"foreignkey": "",
+					"dbcolname": "preferred_meeting_place.street",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "preferredmeetingplaceStreet2",
+					"foreignkey": "",
+					"dbcolname": "preferred_meeting_place.street2",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "preferredmeetingplaceZip",
+					"foreignkey": "",
+					"dbcolname": "preferred_meeting_place.zip",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "county",
+					"foreignkey": "",
+					"dbcolname": "county",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "preferredcommunicationscheduleFrom",
+					"foreignkey": "",
+					"dbcolname": "preferred_communication_schedule.from",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "infoEmail",
+					"foreignkey": "",
+					"dbcolname": "info_email",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "infoName",
+					"foreignkey": "",
+					"dbcolname": "info_name",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "leadType",
+					"foreignkey": "",
+					"dbcolname": "lead_type",
+					"type": "text[]",
+					"notnull": false,
+					"ajvtype": "array"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanRanges",
+					"foreignkey": "",
+					"dbcolname": "loan_ranges",
+					"type": "jsonb",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "vendors",
+					"foreignkey": "",
+					"dbcolname": "vendors",
+					"type": "text[]",
+					"notnull": false,
+					"ajvtype": "array"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "totalMatchAmount",
+					"foreignkey": "",
+					"dbcolname": "total_match_amount",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "totalLeadsMatched",
+					"foreignkey": "",
+					"dbcolname": "total_leads_matched",
+					"type": "integer",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "totalCredited",
+					"foreignkey": "",
+					"dbcolname": "total_credited",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "leadCategory",
+					"foreignkey": "",
+					"dbcolname": "lead_category",
+					"type": "text[]",
+					"notnull": false,
+					"ajvtype": "array"
+				}
+			],
+			"apitablename": "loSubscription",
+			"dbtablename": "lo_subscription"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "loSubscriptionId",
+					"foreignkey": "loSubscription",
+					"dbcolname": "lo_subscription_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "totalMatchAmount",
+					"foreignkey": "",
+					"dbcolname": "total_match_amount",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "totalTransferAmount",
+					"foreignkey": "",
+					"dbcolname": "total_transfer_amount",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "totalLeadsMatched",
+					"foreignkey": "",
+					"dbcolname": "total_leads_matched",
+					"type": "integer",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "totalLeadsTransfered",
+					"foreignkey": "",
+					"dbcolname": "total_leads_transfered",
+					"type": "integer",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "t",
+					"apicolname": "statsDate",
+					"foreignkey": "",
+					"dbcolname": "stats_date",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "loSubscriptionDailyStats",
+			"dbtablename": "lo_subscription_daily_stats"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "character varying(100)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "character varying(100)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "customFieldSectionId",
+					"foreignkey": "contactCustomFieldSection",
+					"dbcolname": "custom_field_section_id",
+					"type": "character varying(100)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "lifecycleId",
+					"foreignkey": "contactStatusLifecycle",
+					"dbcolname": "lifecycle_id",
+					"type": "character varying(100)",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "bridgeSectionLifecycle",
+			"dbtablename": "bridge_section_lifecycle"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "integer",
+					"notnull": true,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventType",
+					"foreignkey": "",
+					"dbcolname": "event_type",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventCategoryId",
+					"foreignkey": "eventCategory",
+					"dbcolname": "event_category_id",
+					"type": "integer",
+					"notnull": true,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventTypeDescription",
+					"foreignkey": "",
+					"dbcolname": "event_type_description",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "dbAction",
+					"foreignkey": "",
+					"dbcolname": "db_action",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdAt",
+					"foreignkey": "",
+					"dbcolname": "created_at",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedAt",
+					"foreignkey": "",
+					"dbcolname": "updated_at",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "eventType",
+			"dbtablename": "event_type"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "name",
+					"foreignkey": "",
+					"dbcolname": "name",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "internalName",
+					"foreignkey": "",
+					"dbcolname": "internal_name",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "type",
+					"foreignkey": "",
+					"dbcolname": "type",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "order",
+					"foreignkey": "",
+					"dbcolname": "order",
+					"type": "integer",
+					"notnull": true,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "purpose",
+					"foreignkey": "",
+					"dbcolname": "purpose",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "sectionId",
+					"foreignkey": "contactCustomFieldSection",
+					"dbcolname": "section_id",
+					"type": "character varying(100)",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "isDeleted",
+					"foreignkey": "",
+					"dbcolname": "is_deleted",
+					"type": "boolean",
+					"notnull": true,
+					"ajvtype": "boolean"
+				}
+			],
+			"apitablename": "contactCustomField",
+			"dbtablename": "contact_custom_field"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "eventId",
+					"foreignkey": "",
+					"dbcolname": "event_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventCategoryId",
+					"foreignkey": "eventCategory",
+					"dbcolname": "event_category_id",
+					"type": "integer",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventCategory",
+					"foreignkey": "",
+					"dbcolname": "event_category",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventTypeId",
+					"foreignkey": "eventType",
+					"dbcolname": "event_type_id",
+					"type": "integer",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventType",
+					"foreignkey": "",
+					"dbcolname": "event_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventData",
+					"foreignkey": "",
+					"dbcolname": "event_data",
+					"type": "jsonb",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventProvider",
+					"foreignkey": "",
+					"dbcolname": "event_provider",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "rawBucket",
+					"foreignkey": "",
+					"dbcolname": "raw_bucket",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "rawPath",
+					"foreignkey": "",
+					"dbcolname": "raw_path",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "reason",
+					"foreignkey": "",
+					"dbcolname": "reason",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "timezone",
+					"foreignkey": "",
+					"dbcolname": "timezone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "channelId",
+					"foreignkey": "",
+					"dbcolname": "channel.id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "channelType",
+					"foreignkey": "",
+					"dbcolname": "channel.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "destinationLocation",
+					"foreignkey": "",
+					"dbcolname": "destination.location",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "destinationType",
+					"foreignkey": "",
+					"dbcolname": "destination.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceIp",
+					"foreignkey": "",
+					"dbcolname": "device.ip",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceLocationCity",
+					"foreignkey": "",
+					"dbcolname": "device.location.city",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceLocationContinent",
+					"foreignkey": "",
+					"dbcolname": "device.location.continent",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceLocationCoordinatesLat",
+					"foreignkey": "",
+					"dbcolname": "device.location.coordinates.lat",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceLocationCoordinatesLon",
+					"foreignkey": "",
+					"dbcolname": "device.location.coordinates.lon",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceLocationCountry",
+					"foreignkey": "",
+					"dbcolname": "device.location.country",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceLocationZip",
+					"foreignkey": "",
+					"dbcolname": "device.location.zip",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceTimezone",
+					"foreignkey": "",
+					"dbcolname": "device.timezone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "deviceType",
+					"foreignkey": "",
+					"dbcolname": "device.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "userPool",
+					"foreignkey": "",
+					"dbcolname": "user.pool",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "destinationId",
+					"foreignkey": "",
+					"dbcolname": "destination.id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "endTime",
+					"foreignkey": "",
+					"dbcolname": "end_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventClass",
+					"foreignkey": "",
+					"dbcolname": "event_class",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventCode",
+					"foreignkey": "",
+					"dbcolname": "event_code",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventSeverity",
+					"foreignkey": "",
+					"dbcolname": "event_severity",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventTime",
+					"foreignkey": "",
+					"dbcolname": "event_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "message",
+					"foreignkey": "",
+					"dbcolname": "message",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "ownerId",
+					"foreignkey": "",
+					"dbcolname": "owner_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "referralId",
+					"foreignkey": "",
+					"dbcolname": "referral.id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "referralType",
+					"foreignkey": "",
+					"dbcolname": "referral.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "startTime",
+					"foreignkey": "",
+					"dbcolname": "start_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "resourceType",
+					"foreignkey": "",
+					"dbcolname": "resource_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "sourceType",
+					"foreignkey": "",
+					"dbcolname": "source_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "eventsV2",
+			"dbtablename": "events_v2"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "userType",
+					"foreignkey": "",
+					"dbcolname": "user_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "user",
+			"dbtablename": "user"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "integer",
+					"notnull": true,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "cost",
+					"foreignkey": "",
+					"dbcolname": "cost",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "allowedTimesSold",
+					"foreignkey": "",
+					"dbcolname": "allowed_times_sold",
+					"type": "integer",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "returnHashType",
+					"foreignkey": "",
+					"dbcolname": "return_hash_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "returnHashValueType",
+					"foreignkey": "",
+					"dbcolname": "return_hash_value_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "skipPartnerId",
+					"foreignkey": "",
+					"dbcolname": "skip_partner_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "returnBestPrice",
+					"foreignkey": "",
+					"dbcolname": "return_best_price",
+					"type": "smallint",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "srcId",
+					"foreignkey": "",
+					"dbcolname": "src_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "type",
+					"foreignkey": "",
+					"dbcolname": "type",
+					"type": "smallint",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "testLead",
+					"foreignkey": "",
+					"dbcolname": "test_lead",
+					"type": "smallint",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "skipXsl",
+					"foreignkey": "",
+					"dbcolname": "skip_xsl",
+					"type": "smallint",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "matchWithPartnerId",
+					"foreignkey": "",
+					"dbcolname": "match_with_partner_id",
+					"type": "smallint[]",
+					"notnull": false,
+					"ajvtype": "array"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "redirectUrl",
+					"foreignkey": "",
+					"dbcolname": "redirect_url",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "src",
+					"foreignkey": "",
+					"dbcolname": "src",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "landingPage",
+					"foreignkey": "",
+					"dbcolname": "landing_page",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "subId",
+					"foreignkey": "",
+					"dbcolname": "sub_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "pubId",
+					"foreignkey": "",
+					"dbcolname": "pub_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "optout",
+					"foreignkey": "",
+					"dbcolname": "optout",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "uniqueIdentifier",
+					"foreignkey": "",
+					"dbcolname": "unique_identifier",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "tcpaConsent",
+					"foreignkey": "",
+					"dbcolname": "tcpa_consent",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "tcpaLanguage",
+					"foreignkey": "",
+					"dbcolname": "tcpa_language",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "leadidToken",
+					"foreignkey": "",
+					"dbcolname": "leadid_token",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "lastName",
+					"foreignkey": "",
+					"dbcolname": "last_name",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "city",
+					"foreignkey": "",
+					"dbcolname": "city",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "state",
+					"foreignkey": "",
+					"dbcolname": "state",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "zip",
+					"foreignkey": "",
+					"dbcolname": "zip",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "primaryPhone",
+					"foreignkey": "",
+					"dbcolname": "primary_phone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "secondaryPhone",
+					"foreignkey": "",
+					"dbcolname": "secondary_phone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "email",
+					"foreignkey": "",
+					"dbcolname": "email",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "estimatedPurchasePrice",
+					"foreignkey": "",
+					"dbcolname": "estimated_purchase_price",
+					"type": "numeric(10,2)",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "foundHome",
+					"foreignkey": "",
+					"dbcolname": "found_home",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "movingDate",
+					"foreignkey": "",
+					"dbcolname": "moving_date",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "newPropertyZip",
+					"foreignkey": "",
+					"dbcolname": "new_property_zip",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanType",
+					"foreignkey": "",
+					"dbcolname": "loan_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "productType",
+					"foreignkey": "",
+					"dbcolname": "product_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "cashOutAmount",
+					"foreignkey": "",
+					"dbcolname": "cash_out_amount",
+					"type": "numeric(10,2)",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "propertyType",
+					"foreignkey": "",
+					"dbcolname": "property_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "refiGoal",
+					"foreignkey": "",
+					"dbcolname": "refi_goal",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "workingWithAnAgent",
+					"foreignkey": "",
+					"dbcolname": "working_with_an_agent",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "foreclosureLast7Years",
+					"foreignkey": "",
+					"dbcolname": "foreclosure_last_7_years",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "creditStatus",
+					"foreignkey": "",
+					"dbcolname": "credit_status",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanValue",
+					"foreignkey": "",
+					"dbcolname": "loan_value",
+					"type": "numeric(10,2)",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "homeValue",
+					"foreignkey": "",
+					"dbcolname": "home_value",
+					"type": "numeric(10,2)",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "firstMortgageRate",
+					"foreignkey": "",
+					"dbcolname": "first_mortgage_rate",
+					"type": "smallint",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "secondMortgage",
+					"foreignkey": "",
+					"dbcolname": "second_mortgage",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "secondMortgageRate",
+					"foreignkey": "",
+					"dbcolname": "second_mortgage_rate",
+					"type": "smallint",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "ltv",
+					"foreignkey": "",
+					"dbcolname": "ltv",
+					"type": "smallint",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "mode",
+					"foreignkey": "",
+					"dbcolname": "mode",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "status",
+					"foreignkey": "",
+					"dbcolname": "status",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "reason",
+					"foreignkey": "",
+					"dbcolname": "reason",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "extraData",
+					"foreignkey": "",
+					"dbcolname": "extra_data",
+					"type": "jsonb",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "subscriptionId",
+					"foreignkey": "loSubscription",
+					"dbcolname": "subscription_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "loLeadRaw",
+			"dbtablename": "lo_lead_raw"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "templateId",
+					"foreignkey": "template",
+					"dbcolname": "template_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "versionId",
+					"foreignkey": "templateVersion",
+					"dbcolname": "version_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "templateDependency",
+			"dbtablename": "template_dependency"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanOfficerId",
+					"foreignkey": "user",
+					"dbcolname": "loan_officer_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressId",
+					"foreignkey": "property",
+					"dbcolname": "address_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "purpose",
+					"foreignkey": "",
+					"dbcolname": "purpose",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "product",
+					"foreignkey": "",
+					"dbcolname": "product",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "amount",
+					"foreignkey": "",
+					"dbcolname": "amount",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "interestRate",
+					"foreignkey": "",
+					"dbcolname": "interest_rate",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "term",
+					"foreignkey": "",
+					"dbcolname": "term",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "downPayment",
+					"foreignkey": "",
+					"dbcolname": "down_payment",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "remainingTerm",
+					"foreignkey": "",
+					"dbcolname": "remaining_term",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "notes",
+					"foreignkey": "",
+					"dbcolname": "notes",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "mortgageInsurance",
+					"foreignkey": "",
+					"dbcolname": "mortgage_insurance",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "status",
+					"foreignkey": "",
+					"dbcolname": "status",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "closingDate",
+					"foreignkey": "",
+					"dbcolname": "closing_date",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "remainingValue",
+					"foreignkey": "",
+					"dbcolname": "remaining_value",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "amortization",
+					"foreignkey": "",
+					"dbcolname": "amortization",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "desiredOrCurrent",
+					"foreignkey": "",
+					"dbcolname": "desired_or_current",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "desiredCashOutAmount",
+					"foreignkey": "",
+					"dbcolname": "desired_cash_out_amount",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "desiredDownPayment",
+					"foreignkey": "",
+					"dbcolname": "desired_down_payment",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanPropertyType",
+					"foreignkey": "",
+					"dbcolname": "loan_property_type",
+					"type": "character varying(255)",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanUnits",
+					"foreignkey": "",
+					"dbcolname": "loan_units",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "timeline",
+					"foreignkey": "",
+					"dbcolname": "timeline",
+					"type": "character varying(80)",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanPropertyOccupancy",
+					"foreignkey": "",
+					"dbcolname": "loan_property_occupancy",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanPropertyValue",
+					"foreignkey": "",
+					"dbcolname": "loan_property_value",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanType",
+					"foreignkey": "",
+					"dbcolname": "loan_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "loan",
+			"dbtablename": "loan"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressId",
+					"foreignkey": "property",
+					"dbcolname": "address_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "name",
+					"foreignkey": "",
+					"dbcolname": "name",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "type",
+					"foreignkey": "",
+					"dbcolname": "type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "phone",
+					"foreignkey": "",
+					"dbcolname": "phone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "email",
+					"foreignkey": "",
+					"dbcolname": "email",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "nmlsId",
+					"foreignkey": "",
+					"dbcolname": "nmls_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "parentOrganizationId",
+					"foreignkey": "organization",
+					"dbcolname": "parent_organization_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "organization",
+			"dbtablename": "organization"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "organizationId",
+					"foreignkey": "organization",
+					"dbcolname": "organization_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "type",
+					"foreignkey": "",
+					"dbcolname": "type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "firstName",
+					"foreignkey": "",
+					"dbcolname": "first_name",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "lastName",
+					"foreignkey": "",
+					"dbcolname": "last_name",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "personalEmail",
+					"foreignkey": "",
+					"dbcolname": "personal_email",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "workEmail",
+					"foreignkey": "",
+					"dbcolname": "work_email",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "mobilePhone",
+					"foreignkey": "",
+					"dbcolname": "mobile_phone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "workPhone",
+					"foreignkey": "",
+					"dbcolname": "work_phone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressId",
+					"foreignkey": "property",
+					"dbcolname": "address_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "partner",
+			"dbtablename": "partner"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "templateId",
+					"foreignkey": "template",
+					"dbcolname": "template_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "latestTemplate",
+					"foreignkey": "",
+					"dbcolname": "latest_template",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "name",
+					"foreignkey": "",
+					"dbcolname": "name",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "data",
+					"foreignkey": "",
+					"dbcolname": "data",
+					"type": "jsonb",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "type",
+					"foreignkey": "",
+					"dbcolname": "type",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "latestVersionId",
+					"foreignkey": "elementVersion",
+					"dbcolname": "latest_version_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "element",
+			"dbtablename": "element"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignmentId",
+					"foreignkey": "",
+					"dbcolname": "assignment_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "billed",
+					"foreignkey": "",
+					"dbcolname": "billed",
+					"type": "boolean",
+					"notnull": true,
+					"ajvtype": "boolean"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "boberdooId",
+					"foreignkey": "",
+					"dbcolname": "boberdoo_id",
+					"type": "integer",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "callCenterService",
+					"foreignkey": "",
+					"dbcolname": "call_center_service",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "creditStatus",
+					"foreignkey": "",
+					"dbcolname": "credit_status",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "email",
+					"foreignkey": "",
+					"dbcolname": "email",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "firstName",
+					"foreignkey": "",
+					"dbcolname": "first_name",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "language",
+					"foreignkey": "",
+					"dbcolname": "language",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "lastName",
+					"foreignkey": "",
+					"dbcolname": "last_name",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "ownerId",
+					"foreignkey": "",
+					"dbcolname": "owner_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "phone",
+					"foreignkey": "",
+					"dbcolname": "phone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "productId",
+					"foreignkey": "",
+					"dbcolname": "product_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "provider",
+					"foreignkey": "",
+					"dbcolname": "provider",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "vendor",
+					"foreignkey": "",
+					"dbcolname": "vendor",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "source",
+					"foreignkey": "",
+					"dbcolname": "source",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "subscriptionId",
+					"foreignkey": "loSubscription",
+					"dbcolname": "subscription_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "price",
+					"foreignkey": "",
+					"dbcolname": "price",
+					"type": "double precision",
+					"notnull": true,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "transferPrice",
+					"foreignkey": "",
+					"dbcolname": "transfer_price",
+					"type": "double precision",
+					"notnull": true,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "transferStatus",
+					"foreignkey": "",
+					"dbcolname": "transfer_status",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "leadType",
+					"foreignkey": "",
+					"dbcolname": "lead_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "leadCategory",
+					"foreignkey": "",
+					"dbcolname": "lead_category",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressCity",
+					"foreignkey": "",
+					"dbcolname": "address.city",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressCountry",
+					"foreignkey": "",
+					"dbcolname": "address.country",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressState",
+					"foreignkey": "",
+					"dbcolname": "address.state",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressStreet",
+					"foreignkey": "",
+					"dbcolname": "address.street",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressStreet2",
+					"foreignkey": "",
+					"dbcolname": "address.street2",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressStreet3",
+					"foreignkey": "",
+					"dbcolname": "address.street3",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanDownPayment",
+					"foreignkey": "",
+					"dbcolname": "loan.down_payment",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanInterestRate",
+					"foreignkey": "",
+					"dbcolname": "loan.interest_rate",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanMonthlyPayment",
+					"foreignkey": "",
+					"dbcolname": "loan.monthly_payment",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanPurchasePrice",
+					"foreignkey": "",
+					"dbcolname": "loan.purchase_price",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanTransactionType",
+					"foreignkey": "",
+					"dbcolname": "loan.transaction_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanType",
+					"foreignkey": "",
+					"dbcolname": "loan.type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loLeadRawId",
+					"foreignkey": "loLeadRaw",
+					"dbcolname": "lo_lead_raw_id",
+					"type": "integer",
+					"notnull": false,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanRange",
+					"foreignkey": "",
+					"dbcolname": "loan_range",
+					"type": "jsonb",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "creditedPrice",
+					"foreignkey": "",
+					"dbcolname": "credited_price",
+					"type": "double precision",
+					"notnull": true,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "creditedTransferPrice",
+					"foreignkey": "",
+					"dbcolname": "credited_transfer_price",
+					"type": "double precision",
+					"notnull": true,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "refundedPrice",
+					"foreignkey": "",
+					"dbcolname": "refunded_price",
+					"type": "double precision",
+					"notnull": true,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "refundedTransferPrice",
+					"foreignkey": "",
+					"dbcolname": "refunded_transfer_price",
+					"type": "double precision",
+					"notnull": true,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "transferDate",
+					"foreignkey": "",
+					"dbcolname": "transfer_date",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "loLead",
+			"dbtablename": "lo_lead"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "name",
+					"foreignkey": "",
+					"dbcolname": "name",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "order",
+					"foreignkey": "",
+					"dbcolname": "order",
+					"type": "integer",
+					"notnull": true,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "isConverted",
+					"foreignkey": "",
+					"dbcolname": "is_converted",
+					"type": "boolean",
+					"notnull": true,
+					"ajvtype": "boolean"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "statusLifecycleId",
+					"foreignkey": "contactStatusLifecycle",
+					"dbcolname": "status_lifecycle_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "isDeleted",
+					"foreignkey": "",
+					"dbcolname": "is_deleted",
+					"type": "boolean",
+					"notnull": true,
+					"ajvtype": "boolean"
+				}
+			],
+			"apitablename": "contactStatus",
+			"dbtablename": "contact_status"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventId",
+					"foreignkey": "",
+					"dbcolname": "event_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventCategoryId",
+					"foreignkey": "eventCategory",
+					"dbcolname": "event_category_id",
+					"type": "integer",
+					"notnull": true,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventCategory",
+					"foreignkey": "",
+					"dbcolname": "event_category",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventTypeId",
+					"foreignkey": "eventType",
+					"dbcolname": "event_type_id",
+					"type": "integer",
+					"notnull": true,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventType",
+					"foreignkey": "",
+					"dbcolname": "event_type",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "historyData",
+					"foreignkey": "",
+					"dbcolname": "history_data",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "endTime",
+					"foreignkey": "",
+					"dbcolname": "end_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventClass",
+					"foreignkey": "",
+					"dbcolname": "event_class",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventCode",
+					"foreignkey": "",
+					"dbcolname": "event_code",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventData",
+					"foreignkey": "",
+					"dbcolname": "event_data",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventSeverity",
+					"foreignkey": "",
+					"dbcolname": "event_severity",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "eventTime",
+					"foreignkey": "",
+					"dbcolname": "event_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "message",
+					"foreignkey": "",
+					"dbcolname": "message",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "ownerId",
+					"foreignkey": "",
+					"dbcolname": "owner_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "reason",
+					"foreignkey": "",
+					"dbcolname": "reason",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "startTime",
+					"foreignkey": "",
+					"dbcolname": "start_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "timeZone",
+					"foreignkey": "",
+					"dbcolname": "time_zone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "channelId",
+					"foreignkey": "",
+					"dbcolname": "channel_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "channelType",
+					"foreignkey": "",
+					"dbcolname": "channel_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "resourceType",
+					"foreignkey": "",
+					"dbcolname": "resource_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "sourceType",
+					"foreignkey": "",
+					"dbcolname": "source_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "activityLog",
+			"dbtablename": "activity_log"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "name",
+					"foreignkey": "",
+					"dbcolname": "name",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "body",
+					"foreignkey": "",
+					"dbcolname": "body",
+					"type": "jsonb",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "templateId",
+					"foreignkey": "template",
+					"dbcolname": "template_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "path",
+					"foreignkey": "",
+					"dbcolname": "path",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "headerMeta",
+					"foreignkey": "",
+					"dbcolname": "header_meta",
+					"type": "jsonb",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "themeId",
+					"foreignkey": "",
+					"dbcolname": "theme_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "category",
+					"foreignkey": "",
+					"dbcolname": "category",
+					"type": "page_category",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "ownerId",
+					"foreignkey": "",
+					"dbcolname": "owner_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "type",
+					"foreignkey": "",
+					"dbcolname": "type",
+					"type": "page_type",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "status",
+					"foreignkey": "",
+					"dbcolname": "status",
+					"type": "page_status",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "latestTemplateId",
+					"foreignkey": "templateVersion",
+					"dbcolname": "latest_template_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "page",
+			"dbtablename": "page"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "subdomain",
+					"foreignkey": "account",
+					"dbcolname": "subdomain",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "t",
+					"apicolname": "path",
+					"foreignkey": "",
+					"dbcolname": "path",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "resourceId",
+					"foreignkey": "page",
+					"dbcolname": "resource_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "routing",
+			"dbtablename": "routing"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "statusId",
+					"foreignkey": "contactStatus",
+					"dbcolname": "status_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressId",
+					"foreignkey": "property",
+					"dbcolname": "address_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "pictureUrl",
+					"foreignkey": "",
+					"dbcolname": "picture_url",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "nmlsId",
+					"foreignkey": "",
+					"dbcolname": "nmls_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "type",
+					"foreignkey": "",
+					"dbcolname": "type",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "firstName",
+					"foreignkey": "",
+					"dbcolname": "first_name",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "lastName",
+					"foreignkey": "",
+					"dbcolname": "last_name",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "personalEmail",
+					"foreignkey": "",
+					"dbcolname": "personal_email",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "workEmail",
+					"foreignkey": "",
+					"dbcolname": "work_email",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "mobilePhone",
+					"foreignkey": "",
+					"dbcolname": "mobile_phone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "workPhone",
+					"foreignkey": "",
+					"dbcolname": "work_phone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "extraMail",
+					"foreignkey": "",
+					"dbcolname": "extra_mail",
+					"type": "text[]",
+					"notnull": false,
+					"ajvtype": "array"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "extraPhone",
+					"foreignkey": "",
+					"dbcolname": "extra_phone",
+					"type": "text[]",
+					"notnull": false,
+					"ajvtype": "array"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "jobTitle",
+					"foreignkey": "",
+					"dbcolname": "job_title",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "maritalStatus",
+					"foreignkey": "",
+					"dbcolname": "marital_status",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "fico",
+					"foreignkey": "",
+					"dbcolname": "fico",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "gender",
+					"foreignkey": "",
+					"dbcolname": "gender",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "dob",
+					"foreignkey": "",
+					"dbcolname": "dob",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "creationSource",
+					"foreignkey": "",
+					"dbcolname": "creation_source",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "ssn",
+					"foreignkey": "",
+					"dbcolname": "ssn",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "leadSourceType",
+					"foreignkey": "",
+					"dbcolname": "lead_source_type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "leadSource",
+					"foreignkey": "",
+					"dbcolname": "lead_source",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "middleName",
+					"foreignkey": "",
+					"dbcolname": "middle_name",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "autoIncrementId",
+					"foreignkey": "",
+					"dbcolname": "auto_increment_id",
+					"type": "integer",
+					"notnull": true,
+					"ajvtype": "integer"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "locale",
+					"foreignkey": "",
+					"dbcolname": "locale",
+					"type": "character varying(50)",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "monthlyIncome",
+					"foreignkey": "",
+					"dbcolname": "monthly_income",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "organizationId",
+					"foreignkey": "organization",
+					"dbcolname": "organization_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "origin",
+					"foreignkey": "",
+					"dbcolname": "origin",
+					"type": "character varying(100)",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "taygoSource",
+					"foreignkey": "",
+					"dbcolname": "taygo_source",
+					"type": "character varying(100)",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "timezone",
+					"foreignkey": "",
+					"dbcolname": "timezone",
+					"type": "character varying(50)",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "isDeleted",
+					"foreignkey": "",
+					"dbcolname": "is_deleted",
+					"type": "boolean",
+					"notnull": true,
+					"ajvtype": "boolean"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "isConverted",
+					"foreignkey": "",
+					"dbcolname": "is_converted",
+					"type": "boolean",
+					"notnull": true,
+					"ajvtype": "boolean"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "statusLifecycleId",
+					"foreignkey": "contactStatusLifecycle",
+					"dbcolname": "status_lifecycle_id",
+					"type": "character varying(100)",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "homePhone",
+					"foreignkey": "",
+					"dbcolname": "home_phone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "contact",
+			"dbtablename": "contact"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "character varying(100)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "contactId",
+					"foreignkey": "contact",
+					"dbcolname": "contact_id",
+					"type": "character varying(100)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "associateName",
+					"foreignkey": "",
+					"dbcolname": "associate_name",
+					"type": "character varying(255)",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "contactOtherAssociates",
+			"dbtablename": "contact_other_associates"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "contactId",
+					"foreignkey": "contact",
+					"dbcolname": "contact_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "t",
+					"apicolname": "assignedTo",
+					"foreignkey": "",
+					"dbcolname": "assigned_to",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "relationship",
+					"foreignkey": "",
+					"dbcolname": "relationship",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignedBy",
+					"foreignkey": "",
+					"dbcolname": "assigned_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignTime",
+					"foreignkey": "",
+					"dbcolname": "assign_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignRequest",
+					"foreignkey": "",
+					"dbcolname": "assign_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "bridgeContactContact",
+			"dbtablename": "bridge_contact_contact"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "contactId",
+					"foreignkey": "contact",
+					"dbcolname": "contact_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "tagId",
+					"foreignkey": "contactTag",
+					"dbcolname": "tag_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignedBy",
+					"foreignkey": "",
+					"dbcolname": "assigned_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignTime",
+					"foreignkey": "",
+					"dbcolname": "assign_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignRequest",
+					"foreignkey": "",
+					"dbcolname": "assign_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "bridgeContactTag",
+			"dbtablename": "bridge_contact_tag"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "contactId",
+					"foreignkey": "contact",
+					"dbcolname": "contact_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "customFieldId",
+					"foreignkey": "contactCustomField",
+					"dbcolname": "custom_field_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "value",
+					"foreignkey": "",
+					"dbcolname": "value",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "contactCustomFieldValue",
+			"dbtablename": "contact_custom_field_value"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "sourceId",
+					"foreignkey": "page",
+					"dbcolname": "source_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "destinationId",
+					"foreignkey": "page",
+					"dbcolname": "destination_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "links",
+			"dbtablename": "links"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "A",
+					"foreignkey": "element",
+					"dbcolname": "A",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "B",
+					"foreignkey": "templateVersion",
+					"dbcolname": "B",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "elementtotemplateVersion",
+			"dbtablename": "_elementTotemplate_version"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "contactId",
+					"foreignkey": "contact",
+					"dbcolname": "contact_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "loanId",
+					"foreignkey": "loan",
+					"dbcolname": "loan_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignedBy",
+					"foreignkey": "",
+					"dbcolname": "assigned_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignTime",
+					"foreignkey": "",
+					"dbcolname": "assign_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignRequest",
+					"foreignkey": "",
+					"dbcolname": "assign_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "type",
+					"foreignkey": "",
+					"dbcolname": "type",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "bridgeContactLoan",
+			"dbtablename": "bridge_contact_loan"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "contactId",
+					"foreignkey": "contact",
+					"dbcolname": "contact_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "addressId",
+					"foreignkey": "property",
+					"dbcolname": "address_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "organizationId",
+					"foreignkey": "organization",
+					"dbcolname": "organization_id",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "type",
+					"foreignkey": "",
+					"dbcolname": "type",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "employerName",
+					"foreignkey": "",
+					"dbcolname": "employer_name",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "title",
+					"foreignkey": "",
+					"dbcolname": "title",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "phone",
+					"foreignkey": "",
+					"dbcolname": "phone",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "amount",
+					"foreignkey": "",
+					"dbcolname": "amount",
+					"type": "double precision",
+					"notnull": false,
+					"ajvtype": "number"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "incomeAmountPeriod",
+					"foreignkey": "",
+					"dbcolname": "income_amount_period",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "startDate",
+					"foreignkey": "",
+					"dbcolname": "start_date",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "endDate",
+					"foreignkey": "",
+					"dbcolname": "end_date",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "description",
+					"foreignkey": "",
+					"dbcolname": "description",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createdBy",
+					"foreignkey": "",
+					"dbcolname": "created_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createTime",
+					"foreignkey": "",
+					"dbcolname": "create_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "createRequest",
+					"foreignkey": "",
+					"dbcolname": "create_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updatedBy",
+					"foreignkey": "",
+					"dbcolname": "updated_by",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateTime",
+					"foreignkey": "",
+					"dbcolname": "update_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "updateRequest",
+					"foreignkey": "",
+					"dbcolname": "update_request",
+					"type": "text",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "employerPhone",
+					"foreignkey": "",
+					"dbcolname": "employer_phone",
+					"type": "character varying(25)",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "status",
+					"foreignkey": "",
+					"dbcolname": "status",
+					"type": "character varying(50)",
+					"notnull": false,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "incomeSource",
+			"dbtablename": "income_source"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "t",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "character varying(100)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "contactId",
+					"foreignkey": "contact",
+					"dbcolname": "contact_id",
+					"type": "character varying(100)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "partnerId",
+					"foreignkey": "partner",
+					"dbcolname": "partner_id",
+					"type": "character varying(100)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "type",
+					"foreignkey": "",
+					"dbcolname": "type",
+					"type": "character varying(255)",
+					"notnull": false,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignedBy",
+					"foreignkey": "",
+					"dbcolname": "assigned_by",
+					"type": "character varying(100)",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignTime",
+					"foreignkey": "",
+					"dbcolname": "assign_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignRequest",
+					"foreignkey": "",
+					"dbcolname": "assign_request",
+					"type": "character varying(100)",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "bridgeContactPartner",
+			"dbtablename": "bridge_contact_partner"
+		},
+		{
+			"columnInfoList": [
+				{
+					"primarykey": "f",
+					"apicolname": "contactId",
+					"foreignkey": "contact",
+					"dbcolname": "contact_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "userId",
+					"foreignkey": "user",
+					"dbcolname": "user_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "accountId",
+					"foreignkey": "account",
+					"dbcolname": "account_id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignedBy",
+					"foreignkey": "",
+					"dbcolname": "assigned_by",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignTime",
+					"foreignkey": "",
+					"dbcolname": "assign_time",
+					"type": "timestamp(6) with time zone",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "assignRequest",
+					"foreignkey": "",
+					"dbcolname": "assign_request",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				},
+				{
+					"primarykey": "f",
+					"apicolname": "id",
+					"foreignkey": "",
+					"dbcolname": "id",
+					"type": "text",
+					"notnull": true,
+					"ajvtype": "string"
+				}
+			],
+			"apitablename": "bridgeContactUser",
+			"dbtablename": "bridge_contact_user"
+		}
+	]
+}
