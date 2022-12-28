@@ -37,9 +37,6 @@ const engagement_schema = {
     required: ['eventProvider'],
     properties: { apicolname: engagement_ajv.eventProvider.api},	
   },{
-    required: ['eventAction'],
-    properties: { apicolname: engagement_ajv.eventAction.api},	
-  },{
     required: ['eventName'],
     properties: { apicolname: engagement_ajv.eventName.api},	
   },{

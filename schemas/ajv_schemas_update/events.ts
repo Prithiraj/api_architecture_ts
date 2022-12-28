@@ -40,11 +40,11 @@ const events_schema = {
     required: ['eventSeverity'],
     properties: { apicolname: events_ajv.eventSeverity.api},	
   },{
+    required: ['eventType'],
+    properties: { apicolname: events_ajv.eventType.api},	
+  },{
     required: ['message'],
     properties: { apicolname: events_ajv.message.api},	
-  },{
-    required: ['outcome'],
-    properties: { apicolname: events_ajv.outcome.api},	
   },{
     required: ['parentId'],
     properties: { apicolname: events_ajv.parentId.api},	
@@ -58,9 +58,6 @@ const events_schema = {
     required: ['reason'],
     properties: { apicolname: events_ajv.reason.api},	
   },{
-    required: ['timezone'],
-    properties: { apicolname: events_ajv.timezone.api},	
-  },{
     required: ['createTime'],
     properties: { apicolname: events_ajv.createTime.api},	
   },{
@@ -70,9 +67,6 @@ const events_schema = {
     required: ['eventTime'],
     properties: { apicolname: events_ajv.eventTime.api},	
   },{
-    required: ['startTime'],
-    properties: { apicolname: events_ajv.startTime.api},	
-  },{
     required: ['destinationId'],
     properties: { apicolname: events_ajv.destinationId.api},	
   },{
@@ -81,9 +75,6 @@ const events_schema = {
   },{
     required: ['channelType'],
     properties: { apicolname: events_ajv.channelType.api},	
-  },{
-    required: ['destinationLocation'],
-    properties: { apicolname: events_ajv.destinationLocation.api},	
   },{
     required: ['destinationType'],
     properties: { apicolname: events_ajv.destinationType.api},	
@@ -141,6 +132,9 @@ const events_schema = {
   },{
     required: ['userType'],
     properties: { apicolname: events_ajv.userType.api},	
+  },{
+    required: ['timezone'],
+    properties: { apicolname: events_ajv.timezone.api},	
   },]
 };
 

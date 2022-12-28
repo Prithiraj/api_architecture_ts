@@ -27,6 +27,7 @@ const property_schema = {
     updateTime: property_ajv.updateTime.api,
     updateRequest: property_ajv.updateRequest.api,
     actualValue: property_ajv.actualValue.api,
+    estimatedValue: property_ajv.estimatedValue.api,
     hazardInsurance: property_ajv.hazardInsurance.api,
     propertyUnits: property_ajv.propertyUnits.api,
     propertyOccupancy: property_ajv.propertyOccupancy.api,

@@ -37,6 +37,9 @@ const elementVersion_schema = {
     required: ['updateTime'],
     properties: { apicolname: elementVersion_ajv.updateTime.api},	
   },{
+    required: ['updatedBy'],
+    properties: { apicolname: elementVersion_ajv.updatedBy.api},	
+  },{
     required: ['createRequest'],
     properties: { apicolname: elementVersion_ajv.createRequest.api},	
   },{

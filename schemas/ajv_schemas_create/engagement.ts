@@ -14,7 +14,6 @@ const engagement_schema = {
     eventTime: engagement_ajv.eventTime.api,
     createTime: engagement_ajv.createTime.api,
     eventProvider: engagement_ajv.eventProvider.api,
-    eventAction: engagement_ajv.eventAction.api,
     eventName: engagement_ajv.eventName.api,
     eventGroup: engagement_ajv.eventGroup.api,
     eventCategory: engagement_ajv.eventCategory.api,

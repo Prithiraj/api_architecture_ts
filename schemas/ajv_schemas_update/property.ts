@@ -76,6 +76,9 @@ const property_schema = {
     required: ['actualValue'],
     properties: { apicolname: property_ajv.actualValue.api},	
   },{
+    required: ['estimatedValue'],
+    properties: { apicolname: property_ajv.estimatedValue.api},	
+  },{
     required: ['hazardInsurance'],
     properties: { apicolname: property_ajv.hazardInsurance.api},	
   },{

@@ -16,14 +16,14 @@ const loSubscription_schema = {
     required: ['stripeSubscription'],
     properties: { apicolname: loSubscription_ajv.stripeSubscription.api},	
   },{
-    required: ['stripeStatus'],
-    properties: { apicolname: loSubscription_ajv.stripeStatus.api},	
+    required: ['stripePaymentIntent'],
+    properties: { apicolname: loSubscription_ajv.stripePaymentIntent.api},	
   },{
-    required: ['autoBilling'],
-    properties: { apicolname: loSubscription_ajv.autoBilling.api},	
+    required: ['boberdooId'],
+    properties: { apicolname: loSubscription_ajv.boberdooId.api},	
   },{
-    required: ['boberdooBalance'],
-    properties: { apicolname: loSubscription_ajv.boberdooBalance.api},	
+    required: ['bundleTitle'],
+    properties: { apicolname: loSubscription_ajv.bundleTitle.api},	
   },{
     required: ['cancelTime'],
     properties: { apicolname: loSubscription_ajv.cancelTime.api},	
@@ -40,14 +40,11 @@ const loSubscription_schema = {
     required: ['dailyBudgetLimit'],
     properties: { apicolname: loSubscription_ajv.dailyBudgetLimit.api},	
   },{
-    required: ['dailyUnitLimit'],
-    properties: { apicolname: loSubscription_ajv.dailyUnitLimit.api},	
+    required: ['deactivateTime'],
+    properties: { apicolname: loSubscription_ajv.deactivateTime.api},	
   },{
-    required: ['deactivateReason'],
-    properties: { apicolname: loSubscription_ajv.deactivateReason.api},	
-  },{
-    required: ['inactive'],
-    properties: { apicolname: loSubscription_ajv.inactive.api},	
+    required: ['finishTime'],
+    properties: { apicolname: loSubscription_ajv.finishTime.api},	
   },{
     required: ['price'],
     properties: { apicolname: loSubscription_ajv.price.api},	
@@ -55,14 +52,11 @@ const loSubscription_schema = {
     required: ['productId'],
     properties: { apicolname: loSubscription_ajv.productId.api},	
   },{
-    required: ['transferPrice'],
-    properties: { apicolname: loSubscription_ajv.transferPrice.api},	
+    required: ['transferPriceSubscriptionItemId'],
+    properties: { apicolname: loSubscription_ajv.transferPriceSubscriptionItemId.api},	
   },{
-    required: ['updatedBy'],
-    properties: { apicolname: loSubscription_ajv.updatedBy.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: loSubscription_ajv.updateTime.api},	
+    required: ['updateRequest'],
+    properties: { apicolname: loSubscription_ajv.updateRequest.api},	
   },{
     required: ['activeLeadTransfer'],
     properties: { apicolname: loSubscription_ajv.activeLeadTransfer.api},	
@@ -82,8 +76,8 @@ const loSubscription_schema = {
     required: ['primaryPhoneType'],
     properties: { apicolname: loSubscription_ajv.primaryPhoneType.api},	
   },{
-    required: ['primaryPhoneVerified'],
-    properties: { apicolname: loSubscription_ajv.primaryPhoneVerified.api},	
+    required: ['primaryPhone'],
+    properties: { apicolname: loSubscription_ajv.primaryPhone.api},	
   },{
     required: ['secondaryPhoneType'],
     properties: { apicolname: loSubscription_ajv.secondaryPhoneType.api},	
@@ -91,53 +85,53 @@ const loSubscription_schema = {
     required: ['secondaryPhoneVerified'],
     properties: { apicolname: loSubscription_ajv.secondaryPhoneVerified.api},	
   },{
-    required: ['addressCity'],
-    properties: { apicolname: loSubscription_ajv.addressCity.api},	
+    required: ['alertList'],
+    properties: { apicolname: loSubscription_ajv.alertList.api},	
+  },{
+    required: ['addressCountry'],
+    properties: { apicolname: loSubscription_ajv.addressCountry.api},	
   },{
     required: ['addressState'],
     properties: { apicolname: loSubscription_ajv.addressState.api},	
   },{
-    required: ['addressStreet'],
-    properties: { apicolname: loSubscription_ajv.addressStreet.api},	
+    required: ['addressStreet2'],
+    properties: { apicolname: loSubscription_ajv.addressStreet2.api},	
   },{
-    required: ['addressStreet3'],
-    properties: { apicolname: loSubscription_ajv.addressStreet3.api},	
+    required: ['addressZip'],
+    properties: { apicolname: loSubscription_ajv.addressZip.api},	
   },{
     required: ['preferredmeetingplaceCity'],
     properties: { apicolname: loSubscription_ajv.preferredmeetingplaceCity.api},	
   },{
-    required: ['preferredmeetingplaceCountry'],
-    properties: { apicolname: loSubscription_ajv.preferredmeetingplaceCountry.api},	
-  },{
-    required: ['preferredmeetingplaceStreet'],
-    properties: { apicolname: loSubscription_ajv.preferredmeetingplaceStreet.api},	
+    required: ['preferredmeetingplaceState'],
+    properties: { apicolname: loSubscription_ajv.preferredmeetingplaceState.api},	
   },{
     required: ['preferredmeetingplaceStreet2'],
     properties: { apicolname: loSubscription_ajv.preferredmeetingplaceStreet2.api},	
   },{
-    required: ['preferredmeetingplaceZip'],
-    properties: { apicolname: loSubscription_ajv.preferredmeetingplaceZip.api},	
+    required: ['preferredmeetingplaceStreet3'],
+    properties: { apicolname: loSubscription_ajv.preferredmeetingplaceStreet3.api},	
   },{
     required: ['county'],
     properties: { apicolname: loSubscription_ajv.county.api},	
   },{
-    required: ['preferredcommunicationscheduleFrom'],
-    properties: { apicolname: loSubscription_ajv.preferredcommunicationscheduleFrom.api},	
+    required: ['preferredcommunicationscheduleDays'],
+    properties: { apicolname: loSubscription_ajv.preferredcommunicationscheduleDays.api},	
   },{
-    required: ['infoEmail'],
-    properties: { apicolname: loSubscription_ajv.infoEmail.api},	
+    required: ['preferredcommunicationscheduleTo'],
+    properties: { apicolname: loSubscription_ajv.preferredcommunicationscheduleTo.api},	
   },{
-    required: ['infoName'],
-    properties: { apicolname: loSubscription_ajv.infoName.api},	
+    required: ['infoPhone'],
+    properties: { apicolname: loSubscription_ajv.infoPhone.api},	
   },{
-    required: ['leadType'],
-    properties: { apicolname: loSubscription_ajv.leadType.api},	
+    required: ['infoWebsite'],
+    properties: { apicolname: loSubscription_ajv.infoWebsite.api},	
   },{
-    required: ['loanRanges'],
-    properties: { apicolname: loSubscription_ajv.loanRanges.api},	
+    required: ['transactionType'],
+    properties: { apicolname: loSubscription_ajv.transactionType.api},	
   },{
-    required: ['vendors'],
-    properties: { apicolname: loSubscription_ajv.vendors.api},	
+    required: ['loanType'],
+    properties: { apicolname: loSubscription_ajv.loanType.api},	
   },{
     required: ['totalMatchAmount'],
     properties: { apicolname: loSubscription_ajv.totalMatchAmount.api},	

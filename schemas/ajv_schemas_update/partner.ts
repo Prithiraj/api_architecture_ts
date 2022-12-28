@@ -55,6 +55,9 @@ const partner_schema = {
     required: ['updateTime'],
     properties: { apicolname: partner_ajv.updateTime.api},	
   },{
+    required: ['updateRequest'],
+    properties: { apicolname: partner_ajv.updateRequest.api},	
+  },{
     required: ['addressId'],
     properties: { apicolname: partner_ajv.addressId.api},	
   },]

@@ -28,17 +28,14 @@ const loLeadSource_schema = {
     required: ['tileHighlights'],
     properties: { apicolname: loLeadSource_ajv.tileHighlights.api},	
   },{
-    required: ['title'],
-    properties: { apicolname: loLeadSource_ajv.title.api},	
+    required: ['createTime'],
+    properties: { apicolname: loLeadSource_ajv.createTime.api},	
   },{
     required: ['updateTime'],
     properties: { apicolname: loLeadSource_ajv.updateTime.api},	
   },{
     required: ['active'],
     properties: { apicolname: loLeadSource_ajv.active.api},	
-  },{
-    required: ['callcenter'],
-    properties: { apicolname: loLeadSource_ajv.callcenter.api},	
   },{
     required: ['dedicatedCallcenter'],
     properties: { apicolname: loLeadSource_ajv.dedicatedCallcenter.api},	

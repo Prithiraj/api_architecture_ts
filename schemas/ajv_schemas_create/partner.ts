@@ -20,6 +20,7 @@ const partner_schema = {
     createRequest: partner_ajv.createRequest.api,
     updatedBy: partner_ajv.updatedBy.api,
     updateTime: partner_ajv.updateTime.api,
+    updateRequest: partner_ajv.updateRequest.api,
     addressId: partner_ajv.addressId.api,
   },
   required: [],

@@ -25,14 +25,14 @@ const loLead_schema = {
     required: ['callCenterService'],
     properties: { apicolname: loLead_ajv.callCenterService.api},	
   },{
+    required: ['companyId'],
+    properties: { apicolname: loLead_ajv.companyId.api},	
+  },{
     required: ['creditStatus'],
     properties: { apicolname: loLead_ajv.creditStatus.api},	
   },{
     required: ['email'],
     properties: { apicolname: loLead_ajv.email.api},	
-  },{
-    required: ['firstName'],
-    properties: { apicolname: loLead_ajv.firstName.api},	
   },{
     required: ['language'],
     properties: { apicolname: loLead_ajv.language.api},	
@@ -49,20 +49,17 @@ const loLead_schema = {
     required: ['productId'],
     properties: { apicolname: loLead_ajv.productId.api},	
   },{
-    required: ['provider'],
-    properties: { apicolname: loLead_ajv.provider.api},	
-  },{
     required: ['vendor'],
     properties: { apicolname: loLead_ajv.vendor.api},	
+  },{
+    required: ['secondaryPhone'],
+    properties: { apicolname: loLead_ajv.secondaryPhone.api},	
   },{
     required: ['source'],
     properties: { apicolname: loLead_ajv.source.api},	
   },{
     required: ['subscriptionId'],
     properties: { apicolname: loLead_ajv.subscriptionId.api},	
-  },{
-    required: ['price'],
-    properties: { apicolname: loLead_ajv.price.api},	
   },{
     required: ['transferPrice'],
     properties: { apicolname: loLead_ajv.transferPrice.api},	
@@ -109,17 +106,17 @@ const loLead_schema = {
     required: ['loanTransactionType'],
     properties: { apicolname: loLead_ajv.loanTransactionType.api},	
   },{
-    required: ['loanType'],
-    properties: { apicolname: loLead_ajv.loanType.api},	
-  },{
     required: ['createdBy'],
     properties: { apicolname: loLead_ajv.createdBy.api},	
   },{
-    required: ['createTime'],
-    properties: { apicolname: loLead_ajv.createTime.api},	
+    required: ['createRequest'],
+    properties: { apicolname: loLead_ajv.createRequest.api},	
   },{
     required: ['updatedBy'],
     properties: { apicolname: loLead_ajv.updatedBy.api},	
+  },{
+    required: ['updateRequest'],
+    properties: { apicolname: loLead_ajv.updateRequest.api},	
   },{
     required: ['updateTime'],
     properties: { apicolname: loLead_ajv.updateTime.api},	
@@ -132,9 +129,6 @@ const loLead_schema = {
   },{
     required: ['creditedPrice'],
     properties: { apicolname: loLead_ajv.creditedPrice.api},	
-  },{
-    required: ['creditedTransferPrice'],
-    properties: { apicolname: loLead_ajv.creditedTransferPrice.api},	
   },{
     required: ['refundedPrice'],
     properties: { apicolname: loLead_ajv.refundedPrice.api},	

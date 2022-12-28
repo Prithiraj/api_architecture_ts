@@ -14,6 +14,7 @@ const elementVersion_schema = {
     createdBy: elementVersion_ajv.createdBy.api,
     updateRequest: elementVersion_ajv.updateRequest.api,
     updateTime: elementVersion_ajv.updateTime.api,
+    updatedBy: elementVersion_ajv.updatedBy.api,
     createRequest: elementVersion_ajv.createRequest.api,
     id: elementVersion_ajv.id.api,
   },

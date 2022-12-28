@@ -22,20 +22,20 @@ if __name__ == "__main__":
     isFile = os.path.isfile('jsons/custom_json/custom.json')
     if isFile is False:
         with open('jsons/custom_json/custom.json', 'w') as f:
-            f.write(json.dumps({"schemas":[]})) 
+            f.write(json.dumps({"schemas":[]}, indent=4)) 
     
     with open('jsons/custom_json/custom.json', 'r') as f:
         data = json.load(f)
     
-    new_schema = Comparer().compareAndUpdate(schemas, data)
+    new_schemas = Comparer().compareAndUpdate(schemas, data)
     # dataTable = dataTable(sorted_schema)
     
     sortSchema = SortSchema()
-    sorted_schema = sortSchema.sortSchema(schemas)
+    sorted_schema = sortSchema.sortSchema(new_schemas["schemas"])
     
-    with open('jsons/test_json/schema.json', 'w') as f:
-        f.write(json.dumps(sorted_schema))	
+    with open('jsons/custom_json/custom.json', 'w') as f:
+        f.write(json.dumps(sorted_schema, indent=4))	
     
     typescriptGen = TypescriptGen()
     typescriptGen.genTypeScript(sorted_schema)
-    print(json.dumps(sorted_schema))
+    # print(json.dumps(sorted_schema))

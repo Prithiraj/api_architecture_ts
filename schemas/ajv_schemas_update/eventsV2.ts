@@ -40,9 +40,6 @@ const eventsV2_schema = {
     required: ['reason'],
     properties: { apicolname: eventsV2_ajv.reason.api},	
   },{
-    required: ['timezone'],
-    properties: { apicolname: eventsV2_ajv.timezone.api},	
-  },{
     required: ['createTime'],
     properties: { apicolname: eventsV2_ajv.createTime.api},	
   },{
@@ -108,9 +105,6 @@ const eventsV2_schema = {
   },{
     required: ['message'],
     properties: { apicolname: eventsV2_ajv.message.api},	
-  },{
-    required: ['ownerId'],
-    properties: { apicolname: eventsV2_ajv.ownerId.api},	
   },{
     required: ['referralId'],
     properties: { apicolname: eventsV2_ajv.referralId.api},	
