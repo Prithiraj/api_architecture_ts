@@ -11,10 +11,7 @@
                     "type": "character varying(64)",
                     "ajvtype": "string",
                     "foreignkey": "",
-                    "primarykey": "f",
-                    "ajv_experience": {
-                        "hello": 123
-                    }
+                    "primarykey": "f"
                 },
                 {
                     "apicolname": "finishedAt",
