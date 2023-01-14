@@ -1,0 +1,29 @@
+import ajvInstance from '../ajv-instance';
+import { user_ajv } from '../mapper_ajv';
+
+
+const user_schema = {
+  type: 'object',
+  properties: {
+    id: user_ajv.id.api,
+    accountId: user_ajv.accountId.api,
+    userType: user_ajv.userType.api,
+    createdBy: user_ajv.createdBy.api,
+    createTime: user_ajv.createTime.api,
+    createRequest: user_ajv.createRequest.api,
+    updatedBy: user_ajv.updatedBy.api,
+    updateRequest: user_ajv.updateRequest.api,
+    emailVerified: user_ajv.emailVerified.api,
+    profileImage: user_ajv.profileImage.api,
+    firstname: user_ajv.firstname.api,
+    phoneNumberVerified: user_ajv.phoneNumberVerified.api,
+    email: user_ajv.email.api,
+    lastname: user_ajv.lastname.api,
+    phone: user_ajv.phone.api,
+    updateTime: user_ajv.updateTime.api,
+  },
+  required: [],
+  additionalProperties: false,
+};
+
+export default ajvInstance.compile(user_schema);

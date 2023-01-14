@@ -1,0 +1,30 @@
+import ajvInstance from '../ajv-instance';
+import { eventType_ajv } from '../mapper_ajv';
+
+
+const eventType_schema = {
+  type: 'object',
+  properties: {
+    id: { type: 'string',}
+  },
+  required: ['id'],
+  additionalProperties: false,
+  anyOf: [{
+    required: ['id'],
+    properties: { apicolname: eventType_ajv.id.api},	
+  },{
+    required: ['eventCategoryId'],
+    properties: { apicolname: eventType_ajv.eventCategoryId.api},	
+  },{
+    required: ['eventTypeDescription'],
+    properties: { apicolname: eventType_ajv.eventTypeDescription.api},	
+  },{
+    required: ['createdAt'],
+    properties: { apicolname: eventType_ajv.createdAt.api},	
+  },{
+    required: ['updatedAt'],
+    properties: { apicolname: eventType_ajv.updatedAt.api},	
+  },]
+};
+
+export default ajvInstance.compile(eventType_schema);

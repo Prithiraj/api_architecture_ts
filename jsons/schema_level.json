@@ -1,0 +1,10 @@
+{
+	"insert":{
+		"exclude": {
+			"system": ["createdBy", "createTime", "createRequest", "updatedBy", "updateTime", "updateRequest", "isDeleted", "autoIncrementId"],
+			"dependency": ["accountId"],
+			"primaryKey": true
+		}	
+	}
+}
+

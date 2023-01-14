@@ -1,3 +1,5 @@
+import os
+
 def remove_special_chars(name, delimiter):
     camel_case = name
     if name.find(delimiter)>=1:
@@ -34,4 +36,21 @@ def to_ajv_type(_type):
     
     else:
         return 'string'
-    
+
+def remove_dict(d, key, values):
+    for value in values:
+        if d.get(key) == value:
+            return False
+    return True
+
+def set_difference(set1:set, set2:set):
+    return set1.difference(set2)
+
+def delete_files_from_directory(directory):
+    for file in os.listdir(directory):
+        file_path = os.path.join(directory, file)
+        try:
+            if os.path.isfile(file_path):
+                os.unlink(file_path)
+        except Exception as e:
+            print(e)

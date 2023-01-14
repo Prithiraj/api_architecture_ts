@@ -13,7 +13,7 @@ if __name__ == "__main__":
     tables = tableInfo.get_tables('public')
     items = TableInfo.get_all_table_info('public')
 
-    schemas = SerializerDeserializer.get_deserialized_schema(tables, items)
+    db_schema = SerializerDeserializer.get_deserialized_schema(tables, items)
     
     # 1. Build schema objects for sorted_schema
     # sorted_schema
@@ -25,13 +25,13 @@ if __name__ == "__main__":
             f.write(json.dumps({"schemas":[]}, indent=4)) 
     
     with open('jsons/custom_json/custom.json', 'r') as f:
-        data = json.load(f)
+        custom_schema = json.load(f)["schemas"]
     
-    new_schemas = Comparer().compareAndUpdate(schemas, data)
+    new_schemas = Comparer(db_schema, custom_schema).compareAndUpdate(db_schema, custom_schema)
     # dataTable = dataTable(sorted_schema)
     
     sortSchema = SortSchema()
-    sorted_schema = sortSchema.sortSchema(new_schemas["schemas"])
+    sorted_schema = sortSchema.sortSchema(new_schemas)
     
     with open('jsons/custom_json/custom.json', 'w') as f:
         f.write(json.dumps(sorted_schema, indent=4))	
