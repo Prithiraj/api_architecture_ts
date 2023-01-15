@@ -10,16 +10,21 @@ export async function connectToDatabase(
   databaseName: string,
   databaseUsername: string,
   databasePassword: string,
+  tunnling: boolean,
 ) {
-  const tnl = await tunnel({
-    host: sshHost,
-    username: sshUsername,
-    privateKey: sshKeyPath,
-    port: 22,
-    dstPort: 5432,
-    dstHost: databaseHost,
-    localPort: 5433,
-  })
+
+  let tnl;
+  if (tunnling === true) {
+    tnl = await tunnel({
+      host: sshHost,
+      username: sshUsername,
+      privateKey: sshKeyPath,
+      port: 22,
+      dstPort: 5432,
+      dstHost: databaseHost,
+      localPort: 5433,
+    })
+  }
 
   const prisma = new PrismaClient({
     datasources: {
@@ -33,7 +38,9 @@ export async function connectToDatabase(
     // Use the `prisma` instance to execute queries against the database
   } finally {
     await prisma.disconnect()
-    tnl.close()
+    if (tnl !== undefined) {
+      tnl.close()
+    }
   }
 }
 

@@ -15,7 +15,8 @@ async function main() {
 		data.DB_HOST,
 		data.PG_DB_NAME,
 		data.PG_UN,
-		data.PG_DB_PW
+		data.PG_DB_PW,
+		data.TUNNLING,
 	);
 
   };

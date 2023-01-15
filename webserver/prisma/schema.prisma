@@ -1,0 +1,1312 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model account {
+  id                                  String                         @id
+  created_by                          String
+  create_time                         DateTime                       @db.Timestamptz(6)
+  create_request                      String
+  updated_by                          String?
+  update_time                         DateTime?                      @db.Timestamptz(6)
+  update_request                      String?
+  subdomain                           String?                        @unique
+  bridge_contact_contact              bridge_contact_contact[]
+  bridge_contact_loan                 bridge_contact_loan[]
+  bridge_contact_partner              bridge_contact_partner[]
+  bridge_contact_tag                  bridge_contact_tag[]
+  bridge_contact_user                 bridge_contact_user[]
+  bridge_section_lifecycle            bridge_section_lifecycle[]
+  contact                             contact[]
+  contact_comment                     contact_comment[]
+  contact_custom_field                contact_custom_field[]
+  contact_custom_field_value          contact_custom_field_value[]
+  contact_reminder                    contact_reminder[]
+  contact_status                      contact_status[]
+  contact_tag                         contact_tag[]
+  element                             element[]
+  element_version                     element_version[]
+  income_source                       income_source[]
+  links                               links[]
+  loan                                loan[]
+  organization                        organization[]
+  page                                page[]
+  page_version                        page_version[]
+  partner                             partner[]
+  property                            property[]
+  routing_routing_account_idToaccount routing[]                      @relation("routing_account_idToaccount")
+  routing_routing_subdomainToaccount  routing[]                      @relation("routing_subdomainToaccount")
+  template                            template[]
+  template_dependency                 template_dependency[]
+  template_version                    template_version[]
+  user                                user[]
+  workflow_template_permission        workflow_template_permission[]
+}
+
+model activity_log {
+  id                String         @id
+  event_id          String?
+  event_category_id Int
+  event_category    String
+  event_type_id     Int
+  event_type        String
+  history_data      String?
+  create_time       DateTime       @db.Timestamptz(6)
+  end_time          DateTime?      @db.Timestamptz(6)
+  event_class       String?
+  event_code        String?
+  event_data        String?
+  event_severity    String?
+  event_time        DateTime       @db.Timestamptz(6)
+  message           String?
+  owner_id          String?
+  reason            String?
+  start_time        DateTime?      @db.Timestamptz(6)
+  time_zone         String?
+  channel_id        String?
+  channel_type      String?
+  resource_id       String?
+  resource_type     String?
+  source_id         String?
+  source_type       String?
+  contact_id        String?
+  master_event_time DateTime       @default(now()) @db.Timestamptz(6)
+  user_id           String?
+  contact           contact?       @relation(fields: [contact_id], references: [id])
+  user              user?          @relation(fields: [user_id], references: [id])
+
+  @@index([contact_id], type: Hash)
+  @@index([master_event_time(sort: Desc), event_time])
+  @@index([resource_type, resource_id])
+  @@index([user_id], type: Hash)
+}
+
+model bridge_contact_contact {
+  contact_id     String
+  account_id     String
+  assigned_to    String
+  relationship   String
+  assigned_by    String
+  assign_time    DateTime @db.Timestamptz(6)
+  assign_request String
+  id             String   @unique
+  account        account  @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  contact        contact  @relation(fields: [contact_id], references: [id])
+
+  @@id([contact_id, assigned_to])
+}
+
+model bridge_contact_loan {
+  contact_id     String
+  loan_id        String
+  account_id     String
+  assigned_by    String
+  assign_time    DateTime @db.Timestamptz(6)
+  assign_request String
+  type           String
+  id             String   @unique
+  account        account  @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  contact        contact  @relation(fields: [contact_id], references: [id], onDelete: NoAction)
+  loan           loan     @relation(fields: [loan_id], references: [id], onDelete: NoAction)
+
+  @@id([contact_id, loan_id])
+}
+
+model bridge_contact_partner {
+  id             String   @id
+  account_id     String   @db.VarChar(100)
+  contact_id     String   @db.VarChar(100)
+  partner_id     String   @db.VarChar(100)
+  type           String?  @db.VarChar(255)
+  assigned_by    String   @db.VarChar(100)
+  assign_time    DateTime @db.Timestamptz(6)
+  assign_request String   @db.VarChar(100)
+  account        account  @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  contact        contact  @relation(fields: [contact_id], references: [id], onDelete: NoAction)
+  partner        partner  @relation(fields: [partner_id], references: [id], onDelete: NoAction)
+
+  @@unique([contact_id, partner_id, type])
+}
+
+model bridge_contact_tag {
+  contact_id     String
+  tag_id         String
+  account_id     String
+  assigned_by    String
+  assign_time    DateTime    @db.Timestamptz(6)
+  assign_request String
+  id             String      @unique
+  account        account     @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  contact        contact     @relation(fields: [contact_id], references: [id])
+  contact_tag    contact_tag @relation(fields: [tag_id], references: [id])
+
+  @@id([contact_id, tag_id])
+}
+
+model bridge_contact_user {
+  contact_id     String
+  user_id        String
+  account_id     String
+  assigned_by    String
+  assign_time    DateTime @db.Timestamptz(6)
+  assign_request String
+  id             String   @unique
+  account        account  @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  contact        contact  @relation(fields: [contact_id], references: [id])
+  user           user     @relation(fields: [user_id], references: [id])
+
+  @@id([contact_id, user_id])
+}
+
+model bridge_section_lifecycle {
+  id                           String                       @id @db.VarChar(100)
+  account_id                   String                       @db.VarChar(100)
+  custom_field_section_id      String                       @db.VarChar(100)
+  lifecycle_id                 String                       @db.VarChar(100)
+  account                      account                      @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  contact_custom_field_section contact_custom_field_section @relation(fields: [custom_field_section_id], references: [id], onDelete: NoAction)
+  contact_status_lifecycle     contact_status_lifecycle     @relation(fields: [lifecycle_id], references: [id], onDelete: NoAction)
+
+  @@unique([custom_field_section_id, lifecycle_id])
+}
+
+model contact {
+  id                                 String                       @id
+  account_id                         String
+  status_id                          String?
+  address_id                         String?
+  picture_url                        String?
+  nmls_id                            String?
+  type                               String
+  first_name                         String
+  last_name                          String
+  personal_email                     String?
+  work_email                         String?
+  mobile_phone                       String?
+  work_phone                         String?
+  extra_mail                         String[]
+  extra_phone                        String[]
+  job_title                          String?
+  marital_status                     String?
+  gender                             String?
+  dob                                String?
+  creation_source                    String
+  ssn                                String?
+  lead_source_type                   String?
+  lead_source                        String?
+  created_by                         String
+  create_time                        DateTime                     @db.Timestamptz(6)
+  create_request                     String
+  updated_by                         String?
+  update_time                        DateTime?                    @db.Timestamptz(6)
+  update_request                     String?
+  middle_name                        String?
+  auto_increment_id                  Int                          @default(autoincrement())
+  locale                             String?                      @db.VarChar(50)
+  monthly_income                     Float?
+  organization_id                    String?
+  origin                             String?                      @db.VarChar(100)
+  taygo_source                       String?                      @db.VarChar(100)
+  timezone                           String?                      @db.VarChar(50)
+  is_deleted                         Boolean                      @default(false)
+  is_converted                       Boolean                      @default(false)
+  status_lifecycle_id                String?                      @db.VarChar(100)
+  home_phone                         String?
+  fico                               Int?
+  current_loan_id                    String?
+  desired_loan_id                    String?
+  activity_log                       activity_log[]
+  bridge_contact_contact             bridge_contact_contact[]
+  bridge_contact_loan                bridge_contact_loan[]
+  bridge_contact_partner             bridge_contact_partner[]
+  bridge_contact_tag                 bridge_contact_tag[]
+  bridge_contact_user                bridge_contact_user[]
+  account                            account                      @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  property                           property?                    @relation(fields: [address_id], references: [id], onDelete: NoAction)
+  loan_contact_current_loan_idToloan loan?                        @relation("contact_current_loan_idToloan", fields: [current_loan_id], references: [id], onDelete: NoAction)
+  loan_contact_desired_loan_idToloan loan?                        @relation("contact_desired_loan_idToloan", fields: [desired_loan_id], references: [id], onDelete: NoAction)
+  organization                       organization?                @relation(fields: [organization_id], references: [id], onDelete: NoAction)
+  contact_status                     contact_status?              @relation(fields: [status_id], references: [id], onDelete: NoAction)
+  contact_status_lifecycle           contact_status_lifecycle?    @relation(fields: [status_lifecycle_id], references: [id], onDelete: NoAction)
+  contact_comment                    contact_comment[]
+  contact_custom_field_value         contact_custom_field_value[]
+  contact_other_associates           contact_other_associates[]
+  contact_reminder                   contact_reminder[]
+  income_source                      income_source[]
+}
+
+model contact_comment {
+  id          String    @id
+  account_id  String    @db.VarChar(100)
+  contact_id  String    @db.VarChar(100)
+  user_id     String    @db.VarChar(100)
+  comment     String
+  active      Boolean   @default(true)
+  created_by  String    @db.VarChar(100)
+  create_time DateTime  @default(now()) @db.Timestamptz(6)
+  updated_by  String?   @db.VarChar(100)
+  update_time DateTime? @db.Timestamptz(6)
+  account     account   @relation(fields: [account_id], references: [id], onDelete: Cascade)
+  contact     contact   @relation(fields: [contact_id], references: [id], onDelete: Cascade)
+  user        user      @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@index([account_id], type: Hash)
+  @@index([active], type: Hash)
+  @@index([contact_id], type: Hash)
+  @@index([create_time(sort: Desc)])
+  @@index([user_id], type: Hash)
+}
+
+model contact_custom_field {
+  id                           String                        @id
+  account_id                   String
+  name                         String
+  type                         String
+  order                        Int
+  purpose                      String?
+  created_by                   String
+  create_time                  DateTime                      @db.Timestamptz(6)
+  create_request               String
+  updated_by                   String?
+  update_time                  DateTime?                     @db.Timestamptz(6)
+  update_request               String?
+  section_id                   String?                       @db.VarChar(100)
+  is_deleted                   Boolean                       @default(false)
+  account                      account                       @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  contact_custom_field_section contact_custom_field_section? @relation(fields: [section_id], references: [id], onDelete: NoAction)
+  contact_custom_field_value   contact_custom_field_value[]
+}
+
+model contact_custom_field_section {
+  id                       String                     @id @db.VarChar(100)
+  account_id               String                     @db.VarChar(100)
+  section_name             String                     @db.VarChar(255)
+  is_deleted               Boolean                    @default(false)
+  created_by               String                     @db.VarChar(100)
+  create_time              DateTime                   @db.Timestamptz(6)
+  create_request           String                     @db.VarChar(100)
+  updated_by               String?                    @db.VarChar(100)
+  update_time              DateTime?                  @db.Timestamptz(6)
+  update_request           String?                    @db.VarChar(100)
+  bridge_section_lifecycle bridge_section_lifecycle[]
+  contact_custom_field     contact_custom_field[]
+}
+
+model contact_custom_field_value {
+  account_id           String
+  contact_id           String
+  custom_field_id      String
+  value                String
+  id                   String               @unique
+  account              account              @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  contact              contact              @relation(fields: [contact_id], references: [id], onDelete: NoAction)
+  contact_custom_field contact_custom_field @relation(fields: [custom_field_id], references: [id], onDelete: NoAction)
+
+  @@id([contact_id, custom_field_id])
+}
+
+model contact_other_associates {
+  id             String  @id @db.VarChar(100)
+  account_id     String  @db.VarChar(100)
+  contact_id     String  @db.VarChar(100)
+  associate_name String  @db.VarChar(255)
+  contact        contact @relation(fields: [contact_id], references: [id], onDelete: NoAction)
+}
+
+model contact_reminder {
+  id            String    @id
+  account_id    String    @db.VarChar(100)
+  contact_id    String    @db.VarChar(100)
+  user_id       String    @db.VarChar(100)
+  type          String    @default("reminder") @db.VarChar(100)
+  title         String?
+  description   String?
+  due_date      DateTime  @db.Timestamptz(6)
+  execute_at    String    @db.VarChar(16)
+  reminder_data String?
+  active        Boolean   @default(true)
+  created_by    String    @db.VarChar(100)
+  create_time   DateTime  @default(now()) @db.Timestamptz(6)
+  updated_by    String?   @db.VarChar(100)
+  update_time   DateTime? @db.Timestamptz(6)
+  account       account   @relation(fields: [account_id], references: [id], onDelete: Cascade)
+  contact       contact   @relation(fields: [contact_id], references: [id], onDelete: Cascade)
+  user          user      @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@index([account_id], type: Hash)
+  @@index([active], type: Hash)
+  @@index([contact_id], type: Hash)
+  @@index([due_date(sort: Desc)])
+  @@index([execute_at], type: Hash)
+  @@index([type], type: Hash)
+  @@index([user_id], type: Hash)
+}
+
+model contact_status {
+  id                       String                    @id
+  account_id               String
+  name                     String
+  order                    Int
+  created_by               String
+  create_time              DateTime                  @db.Timestamptz(6)
+  create_request           String
+  updated_by               String?
+  update_time              DateTime?                 @db.Timestamptz(6)
+  update_request           String?
+  is_converted             Boolean                   @default(false)
+  status_lifecycle_id      String?
+  is_deleted               Boolean                   @default(false)
+  contact                  contact[]
+  account                  account                   @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  contact_status_lifecycle contact_status_lifecycle? @relation(fields: [status_lifecycle_id], references: [id], onDelete: NoAction)
+}
+
+model contact_status_lifecycle {
+  id                       String                     @id
+  lifecycle_name           String
+  created_by               String
+  create_time              DateTime                   @db.Timestamptz(6)
+  create_request           String
+  updated_by               String?
+  update_time              DateTime?                  @db.Timestamptz(6)
+  update_request           String?
+  account_id               String
+  is_deleted               Boolean                    @default(false)
+  bridge_section_lifecycle bridge_section_lifecycle[]
+  contact                  contact[]
+  contact_status           contact_status[]
+}
+
+model contact_tag {
+  id                 String               @id
+  account_id         String
+  name               String
+  order              Int
+  created_by         String
+  create_time        DateTime             @db.Timestamptz(6)
+  create_request     String
+  updated_by         String?
+  update_time        DateTime?            @db.Timestamptz(6)
+  update_request     String?
+  bridge_contact_tag bridge_contact_tag[]
+  account            account              @relation(fields: [account_id], references: [id], onDelete: NoAction)
+}
+
+model element {
+  account_id        String
+  template_id       String?
+  latest_template   String?
+  id                String             @id
+  name              String
+  data              Json
+  create_time       DateTime           @db.Timestamptz(6)
+  type              String
+  created_by        String
+  update_request    String?
+  update_time       DateTime?          @db.Timestamptz(6)
+  updated_by        String?
+  create_request    String
+  latest_version_id String
+  account           account            @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  element_version   element_version    @relation(fields: [latest_version_id], references: [id], onDelete: NoAction)
+  template          template?          @relation(fields: [template_id], references: [id], onDelete: NoAction)
+  template_version  template_version[]
+}
+
+model element_version {
+  account_id     String
+  version        String
+  element_id     String
+  name           String?
+  data           Json?
+  create_time    DateTime  @db.Timestamptz(6)
+  created_by     String
+  update_request String?
+  update_time    DateTime? @db.Timestamptz(6)
+  updated_by     String?
+  create_request String
+  id             String    @id
+  element        element[]
+  account        account   @relation(fields: [account_id], references: [id], onDelete: NoAction)
+
+  @@unique([element_id, version])
+}
+
+model engagement {
+  parent_id      String?
+  event_id       String  @id
+  raw_bucket     String?
+  raw_path       String? @unique
+  event_class    String?
+  event_type     String?
+  event_time     String?
+  create_time    String?
+  event_provider String?
+  event_action   String?
+  event_name     String?
+  event_group    String?
+  event_category String?
+  event_code     String?
+  event_severity String?
+  outcome        String?
+  message        String?
+  reason         String?
+  timezone       String?
+  start_time     String?
+  end_time       String?
+  event_data     Json?
+  channel_id     String? @map("channel.id")
+  channel_type   String? @map("channel.type")
+  resource_id    String? @map("resource.id")
+  resource_type  String? @map("resource.type")
+  source_id      String? @map("source.id")
+  source_type    String? @map("source.type")
+  user_agent     String? @map("user.agent")
+  user_id        String? @map("user.id")
+  user_pool      String? @map("user.pool")
+  user_type      String? @map("user.type")
+  test_col_01    String?
+}
+
+model event_category {
+  id                           Int            @id @default(autoincrement())
+  event_category_name          String         @unique
+  event_targeted_to_table_name String?
+  event_category_description   String?
+  created_at                   DateTime       @default(now()) @db.Timestamptz(6)
+  updated_at                   DateTime?      @db.Timestamptz(6)
+  activity_log                 activity_log[]
+  event_type                   event_type[]
+  events_v2                    events_v2[]
+}
+
+model event_type {
+  id                     Int            @id @default(autoincrement())
+  event_type             String
+  event_category_id      Int
+  event_type_description String?
+  db_action              String?
+  created_at             DateTime       @default(now()) @db.Timestamptz(6)
+  updated_at             DateTime?      @db.Timestamptz(6)
+  activity_log           activity_log[]
+  event_category         event_category @relation(fields: [event_category_id], references: [id], onDelete: NoAction)
+  events_v2              events_v2[]
+}
+
+model events {
+  event_action                    String?
+  event_category                  String?
+  event_class                     String?
+  event_code                      String?
+  event_data                      Json?
+  event_group                     String?
+  event_id                        String    @id
+  event_name                      String?
+  event_provider                  String?
+  event_severity                  String?
+  event_type                      String?
+  message                         String?
+  outcome                         String?
+  parent_id                       String?
+  raw_bucket                      String?
+  raw_path                        String?   @unique
+  reason                          String?
+  create_time                     DateTime? @db.Timestamptz(6)
+  end_time                        DateTime? @db.Timestamptz(6)
+  event_time                      DateTime? @db.Timestamptz(6)
+  start_time                      DateTime? @db.Timestamptz(6)
+  destination_id                  String?   @map("destination.id")
+  channel_id                      String?   @map("channel.id")
+  channel_type                    String?   @map("channel.type")
+  destination_location            String?   @map("destination.location")
+  destination_type                String?   @map("destination.type")
+  device_ip                       String?   @map("device.ip")
+  device_location_city            String?   @map("device.location.city")
+  device_location_continent       String?   @map("device.location.continent")
+  device_location_coordinates_lat String?   @map("device.location.coordinates.lat")
+  device_location_coordinates_lon String?   @map("device.location.coordinates.lon")
+  device_location_country         String?   @map("device.location.country")
+  device_location_zip             String?   @map("device.location.zip")
+  device_timezone                 String?   @map("device.timezone")
+  device_type                     String?   @map("device.type")
+  referral_id                     String?   @map("referral.id")
+  referral_type                   String?   @map("referral.type")
+  resource_id                     String?   @map("resource.id")
+  resource_type                   String?   @map("resource.type")
+  source_id                       String?   @map("source.id")
+  source_type                     String?   @map("source.type")
+  user_agent                      String?   @map("user.agent")
+  user_id                         String?   @map("user.id")
+  user_pool                       String?   @map("user.pool")
+  user_type                       String?   @map("user.type")
+  timezone                        String?
+}
+
+model events_v2 {
+  event_id                        String          @id
+  event_category_id               Int?
+  event_category                  String?
+  event_type_id                   Int?
+  event_type                      String?
+  event_data                      Json
+  event_provider                  String?
+  raw_bucket                      String?
+  raw_path                        String?         @unique
+  reason                          String?
+  create_time                     DateTime        @default(now()) @db.Timestamptz(6)
+  destination_location            String?         @map("destination.location")
+  destination_type                String?         @map("destination.type")
+  device_ip                       String?         @map("device.ip")
+  device_location_city            String?         @map("device.location.city")
+  device_location_continent       String?         @map("device.location.continent")
+  device_location_coordinates_lat String?         @map("device.location.coordinates.lat")
+  device_location_coordinates_lon String?         @map("device.location.coordinates.lon")
+  device_location_country         String?         @map("device.location.country")
+  device_location_zip             String?         @map("device.location.zip")
+  device_timezone                 String?         @map("device.timezone")
+  device_type                     String?         @map("device.type")
+  user_pool                       String?         @map("user.pool")
+  destination_id                  String?         @map("destination.id")
+  end_time                        DateTime?       @db.Timestamptz(6)
+  event_class                     String?
+  event_code                      String?
+  event_severity                  String?
+  event_time                      DateTime        @db.Timestamptz(6)
+  message                         String?
+  owner_id                        String?
+  referral_id                     String?         @map("referral.id")
+  referral_type                   String?         @map("referral.type")
+  start_time                      DateTime?       @db.Timestamptz(6)
+  resource_id                     String?
+  resource_type                   String?
+  source_id                       String?
+  source_type                     String?
+  time_zone                       String?
+  channel_id                      String?
+  channel_type                    String?
+
+  @@index([event_time])
+}
+
+model income_source {
+  id                   String        @id
+  account_id           String
+  contact_id           String?
+  address_id           String?
+  organization_id      String?
+  type                 String?
+  employer_name        String?
+  title                String?
+  phone                String?
+  amount               Float?
+  income_amount_period String?
+  start_date           DateTime?     @db.Timestamptz(6)
+  end_date             DateTime?     @db.Timestamptz(6)
+  description          String?
+  created_by           String
+  create_time          DateTime      @db.Timestamptz(6)
+  create_request       String
+  updated_by           String?
+  update_time          DateTime?     @db.Timestamptz(6)
+  update_request       String?
+  employer_phone       String?       @db.VarChar(25)
+  status               String?       @db.VarChar(50)
+  account              account       @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  property             property?     @relation(fields: [address_id], references: [id], onDelete: NoAction)
+  contact              contact?      @relation(fields: [contact_id], references: [id], onDelete: NoAction)
+  organization         organization? @relation(fields: [organization_id], references: [id], onDelete: NoAction)
+}
+
+model links {
+  id                              String    @id
+  account_id                      String
+  source_id                       String
+  destination_id                  String
+  create_time                     DateTime  @db.Timestamptz(6)
+  created_by                      String
+  update_request                  String?
+  update_time                     DateTime? @db.Timestamptz(6)
+  updated_by                      String?
+  create_request                  String
+  account                         account   @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  page_links_destination_idTopage page      @relation("links_destination_idTopage", fields: [destination_id], references: [id], onDelete: NoAction)
+  page_links_source_idTopage      page      @relation("links_source_idTopage", fields: [source_id], references: [id], onDelete: NoAction)
+}
+
+model lo_lead {
+  id                      String          @id
+  assignment_id           String?
+  billed                  Boolean         @default(false)
+  boberdoo_id             Int?
+  call_center_service     String?
+  company_id              String?
+  credit_status           String?
+  email                   String?
+  first_name              String?
+  language                String?
+  last_name               String?
+  owner_id                String?
+  phone                   String?
+  product_id              String?
+  provider                String?
+  vendor                  String?
+  secondary_phone         String?
+  source                  String?
+  subscription_id         String
+  price                   Float           @default(0)
+  transfer_price          Float           @default(0)
+  transfer_status         String?
+  lead_type               String?
+  lead_category           String?
+  address_city            String?         @map("address.city")
+  address_country         String?         @map("address.country")
+  address_state           String?         @map("address.state")
+  address_street          String?         @map("address.street")
+  address_street2         String?         @map("address.street2")
+  address_street3         String?         @map("address.street3")
+  address_zip             String?         @map("address.zip")
+  loan_down_payment       Float?          @map("loan.down_payment")
+  loan_interest_rate      Float?          @map("loan.interest_rate")
+  loan_monthly_payment    Float?          @map("loan.monthly_payment")
+  loan_purchase_price     Float?          @map("loan.purchase_price")
+  loan_transaction_type   String?         @map("loan.transaction_type")
+  loan_type               String?         @map("loan.type")
+  created_by              String?
+  create_request          String?
+  create_time             DateTime?       @db.Timestamptz(6)
+  updated_by              String?
+  update_request          String?
+  update_time             DateTime?       @db.Timestamptz(6)
+  account_id              String?
+  lo_lead_raw_id          Int?
+  loan_range              Json?
+  credited_price          Float           @default(0)
+  credited_transfer_price Float           @default(0)
+  refunded_price          Float           @default(0)
+  refunded_transfer_price Float           @default(0)
+  transfer_date           DateTime?       @db.Timestamptz(6)
+  lo_lead_raw             lo_lead_raw?    @relation(fields: [lo_lead_raw_id], references: [id])
+  lo_subscription         lo_subscription @relation(fields: [subscription_id], references: [id])
+}
+
+model lo_lead_raw {
+  id                       Int              @id @default(autoincrement())
+  account_id               String?
+  cost                     Float?
+  allowed_times_sold       Int?
+  return_hash_type         String?
+  return_hash_value_type   String?
+  skip_partner_id          String?
+  return_best_price        Int?             @db.SmallInt
+  src_id                   String?
+  type                     Int?             @db.SmallInt
+  test_lead                Int?             @db.SmallInt
+  skip_xsl                 Int?             @db.SmallInt
+  match_with_partner_id    Int[]            @db.SmallInt
+  redirect_url             String?
+  ip_address               String?
+  src                      String?
+  landing_page             String?
+  sub_id                   String?
+  pub_id                   String?
+  optout                   String?
+  unique_identifier        String?
+  user_agent               String?
+  tcpa_consent             String?
+  tcpa_language            String?
+  trusted_form_url         String?
+  leadid_token             String?
+  first_name               String?
+  last_name                String?
+  address                  String?
+  city                     String?
+  state                    String?
+  zip                      String?
+  primary_phone            String?
+  secondary_phone          String?
+  email                    String?
+  estimated_purchase_price Decimal?         @db.Decimal(10, 2)
+  down_payment             Decimal?         @db.Decimal(10, 2)
+  found_home               String?
+  moving_date              String?
+  new_property_zip         String?
+  loan_type                String?
+  product_type             String?
+  cash_out_amount          Decimal?         @db.Decimal(10, 2)
+  dob                      String?
+  property_type            String?
+  property_use             String?
+  refi_goal                String?
+  working_with_an_agent    String?
+  bankruptcy_last_7_years  String?
+  foreclosure_last_7_years String?
+  credit_status            String?
+  loan_value               Decimal?         @db.Decimal(10, 2)
+  home_value               Decimal?         @db.Decimal(10, 2)
+  first_mortgage_balance   Decimal?         @db.Decimal(10, 2)
+  first_mortgage_rate      Int?             @db.SmallInt
+  second_mortgage          String?
+  second_mortgage_balance  Decimal?         @db.Decimal(10, 2)
+  second_mortgage_rate     Int?             @db.SmallInt
+  ltv                      Int?             @db.SmallInt
+  ssn                      String?
+  mode                     String?
+  status                   String?
+  create_request           String?
+  create_time              DateTime?        @db.Timestamptz(6)
+  created_by               String?
+  update_request           String?
+  update_time              DateTime?        @db.Timestamptz(6)
+  updated_by               String?
+  reason                   String?
+  lo_lead_id               String?
+  extra_data               Json?
+  subscription_id          String?
+  billing_status           String?
+  lo_lead                  lo_lead[]
+  lo_subscription          lo_subscription? @relation(fields: [subscription_id], references: [id])
+}
+
+model lo_lead_source {
+  id                   String    @id
+  color                String
+  product_id           String?
+  tile_color           String
+  tile_description     String
+  tile_highlights      String[]
+  title                String
+  create_time          DateTime? @db.Timestamptz(6)
+  update_time          DateTime? @db.Timestamptz(6)
+  active               Boolean   @default(true)
+  callcenter           String    @default("MarketTech")
+  dedicated_callcenter Boolean   @default(false)
+  notification_emails  String[]  @default([])
+  order                Int?
+}
+
+model lo_subscription {
+  id                                                                                                     String                        @id
+  stripe_subscription                                                                                    String?                       @unique
+  stripe_status                                                                                          String?
+  stripe_payment_intent                                                                                  String?
+  account_id                                                                                             String?
+  auto_billing                                                                                           Boolean?
+  boberdoo_id                                                                                            Int?
+  boberdoo_balance                                                                                       Float?
+  bundle_title                                                                                           String?
+  cancel_time                                                                                            DateTime?                     @db.Timestamptz(6)
+  company_id                                                                                             String?
+  created_by                                                                                             String?
+  create_request                                                                                         String?
+  create_time                                                                                            DateTime?                     @db.Timestamptz(6)
+  current_step                                                                                           String?
+  daily_budget_limit                                                                                     Float?
+  daily_unit_limit                                                                                       Int?
+  deactivate_time                                                                                        DateTime?                     @db.Timestamptz(6)
+  deactivate_reason                                                                                      String?
+  finish_time                                                                                            DateTime?                     @db.Timestamptz(6)
+  inactive                                                                                               Boolean?
+  price                                                                                                  Float?
+  price_subscription_item_id                                                                             String?                       @unique
+  product_id                                                                                             String?
+  transfer_price                                                                                         Float?
+  transfer_price_subscription_item_id                                                                    String?                       @unique
+  updated_by                                                                                             String?
+  update_request                                                                                         String?
+  update_time                                                                                            DateTime?                     @db.Timestamptz(6)
+  user_id                                                                                                String?
+  active_lead_transfer                                                                                   Boolean?
+  agent_state                                                                                            String?
+  call_center_service                                                                                    String[]
+  credit_status                                                                                          String[]
+  schedule_days                                                                                          String[]                      @map("schedule.days")
+  schedule_from                                                                                          String?                       @map("schedule.from")
+  schedule_to                                                                                            String?                       @map("schedule.to")
+  time_zone                                                                                              String?
+  primary_phone_type                                                                                     String?
+  primary_phone                                                                                          String?
+  primary_phone_verified                                                                                 Boolean?
+  secondary_phone_type                                                                                   String?
+  secondary_phone                                                                                        String?
+  secondary_phone_verified                                                                               Boolean?
+  alert_list                                                                                             String[]
+  address_city                                                                                           String?                       @map("address.city")
+  address_country                                                                                        String?                       @map("address.country")
+  address_state                                                                                          String?                       @map("address.state")
+  address_street                                                                                         String?                       @map("address.street")
+  address_street2                                                                                        String?                       @map("address.street2")
+  address_street3                                                                                        String?                       @map("address.street3")
+  address_zip                                                                                            String?                       @map("address.zip")
+  preferred_meeting_place_city                                                                           String?                       @map("preferred_meeting_place.city")
+  preferred_meeting_place_country                                                                        String?                       @map("preferred_meeting_place.country")
+  preferred_meeting_place_state                                                                          String?                       @map("preferred_meeting_place.state")
+  preferred_meeting_place_street                                                                         String?                       @map("preferred_meeting_place.street")
+  preferred_meeting_place_street2                                                                        String?                       @map("preferred_meeting_place.street2")
+  preferred_meeting_place_street3                                                                        String?                       @map("preferred_meeting_place.street3")
+  preferred_meeting_place_zip                                                                            String?                       @map("preferred_meeting_place.zip")
+  county                                                                                                 String?
+  preferred_communication_schedule_days                                                                  String[]                      @map("preferred_communication_schedule.days")
+  preferred_communication_schedule_from                                                                  String?                       @map("preferred_communication_schedule.from")
+  preferred_communication_schedule_to                                                                    String?                       @map("preferred_communication_schedule.to")
+  info_email                                                                                             String?
+  info_phone                                                                                             String?
+  info_name                                                                                              String?
+  info_website                                                                                           String?
+  lead_type                                                                                              String[]
+  transaction_type                                                                                       String[]
+  loan_ranges                                                                                            Json
+  loan_type                                                                                              String[]
+  vendors                                                                                                String[]
+  total_match_amount                                                                                     Float?                        @default(0)
+  total_transfer_amount                                                                                  Float?                        @default(0)
+  total_leads_matched                                                                                    Int?                          @default(0)
+  total_leads_transfered                                                                                 Int?                          @default(0)
+  total_credited                                                                                         Float?                        @default(0)
+  total_refunded                                                                                         Float?                        @default(0)
+  lead_category                                                                                          String[]
+  weight                                                                                                 Int                           @default(0)
+  lo_lead                                                                                                lo_lead[]
+  lo_lead_raw                                                                                            lo_lead_raw[]
+  stripe_subscription_item_lo_subscription_price_subscription_item_idTostripe_subscription_item          stripe_subscription_item?     @relation("lo_subscription_price_subscription_item_idTostripe_subscription_item", fields: [price_subscription_item_id], references: [id])
+  stripe_subscription_item_lo_subscription_transfer_price_subscription_item_idTostripe_subscription_item stripe_subscription_item?     @relation("lo_subscription_transfer_price_subscription_item_idTostripe_subscription_item", fields: [transfer_price_subscription_item_id], references: [id])
+  lo_subscription_daily_stats                                                                            lo_subscription_daily_stats[]
+
+  @@index([vendors, inactive, current_step, auto_billing])
+}
+
+model lo_subscription_daily_stats {
+  lo_subscription_id     String
+  total_match_amount     Float?          @default(0)
+  total_transfer_amount  Float?          @default(0)
+  total_leads_matched    Int?            @default(0)
+  total_leads_transfered Int?            @default(0)
+  created_by             String?
+  create_request         String?
+  create_time            DateTime?       @db.Timestamptz(6)
+  updated_by             String?
+  update_request         String?
+  update_time            DateTime?       @db.Timestamptz(6)
+  stats_date             DateTime        @db.Timestamptz(6)
+  lo_subscription        lo_subscription @relation(fields: [lo_subscription_id], references: [id])
+
+  @@id([lo_subscription_id, stats_date])
+}
+
+model loan {
+  id                                    String                @id
+  account_id                            String
+  loan_officer_id                       String?
+  address_id                            String?
+  purpose                               String?
+  product                               String?
+  amount                                Float?
+  interest_rate                         Float?
+  term                                  String?
+  down_payment                          Float?
+  remaining_term                        String?
+  notes                                 String?
+  mortgage_insurance                    Float?
+  status                                String
+  closing_date                          DateTime?             @db.Timestamptz(6)
+  created_by                            String
+  create_time                           DateTime              @db.Timestamptz(6)
+  create_request                        String
+  updated_by                            String?
+  update_time                           DateTime?             @db.Timestamptz(6)
+  update_request                        String?
+  remaining_value                       Float?
+  amortization                          String?
+  desired_or_current                    String
+  desired_cash_out_amount               Float?
+  desired_down_payment                  Float?
+  loan_property_type                    String?               @db.VarChar(255)
+  loan_units                            Float?
+  timeline                              String?               @db.VarChar(80)
+  loan_property_occupancy               String?
+  loan_property_value                   Float?
+  loan_type                             String?
+  bridge_contact_loan                   bridge_contact_loan[]
+  contact_contact_current_loan_idToloan contact[]             @relation("contact_current_loan_idToloan")
+  contact_contact_desired_loan_idToloan contact[]             @relation("contact_desired_loan_idToloan")
+  account                               account               @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  property                              property?             @relation(fields: [address_id], references: [id], onDelete: NoAction)
+  user                                  user?                 @relation(fields: [loan_officer_id], references: [id], onDelete: NoAction)
+}
+
+model organization {
+  id                     String          @id
+  account_id             String
+  address_id             String?
+  name                   String?
+  type                   String?
+  phone                  String?
+  email                  String?
+  nmls_id                String?
+  created_by             String
+  create_time            DateTime        @db.Timestamptz(6)
+  create_request         String
+  updated_by             String?
+  update_time            DateTime?       @db.Timestamptz(6)
+  update_request         String?
+  parent_organization_id String?
+  contact                contact[]
+  income_source          income_source[]
+  account                account         @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  property               property?       @relation(fields: [address_id], references: [id], onDelete: NoAction)
+  organization           organization?   @relation("organizationToorganization", fields: [parent_organization_id], references: [id])
+  other_organization     organization[]  @relation("organizationToorganization")
+  partner                partner[]
+}
+
+model page {
+  account_id                       String
+  id                               String            @id
+  name                             String
+  body                             Json
+  template_id                      String?
+  path                             String?
+  create_time                      DateTime          @db.Timestamptz(6)
+  header_meta                      Json?
+  theme_id                         String
+  created_by                       String
+  update_request                   String?
+  update_time                      DateTime?         @db.Timestamptz(6)
+  updated_by                       String?
+  create_request                   String
+  category                         page_category?
+  owner_id                         String
+  type                             page_type
+  status                           page_status?
+  latest_template_id               String?
+  latest_version_id                String
+  links_links_destination_idTopage links[]           @relation("links_destination_idTopage")
+  links_links_source_idTopage      links[]           @relation("links_source_idTopage")
+  account                          account           @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  template_version                 template_version? @relation(fields: [latest_template_id], references: [id], onDelete: NoAction)
+  page_version                     page_version      @relation(fields: [latest_version_id], references: [id], onDelete: NoAction)
+  template                         template?         @relation(fields: [template_id], references: [id], onDelete: NoAction)
+  routing                          routing[]
+
+  @@unique([account_id, path])
+}
+
+model page_version {
+  account_id     String
+  version        String
+  page_id        String
+  name           String?
+  body           Json?
+  create_time    DateTime  @db.Timestamptz(6)
+  created_by     String
+  update_request String?
+  update_time    DateTime? @db.Timestamptz(6)
+  updated_by     String?
+  create_request String
+  id             String    @id
+  page           page[]
+  account        account   @relation(fields: [account_id], references: [id], onDelete: NoAction)
+
+  @@unique([page_id, version])
+}
+
+model partner {
+  id                     String                   @id
+  account_id             String
+  organization_id        String?
+  type                   String?
+  first_name             String
+  last_name              String
+  personal_email         String?
+  work_email             String?
+  mobile_phone           String?
+  work_phone             String?
+  created_by             String
+  create_time            DateTime                 @db.Timestamptz(6)
+  create_request         String
+  updated_by             String?
+  update_time            DateTime?                @db.Timestamptz(6)
+  update_request         String?
+  address_id             String?
+  bridge_contact_partner bridge_contact_partner[]
+  account                account                  @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  property               property?                @relation(fields: [address_id], references: [id], onDelete: NoAction)
+  organization           organization?            @relation(fields: [organization_id], references: [id], onDelete: NoAction)
+}
+
+model persons {
+  personid  Int     @id
+  lastname  String?
+  firstname String?
+  address   String?
+  city      String?
+}
+
+model property {
+  id                 String          @id
+  account_id         String
+  type               String
+  street_1           String?
+  street_2           String?
+  city               String?
+  state              String?
+  country            String?
+  taxes              Float?
+  misc_exp           Float?
+  rental_income      Float?
+  square_footage     Float?
+  bedrooms           Float?
+  baths              Float?
+  postal             String?
+  created_by         String
+  create_time        DateTime        @db.Timestamptz(6)
+  create_request     String
+  updated_by         String?
+  update_time        DateTime?       @db.Timestamptz(6)
+  update_request     String?
+  actual_value       Float?
+  estimated_value    Float?
+  hazard_insurance   Float?
+  property_units     Float?
+  property_occupancy String?         @db.VarChar(50)
+  contact            contact[]
+  income_source      income_source[]
+  loan               loan[]
+  organization       organization[]
+  partner            partner[]
+  account            account         @relation(fields: [account_id], references: [id], onDelete: NoAction)
+}
+
+model routing {
+  account_id                          String
+  subdomain                           String?
+  path                                String    @id
+  resource_id                         String
+  create_time                         DateTime  @db.Timestamptz(6)
+  created_by                          String
+  update_request                      String?
+  update_time                         DateTime? @db.Timestamptz(6)
+  updated_by                          String?
+  create_request                      String
+  account_routing_account_idToaccount account   @relation("routing_account_idToaccount", fields: [account_id], references: [id], onDelete: NoAction)
+  page                                page      @relation(fields: [resource_id], references: [id], onDelete: NoAction)
+  account_routing_subdomainToaccount  account?  @relation("routing_subdomainToaccount", fields: [subdomain], references: [subdomain], onDelete: NoAction)
+}
+
+model stripe_subscription_item {
+  id                                                                                            String           @id
+  stripe_price                                                                                  String?
+  is_transfer_price                                                                             Boolean?
+  lo_subscription_lo_subscription_price_subscription_item_idTostripe_subscription_item          lo_subscription? @relation("lo_subscription_price_subscription_item_idTostripe_subscription_item")
+  lo_subscription_lo_subscription_transfer_price_subscription_item_idTostripe_subscription_item lo_subscription? @relation("lo_subscription_transfer_price_subscription_item_idTostripe_subscription_item")
+}
+
+model template {
+  account_id                                                    String
+  id                                                            String                @id
+  type                                                          String
+  name                                                          String
+  data                                                          Json
+  create_time                                                   DateTime              @db.Timestamptz(6)
+  thumbnail                                                     String
+  created_by                                                    String
+  update_request                                                String?
+  update_time                                                   DateTime?             @db.Timestamptz(6)
+  updated_by                                                    String?
+  create_request                                                String
+  latest_version_id                                             String
+  element                                                       element[]
+  page                                                          page[]
+  account                                                       account               @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  template_version                                              template_version      @relation(fields: [latest_version_id], references: [id], onDelete: NoAction)
+  template_dependency_template_dependency_resource_idTotemplate template_dependency[] @relation("template_dependency_resource_idTotemplate")
+  template_dependency_template_dependency_template_idTotemplate template_dependency[] @relation("template_dependency_template_idTotemplate")
+}
+
+model template_dependency {
+  id                                                 String           @id
+  account_id                                         String
+  template_id                                        String
+  resource_id                                        String
+  create_time                                        DateTime         @db.Timestamptz(6)
+  created_by                                         String
+  update_request                                     String?
+  update_time                                        DateTime?        @db.Timestamptz(6)
+  updated_by                                         String?
+  create_request                                     String
+  version_id                                         String
+  account                                            account          @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  template_template_dependency_resource_idTotemplate template         @relation("template_dependency_resource_idTotemplate", fields: [resource_id], references: [id], onDelete: NoAction)
+  template_template_dependency_template_idTotemplate template         @relation("template_dependency_template_idTotemplate", fields: [template_id], references: [id], onDelete: NoAction)
+  template_version                                   template_version @relation(fields: [version_id], references: [id], onDelete: NoAction)
+}
+
+model template_version {
+  account_id          String
+  version             String
+  template_id         String
+  type                String?
+  name                String?
+  data                Json?
+  create_time         DateTime              @db.Timestamptz(6)
+  created_by          String
+  update_request      String?
+  update_time         DateTime?             @db.Timestamptz(6)
+  updated_by          String?
+  create_request      String
+  id                  String                @id
+  page                page[]
+  template            template[]
+  template_dependency template_dependency[]
+  account             account               @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  element             element[]
+
+  @@unique([template_id, version])
+}
+
+model theme {
+  id             String    @id
+  name           String?
+  theme          Json
+  create_time    DateTime  @db.Timestamptz(6)
+  created_by     String
+  update_request String?
+  update_time    DateTime? @db.Timestamptz(6)
+  updated_by     String?
+  create_request String
+}
+
+model user {
+  id                           String                         @id
+  account_id                   String
+  user_type                    String?
+  created_by                   String
+  create_time                  DateTime                       @db.Timestamptz(6)
+  create_request               String?
+  updated_by                   String?
+  update_time                  DateTime?                      @db.Timestamptz(6)
+  update_request               String?
+  email                        String?
+  email_verified               Boolean                        @default(false)
+  firstname                    String?
+  lastname                     String?
+  phone                        String?
+  phone_number_verified        Boolean                        @default(false)
+  profile_image                String?
+  activity_log                 activity_log[]
+  bridge_contact_user          bridge_contact_user[]
+  contact_comment              contact_comment[]
+  contact_reminder             contact_reminder[]
+  loan                         loan[]
+  account                      account                        @relation(fields: [account_id], references: [id], onDelete: NoAction)
+  workflow_template_permission workflow_template_permission[]
+}
+
+model workflow {
+  account_id              String
+  id                      String                    @id
+  source_template         String?                   @unique
+  status                  workflow_status
+  steps                   Json
+  target_filter           String
+  api_version             String
+  entity_name             String
+  first_step              String
+  flow_type               String
+  name                    String
+  recurring               Json?
+  start_time              String
+  create_time             DateTime                  @db.Timestamptz(6)
+  create_request          String                    @db.VarChar(100)
+  created_by              String                    @db.VarChar(100)
+  update_request          String?                   @db.VarChar(100)
+  update_time             DateTime?                 @db.Timestamptz(6)
+  updated_by              String?                   @db.VarChar(100)
+  retry                   Json?
+  workflow_state          workflow_state[]
+  workflow_template       workflow_template[]
+  workflow_target_filters workflow_target_filters[]
+}
+
+model workflow_state {
+  id             String    @id
+  workflow_id    String
+  entity_name    String
+  api_version    String
+  steps          Json
+  created_by     String    @db.VarChar(100)
+  create_time    DateTime  @db.Timestamptz(6)
+  create_request String    @db.VarChar(100)
+  updated_by     String?   @db.VarChar(100)
+  update_time    DateTime? @db.Timestamptz(6)
+  update_request String?   @db.VarChar(100)
+  workflow       workflow  @relation(fields: [workflow_id], references: [id])
+}
+
+model workflow_target_filters {
+  id       String     @id
+  query    Json
+  workflow workflow[]
+}
+
+model workflow_template {
+  id                           String                         @id
+  workflow_id                  String
+  workflow_data                Json
+  version                      String
+  create_request               String                         @db.VarChar(100)
+  create_time                  DateTime                       @db.Timestamptz(6)
+  created_by                   String                         @db.VarChar(100)
+  update_request               String?                        @db.VarChar(100)
+  update_time                  DateTime?                      @db.Timestamptz(6)
+  updated_by                   String?                        @db.VarChar(100)
+  workflow                     workflow                       @relation(fields: [workflow_id], references: [id])
+  workflow_template_permission workflow_template_permission[]
+}
+
+model workflow_template_permission {
+  id                   String            @id
+  account_id           String
+  user_id              String
+  workflow_template_id String
+  permission           permission
+  create_request       String            @db.VarChar(100)
+  create_time          DateTime          @db.Timestamptz(6)
+  created_by           String            @db.VarChar(100)
+  update_request       String?           @db.VarChar(100)
+  update_time          DateTime?         @db.Timestamptz(6)
+  updated_by           String?           @db.VarChar(100)
+  account              account           @relation(fields: [account_id], references: [id])
+  user                 user              @relation(fields: [user_id], references: [id])
+  workflow_template    workflow_template @relation(fields: [workflow_template_id], references: [id])
+}
+
+enum page_category {
+  home_page
+  about_us
+  apply_now
+  get_a_quote
+  loan_types
+}
+
+enum page_status {
+  unpublished
+  published
+}
+
+enum page_type {
+  template_page
+  html_page
+}
+
+enum permission {
+  none
+  read
+  write
+  admin
+}
+
+enum workflow_status {
+  active
+  paused
+}
