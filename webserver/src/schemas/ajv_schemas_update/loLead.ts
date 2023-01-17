@@ -28,14 +28,11 @@ const loLead_schema = {
     required: ['companyId'],
     properties: { apicolname: loLead_ajv.companyId.api},	
   },{
-    required: ['creditStatus'],
-    properties: { apicolname: loLead_ajv.creditStatus.api},	
-  },{
     required: ['email'],
     properties: { apicolname: loLead_ajv.email.api},	
   },{
-    required: ['firstName'],
-    properties: { apicolname: loLead_ajv.firstName.api},	
+    required: ['language'],
+    properties: { apicolname: loLead_ajv.language.api},	
   },{
     required: ['lastName'],
     properties: { apicolname: loLead_ajv.lastName.api},	
@@ -45,9 +42,6 @@ const loLead_schema = {
   },{
     required: ['phone'],
     properties: { apicolname: loLead_ajv.phone.api},	
-  },{
-    required: ['productId'],
-    properties: { apicolname: loLead_ajv.productId.api},	
   },{
     required: ['provider'],
     properties: { apicolname: loLead_ajv.provider.api},	
@@ -61,8 +55,20 @@ const loLead_schema = {
     required: ['source'],
     properties: { apicolname: loLead_ajv.source.api},	
   },{
+    required: ['subscriptionId'],
+    properties: { apicolname: loLead_ajv.subscriptionId.api},	
+  },{
     required: ['price'],
     properties: { apicolname: loLead_ajv.price.api},	
+  },{
+    required: ['transferStatus'],
+    properties: { apicolname: loLead_ajv.transferStatus.api},	
+  },{
+    required: ['leadType'],
+    properties: { apicolname: loLead_ajv.leadType.api},	
+  },{
+    required: ['leadCategory'],
+    properties: { apicolname: loLead_ajv.leadCategory.api},	
   },{
     required: ['addressCity'],
     properties: { apicolname: loLead_ajv.addressCity.api},	
@@ -73,8 +79,14 @@ const loLead_schema = {
     required: ['addressStreet'],
     properties: { apicolname: loLead_ajv.addressStreet.api},	
   },{
+    required: ['addressStreet2'],
+    properties: { apicolname: loLead_ajv.addressStreet2.api},	
+  },{
     required: ['loanDownPayment'],
     properties: { apicolname: loLead_ajv.loanDownPayment.api},	
+  },{
+    required: ['loanInterestRate'],
+    properties: { apicolname: loLead_ajv.loanInterestRate.api},	
   },{
     required: ['loanMonthlyPayment'],
     properties: { apicolname: loLead_ajv.loanMonthlyPayment.api},	
@@ -85,53 +97,53 @@ const loLead_schema = {
     required: ['createRequest'],
     properties: { apicolname: loLead_ajv.createRequest.api},	
   },{
+    required: ['createTime'],
+    properties: { apicolname: loLead_ajv.createTime.api},	
+  },{
+    required: ['updatedBy'],
+    properties: { apicolname: loLead_ajv.updatedBy.api},	
+  },{
+    required: ['updateTime'],
+    properties: { apicolname: loLead_ajv.updateTime.api},	
+  },{
     required: ['loLeadRawId'],
     properties: { apicolname: loLead_ajv.loLeadRawId.api},	
-  },{
-    required: ['loanRange'],
-    properties: { apicolname: loLead_ajv.loanRange.api},	
   },{
     required: ['creditedTransferPrice'],
     properties: { apicolname: loLead_ajv.creditedTransferPrice.api},	
   },{
+    required: ['refundedPrice'],
+    properties: { apicolname: loLead_ajv.refundedPrice.api},	
+  },{
     required: ['transferDate'],
     properties: { apicolname: loLead_ajv.transferDate.api},	
   },{
-    required: ['leadType'],
-    properties: { apicolname: loLead_ajv.leadType.api},	
-  },{
-    required: ['createdBy'],
-    properties: { apicolname: loLead_ajv.createdBy.api},	
-  },{
-    required: ['addressState'],
-    properties: { apicolname: loLead_ajv.addressState.api},	
+    required: ['firstName'],
+    properties: { apicolname: loLead_ajv.firstName.api},	
   },{
     required: ['updateRequest'],
     properties: { apicolname: loLead_ajv.updateRequest.api},	
   },{
-    required: ['leadCategory'],
-    properties: { apicolname: loLead_ajv.leadCategory.api},	
+    required: ['addressState'],
+    properties: { apicolname: loLead_ajv.addressState.api},	
   },{
-    required: ['createTime'],
-    properties: { apicolname: loLead_ajv.createTime.api},	
+    required: ['refundedTransferPrice'],
+    properties: { apicolname: loLead_ajv.refundedTransferPrice.api},	
   },{
     required: ['addressZip'],
     properties: { apicolname: loLead_ajv.addressZip.api},	
   },{
-    required: ['subscriptionId'],
-    properties: { apicolname: loLead_ajv.subscriptionId.api},	
-  },{
-    required: ['refundedPrice'],
-    properties: { apicolname: loLead_ajv.refundedPrice.api},	
-  },{
     required: ['transferPrice'],
     properties: { apicolname: loLead_ajv.transferPrice.api},	
   },{
-    required: ['addressStreet2'],
-    properties: { apicolname: loLead_ajv.addressStreet2.api},	
+    required: ['loanPurchasePrice'],
+    properties: { apicolname: loLead_ajv.loanPurchasePrice.api},	
   },{
-    required: ['language'],
-    properties: { apicolname: loLead_ajv.language.api},	
+    required: ['creditedPrice'],
+    properties: { apicolname: loLead_ajv.creditedPrice.api},	
+  },{
+    required: ['creditStatus'],
+    properties: { apicolname: loLead_ajv.creditStatus.api},	
   },]
 };
 

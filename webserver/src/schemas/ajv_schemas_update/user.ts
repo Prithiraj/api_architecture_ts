@@ -19,9 +19,6 @@ const user_schema = {
     required: ['userType'],
     properties: { apicolname: user_ajv.userType.api},	
   },{
-    required: ['createdBy'],
-    properties: { apicolname: user_ajv.createdBy.api},	
-  },{
     required: ['createTime'],
     properties: { apicolname: user_ajv.createTime.api},	
   },{
@@ -31,23 +28,17 @@ const user_schema = {
     required: ['updatedBy'],
     properties: { apicolname: user_ajv.updatedBy.api},	
   },{
+    required: ['updateTime'],
+    properties: { apicolname: user_ajv.updateTime.api},	
+  },{
     required: ['updateRequest'],
     properties: { apicolname: user_ajv.updateRequest.api},	
   },{
-    required: ['emailVerified'],
-    properties: { apicolname: user_ajv.emailVerified.api},	
-  },{
-    required: ['profileImage'],
-    properties: { apicolname: user_ajv.profileImage.api},	
-  },{
-    required: ['firstname'],
-    properties: { apicolname: user_ajv.firstname.api},	
-  },{
-    required: ['phoneNumberVerified'],
-    properties: { apicolname: user_ajv.phoneNumberVerified.api},	
-  },{
     required: ['email'],
     properties: { apicolname: user_ajv.email.api},	
+  },{
+    required: ['emailVerified'],
+    properties: { apicolname: user_ajv.emailVerified.api},	
   },{
     required: ['lastname'],
     properties: { apicolname: user_ajv.lastname.api},	
@@ -55,8 +46,11 @@ const user_schema = {
     required: ['phone'],
     properties: { apicolname: user_ajv.phone.api},	
   },{
-    required: ['updateTime'],
-    properties: { apicolname: user_ajv.updateTime.api},	
+    required: ['phoneNumberVerified'],
+    properties: { apicolname: user_ajv.phoneNumberVerified.api},	
+  },{
+    required: ['profileImage'],
+    properties: { apicolname: user_ajv.profileImage.api},	
   },]
 };
 

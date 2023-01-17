@@ -34,26 +34,32 @@ const page_schema = {
     required: ['themeId'],
     properties: { apicolname: page_ajv.themeId.api},	
   },{
-    required: ['createdBy'],
-    properties: { apicolname: page_ajv.createdBy.api},	
-  },{
     required: ['updateRequest'],
     properties: { apicolname: page_ajv.updateRequest.api},	
+  },{
+    required: ['updateTime'],
+    properties: { apicolname: page_ajv.updateTime.api},	
   },{
     required: ['updatedBy'],
     properties: { apicolname: page_ajv.updatedBy.api},	
   },{
+    required: ['createRequest'],
+    properties: { apicolname: page_ajv.createRequest.api},	
+  },{
     required: ['category'],
     properties: { apicolname: page_ajv.category.api},	
   },{
-    required: ['ownerId'],
-    properties: { apicolname: page_ajv.ownerId.api},	
+    required: ['type'],
+    properties: { apicolname: page_ajv.type.api},	
   },{
     required: ['status'],
     properties: { apicolname: page_ajv.status.api},	
   },{
-    required: ['latestTemplateId'],
-    properties: { apicolname: page_ajv.latestTemplateId.api},	
+    required: ['ownerId'],
+    properties: { apicolname: page_ajv.ownerId.api},	
+  },{
+    required: ['headerMeta'],
+    properties: { apicolname: page_ajv.headerMeta.api},	
   },]
 };
 

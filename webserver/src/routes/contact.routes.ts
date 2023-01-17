@@ -13,10 +13,7 @@ contactRouter.get('/',  (request: Request, response: Response): any => {
 });
   
 contactRouter.post('/', validateDto(contactSchema), (request: Request, response: Response): any => {
-  
-	
 	return response.json({"message": "OK"});
-  
 });
 
 contactRouter.post('/create', async (request: Request, response: Response): Promise<any> => {

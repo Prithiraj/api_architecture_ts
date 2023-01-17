@@ -6,7 +6,6 @@ const bridgeContactContact_schema = {
   type: 'object',
   properties: {
     contactId: bridgeContactContact_ajv.contactId.api,
-    accountId: bridgeContactContact_ajv.accountId.api,
     assignedTo: bridgeContactContact_ajv.assignedTo.api,
     relationship: bridgeContactContact_ajv.relationship.api,
     assignedBy: bridgeContactContact_ajv.assignedBy.api,
@@ -14,7 +13,7 @@ const bridgeContactContact_schema = {
     assignRequest: bridgeContactContact_ajv.assignRequest.api,
     id: bridgeContactContact_ajv.id.api,
   },
-  required: [],
+  required: ['contactId', 'id', 'assignedTo', 'assignedBy', 'assignRequest', 'assignTime', 'relationship'],
   additionalProperties: false,
 };
 

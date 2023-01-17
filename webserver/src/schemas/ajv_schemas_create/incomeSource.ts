@@ -5,8 +5,6 @@ import { incomeSource_ajv } from '../mapper_ajv';
 const incomeSource_schema = {
   type: 'object',
   properties: {
-    id: incomeSource_ajv.id.api,
-    accountId: incomeSource_ajv.accountId.api,
     contactId: incomeSource_ajv.contactId.api,
     addressId: incomeSource_ajv.addressId.api,
     organizationId: incomeSource_ajv.organizationId.api,
@@ -19,16 +17,10 @@ const incomeSource_schema = {
     startDate: incomeSource_ajv.startDate.api,
     endDate: incomeSource_ajv.endDate.api,
     description: incomeSource_ajv.description.api,
-    createdBy: incomeSource_ajv.createdBy.api,
-    createTime: incomeSource_ajv.createTime.api,
-    createRequest: incomeSource_ajv.createRequest.api,
-    updatedBy: incomeSource_ajv.updatedBy.api,
-    updateTime: incomeSource_ajv.updateTime.api,
-    updateRequest: incomeSource_ajv.updateRequest.api,
     employerPhone: incomeSource_ajv.employerPhone.api,
     status: incomeSource_ajv.status.api,
   },
-  required: [],
+  required: ,
   additionalProperties: false,
 };
 

@@ -49,11 +49,17 @@ const loLeadRaw_schema = {
     required: ['redirectUrl'],
     properties: { apicolname: loLeadRaw_ajv.redirectUrl.api},	
   },{
+    required: ['ipAddress'],
+    properties: { apicolname: loLeadRaw_ajv.ipAddress.api},	
+  },{
     required: ['src'],
     properties: { apicolname: loLeadRaw_ajv.src.api},	
   },{
     required: ['landingPage'],
     properties: { apicolname: loLeadRaw_ajv.landingPage.api},	
+  },{
+    required: ['subId'],
+    properties: { apicolname: loLeadRaw_ajv.subId.api},	
   },{
     required: ['pubId'],
     properties: { apicolname: loLeadRaw_ajv.pubId.api},	
@@ -64,6 +70,9 @@ const loLeadRaw_schema = {
     required: ['uniqueIdentifier'],
     properties: { apicolname: loLeadRaw_ajv.uniqueIdentifier.api},	
   },{
+    required: ['userAgent'],
+    properties: { apicolname: loLeadRaw_ajv.userAgent.api},	
+  },{
     required: ['tcpaConsent'],
     properties: { apicolname: loLeadRaw_ajv.tcpaConsent.api},	
   },{
@@ -73,17 +82,26 @@ const loLeadRaw_schema = {
     required: ['trustedFormUrl'],
     properties: { apicolname: loLeadRaw_ajv.trustedFormUrl.api},	
   },{
+    required: ['leadidToken'],
+    properties: { apicolname: loLeadRaw_ajv.leadidToken.api},	
+  },{
     required: ['firstName'],
     properties: { apicolname: loLeadRaw_ajv.firstName.api},	
   },{
     required: ['lastName'],
     properties: { apicolname: loLeadRaw_ajv.lastName.api},	
   },{
+    required: ['address'],
+    properties: { apicolname: loLeadRaw_ajv.address.api},	
+  },{
     required: ['city'],
     properties: { apicolname: loLeadRaw_ajv.city.api},	
   },{
     required: ['state'],
     properties: { apicolname: loLeadRaw_ajv.state.api},	
+  },{
+    required: ['zip'],
+    properties: { apicolname: loLeadRaw_ajv.zip.api},	
   },{
     required: ['primaryPhone'],
     properties: { apicolname: loLeadRaw_ajv.primaryPhone.api},	
@@ -115,23 +133,35 @@ const loLeadRaw_schema = {
     required: ['productType'],
     properties: { apicolname: loLeadRaw_ajv.productType.api},	
   },{
+    required: ['cashOutAmount'],
+    properties: { apicolname: loLeadRaw_ajv.cashOutAmount.api},	
+  },{
+    required: ['dob'],
+    properties: { apicolname: loLeadRaw_ajv.dob.api},	
+  },{
     required: ['propertyType'],
     properties: { apicolname: loLeadRaw_ajv.propertyType.api},	
   },{
     required: ['propertyUse'],
     properties: { apicolname: loLeadRaw_ajv.propertyUse.api},	
   },{
+    required: ['refiGoal'],
+    properties: { apicolname: loLeadRaw_ajv.refiGoal.api},	
+  },{
     required: ['workingWithAnAgent'],
     properties: { apicolname: loLeadRaw_ajv.workingWithAnAgent.api},	
+  },{
+    required: ['bankruptcyLast7Years'],
+    properties: { apicolname: loLeadRaw_ajv.bankruptcyLast7Years.api},	
   },{
     required: ['foreclosureLast7Years'],
     properties: { apicolname: loLeadRaw_ajv.foreclosureLast7Years.api},	
   },{
+    required: ['loanValue'],
+    properties: { apicolname: loLeadRaw_ajv.loanValue.api},	
+  },{
     required: ['homeValue'],
     properties: { apicolname: loLeadRaw_ajv.homeValue.api},	
-  },{
-    required: ['firstMortgageBalance'],
-    properties: { apicolname: loLeadRaw_ajv.firstMortgageBalance.api},	
   },{
     required: ['secondMortgage'],
     properties: { apicolname: loLeadRaw_ajv.secondMortgage.api},	
@@ -139,8 +169,8 @@ const loLeadRaw_schema = {
     required: ['secondMortgageBalance'],
     properties: { apicolname: loLeadRaw_ajv.secondMortgageBalance.api},	
   },{
-    required: ['ltv'],
-    properties: { apicolname: loLeadRaw_ajv.ltv.api},	
+    required: ['secondMortgageRate'],
+    properties: { apicolname: loLeadRaw_ajv.secondMortgageRate.api},	
   },{
     required: ['ssn'],
     properties: { apicolname: loLeadRaw_ajv.ssn.api},	
@@ -151,8 +181,17 @@ const loLeadRaw_schema = {
     required: ['status'],
     properties: { apicolname: loLeadRaw_ajv.status.api},	
   },{
+    required: ['createRequest'],
+    properties: { apicolname: loLeadRaw_ajv.createRequest.api},	
+  },{
     required: ['createTime'],
     properties: { apicolname: loLeadRaw_ajv.createTime.api},	
+  },{
+    required: ['updateRequest'],
+    properties: { apicolname: loLeadRaw_ajv.updateRequest.api},	
+  },{
+    required: ['updatedBy'],
+    properties: { apicolname: loLeadRaw_ajv.updatedBy.api},	
   },{
     required: ['reason'],
     properties: { apicolname: loLeadRaw_ajv.reason.api},	
@@ -160,53 +199,14 @@ const loLeadRaw_schema = {
     required: ['subscriptionId'],
     properties: { apicolname: loLeadRaw_ajv.subscriptionId.api},	
   },{
-    required: ['userAgent'],
-    properties: { apicolname: loLeadRaw_ajv.userAgent.api},	
-  },{
-    required: ['leadidToken'],
-    properties: { apicolname: loLeadRaw_ajv.leadidToken.api},	
-  },{
-    required: ['refiGoal'],
-    properties: { apicolname: loLeadRaw_ajv.refiGoal.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: loLeadRaw_ajv.createRequest.api},	
-  },{
-    required: ['loLeadId'],
-    properties: { apicolname: loLeadRaw_ajv.loLeadId.api},	
-  },{
-    required: ['zip'],
-    properties: { apicolname: loLeadRaw_ajv.zip.api},	
-  },{
-    required: ['address'],
-    properties: { apicolname: loLeadRaw_ajv.address.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: loLeadRaw_ajv.updatedBy.api},	
-  },{
-    required: ['dob'],
-    properties: { apicolname: loLeadRaw_ajv.dob.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: loLeadRaw_ajv.updateRequest.api},	
-  },{
-    required: ['creditStatus'],
-    properties: { apicolname: loLeadRaw_ajv.creditStatus.api},	
+    required: ['billingStatus'],
+    properties: { apicolname: loLeadRaw_ajv.billingStatus.api},	
   },{
     required: ['firstMortgageRate'],
     properties: { apicolname: loLeadRaw_ajv.firstMortgageRate.api},	
   },{
-    required: ['cashOutAmount'],
-    properties: { apicolname: loLeadRaw_ajv.cashOutAmount.api},	
-  },{
-    required: ['subId'],
-    properties: { apicolname: loLeadRaw_ajv.subId.api},	
-  },{
-    required: ['extraData'],
-    properties: { apicolname: loLeadRaw_ajv.extraData.api},	
-  },{
-    required: ['ipAddress'],
-    properties: { apicolname: loLeadRaw_ajv.ipAddress.api},	
+    required: ['loLeadId'],
+    properties: { apicolname: loLeadRaw_ajv.loLeadId.api},	
   },]
 };
 

@@ -22,12 +22,6 @@ const links_schema = {
     required: ['destinationId'],
     properties: { apicolname: links_ajv.destinationId.api},	
   },{
-    required: ['createTime'],
-    properties: { apicolname: links_ajv.createTime.api},	
-  },{
-    required: ['createdBy'],
-    properties: { apicolname: links_ajv.createdBy.api},	
-  },{
     required: ['updateRequest'],
     properties: { apicolname: links_ajv.updateRequest.api},	
   },{

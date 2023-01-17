@@ -43,6 +43,9 @@ const engagement_schema = {
     required: ['eventName'],
     properties: { apicolname: engagement_ajv.eventName.api},	
   },{
+    required: ['eventGroup'],
+    properties: { apicolname: engagement_ajv.eventGroup.api},	
+  },{
     required: ['eventCategory'],
     properties: { apicolname: engagement_ajv.eventCategory.api},	
   },{
@@ -58,6 +61,9 @@ const engagement_schema = {
     required: ['message'],
     properties: { apicolname: engagement_ajv.message.api},	
   },{
+    required: ['reason'],
+    properties: { apicolname: engagement_ajv.reason.api},	
+  },{
     required: ['timezone'],
     properties: { apicolname: engagement_ajv.timezone.api},	
   },{
@@ -69,6 +75,9 @@ const engagement_schema = {
   },{
     required: ['eventData'],
     properties: { apicolname: engagement_ajv.eventData.api},	
+  },{
+    required: ['channelId'],
+    properties: { apicolname: engagement_ajv.channelId.api},	
   },{
     required: ['channelType'],
     properties: { apicolname: engagement_ajv.channelType.api},	
@@ -85,8 +94,8 @@ const engagement_schema = {
     required: ['sourceType'],
     properties: { apicolname: engagement_ajv.sourceType.api},	
   },{
-    required: ['userAgent'],
-    properties: { apicolname: engagement_ajv.userAgent.api},	
+    required: ['userId'],
+    properties: { apicolname: engagement_ajv.userId.api},	
   },{
     required: ['userPool'],
     properties: { apicolname: engagement_ajv.userPool.api},	
@@ -97,14 +106,8 @@ const engagement_schema = {
     required: ['testCol01'],
     properties: { apicolname: engagement_ajv.testCol01.api},	
   },{
-    required: ['reason'],
-    properties: { apicolname: engagement_ajv.reason.api},	
-  },{
-    required: ['channelId'],
-    properties: { apicolname: engagement_ajv.channelId.api},	
-  },{
-    required: ['userId'],
-    properties: { apicolname: engagement_ajv.userId.api},	
+    required: ['userAgent'],
+    properties: { apicolname: engagement_ajv.userAgent.api},	
   },]
 };
 

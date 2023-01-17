@@ -40,17 +40,11 @@ const partner_schema = {
     required: ['workPhone'],
     properties: { apicolname: partner_ajv.workPhone.api},	
   },{
-    required: ['createdBy'],
-    properties: { apicolname: partner_ajv.createdBy.api},	
-  },{
     required: ['createTime'],
     properties: { apicolname: partner_ajv.createTime.api},	
   },{
     required: ['createRequest'],
     properties: { apicolname: partner_ajv.createRequest.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: partner_ajv.updatedBy.api},	
   },{
     required: ['updateTime'],
     properties: { apicolname: partner_ajv.updateTime.api},	
@@ -60,6 +54,9 @@ const partner_schema = {
   },{
     required: ['addressId'],
     properties: { apicolname: partner_ajv.addressId.api},	
+  },{
+    required: ['updatedBy'],
+    properties: { apicolname: partner_ajv.updatedBy.api},	
   },]
 };
 

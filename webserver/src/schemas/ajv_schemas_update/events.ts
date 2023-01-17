@@ -16,11 +16,17 @@ const events_schema = {
     required: ['eventCategory'],
     properties: { apicolname: events_ajv.eventCategory.api},	
   },{
+    required: ['eventClass'],
+    properties: { apicolname: events_ajv.eventClass.api},	
+  },{
     required: ['eventCode'],
     properties: { apicolname: events_ajv.eventCode.api},	
   },{
     required: ['eventData'],
     properties: { apicolname: events_ajv.eventData.api},	
+  },{
+    required: ['eventGroup'],
+    properties: { apicolname: events_ajv.eventGroup.api},	
   },{
     required: ['eventId'],
     properties: { apicolname: events_ajv.eventId.api},	
@@ -46,9 +52,6 @@ const events_schema = {
     required: ['parentId'],
     properties: { apicolname: events_ajv.parentId.api},	
   },{
-    required: ['rawBucket'],
-    properties: { apicolname: events_ajv.rawBucket.api},	
-  },{
     required: ['rawPath'],
     properties: { apicolname: events_ajv.rawPath.api},	
   },{
@@ -57,6 +60,12 @@ const events_schema = {
   },{
     required: ['createTime'],
     properties: { apicolname: events_ajv.createTime.api},	
+  },{
+    required: ['endTime'],
+    properties: { apicolname: events_ajv.endTime.api},	
+  },{
+    required: ['eventTime'],
+    properties: { apicolname: events_ajv.eventTime.api},	
   },{
     required: ['startTime'],
     properties: { apicolname: events_ajv.startTime.api},	
@@ -70,20 +79,32 @@ const events_schema = {
     required: ['channelType'],
     properties: { apicolname: events_ajv.channelType.api},	
   },{
+    required: ['destinationLocation'],
+    properties: { apicolname: events_ajv.destinationLocation.api},	
+  },{
     required: ['destinationType'],
     properties: { apicolname: events_ajv.destinationType.api},	
+  },{
+    required: ['deviceIp'],
+    properties: { apicolname: events_ajv.deviceIp.api},	
+  },{
+    required: ['deviceLocationCity'],
+    properties: { apicolname: events_ajv.deviceLocationCity.api},	
   },{
     required: ['deviceLocationContinent'],
     properties: { apicolname: events_ajv.deviceLocationContinent.api},	
   },{
-    required: ['deviceLocationCoordinatesLat'],
-    properties: { apicolname: events_ajv.deviceLocationCoordinatesLat.api},	
-  },{
     required: ['deviceLocationCoordinatesLon'],
     properties: { apicolname: events_ajv.deviceLocationCoordinatesLon.api},	
   },{
+    required: ['deviceLocationCountry'],
+    properties: { apicolname: events_ajv.deviceLocationCountry.api},	
+  },{
     required: ['deviceLocationZip'],
     properties: { apicolname: events_ajv.deviceLocationZip.api},	
+  },{
+    required: ['deviceType'],
+    properties: { apicolname: events_ajv.deviceType.api},	
   },{
     required: ['referralId'],
     properties: { apicolname: events_ajv.referralId.api},	
@@ -91,8 +112,8 @@ const events_schema = {
     required: ['referralType'],
     properties: { apicolname: events_ajv.referralType.api},	
   },{
-    required: ['resourceType'],
-    properties: { apicolname: events_ajv.resourceType.api},	
+    required: ['resourceId'],
+    properties: { apicolname: events_ajv.resourceId.api},	
   },{
     required: ['sourceId'],
     properties: { apicolname: events_ajv.sourceId.api},	
@@ -109,29 +130,14 @@ const events_schema = {
     required: ['timezone'],
     properties: { apicolname: events_ajv.timezone.api},	
   },{
-    required: ['endTime'],
-    properties: { apicolname: events_ajv.endTime.api},	
+    required: ['rawBucket'],
+    properties: { apicolname: events_ajv.rawBucket.api},	
   },{
-    required: ['deviceLocationCountry'],
-    properties: { apicolname: events_ajv.deviceLocationCountry.api},	
+    required: ['userType'],
+    properties: { apicolname: events_ajv.userType.api},	
   },{
-    required: ['deviceTimezone'],
-    properties: { apicolname: events_ajv.deviceTimezone.api},	
-  },{
-    required: ['deviceIp'],
-    properties: { apicolname: events_ajv.deviceIp.api},	
-  },{
-    required: ['resourceId'],
-    properties: { apicolname: events_ajv.resourceId.api},	
-  },{
-    required: ['destinationLocation'],
-    properties: { apicolname: events_ajv.destinationLocation.api},	
-  },{
-    required: ['eventGroup'],
-    properties: { apicolname: events_ajv.eventGroup.api},	
-  },{
-    required: ['eventClass'],
-    properties: { apicolname: events_ajv.eventClass.api},	
+    required: ['userId'],
+    properties: { apicolname: events_ajv.userId.api},	
   },]
 };
 

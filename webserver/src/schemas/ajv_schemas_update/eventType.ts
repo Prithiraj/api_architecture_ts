@@ -13,8 +13,8 @@ const eventType_schema = {
     required: ['id'],
     properties: { apicolname: eventType_ajv.id.api},	
   },{
-    required: ['eventCategoryId'],
-    properties: { apicolname: eventType_ajv.eventCategoryId.api},	
+    required: ['eventType'],
+    properties: { apicolname: eventType_ajv.eventType.api},	
   },{
     required: ['eventTypeDescription'],
     properties: { apicolname: eventType_ajv.eventTypeDescription.api},	
@@ -24,6 +24,12 @@ const eventType_schema = {
   },{
     required: ['updatedAt'],
     properties: { apicolname: eventType_ajv.updatedAt.api},	
+  },{
+    required: ['eventCategoryId'],
+    properties: { apicolname: eventType_ajv.eventCategoryId.api},	
+  },{
+    required: ['dbAction'],
+    properties: { apicolname: eventType_ajv.dbAction.api},	
   },]
 };
 

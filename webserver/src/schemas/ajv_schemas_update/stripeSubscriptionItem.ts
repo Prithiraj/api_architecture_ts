@@ -15,9 +15,6 @@ const stripeSubscriptionItem_schema = {
   },{
     required: ['stripePrice'],
     properties: { apicolname: stripeSubscriptionItem_ajv.stripePrice.api},	
-  },{
-    required: ['isTransferPrice'],
-    properties: { apicolname: stripeSubscriptionItem_ajv.isTransferPrice.api},	
   },]
 };
 

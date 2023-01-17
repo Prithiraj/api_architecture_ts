@@ -79,9 +79,6 @@ const contact_schema = {
     required: ['leadSource'],
     properties: { apicolname: contact_ajv.leadSource.api},	
   },{
-    required: ['createdBy'],
-    properties: { apicolname: contact_ajv.createdBy.api},	
-  },{
     required: ['createTime'],
     properties: { apicolname: contact_ajv.createTime.api},	
   },{
@@ -115,6 +112,9 @@ const contact_schema = {
     required: ['origin'],
     properties: { apicolname: contact_ajv.origin.api},	
   },{
+    required: ['taygoSource'],
+    properties: { apicolname: contact_ajv.taygoSource.api},	
+  },{
     required: ['timezone'],
     properties: { apicolname: contact_ajv.timezone.api},	
   },{
@@ -123,9 +123,6 @@ const contact_schema = {
   },{
     required: ['isConverted'],
     properties: { apicolname: contact_ajv.isConverted.api},	
-  },{
-    required: ['statusLifecycleId'],
-    properties: { apicolname: contact_ajv.statusLifecycleId.api},	
   },{
     required: ['homePhone'],
     properties: { apicolname: contact_ajv.homePhone.api},	
@@ -138,9 +135,6 @@ const contact_schema = {
   },{
     required: ['desiredLoanId'],
     properties: { apicolname: contact_ajv.desiredLoanId.api},	
-  },{
-    required: ['taygoSource'],
-    properties: { apicolname: contact_ajv.taygoSource.api},	
   },]
 };
 

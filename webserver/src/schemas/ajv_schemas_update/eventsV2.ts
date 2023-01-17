@@ -25,6 +25,9 @@ const eventsV2_schema = {
     required: ['eventType'],
     properties: { apicolname: eventsV2_ajv.eventType.api},	
   },{
+    required: ['eventData'],
+    properties: { apicolname: eventsV2_ajv.eventData.api},	
+  },{
     required: ['eventProvider'],
     properties: { apicolname: eventsV2_ajv.eventProvider.api},	
   },{
@@ -49,6 +52,9 @@ const eventsV2_schema = {
     required: ['deviceIp'],
     properties: { apicolname: eventsV2_ajv.deviceIp.api},	
   },{
+    required: ['deviceLocationCity'],
+    properties: { apicolname: eventsV2_ajv.deviceLocationCity.api},	
+  },{
     required: ['deviceLocationContinent'],
     properties: { apicolname: eventsV2_ajv.deviceLocationContinent.api},	
   },{
@@ -67,11 +73,17 @@ const eventsV2_schema = {
     required: ['deviceTimezone'],
     properties: { apicolname: eventsV2_ajv.deviceTimezone.api},	
   },{
+    required: ['deviceType'],
+    properties: { apicolname: eventsV2_ajv.deviceType.api},	
+  },{
     required: ['userPool'],
     properties: { apicolname: eventsV2_ajv.userPool.api},	
   },{
     required: ['destinationId'],
     properties: { apicolname: eventsV2_ajv.destinationId.api},	
+  },{
+    required: ['endTime'],
+    properties: { apicolname: eventsV2_ajv.endTime.api},	
   },{
     required: ['eventClass'],
     properties: { apicolname: eventsV2_ajv.eventClass.api},	
@@ -79,14 +91,8 @@ const eventsV2_schema = {
     required: ['eventCode'],
     properties: { apicolname: eventsV2_ajv.eventCode.api},	
   },{
-    required: ['eventSeverity'],
-    properties: { apicolname: eventsV2_ajv.eventSeverity.api},	
-  },{
     required: ['eventTime'],
     properties: { apicolname: eventsV2_ajv.eventTime.api},	
-  },{
-    required: ['message'],
-    properties: { apicolname: eventsV2_ajv.message.api},	
   },{
     required: ['ownerId'],
     properties: { apicolname: eventsV2_ajv.ownerId.api},	
@@ -106,20 +112,17 @@ const eventsV2_schema = {
     required: ['sourceType'],
     properties: { apicolname: eventsV2_ajv.sourceType.api},	
   },{
-    required: ['timeZone'],
-    properties: { apicolname: eventsV2_ajv.timeZone.api},	
-  },{
     required: ['channelId'],
     properties: { apicolname: eventsV2_ajv.channelId.api},	
   },{
-    required: ['deviceType'],
-    properties: { apicolname: eventsV2_ajv.deviceType.api},	
-  },{
-    required: ['endTime'],
-    properties: { apicolname: eventsV2_ajv.endTime.api},	
-  },{
     required: ['channelType'],
     properties: { apicolname: eventsV2_ajv.channelType.api},	
+  },{
+    required: ['timeZone'],
+    properties: { apicolname: eventsV2_ajv.timeZone.api},	
+  },{
+    required: ['message'],
+    properties: { apicolname: eventsV2_ajv.message.api},	
   },]
 };
 

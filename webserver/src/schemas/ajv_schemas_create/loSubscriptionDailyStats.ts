@@ -10,15 +10,8 @@ const loSubscriptionDailyStats_schema = {
     totalTransferAmount: loSubscriptionDailyStats_ajv.totalTransferAmount.api,
     totalLeadsMatched: loSubscriptionDailyStats_ajv.totalLeadsMatched.api,
     totalLeadsTransfered: loSubscriptionDailyStats_ajv.totalLeadsTransfered.api,
-    createdBy: loSubscriptionDailyStats_ajv.createdBy.api,
-    createRequest: loSubscriptionDailyStats_ajv.createRequest.api,
-    createTime: loSubscriptionDailyStats_ajv.createTime.api,
-    updateRequest: loSubscriptionDailyStats_ajv.updateRequest.api,
-    updateTime: loSubscriptionDailyStats_ajv.updateTime.api,
-    statsDate: loSubscriptionDailyStats_ajv.statsDate.api,
-    updatedBy: loSubscriptionDailyStats_ajv.updatedBy.api,
   },
-  required: [],
+  required: ['loSubscriptionId'],
   additionalProperties: false,
 };
 

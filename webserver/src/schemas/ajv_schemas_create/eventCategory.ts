@@ -5,14 +5,13 @@ import { eventCategory_ajv } from '../mapper_ajv';
 const eventCategory_schema = {
   type: 'object',
   properties: {
-    id: eventCategory_ajv.id.api,
     eventCategoryName: eventCategory_ajv.eventCategoryName.api,
     eventTargetedToTableName: eventCategory_ajv.eventTargetedToTableName.api,
     eventCategoryDescription: eventCategory_ajv.eventCategoryDescription.api,
     createdAt: eventCategory_ajv.createdAt.api,
     updatedAt: eventCategory_ajv.updatedAt.api,
   },
-  required: [],
+  required: ['createdAt', 'eventCategoryName'],
   additionalProperties: false,
 };
 

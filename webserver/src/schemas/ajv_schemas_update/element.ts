@@ -19,20 +19,32 @@ const element_schema = {
     required: ['id'],
     properties: { apicolname: element_ajv.id.api},	
   },{
+    required: ['data'],
+    properties: { apicolname: element_ajv.data.api},	
+  },{
     required: ['createTime'],
     properties: { apicolname: element_ajv.createTime.api},	
   },{
-    required: ['createdBy'],
-    properties: { apicolname: element_ajv.createdBy.api},	
+    required: ['type'],
+    properties: { apicolname: element_ajv.type.api},	
   },{
-    required: ['updateTime'],
-    properties: { apicolname: element_ajv.updateTime.api},	
+    required: ['updateRequest'],
+    properties: { apicolname: element_ajv.updateRequest.api},	
+  },{
+    required: ['updatedBy'],
+    properties: { apicolname: element_ajv.updatedBy.api},	
   },{
     required: ['createRequest'],
     properties: { apicolname: element_ajv.createRequest.api},	
   },{
-    required: ['data'],
-    properties: { apicolname: element_ajv.data.api},	
+    required: ['latestVersionId'],
+    properties: { apicolname: element_ajv.latestVersionId.api},	
+  },{
+    required: ['updateTime'],
+    properties: { apicolname: element_ajv.updateTime.api},	
+  },{
+    required: ['latestTemplate'],
+    properties: { apicolname: element_ajv.latestTemplate.api},	
   },]
 };
 

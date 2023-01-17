@@ -52,9 +52,6 @@ const incomeSource_schema = {
     required: ['description'],
     properties: { apicolname: incomeSource_ajv.description.api},	
   },{
-    required: ['createdBy'],
-    properties: { apicolname: incomeSource_ajv.createdBy.api},	
-  },{
     required: ['createTime'],
     properties: { apicolname: incomeSource_ajv.createTime.api},	
   },{
@@ -64,9 +61,6 @@ const incomeSource_schema = {
     required: ['updatedBy'],
     properties: { apicolname: incomeSource_ajv.updatedBy.api},	
   },{
-    required: ['updateTime'],
-    properties: { apicolname: incomeSource_ajv.updateTime.api},	
-  },{
     required: ['updateRequest'],
     properties: { apicolname: incomeSource_ajv.updateRequest.api},	
   },{
@@ -75,6 +69,9 @@ const incomeSource_schema = {
   },{
     required: ['status'],
     properties: { apicolname: incomeSource_ajv.status.api},	
+  },{
+    required: ['updateTime'],
+    properties: { apicolname: incomeSource_ajv.updateTime.api},	
   },]
 };
 

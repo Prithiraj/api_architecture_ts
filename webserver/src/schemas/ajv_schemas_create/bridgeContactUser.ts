@@ -7,13 +7,12 @@ const bridgeContactUser_schema = {
   properties: {
     contactId: bridgeContactUser_ajv.contactId.api,
     userId: bridgeContactUser_ajv.userId.api,
-    accountId: bridgeContactUser_ajv.accountId.api,
     assignedBy: bridgeContactUser_ajv.assignedBy.api,
     assignTime: bridgeContactUser_ajv.assignTime.api,
     assignRequest: bridgeContactUser_ajv.assignRequest.api,
     id: bridgeContactUser_ajv.id.api,
   },
-  required: [],
+  required: ['contactId', 'id', 'assignedBy', 'assignRequest', 'assignTime', 'userId'],
   additionalProperties: false,
 };
 

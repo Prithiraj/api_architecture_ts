@@ -55,9 +55,6 @@ const loan_schema = {
     required: ['closingDate'],
     properties: { apicolname: loan_ajv.closingDate.api},	
   },{
-    required: ['createdBy'],
-    properties: { apicolname: loan_ajv.createdBy.api},	
-  },{
     required: ['createTime'],
     properties: { apicolname: loan_ajv.createTime.api},	
   },{
@@ -75,9 +72,6 @@ const loan_schema = {
   },{
     required: ['remainingValue'],
     properties: { apicolname: loan_ajv.remainingValue.api},	
-  },{
-    required: ['amortization'],
-    properties: { apicolname: loan_ajv.amortization.api},	
   },{
     required: ['desiredOrCurrent'],
     properties: { apicolname: loan_ajv.desiredOrCurrent.api},	

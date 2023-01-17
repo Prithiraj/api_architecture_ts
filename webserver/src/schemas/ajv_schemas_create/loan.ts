@@ -5,8 +5,6 @@ import { loan_ajv } from '../mapper_ajv';
 const loan_schema = {
   type: 'object',
   properties: {
-    id: loan_ajv.id.api,
-    accountId: loan_ajv.accountId.api,
     loanOfficerId: loan_ajv.loanOfficerId.api,
     addressId: loan_ajv.addressId.api,
     purpose: loan_ajv.purpose.api,
@@ -20,14 +18,7 @@ const loan_schema = {
     mortgageInsurance: loan_ajv.mortgageInsurance.api,
     status: loan_ajv.status.api,
     closingDate: loan_ajv.closingDate.api,
-    createdBy: loan_ajv.createdBy.api,
-    createTime: loan_ajv.createTime.api,
-    createRequest: loan_ajv.createRequest.api,
-    updatedBy: loan_ajv.updatedBy.api,
-    updateTime: loan_ajv.updateTime.api,
-    updateRequest: loan_ajv.updateRequest.api,
     remainingValue: loan_ajv.remainingValue.api,
-    amortization: loan_ajv.amortization.api,
     desiredOrCurrent: loan_ajv.desiredOrCurrent.api,
     desiredCashOutAmount: loan_ajv.desiredCashOutAmount.api,
     desiredDownPayment: loan_ajv.desiredDownPayment.api,
@@ -38,7 +29,7 @@ const loan_schema = {
     loanPropertyValue: loan_ajv.loanPropertyValue.api,
     loanType: loan_ajv.loanType.api,
   },
-  required: [],
+  required: ['status', 'desiredOrCurrent'],
   additionalProperties: false,
 };
 

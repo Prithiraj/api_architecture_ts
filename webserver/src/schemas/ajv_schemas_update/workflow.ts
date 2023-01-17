@@ -28,9 +28,6 @@ const workflow_schema = {
     required: ['apiVersion'],
     properties: { apicolname: workflow_ajv.apiVersion.api},	
   },{
-    required: ['entityName'],
-    properties: { apicolname: workflow_ajv.entityName.api},	
-  },{
     required: ['firstStep'],
     properties: { apicolname: workflow_ajv.firstStep.api},	
   },{
@@ -57,9 +54,6 @@ const workflow_schema = {
   },{
     required: ['updateRequest'],
     properties: { apicolname: workflow_ajv.updateRequest.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: workflow_ajv.updateTime.api},	
   },{
     required: ['updatedBy'],
     properties: { apicolname: workflow_ajv.updatedBy.api},	

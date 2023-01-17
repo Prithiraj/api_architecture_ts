@@ -5,8 +5,6 @@ import { contactReminder_ajv } from '../mapper_ajv';
 const contactReminder_schema = {
   type: 'object',
   properties: {
-    id: contactReminder_ajv.id.api,
-    accountId: contactReminder_ajv.accountId.api,
     contactId: contactReminder_ajv.contactId.api,
     userId: contactReminder_ajv.userId.api,
     type: contactReminder_ajv.type.api,
@@ -16,12 +14,8 @@ const contactReminder_schema = {
     executeAt: contactReminder_ajv.executeAt.api,
     reminderData: contactReminder_ajv.reminderData.api,
     active: contactReminder_ajv.active.api,
-    createdBy: contactReminder_ajv.createdBy.api,
-    createTime: contactReminder_ajv.createTime.api,
-    updatedBy: contactReminder_ajv.updatedBy.api,
-    updateTime: contactReminder_ajv.updateTime.api,
   },
-  required: [],
+  required: ['active', 'contactId', 'type', 'userId', 'executeAt', 'dueDate'],
   additionalProperties: false,
 };
 
