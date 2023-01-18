@@ -18,7 +18,6 @@ const engagement_schema = {
     eventCategory: engagement_ajv.eventCategory.api,
     eventCode: engagement_ajv.eventCode.api,
     eventSeverity: engagement_ajv.eventSeverity.api,
-    outcome: engagement_ajv.outcome.api,
     message: engagement_ajv.message.api,
     reason: engagement_ajv.reason.api,
     timezone: engagement_ajv.timezone.api,

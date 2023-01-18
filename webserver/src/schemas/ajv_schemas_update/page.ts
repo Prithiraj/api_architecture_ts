@@ -5,40 +5,37 @@ import { page_ajv } from '../mapper_ajv';
 const page_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: page_ajv.id.api,
+    name: page_ajv.name.api,
+    body: page_ajv.body.api,
+    templateId: page_ajv.templateId.api,
+    path: page_ajv.path.api,
+    themeId: page_ajv.themeId.api,
+    category: page_ajv.category.api,
+    type: page_ajv.type.api,
+    headerMeta: page_ajv.headerMeta.api,
+    latestTemplateId: page_ajv.latestTemplateId.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['name'],
-    properties: { apicolname: page_ajv.name.api},	
   },{
     required: ['body'],
-    properties: { apicolname: page_ajv.body.api},	
   },{
     required: ['templateId'],
-    properties: { apicolname: page_ajv.templateId.api},	
   },{
     required: ['path'],
-    properties: { apicolname: page_ajv.path.api},	
   },{
     required: ['themeId'],
-    properties: { apicolname: page_ajv.themeId.api},	
   },{
     required: ['category'],
-    properties: { apicolname: page_ajv.category.api},	
   },{
     required: ['type'],
-    properties: { apicolname: page_ajv.type.api},	
-  },{
-    required: ['status'],
-    properties: { apicolname: page_ajv.status.api},	
-  },{
-    required: ['ownerId'],
-    properties: { apicolname: page_ajv.ownerId.api},	
   },{
     required: ['headerMeta'],
-    properties: { apicolname: page_ajv.headerMeta.api},	
+  },{
+    required: ['latestTemplateId'],
   },]
 };
 

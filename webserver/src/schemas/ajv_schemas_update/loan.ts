@@ -5,79 +5,82 @@ import { loan_ajv } from '../mapper_ajv';
 const loan_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: loan_ajv.id.api,
+    loanOfficerId: loan_ajv.loanOfficerId.api,
+    addressId: loan_ajv.addressId.api,
+    purpose: loan_ajv.purpose.api,
+    product: loan_ajv.product.api,
+    amount: loan_ajv.amount.api,
+    interestRate: loan_ajv.interestRate.api,
+    term: loan_ajv.term.api,
+    downPayment: loan_ajv.downPayment.api,
+    remainingTerm: loan_ajv.remainingTerm.api,
+    notes: loan_ajv.notes.api,
+    mortgageInsurance: loan_ajv.mortgageInsurance.api,
+    status: loan_ajv.status.api,
+    closingDate: loan_ajv.closingDate.api,
+    remainingValue: loan_ajv.remainingValue.api,
+    desiredOrCurrent: loan_ajv.desiredOrCurrent.api,
+    desiredCashOutAmount: loan_ajv.desiredCashOutAmount.api,
+    desiredDownPayment: loan_ajv.desiredDownPayment.api,
+    loanPropertyType: loan_ajv.loanPropertyType.api,
+    loanUnits: loan_ajv.loanUnits.api,
+    timeline: loan_ajv.timeline.api,
+    loanPropertyOccupancy: loan_ajv.loanPropertyOccupancy.api,
+    loanPropertyValue: loan_ajv.loanPropertyValue.api,
+    loanType: loan_ajv.loanType.api,
+    amortization: loan_ajv.amortization.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['loanOfficerId'],
-    properties: { apicolname: loan_ajv.loanOfficerId.api},	
   },{
     required: ['addressId'],
-    properties: { apicolname: loan_ajv.addressId.api},	
   },{
     required: ['purpose'],
-    properties: { apicolname: loan_ajv.purpose.api},	
   },{
     required: ['product'],
-    properties: { apicolname: loan_ajv.product.api},	
   },{
     required: ['amount'],
-    properties: { apicolname: loan_ajv.amount.api},	
   },{
     required: ['interestRate'],
-    properties: { apicolname: loan_ajv.interestRate.api},	
   },{
     required: ['term'],
-    properties: { apicolname: loan_ajv.term.api},	
   },{
     required: ['downPayment'],
-    properties: { apicolname: loan_ajv.downPayment.api},	
   },{
     required: ['remainingTerm'],
-    properties: { apicolname: loan_ajv.remainingTerm.api},	
   },{
     required: ['notes'],
-    properties: { apicolname: loan_ajv.notes.api},	
   },{
     required: ['mortgageInsurance'],
-    properties: { apicolname: loan_ajv.mortgageInsurance.api},	
   },{
     required: ['status'],
-    properties: { apicolname: loan_ajv.status.api},	
   },{
     required: ['closingDate'],
-    properties: { apicolname: loan_ajv.closingDate.api},	
   },{
     required: ['remainingValue'],
-    properties: { apicolname: loan_ajv.remainingValue.api},	
   },{
     required: ['desiredOrCurrent'],
-    properties: { apicolname: loan_ajv.desiredOrCurrent.api},	
   },{
     required: ['desiredCashOutAmount'],
-    properties: { apicolname: loan_ajv.desiredCashOutAmount.api},	
   },{
     required: ['desiredDownPayment'],
-    properties: { apicolname: loan_ajv.desiredDownPayment.api},	
   },{
     required: ['loanPropertyType'],
-    properties: { apicolname: loan_ajv.loanPropertyType.api},	
   },{
     required: ['loanUnits'],
-    properties: { apicolname: loan_ajv.loanUnits.api},	
   },{
     required: ['timeline'],
-    properties: { apicolname: loan_ajv.timeline.api},	
   },{
     required: ['loanPropertyOccupancy'],
-    properties: { apicolname: loan_ajv.loanPropertyOccupancy.api},	
   },{
     required: ['loanPropertyValue'],
-    properties: { apicolname: loan_ajv.loanPropertyValue.api},	
   },{
     required: ['loanType'],
-    properties: { apicolname: loan_ajv.loanType.api},	
+  },{
+    required: ['amortization'],
   },]
 };
 

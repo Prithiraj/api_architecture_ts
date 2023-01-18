@@ -5,28 +5,25 @@ import { eventType_ajv } from '../mapper_ajv';
 const eventType_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: eventType_ajv.id.api,
+    eventType: eventType_ajv.eventType.api,
+    eventTypeDescription: eventType_ajv.eventTypeDescription.api,
+    createdAt: eventType_ajv.createdAt.api,
+    updatedAt: eventType_ajv.updatedAt.api,
+    eventCategoryId: eventType_ajv.eventCategoryId.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['eventType'],
-    properties: { apicolname: eventType_ajv.eventType.api},	
   },{
     required: ['eventTypeDescription'],
-    properties: { apicolname: eventType_ajv.eventTypeDescription.api},	
   },{
     required: ['createdAt'],
-    properties: { apicolname: eventType_ajv.createdAt.api},	
   },{
     required: ['updatedAt'],
-    properties: { apicolname: eventType_ajv.updatedAt.api},	
   },{
     required: ['eventCategoryId'],
-    properties: { apicolname: eventType_ajv.eventCategoryId.api},	
-  },{
-    required: ['dbAction'],
-    properties: { apicolname: eventType_ajv.dbAction.api},	
   },]
 };
 

@@ -8,7 +8,7 @@ const templateDependency_schema = {
     templateId: templateDependency_ajv.templateId.api,
     versionId: templateDependency_ajv.versionId.api,
   },
-  required: ['templateId', 'versionId'],
+  required: ['versionId', 'templateId'],
   additionalProperties: false,
 };
 

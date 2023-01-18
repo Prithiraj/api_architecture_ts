@@ -28,8 +28,9 @@ const loan_schema = {
     loanPropertyOccupancy: loan_ajv.loanPropertyOccupancy.api,
     loanPropertyValue: loan_ajv.loanPropertyValue.api,
     loanType: loan_ajv.loanType.api,
+    amortization: loan_ajv.amortization.api,
   },
-  required: ['desiredOrCurrent', 'status'],
+  required: ['status', 'desiredOrCurrent'],
   additionalProperties: false,
 };
 

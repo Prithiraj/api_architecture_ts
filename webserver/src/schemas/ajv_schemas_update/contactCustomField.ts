@@ -5,25 +5,25 @@ import { contactCustomField_ajv } from '../mapper_ajv';
 const contactCustomField_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: contactCustomField_ajv.id.api,
+    name: contactCustomField_ajv.name.api,
+    type: contactCustomField_ajv.type.api,
+    order: contactCustomField_ajv.order.api,
+    purpose: contactCustomField_ajv.purpose.api,
+    sectionId: contactCustomField_ajv.sectionId.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['name'],
-    properties: { apicolname: contactCustomField_ajv.name.api},	
   },{
     required: ['type'],
-    properties: { apicolname: contactCustomField_ajv.type.api},	
   },{
     required: ['order'],
-    properties: { apicolname: contactCustomField_ajv.order.api},	
   },{
     required: ['purpose'],
-    properties: { apicolname: contactCustomField_ajv.purpose.api},	
   },{
     required: ['sectionId'],
-    properties: { apicolname: contactCustomField_ajv.sectionId.api},	
   },]
 };
 

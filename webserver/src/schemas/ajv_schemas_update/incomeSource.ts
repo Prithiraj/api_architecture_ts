@@ -5,52 +5,52 @@ import { incomeSource_ajv } from '../mapper_ajv';
 const incomeSource_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: incomeSource_ajv.id.api,
+    contactId: incomeSource_ajv.contactId.api,
+    addressId: incomeSource_ajv.addressId.api,
+    organizationId: incomeSource_ajv.organizationId.api,
+    type: incomeSource_ajv.type.api,
+    employerName: incomeSource_ajv.employerName.api,
+    title: incomeSource_ajv.title.api,
+    phone: incomeSource_ajv.phone.api,
+    amount: incomeSource_ajv.amount.api,
+    incomeAmountPeriod: incomeSource_ajv.incomeAmountPeriod.api,
+    startDate: incomeSource_ajv.startDate.api,
+    endDate: incomeSource_ajv.endDate.api,
+    description: incomeSource_ajv.description.api,
+    employerPhone: incomeSource_ajv.employerPhone.api,
+    status: incomeSource_ajv.status.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['contactId'],
-    properties: { apicolname: incomeSource_ajv.contactId.api},	
   },{
     required: ['addressId'],
-    properties: { apicolname: incomeSource_ajv.addressId.api},	
   },{
     required: ['organizationId'],
-    properties: { apicolname: incomeSource_ajv.organizationId.api},	
   },{
     required: ['type'],
-    properties: { apicolname: incomeSource_ajv.type.api},	
   },{
     required: ['employerName'],
-    properties: { apicolname: incomeSource_ajv.employerName.api},	
   },{
     required: ['title'],
-    properties: { apicolname: incomeSource_ajv.title.api},	
   },{
     required: ['phone'],
-    properties: { apicolname: incomeSource_ajv.phone.api},	
   },{
     required: ['amount'],
-    properties: { apicolname: incomeSource_ajv.amount.api},	
   },{
     required: ['incomeAmountPeriod'],
-    properties: { apicolname: incomeSource_ajv.incomeAmountPeriod.api},	
   },{
     required: ['startDate'],
-    properties: { apicolname: incomeSource_ajv.startDate.api},	
   },{
     required: ['endDate'],
-    properties: { apicolname: incomeSource_ajv.endDate.api},	
   },{
     required: ['description'],
-    properties: { apicolname: incomeSource_ajv.description.api},	
   },{
     required: ['employerPhone'],
-    properties: { apicolname: incomeSource_ajv.employerPhone.api},	
   },{
     required: ['status'],
-    properties: { apicolname: incomeSource_ajv.status.api},	
   },]
 };
 

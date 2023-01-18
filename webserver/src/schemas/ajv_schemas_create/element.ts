@@ -10,8 +10,9 @@ const element_schema = {
     type: element_ajv.type.api,
     latestVersionId: element_ajv.latestVersionId.api,
     latestTemplate: element_ajv.latestTemplate.api,
+    name: element_ajv.name.api,
   },
-  required: ['data', 'type', 'latestVersionId'],
+  required: ['latestVersionId', 'name', 'data', 'type'],
   additionalProperties: false,
 };
 

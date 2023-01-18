@@ -5,19 +5,19 @@ import { workflowTemplate_ajv } from '../mapper_ajv';
 const workflowTemplate_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: workflowTemplate_ajv.id.api,
+    workflowId: workflowTemplate_ajv.workflowId.api,
+    workflowData: workflowTemplate_ajv.workflowData.api,
+    version: workflowTemplate_ajv.version.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['workflowId'],
-    properties: { apicolname: workflowTemplate_ajv.workflowId.api},	
   },{
     required: ['workflowData'],
-    properties: { apicolname: workflowTemplate_ajv.workflowData.api},	
   },{
     required: ['version'],
-    properties: { apicolname: workflowTemplate_ajv.version.api},	
   },]
 };
 

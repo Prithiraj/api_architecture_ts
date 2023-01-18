@@ -38,8 +38,9 @@ const contact_schema = {
     fico: contact_ajv.fico.api,
     currentLoanId: contact_ajv.currentLoanId.api,
     desiredLoanId: contact_ajv.desiredLoanId.api,
+    statusLifecycleId: contact_ajv.statusLifecycleId.api,
   },
-  required: ['creationSource', 'firstName', 'lastName', 'isConverted'],
+  required: ['firstName', 'creationSource', 'lastName', 'dob', 'isConverted', 'type'],
   additionalProperties: false,
 };
 

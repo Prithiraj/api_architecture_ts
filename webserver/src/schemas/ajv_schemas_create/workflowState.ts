@@ -10,7 +10,7 @@ const workflowState_schema = {
     apiVersion: workflowState_ajv.apiVersion.api,
     steps: workflowState_ajv.steps.api,
   },
-  required: ['workflowId', 'entityName', 'apiVersion', 'steps'],
+  required: ['entityName', 'apiVersion', 'workflowId', 'steps'],
   additionalProperties: false,
 };
 

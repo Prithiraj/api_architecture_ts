@@ -5,7 +5,7 @@ import { account_ajv } from '../mapper_ajv';
 const account_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: account_ajv.id.api,
   },
   required: ['id'],
   additionalProperties: false,

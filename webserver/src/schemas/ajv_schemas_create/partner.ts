@@ -8,14 +8,13 @@ const partner_schema = {
     organizationId: partner_ajv.organizationId.api,
     type: partner_ajv.type.api,
     firstName: partner_ajv.firstName.api,
-    lastName: partner_ajv.lastName.api,
     personalEmail: partner_ajv.personalEmail.api,
     workEmail: partner_ajv.workEmail.api,
     mobilePhone: partner_ajv.mobilePhone.api,
     workPhone: partner_ajv.workPhone.api,
     addressId: partner_ajv.addressId.api,
   },
-  required: ['firstName', 'lastName'],
+  required: ['lastName', 'firstName'],
   additionalProperties: false,
 };
 

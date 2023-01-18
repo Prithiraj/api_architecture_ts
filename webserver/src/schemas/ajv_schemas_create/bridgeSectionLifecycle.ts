@@ -8,7 +8,7 @@ const bridgeSectionLifecycle_schema = {
     customFieldSectionId: bridgeSectionLifecycle_ajv.customFieldSectionId.api,
     lifecycleId: bridgeSectionLifecycle_ajv.lifecycleId.api,
   },
-  required: ['customFieldSectionId', 'lifecycleId'],
+  required: ['lifecycleId', 'customFieldSectionId'],
   additionalProperties: false,
 };
 

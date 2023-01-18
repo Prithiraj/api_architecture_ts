@@ -5,22 +5,24 @@ import { persons_ajv } from '../mapper_ajv';
 const persons_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    personid: persons_ajv.personid.api,
+    lastname: persons_ajv.lastname.api,
+    firstname: persons_ajv.firstname.api,
+    address: persons_ajv.address.api,
+    city: persons_ajv.city.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
+    required: ['personid'],
+  },{
     required: ['lastname'],
-    properties: { apicolname: persons_ajv.lastname.api},	
   },{
     required: ['firstname'],
-    properties: { apicolname: persons_ajv.firstname.api},	
   },{
     required: ['address'],
-    properties: { apicolname: persons_ajv.address.api},	
   },{
     required: ['city'],
-    properties: { apicolname: persons_ajv.city.api},	
   },]
 };
 

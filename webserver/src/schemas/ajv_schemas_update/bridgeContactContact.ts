@@ -5,31 +5,28 @@ import { bridgeContactContact_ajv } from '../mapper_ajv';
 const bridgeContactContact_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    contactId: bridgeContactContact_ajv.contactId.api,
+    assignedTo: bridgeContactContact_ajv.assignedTo.api,
+    relationship: bridgeContactContact_ajv.relationship.api,
+    assignedBy: bridgeContactContact_ajv.assignedBy.api,
+    assignTime: bridgeContactContact_ajv.assignTime.api,
+    assignRequest: bridgeContactContact_ajv.assignRequest.api,
+    id: bridgeContactContact_ajv.id.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['contactId'],
-    properties: { apicolname: bridgeContactContact_ajv.contactId.api},	
   },{
     required: ['assignedTo'],
-    properties: { apicolname: bridgeContactContact_ajv.assignedTo.api},	
   },{
     required: ['relationship'],
-    properties: { apicolname: bridgeContactContact_ajv.relationship.api},	
   },{
     required: ['assignedBy'],
-    properties: { apicolname: bridgeContactContact_ajv.assignedBy.api},	
   },{
     required: ['assignTime'],
-    properties: { apicolname: bridgeContactContact_ajv.assignTime.api},	
   },{
     required: ['assignRequest'],
-    properties: { apicolname: bridgeContactContact_ajv.assignRequest.api},	
-  },{
-    required: ['id'],
-    properties: { apicolname: bridgeContactContact_ajv.id.api},	
   },]
 };
 

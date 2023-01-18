@@ -5,118 +5,117 @@ import { eventsV2_ajv } from '../mapper_ajv';
 const eventsV2_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    eventId: eventsV2_ajv.eventId.api,
+    eventCategoryId: eventsV2_ajv.eventCategoryId.api,
+    eventCategory: eventsV2_ajv.eventCategory.api,
+    eventTypeId: eventsV2_ajv.eventTypeId.api,
+    eventType: eventsV2_ajv.eventType.api,
+    eventData: eventsV2_ajv.eventData.api,
+    eventProvider: eventsV2_ajv.eventProvider.api,
+    rawBucket: eventsV2_ajv.rawBucket.api,
+    rawPath: eventsV2_ajv.rawPath.api,
+    reason: eventsV2_ajv.reason.api,
+    destinationLocation: eventsV2_ajv.destinationLocation.api,
+    destinationType: eventsV2_ajv.destinationType.api,
+    deviceIp: eventsV2_ajv.deviceIp.api,
+    deviceLocationCity: eventsV2_ajv.deviceLocationCity.api,
+    deviceLocationContinent: eventsV2_ajv.deviceLocationContinent.api,
+    deviceLocationCoordinatesLat: eventsV2_ajv.deviceLocationCoordinatesLat.api,
+    deviceLocationCoordinatesLon: eventsV2_ajv.deviceLocationCoordinatesLon.api,
+    deviceLocationCountry: eventsV2_ajv.deviceLocationCountry.api,
+    deviceLocationZip: eventsV2_ajv.deviceLocationZip.api,
+    deviceTimezone: eventsV2_ajv.deviceTimezone.api,
+    deviceType: eventsV2_ajv.deviceType.api,
+    userPool: eventsV2_ajv.userPool.api,
+    destinationId: eventsV2_ajv.destinationId.api,
+    endTime: eventsV2_ajv.endTime.api,
+    eventClass: eventsV2_ajv.eventClass.api,
+    eventCode: eventsV2_ajv.eventCode.api,
+    eventTime: eventsV2_ajv.eventTime.api,
+    referralId: eventsV2_ajv.referralId.api,
+    referralType: eventsV2_ajv.referralType.api,
+    startTime: eventsV2_ajv.startTime.api,
+    resourceType: eventsV2_ajv.resourceType.api,
+    sourceType: eventsV2_ajv.sourceType.api,
+    channelId: eventsV2_ajv.channelId.api,
+    channelType: eventsV2_ajv.channelType.api,
+    message: eventsV2_ajv.message.api,
+    eventSeverity: eventsV2_ajv.eventSeverity.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
+    required: ['eventId'],
+  },{
     required: ['eventCategoryId'],
-    properties: { apicolname: eventsV2_ajv.eventCategoryId.api},	
   },{
     required: ['eventCategory'],
-    properties: { apicolname: eventsV2_ajv.eventCategory.api},	
   },{
     required: ['eventTypeId'],
-    properties: { apicolname: eventsV2_ajv.eventTypeId.api},	
   },{
     required: ['eventType'],
-    properties: { apicolname: eventsV2_ajv.eventType.api},	
   },{
     required: ['eventData'],
-    properties: { apicolname: eventsV2_ajv.eventData.api},	
   },{
     required: ['eventProvider'],
-    properties: { apicolname: eventsV2_ajv.eventProvider.api},	
   },{
     required: ['rawBucket'],
-    properties: { apicolname: eventsV2_ajv.rawBucket.api},	
   },{
     required: ['rawPath'],
-    properties: { apicolname: eventsV2_ajv.rawPath.api},	
   },{
     required: ['reason'],
-    properties: { apicolname: eventsV2_ajv.reason.api},	
   },{
     required: ['destinationLocation'],
-    properties: { apicolname: eventsV2_ajv.destinationLocation.api},	
   },{
     required: ['destinationType'],
-    properties: { apicolname: eventsV2_ajv.destinationType.api},	
   },{
     required: ['deviceIp'],
-    properties: { apicolname: eventsV2_ajv.deviceIp.api},	
   },{
     required: ['deviceLocationCity'],
-    properties: { apicolname: eventsV2_ajv.deviceLocationCity.api},	
   },{
     required: ['deviceLocationContinent'],
-    properties: { apicolname: eventsV2_ajv.deviceLocationContinent.api},	
   },{
     required: ['deviceLocationCoordinatesLat'],
-    properties: { apicolname: eventsV2_ajv.deviceLocationCoordinatesLat.api},	
   },{
     required: ['deviceLocationCoordinatesLon'],
-    properties: { apicolname: eventsV2_ajv.deviceLocationCoordinatesLon.api},	
   },{
     required: ['deviceLocationCountry'],
-    properties: { apicolname: eventsV2_ajv.deviceLocationCountry.api},	
   },{
     required: ['deviceLocationZip'],
-    properties: { apicolname: eventsV2_ajv.deviceLocationZip.api},	
   },{
     required: ['deviceTimezone'],
-    properties: { apicolname: eventsV2_ajv.deviceTimezone.api},	
   },{
     required: ['deviceType'],
-    properties: { apicolname: eventsV2_ajv.deviceType.api},	
   },{
     required: ['userPool'],
-    properties: { apicolname: eventsV2_ajv.userPool.api},	
   },{
     required: ['destinationId'],
-    properties: { apicolname: eventsV2_ajv.destinationId.api},	
   },{
     required: ['endTime'],
-    properties: { apicolname: eventsV2_ajv.endTime.api},	
   },{
     required: ['eventClass'],
-    properties: { apicolname: eventsV2_ajv.eventClass.api},	
   },{
     required: ['eventCode'],
-    properties: { apicolname: eventsV2_ajv.eventCode.api},	
   },{
     required: ['eventTime'],
-    properties: { apicolname: eventsV2_ajv.eventTime.api},	
-  },{
-    required: ['ownerId'],
-    properties: { apicolname: eventsV2_ajv.ownerId.api},	
   },{
     required: ['referralId'],
-    properties: { apicolname: eventsV2_ajv.referralId.api},	
   },{
     required: ['referralType'],
-    properties: { apicolname: eventsV2_ajv.referralType.api},	
   },{
     required: ['startTime'],
-    properties: { apicolname: eventsV2_ajv.startTime.api},	
   },{
     required: ['resourceType'],
-    properties: { apicolname: eventsV2_ajv.resourceType.api},	
   },{
     required: ['sourceType'],
-    properties: { apicolname: eventsV2_ajv.sourceType.api},	
   },{
     required: ['channelId'],
-    properties: { apicolname: eventsV2_ajv.channelId.api},	
   },{
     required: ['channelType'],
-    properties: { apicolname: eventsV2_ajv.channelType.api},	
-  },{
-    required: ['timeZone'],
-    properties: { apicolname: eventsV2_ajv.timeZone.api},	
   },{
     required: ['message'],
-    properties: { apicolname: eventsV2_ajv.message.api},	
+  },{
+    required: ['eventSeverity'],
   },]
 };
 

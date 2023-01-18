@@ -12,11 +12,10 @@ const page_schema = {
     themeId: page_ajv.themeId.api,
     category: page_ajv.category.api,
     type: page_ajv.type.api,
-    status: page_ajv.status.api,
-    ownerId: page_ajv.ownerId.api,
     headerMeta: page_ajv.headerMeta.api,
+    latestTemplateId: page_ajv.latestTemplateId.api,
   },
-  required: ['type', 'body', 'themeId', 'ownerId', 'name'],
+  required: ['ownerId', 'name', 'themeId', 'body', 'type'],
   additionalProperties: false,
 };
 

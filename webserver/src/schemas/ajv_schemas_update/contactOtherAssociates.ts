@@ -5,16 +5,16 @@ import { contactOtherAssociates_ajv } from '../mapper_ajv';
 const contactOtherAssociates_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: contactOtherAssociates_ajv.id.api,
+    contactId: contactOtherAssociates_ajv.contactId.api,
+    associateName: contactOtherAssociates_ajv.associateName.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['contactId'],
-    properties: { apicolname: contactOtherAssociates_ajv.contactId.api},	
   },{
     required: ['associateName'],
-    properties: { apicolname: contactOtherAssociates_ajv.associateName.api},	
   },]
 };
 

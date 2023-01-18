@@ -10,7 +10,7 @@ const contactComment_schema = {
     comment: contactComment_ajv.comment.api,
     active: contactComment_ajv.active.api,
   },
-  required: ['contactId', 'active', 'comment', 'userId'],
+  required: ['userId', 'contactId', 'active', 'comment'],
   additionalProperties: false,
 };
 

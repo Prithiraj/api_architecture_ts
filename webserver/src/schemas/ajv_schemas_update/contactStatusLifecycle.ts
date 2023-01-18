@@ -5,13 +5,13 @@ import { contactStatusLifecycle_ajv } from '../mapper_ajv';
 const contactStatusLifecycle_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: contactStatusLifecycle_ajv.id.api,
+    lifecycleName: contactStatusLifecycle_ajv.lifecycleName.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['lifecycleName'],
-    properties: { apicolname: contactStatusLifecycle_ajv.lifecycleName.api},	
   },]
 };
 

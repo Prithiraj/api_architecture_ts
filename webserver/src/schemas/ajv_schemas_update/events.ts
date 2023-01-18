@@ -5,133 +5,141 @@ import { events_ajv } from '../mapper_ajv';
 const events_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    eventAction: events_ajv.eventAction.api,
+    eventCategory: events_ajv.eventCategory.api,
+    eventClass: events_ajv.eventClass.api,
+    eventCode: events_ajv.eventCode.api,
+    eventData: events_ajv.eventData.api,
+    eventGroup: events_ajv.eventGroup.api,
+    eventId: events_ajv.eventId.api,
+    eventName: events_ajv.eventName.api,
+    eventProvider: events_ajv.eventProvider.api,
+    eventSeverity: events_ajv.eventSeverity.api,
+    eventType: events_ajv.eventType.api,
+    message: events_ajv.message.api,
+    outcome: events_ajv.outcome.api,
+    parentId: events_ajv.parentId.api,
+    rawPath: events_ajv.rawPath.api,
+    reason: events_ajv.reason.api,
+    endTime: events_ajv.endTime.api,
+    eventTime: events_ajv.eventTime.api,
+    startTime: events_ajv.startTime.api,
+    destinationId: events_ajv.destinationId.api,
+    channelId: events_ajv.channelId.api,
+    channelType: events_ajv.channelType.api,
+    destinationLocation: events_ajv.destinationLocation.api,
+    destinationType: events_ajv.destinationType.api,
+    deviceIp: events_ajv.deviceIp.api,
+    deviceLocationCity: events_ajv.deviceLocationCity.api,
+    deviceLocationContinent: events_ajv.deviceLocationContinent.api,
+    deviceLocationCoordinatesLon: events_ajv.deviceLocationCoordinatesLon.api,
+    deviceLocationCountry: events_ajv.deviceLocationCountry.api,
+    deviceLocationZip: events_ajv.deviceLocationZip.api,
+    deviceType: events_ajv.deviceType.api,
+    referralId: events_ajv.referralId.api,
+    referralType: events_ajv.referralType.api,
+    resourceId: events_ajv.resourceId.api,
+    sourceId: events_ajv.sourceId.api,
+    sourceType: events_ajv.sourceType.api,
+    userAgent: events_ajv.userAgent.api,
+    userPool: events_ajv.userPool.api,
+    timezone: events_ajv.timezone.api,
+    rawBucket: events_ajv.rawBucket.api,
+    userType: events_ajv.userType.api,
+    resourceType: events_ajv.resourceType.api,
+    deviceTimezone: events_ajv.deviceTimezone.api,
+    deviceLocationCoordinatesLat: events_ajv.deviceLocationCoordinatesLat.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['eventAction'],
-    properties: { apicolname: events_ajv.eventAction.api},	
   },{
     required: ['eventCategory'],
-    properties: { apicolname: events_ajv.eventCategory.api},	
   },{
     required: ['eventClass'],
-    properties: { apicolname: events_ajv.eventClass.api},	
   },{
     required: ['eventCode'],
-    properties: { apicolname: events_ajv.eventCode.api},	
   },{
     required: ['eventData'],
-    properties: { apicolname: events_ajv.eventData.api},	
   },{
     required: ['eventGroup'],
-    properties: { apicolname: events_ajv.eventGroup.api},	
+  },{
+    required: ['eventId'],
   },{
     required: ['eventName'],
-    properties: { apicolname: events_ajv.eventName.api},	
   },{
     required: ['eventProvider'],
-    properties: { apicolname: events_ajv.eventProvider.api},	
   },{
     required: ['eventSeverity'],
-    properties: { apicolname: events_ajv.eventSeverity.api},	
   },{
     required: ['eventType'],
-    properties: { apicolname: events_ajv.eventType.api},	
   },{
     required: ['message'],
-    properties: { apicolname: events_ajv.message.api},	
   },{
     required: ['outcome'],
-    properties: { apicolname: events_ajv.outcome.api},	
   },{
     required: ['parentId'],
-    properties: { apicolname: events_ajv.parentId.api},	
   },{
     required: ['rawPath'],
-    properties: { apicolname: events_ajv.rawPath.api},	
   },{
     required: ['reason'],
-    properties: { apicolname: events_ajv.reason.api},	
   },{
     required: ['endTime'],
-    properties: { apicolname: events_ajv.endTime.api},	
   },{
     required: ['eventTime'],
-    properties: { apicolname: events_ajv.eventTime.api},	
   },{
     required: ['startTime'],
-    properties: { apicolname: events_ajv.startTime.api},	
   },{
     required: ['destinationId'],
-    properties: { apicolname: events_ajv.destinationId.api},	
   },{
     required: ['channelId'],
-    properties: { apicolname: events_ajv.channelId.api},	
   },{
     required: ['channelType'],
-    properties: { apicolname: events_ajv.channelType.api},	
   },{
     required: ['destinationLocation'],
-    properties: { apicolname: events_ajv.destinationLocation.api},	
   },{
     required: ['destinationType'],
-    properties: { apicolname: events_ajv.destinationType.api},	
   },{
     required: ['deviceIp'],
-    properties: { apicolname: events_ajv.deviceIp.api},	
   },{
     required: ['deviceLocationCity'],
-    properties: { apicolname: events_ajv.deviceLocationCity.api},	
   },{
     required: ['deviceLocationContinent'],
-    properties: { apicolname: events_ajv.deviceLocationContinent.api},	
   },{
     required: ['deviceLocationCoordinatesLon'],
-    properties: { apicolname: events_ajv.deviceLocationCoordinatesLon.api},	
   },{
     required: ['deviceLocationCountry'],
-    properties: { apicolname: events_ajv.deviceLocationCountry.api},	
   },{
     required: ['deviceLocationZip'],
-    properties: { apicolname: events_ajv.deviceLocationZip.api},	
   },{
     required: ['deviceType'],
-    properties: { apicolname: events_ajv.deviceType.api},	
   },{
     required: ['referralId'],
-    properties: { apicolname: events_ajv.referralId.api},	
   },{
     required: ['referralType'],
-    properties: { apicolname: events_ajv.referralType.api},	
   },{
     required: ['resourceId'],
-    properties: { apicolname: events_ajv.resourceId.api},	
   },{
     required: ['sourceId'],
-    properties: { apicolname: events_ajv.sourceId.api},	
   },{
     required: ['sourceType'],
-    properties: { apicolname: events_ajv.sourceType.api},	
   },{
     required: ['userAgent'],
-    properties: { apicolname: events_ajv.userAgent.api},	
   },{
     required: ['userPool'],
-    properties: { apicolname: events_ajv.userPool.api},	
   },{
     required: ['timezone'],
-    properties: { apicolname: events_ajv.timezone.api},	
   },{
     required: ['rawBucket'],
-    properties: { apicolname: events_ajv.rawBucket.api},	
   },{
     required: ['userType'],
-    properties: { apicolname: events_ajv.userType.api},	
   },{
-    required: ['userId'],
-    properties: { apicolname: events_ajv.userId.api},	
+    required: ['resourceType'],
+  },{
+    required: ['deviceTimezone'],
+  },{
+    required: ['deviceLocationCoordinatesLat'],
   },]
 };
 

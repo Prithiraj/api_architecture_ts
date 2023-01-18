@@ -5,16 +5,16 @@ import { templateDependency_ajv } from '../mapper_ajv';
 const templateDependency_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: templateDependency_ajv.id.api,
+    templateId: templateDependency_ajv.templateId.api,
+    versionId: templateDependency_ajv.versionId.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['templateId'],
-    properties: { apicolname: templateDependency_ajv.templateId.api},	
   },{
     required: ['versionId'],
-    properties: { apicolname: templateDependency_ajv.versionId.api},	
   },]
 };
 

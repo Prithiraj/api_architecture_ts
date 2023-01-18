@@ -5,37 +5,37 @@ import { contactReminder_ajv } from '../mapper_ajv';
 const contactReminder_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: contactReminder_ajv.id.api,
+    contactId: contactReminder_ajv.contactId.api,
+    userId: contactReminder_ajv.userId.api,
+    type: contactReminder_ajv.type.api,
+    title: contactReminder_ajv.title.api,
+    description: contactReminder_ajv.description.api,
+    dueDate: contactReminder_ajv.dueDate.api,
+    executeAt: contactReminder_ajv.executeAt.api,
+    reminderData: contactReminder_ajv.reminderData.api,
+    active: contactReminder_ajv.active.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['contactId'],
-    properties: { apicolname: contactReminder_ajv.contactId.api},	
   },{
     required: ['userId'],
-    properties: { apicolname: contactReminder_ajv.userId.api},	
   },{
     required: ['type'],
-    properties: { apicolname: contactReminder_ajv.type.api},	
   },{
     required: ['title'],
-    properties: { apicolname: contactReminder_ajv.title.api},	
   },{
     required: ['description'],
-    properties: { apicolname: contactReminder_ajv.description.api},	
   },{
     required: ['dueDate'],
-    properties: { apicolname: contactReminder_ajv.dueDate.api},	
   },{
     required: ['executeAt'],
-    properties: { apicolname: contactReminder_ajv.executeAt.api},	
   },{
     required: ['reminderData'],
-    properties: { apicolname: contactReminder_ajv.reminderData.api},	
   },{
     required: ['active'],
-    properties: { apicolname: contactReminder_ajv.active.api},	
   },]
 };
 

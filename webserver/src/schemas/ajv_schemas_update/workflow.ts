@@ -5,43 +5,43 @@ import { workflow_ajv } from '../mapper_ajv';
 const workflow_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: workflow_ajv.id.api,
+    sourceTemplate: workflow_ajv.sourceTemplate.api,
+    status: workflow_ajv.status.api,
+    steps: workflow_ajv.steps.api,
+    targetFilter: workflow_ajv.targetFilter.api,
+    apiVersion: workflow_ajv.apiVersion.api,
+    firstStep: workflow_ajv.firstStep.api,
+    flowType: workflow_ajv.flowType.api,
+    name: workflow_ajv.name.api,
+    recurring: workflow_ajv.recurring.api,
+    startTime: workflow_ajv.startTime.api,
+    retry: workflow_ajv.retry.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['sourceTemplate'],
-    properties: { apicolname: workflow_ajv.sourceTemplate.api},	
   },{
     required: ['status'],
-    properties: { apicolname: workflow_ajv.status.api},	
   },{
     required: ['steps'],
-    properties: { apicolname: workflow_ajv.steps.api},	
   },{
     required: ['targetFilter'],
-    properties: { apicolname: workflow_ajv.targetFilter.api},	
   },{
     required: ['apiVersion'],
-    properties: { apicolname: workflow_ajv.apiVersion.api},	
   },{
     required: ['firstStep'],
-    properties: { apicolname: workflow_ajv.firstStep.api},	
   },{
     required: ['flowType'],
-    properties: { apicolname: workflow_ajv.flowType.api},	
   },{
     required: ['name'],
-    properties: { apicolname: workflow_ajv.name.api},	
   },{
     required: ['recurring'],
-    properties: { apicolname: workflow_ajv.recurring.api},	
   },{
     required: ['startTime'],
-    properties: { apicolname: workflow_ajv.startTime.api},	
   },{
     required: ['retry'],
-    properties: { apicolname: workflow_ajv.retry.api},	
   },]
 };
 

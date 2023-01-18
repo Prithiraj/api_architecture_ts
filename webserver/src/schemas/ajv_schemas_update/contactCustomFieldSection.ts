@@ -5,13 +5,13 @@ import { contactCustomFieldSection_ajv } from '../mapper_ajv';
 const contactCustomFieldSection_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: contactCustomFieldSection_ajv.id.api,
+    sectionName: contactCustomFieldSection_ajv.sectionName.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['sectionName'],
-    properties: { apicolname: contactCustomFieldSection_ajv.sectionName.api},	
   },]
 };
 

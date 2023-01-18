@@ -5,7 +5,6 @@ import { workflowtoworkflowTargetFilters_ajv } from '../mapper_ajv';
 const workflowtoworkflowTargetFilters_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
   },
   required: ['id'],
   additionalProperties: false,

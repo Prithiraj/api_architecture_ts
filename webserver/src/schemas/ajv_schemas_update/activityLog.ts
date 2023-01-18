@@ -5,73 +5,76 @@ import { activityLog_ajv } from '../mapper_ajv';
 const activityLog_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: activityLog_ajv.id.api,
+    eventId: activityLog_ajv.eventId.api,
+    eventCategoryId: activityLog_ajv.eventCategoryId.api,
+    eventTypeId: activityLog_ajv.eventTypeId.api,
+    historyData: activityLog_ajv.historyData.api,
+    eventClass: activityLog_ajv.eventClass.api,
+    eventData: activityLog_ajv.eventData.api,
+    eventTime: activityLog_ajv.eventTime.api,
+    message: activityLog_ajv.message.api,
+    ownerId: activityLog_ajv.ownerId.api,
+    startTime: activityLog_ajv.startTime.api,
+    resourceType: activityLog_ajv.resourceType.api,
+    contactId: activityLog_ajv.contactId.api,
+    userId: activityLog_ajv.userId.api,
+    reason: activityLog_ajv.reason.api,
+    timeZone: activityLog_ajv.timeZone.api,
+    eventCode: activityLog_ajv.eventCode.api,
+    eventCategory: activityLog_ajv.eventCategory.api,
+    sourceType: activityLog_ajv.sourceType.api,
+    endTime: activityLog_ajv.endTime.api,
+    eventSeverity: activityLog_ajv.eventSeverity.api,
+    eventType: activityLog_ajv.eventType.api,
+    channelId: activityLog_ajv.channelId.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['eventId'],
-    properties: { apicolname: activityLog_ajv.eventId.api},	
   },{
     required: ['eventCategoryId'],
-    properties: { apicolname: activityLog_ajv.eventCategoryId.api},	
   },{
     required: ['eventTypeId'],
-    properties: { apicolname: activityLog_ajv.eventTypeId.api},	
   },{
     required: ['historyData'],
-    properties: { apicolname: activityLog_ajv.historyData.api},	
   },{
     required: ['eventClass'],
-    properties: { apicolname: activityLog_ajv.eventClass.api},	
   },{
     required: ['eventData'],
-    properties: { apicolname: activityLog_ajv.eventData.api},	
   },{
     required: ['eventTime'],
-    properties: { apicolname: activityLog_ajv.eventTime.api},	
   },{
     required: ['message'],
-    properties: { apicolname: activityLog_ajv.message.api},	
   },{
     required: ['ownerId'],
-    properties: { apicolname: activityLog_ajv.ownerId.api},	
   },{
     required: ['startTime'],
-    properties: { apicolname: activityLog_ajv.startTime.api},	
   },{
     required: ['resourceType'],
-    properties: { apicolname: activityLog_ajv.resourceType.api},	
   },{
     required: ['contactId'],
-    properties: { apicolname: activityLog_ajv.contactId.api},	
-  },{
-    required: ['masterEventTime'],
-    properties: { apicolname: activityLog_ajv.masterEventTime.api},	
   },{
     required: ['userId'],
-    properties: { apicolname: activityLog_ajv.userId.api},	
   },{
     required: ['reason'],
-    properties: { apicolname: activityLog_ajv.reason.api},	
   },{
     required: ['timeZone'],
-    properties: { apicolname: activityLog_ajv.timeZone.api},	
   },{
     required: ['eventCode'],
-    properties: { apicolname: activityLog_ajv.eventCode.api},	
-  },{
-    required: ['channelType'],
-    properties: { apicolname: activityLog_ajv.channelType.api},	
   },{
     required: ['eventCategory'],
-    properties: { apicolname: activityLog_ajv.eventCategory.api},	
   },{
     required: ['sourceType'],
-    properties: { apicolname: activityLog_ajv.sourceType.api},	
   },{
     required: ['endTime'],
-    properties: { apicolname: activityLog_ajv.endTime.api},	
+  },{
+    required: ['eventSeverity'],
+  },{
+    required: ['eventType'],
+  },{
+    required: ['channelId'],
   },]
 };
 

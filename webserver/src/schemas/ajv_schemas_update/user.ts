@@ -5,31 +5,31 @@ import { user_ajv } from '../mapper_ajv';
 const user_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: user_ajv.id.api,
+    userType: user_ajv.userType.api,
+    emailVerified: user_ajv.emailVerified.api,
+    lastname: user_ajv.lastname.api,
+    phone: user_ajv.phone.api,
+    phoneNumberVerified: user_ajv.phoneNumberVerified.api,
+    profileImage: user_ajv.profileImage.api,
+    firstname: user_ajv.firstname.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['userType'],
-    properties: { apicolname: user_ajv.userType.api},	
-  },{
-    required: ['email'],
-    properties: { apicolname: user_ajv.email.api},	
   },{
     required: ['emailVerified'],
-    properties: { apicolname: user_ajv.emailVerified.api},	
   },{
     required: ['lastname'],
-    properties: { apicolname: user_ajv.lastname.api},	
   },{
     required: ['phone'],
-    properties: { apicolname: user_ajv.phone.api},	
   },{
     required: ['phoneNumberVerified'],
-    properties: { apicolname: user_ajv.phoneNumberVerified.api},	
   },{
     required: ['profileImage'],
-    properties: { apicolname: user_ajv.profileImage.api},	
+  },{
+    required: ['firstname'],
   },]
 };
 

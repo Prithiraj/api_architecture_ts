@@ -5,16 +5,16 @@ import { contactTag_ajv } from '../mapper_ajv';
 const contactTag_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: contactTag_ajv.id.api,
+    name: contactTag_ajv.name.api,
+    order: contactTag_ajv.order.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['name'],
-    properties: { apicolname: contactTag_ajv.name.api},	
   },{
     required: ['order'],
-    properties: { apicolname: contactTag_ajv.order.api},	
   },]
 };
 

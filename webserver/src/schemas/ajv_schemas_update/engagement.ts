@@ -5,103 +5,102 @@ import { engagement_ajv } from '../mapper_ajv';
 const engagement_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    parentId: engagement_ajv.parentId.api,
+    eventId: engagement_ajv.eventId.api,
+    rawBucket: engagement_ajv.rawBucket.api,
+    rawPath: engagement_ajv.rawPath.api,
+    eventClass: engagement_ajv.eventClass.api,
+    eventType: engagement_ajv.eventType.api,
+    eventTime: engagement_ajv.eventTime.api,
+    eventProvider: engagement_ajv.eventProvider.api,
+    eventAction: engagement_ajv.eventAction.api,
+    eventName: engagement_ajv.eventName.api,
+    eventGroup: engagement_ajv.eventGroup.api,
+    eventCategory: engagement_ajv.eventCategory.api,
+    eventCode: engagement_ajv.eventCode.api,
+    eventSeverity: engagement_ajv.eventSeverity.api,
+    message: engagement_ajv.message.api,
+    reason: engagement_ajv.reason.api,
+    timezone: engagement_ajv.timezone.api,
+    startTime: engagement_ajv.startTime.api,
+    endTime: engagement_ajv.endTime.api,
+    eventData: engagement_ajv.eventData.api,
+    channelId: engagement_ajv.channelId.api,
+    channelType: engagement_ajv.channelType.api,
+    resourceId: engagement_ajv.resourceId.api,
+    resourceType: engagement_ajv.resourceType.api,
+    sourceId: engagement_ajv.sourceId.api,
+    sourceType: engagement_ajv.sourceType.api,
+    userId: engagement_ajv.userId.api,
+    userPool: engagement_ajv.userPool.api,
+    userType: engagement_ajv.userType.api,
+    testCol01: engagement_ajv.testCol01.api,
+    userAgent: engagement_ajv.userAgent.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['parentId'],
-    properties: { apicolname: engagement_ajv.parentId.api},	
+  },{
+    required: ['eventId'],
   },{
     required: ['rawBucket'],
-    properties: { apicolname: engagement_ajv.rawBucket.api},	
   },{
     required: ['rawPath'],
-    properties: { apicolname: engagement_ajv.rawPath.api},	
   },{
     required: ['eventClass'],
-    properties: { apicolname: engagement_ajv.eventClass.api},	
   },{
     required: ['eventType'],
-    properties: { apicolname: engagement_ajv.eventType.api},	
   },{
     required: ['eventTime'],
-    properties: { apicolname: engagement_ajv.eventTime.api},	
   },{
     required: ['eventProvider'],
-    properties: { apicolname: engagement_ajv.eventProvider.api},	
   },{
     required: ['eventAction'],
-    properties: { apicolname: engagement_ajv.eventAction.api},	
   },{
     required: ['eventName'],
-    properties: { apicolname: engagement_ajv.eventName.api},	
   },{
     required: ['eventGroup'],
-    properties: { apicolname: engagement_ajv.eventGroup.api},	
   },{
     required: ['eventCategory'],
-    properties: { apicolname: engagement_ajv.eventCategory.api},	
   },{
     required: ['eventCode'],
-    properties: { apicolname: engagement_ajv.eventCode.api},	
   },{
     required: ['eventSeverity'],
-    properties: { apicolname: engagement_ajv.eventSeverity.api},	
-  },{
-    required: ['outcome'],
-    properties: { apicolname: engagement_ajv.outcome.api},	
   },{
     required: ['message'],
-    properties: { apicolname: engagement_ajv.message.api},	
   },{
     required: ['reason'],
-    properties: { apicolname: engagement_ajv.reason.api},	
   },{
     required: ['timezone'],
-    properties: { apicolname: engagement_ajv.timezone.api},	
   },{
     required: ['startTime'],
-    properties: { apicolname: engagement_ajv.startTime.api},	
   },{
     required: ['endTime'],
-    properties: { apicolname: engagement_ajv.endTime.api},	
   },{
     required: ['eventData'],
-    properties: { apicolname: engagement_ajv.eventData.api},	
   },{
     required: ['channelId'],
-    properties: { apicolname: engagement_ajv.channelId.api},	
   },{
     required: ['channelType'],
-    properties: { apicolname: engagement_ajv.channelType.api},	
   },{
     required: ['resourceId'],
-    properties: { apicolname: engagement_ajv.resourceId.api},	
   },{
     required: ['resourceType'],
-    properties: { apicolname: engagement_ajv.resourceType.api},	
   },{
     required: ['sourceId'],
-    properties: { apicolname: engagement_ajv.sourceId.api},	
   },{
     required: ['sourceType'],
-    properties: { apicolname: engagement_ajv.sourceType.api},	
   },{
     required: ['userId'],
-    properties: { apicolname: engagement_ajv.userId.api},	
   },{
     required: ['userPool'],
-    properties: { apicolname: engagement_ajv.userPool.api},	
   },{
     required: ['userType'],
-    properties: { apicolname: engagement_ajv.userType.api},	
   },{
     required: ['testCol01'],
-    properties: { apicolname: engagement_ajv.testCol01.api},	
   },{
     required: ['userAgent'],
-    properties: { apicolname: engagement_ajv.userAgent.api},	
   },]
 };
 

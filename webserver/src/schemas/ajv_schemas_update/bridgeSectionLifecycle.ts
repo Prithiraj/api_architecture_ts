@@ -5,16 +5,16 @@ import { bridgeSectionLifecycle_ajv } from '../mapper_ajv';
 const bridgeSectionLifecycle_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: bridgeSectionLifecycle_ajv.id.api,
+    customFieldSectionId: bridgeSectionLifecycle_ajv.customFieldSectionId.api,
+    lifecycleId: bridgeSectionLifecycle_ajv.lifecycleId.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['customFieldSectionId'],
-    properties: { apicolname: bridgeSectionLifecycle_ajv.customFieldSectionId.api},	
   },{
     required: ['lifecycleId'],
-    properties: { apicolname: bridgeSectionLifecycle_ajv.lifecycleId.api},	
   },]
 };
 

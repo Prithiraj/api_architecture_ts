@@ -5,31 +5,31 @@ import { organization_ajv } from '../mapper_ajv';
 const organization_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: organization_ajv.id.api,
+    addressId: organization_ajv.addressId.api,
+    name: organization_ajv.name.api,
+    type: organization_ajv.type.api,
+    phone: organization_ajv.phone.api,
+    email: organization_ajv.email.api,
+    nmlsId: organization_ajv.nmlsId.api,
+    parentOrganizationId: organization_ajv.parentOrganizationId.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['addressId'],
-    properties: { apicolname: organization_ajv.addressId.api},	
   },{
     required: ['name'],
-    properties: { apicolname: organization_ajv.name.api},	
   },{
     required: ['type'],
-    properties: { apicolname: organization_ajv.type.api},	
   },{
     required: ['phone'],
-    properties: { apicolname: organization_ajv.phone.api},	
   },{
     required: ['email'],
-    properties: { apicolname: organization_ajv.email.api},	
   },{
     required: ['nmlsId'],
-    properties: { apicolname: organization_ajv.nmlsId.api},	
   },{
     required: ['parentOrganizationId'],
-    properties: { apicolname: organization_ajv.parentOrganizationId.api},	
   },]
 };
 

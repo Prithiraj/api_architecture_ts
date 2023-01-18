@@ -5,16 +5,18 @@ import { routing_ajv } from '../mapper_ajv';
 const routing_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    subdomain: routing_ajv.subdomain.api,
+    path: routing_ajv.path.api,
+    resourceId: routing_ajv.resourceId.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['subdomain'],
-    properties: { apicolname: routing_ajv.subdomain.api},	
+  },{
+    required: ['path'],
   },{
     required: ['resourceId'],
-    properties: { apicolname: routing_ajv.resourceId.api},	
   },]
 };
 

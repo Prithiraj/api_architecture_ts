@@ -5,108 +5,112 @@ import { contact_ajv } from '../mapper_ajv';
 const contact_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: contact_ajv.id.api,
+    statusId: contact_ajv.statusId.api,
+    addressId: contact_ajv.addressId.api,
+    pictureUrl: contact_ajv.pictureUrl.api,
+    nmlsId: contact_ajv.nmlsId.api,
+    type: contact_ajv.type.api,
+    firstName: contact_ajv.firstName.api,
+    lastName: contact_ajv.lastName.api,
+    personalEmail: contact_ajv.personalEmail.api,
+    workEmail: contact_ajv.workEmail.api,
+    mobilePhone: contact_ajv.mobilePhone.api,
+    workPhone: contact_ajv.workPhone.api,
+    extraMail: contact_ajv.extraMail.api,
+    extraPhone: contact_ajv.extraPhone.api,
+    jobTitle: contact_ajv.jobTitle.api,
+    maritalStatus: contact_ajv.maritalStatus.api,
+    gender: contact_ajv.gender.api,
+    dob: contact_ajv.dob.api,
+    creationSource: contact_ajv.creationSource.api,
+    ssn: contact_ajv.ssn.api,
+    leadSourceType: contact_ajv.leadSourceType.api,
+    leadSource: contact_ajv.leadSource.api,
+    middleName: contact_ajv.middleName.api,
+    locale: contact_ajv.locale.api,
+    monthlyIncome: contact_ajv.monthlyIncome.api,
+    organizationId: contact_ajv.organizationId.api,
+    origin: contact_ajv.origin.api,
+    taygoSource: contact_ajv.taygoSource.api,
+    timezone: contact_ajv.timezone.api,
+    isConverted: contact_ajv.isConverted.api,
+    homePhone: contact_ajv.homePhone.api,
+    fico: contact_ajv.fico.api,
+    currentLoanId: contact_ajv.currentLoanId.api,
+    desiredLoanId: contact_ajv.desiredLoanId.api,
+    statusLifecycleId: contact_ajv.statusLifecycleId.api,
   },
   required: ['id'],
+  additionalProperties: false,
   anyOf: [{
     required: ['statusId'],
-    properties: { apicolname: contact_ajv.statusId.api},	
   },{
     required: ['addressId'],
-    properties: { apicolname: contact_ajv.addressId.api},	
   },{
     required: ['pictureUrl'],
-    properties: { apicolname: contact_ajv.pictureUrl.api},	
   },{
     required: ['nmlsId'],
-    properties: { apicolname: contact_ajv.nmlsId.api},	
   },{
     required: ['type'],
-    properties: { apicolname: contact_ajv.type.api},	
   },{
     required: ['firstName'],
-    properties: { apicolname: contact_ajv.firstName.api},	
   },{
     required: ['lastName'],
-    properties: { apicolname: contact_ajv.lastName.api},	
   },{
     required: ['personalEmail'],
-    properties: { apicolname: contact_ajv.personalEmail.api},	
   },{
     required: ['workEmail'],
-    properties: { apicolname: contact_ajv.workEmail.api},	
   },{
     required: ['mobilePhone'],
-    properties: { apicolname: contact_ajv.mobilePhone.api},	
   },{
     required: ['workPhone'],
-    properties: { apicolname: contact_ajv.workPhone.api},	
   },{
     required: ['extraMail'],
-    properties: { apicolname: contact_ajv.extraMail.api},	
   },{
     required: ['extraPhone'],
-    properties: { apicolname: contact_ajv.extraPhone.api},	
   },{
     required: ['jobTitle'],
-    properties: { apicolname: contact_ajv.jobTitle.api},	
   },{
     required: ['maritalStatus'],
-    properties: { apicolname: contact_ajv.maritalStatus.api},	
   },{
     required: ['gender'],
-    properties: { apicolname: contact_ajv.gender.api},	
   },{
     required: ['dob'],
-    properties: { apicolname: contact_ajv.dob.api},	
   },{
     required: ['creationSource'],
-    properties: { apicolname: contact_ajv.creationSource.api},	
   },{
     required: ['ssn'],
-    properties: { apicolname: contact_ajv.ssn.api},	
   },{
     required: ['leadSourceType'],
-    properties: { apicolname: contact_ajv.leadSourceType.api},	
   },{
     required: ['leadSource'],
-    properties: { apicolname: contact_ajv.leadSource.api},	
   },{
     required: ['middleName'],
-    properties: { apicolname: contact_ajv.middleName.api},	
   },{
     required: ['locale'],
-    properties: { apicolname: contact_ajv.locale.api},	
   },{
     required: ['monthlyIncome'],
-    properties: { apicolname: contact_ajv.monthlyIncome.api},	
   },{
     required: ['organizationId'],
-    properties: { apicolname: contact_ajv.organizationId.api},	
   },{
     required: ['origin'],
-    properties: { apicolname: contact_ajv.origin.api},	
   },{
     required: ['taygoSource'],
-    properties: { apicolname: contact_ajv.taygoSource.api},	
   },{
     required: ['timezone'],
-    properties: { apicolname: contact_ajv.timezone.api},	
   },{
     required: ['isConverted'],
-    properties: { apicolname: contact_ajv.isConverted.api},	
   },{
     required: ['homePhone'],
-    properties: { apicolname: contact_ajv.homePhone.api},	
   },{
     required: ['fico'],
-    properties: { apicolname: contact_ajv.fico.api},	
   },{
     required: ['currentLoanId'],
-    properties: { apicolname: contact_ajv.currentLoanId.api},	
   },{
     required: ['desiredLoanId'],
-    properties: { apicolname: contact_ajv.desiredLoanId.api},	
+  },{
+    required: ['statusLifecycleId'],
   },]
 };
 

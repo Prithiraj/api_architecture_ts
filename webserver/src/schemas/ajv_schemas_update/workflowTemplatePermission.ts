@@ -5,19 +5,19 @@ import { workflowTemplatePermission_ajv } from '../mapper_ajv';
 const workflowTemplatePermission_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: workflowTemplatePermission_ajv.id.api,
+    userId: workflowTemplatePermission_ajv.userId.api,
+    workflowTemplateId: workflowTemplatePermission_ajv.workflowTemplateId.api,
+    permission: workflowTemplatePermission_ajv.permission.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['userId'],
-    properties: { apicolname: workflowTemplatePermission_ajv.userId.api},	
   },{
     required: ['workflowTemplateId'],
-    properties: { apicolname: workflowTemplatePermission_ajv.workflowTemplateId.api},	
   },{
     required: ['permission'],
-    properties: { apicolname: workflowTemplatePermission_ajv.permission.api},	
   },]
 };
 

@@ -5,22 +5,22 @@ import { templateVersion_ajv } from '../mapper_ajv';
 const templateVersion_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    version: templateVersion_ajv.version.api,
+    type: templateVersion_ajv.type.api,
+    name: templateVersion_ajv.name.api,
+    data: templateVersion_ajv.data.api,
+    id: templateVersion_ajv.id.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['version'],
-    properties: { apicolname: templateVersion_ajv.version.api},	
   },{
     required: ['type'],
-    properties: { apicolname: templateVersion_ajv.type.api},	
   },{
     required: ['name'],
-    properties: { apicolname: templateVersion_ajv.name.api},	
   },{
     required: ['data'],
-    properties: { apicolname: templateVersion_ajv.data.api},	
   },]
 };
 

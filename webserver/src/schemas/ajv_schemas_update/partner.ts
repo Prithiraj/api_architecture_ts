@@ -5,37 +5,34 @@ import { partner_ajv } from '../mapper_ajv';
 const partner_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: partner_ajv.id.api,
+    organizationId: partner_ajv.organizationId.api,
+    type: partner_ajv.type.api,
+    firstName: partner_ajv.firstName.api,
+    personalEmail: partner_ajv.personalEmail.api,
+    workEmail: partner_ajv.workEmail.api,
+    mobilePhone: partner_ajv.mobilePhone.api,
+    workPhone: partner_ajv.workPhone.api,
+    addressId: partner_ajv.addressId.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['organizationId'],
-    properties: { apicolname: partner_ajv.organizationId.api},	
   },{
     required: ['type'],
-    properties: { apicolname: partner_ajv.type.api},	
   },{
     required: ['firstName'],
-    properties: { apicolname: partner_ajv.firstName.api},	
-  },{
-    required: ['lastName'],
-    properties: { apicolname: partner_ajv.lastName.api},	
   },{
     required: ['personalEmail'],
-    properties: { apicolname: partner_ajv.personalEmail.api},	
   },{
     required: ['workEmail'],
-    properties: { apicolname: partner_ajv.workEmail.api},	
   },{
     required: ['mobilePhone'],
-    properties: { apicolname: partner_ajv.mobilePhone.api},	
   },{
     required: ['workPhone'],
-    properties: { apicolname: partner_ajv.workPhone.api},	
   },{
     required: ['addressId'],
-    properties: { apicolname: partner_ajv.addressId.api},	
   },]
 };
 

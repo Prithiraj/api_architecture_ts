@@ -6,6 +6,7 @@ const stripeSubscriptionItem_schema = {
   type: 'object',
   properties: {
     stripePrice: stripeSubscriptionItem_ajv.stripePrice.api,
+    isTransferPrice: stripeSubscriptionItem_ajv.isTransferPrice.api,
   },
   required: [],
   additionalProperties: false,

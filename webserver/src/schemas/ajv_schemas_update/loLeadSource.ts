@@ -5,43 +5,43 @@ import { loLeadSource_ajv } from '../mapper_ajv';
 const loLeadSource_schema = {
   type: 'object',
   properties: {
-    id: { type: 'string',}
+    id: loLeadSource_ajv.id.api,
+    color: loLeadSource_ajv.color.api,
+    productId: loLeadSource_ajv.productId.api,
+    tileColor: loLeadSource_ajv.tileColor.api,
+    tileDescription: loLeadSource_ajv.tileDescription.api,
+    tileHighlights: loLeadSource_ajv.tileHighlights.api,
+    title: loLeadSource_ajv.title.api,
+    active: loLeadSource_ajv.active.api,
+    callcenter: loLeadSource_ajv.callcenter.api,
+    dedicatedCallcenter: loLeadSource_ajv.dedicatedCallcenter.api,
+    notificationEmails: loLeadSource_ajv.notificationEmails.api,
+    order: loLeadSource_ajv.order.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['color'],
-    properties: { apicolname: loLeadSource_ajv.color.api},	
   },{
     required: ['productId'],
-    properties: { apicolname: loLeadSource_ajv.productId.api},	
   },{
     required: ['tileColor'],
-    properties: { apicolname: loLeadSource_ajv.tileColor.api},	
   },{
     required: ['tileDescription'],
-    properties: { apicolname: loLeadSource_ajv.tileDescription.api},	
   },{
     required: ['tileHighlights'],
-    properties: { apicolname: loLeadSource_ajv.tileHighlights.api},	
   },{
     required: ['title'],
-    properties: { apicolname: loLeadSource_ajv.title.api},	
   },{
     required: ['active'],
-    properties: { apicolname: loLeadSource_ajv.active.api},	
   },{
     required: ['callcenter'],
-    properties: { apicolname: loLeadSource_ajv.callcenter.api},	
   },{
     required: ['dedicatedCallcenter'],
-    properties: { apicolname: loLeadSource_ajv.dedicatedCallcenter.api},	
   },{
     required: ['notificationEmails'],
-    properties: { apicolname: loLeadSource_ajv.notificationEmails.api},	
   },{
     required: ['order'],
-    properties: { apicolname: loLeadSource_ajv.order.api},	
   },]
 };
 
