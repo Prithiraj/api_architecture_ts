@@ -1,6 +1,7 @@
 import json
 import os
 import copy
+from json_modifier.json_update_modifier import JsonUpdateModifier
 from pyschemas.editor.ajvtables import DataTableSchemas
 from pyschemas.editor.comparer import Comparer
 from serializer_deserializer import SerializerDeserializer
@@ -46,9 +47,10 @@ if __name__ == "__main__":
     typescriptGen = TypescriptGen()
     typescriptGen.genMapperTypeScript(sorted_schema)
 
-    insert_schema = copy.deepcopy(sorted_schema)
-    insert_schema = JsonInsertModifier().removeExcludedColumns(insert_schema)
+    # insert_schema = copy.deepcopy(sorted_schema)
+    insert_schema = JsonInsertModifier().removeExcludedColumns(copy.deepcopy(sorted_schema))
     typescriptGen.genInsertTypeScript(insert_schema)
 
-    typescriptGen.genUpdateTypeScript(sorted_schema)
+    update_schema = JsonUpdateModifier().removeExcludedColumns(copy.deepcopy(sorted_schema))
+    typescriptGen.genUpdateTypeScript(update_schema)
     # print(json.dumps(sorted_schema))

@@ -10,9 +10,7 @@
 	"update":{
 		"exclude": {
 			"system": ["createdBy", "createTime", "createRequest", "updatedBy", "updateTime", "updateRequest", "isDeleted", "autoIncrementId"],
-			"dependency": ["accountId"],
-			"extras":[],
-			"primaryKey": true
+			"dependency": ["accountId"]
 		}
 	}
 }

@@ -9,7 +9,7 @@ const {{apitablename}}_schema = {
     {{apicolname}}: {{apitablename}}_ajv.{{apicolname}}.api,
     {{/columnInfoList}}
   },
-  required: {{# ajv_insert}}{{required}}{{/ajv_insert}},
+  required: {{# ajv_insert}}{{required}}{{^required}}[]{{/required}}{{/ajv_insert}},
   additionalProperties: false,
 };
 
