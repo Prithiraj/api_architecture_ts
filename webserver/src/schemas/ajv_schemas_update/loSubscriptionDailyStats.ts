@@ -24,24 +24,6 @@ const loSubscriptionDailyStats_schema = {
   },{
     required: ['totalLeadsTransfered'],
     properties: { apicolname: loSubscriptionDailyStats_ajv.totalLeadsTransfered.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: loSubscriptionDailyStats_ajv.createRequest.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: loSubscriptionDailyStats_ajv.createTime.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: loSubscriptionDailyStats_ajv.updatedBy.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: loSubscriptionDailyStats_ajv.updateRequest.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: loSubscriptionDailyStats_ajv.updateTime.api},	
-  },{
-    required: ['statsDate'],
-    properties: { apicolname: loSubscriptionDailyStats_ajv.statsDate.api},	
   },]
 };
 

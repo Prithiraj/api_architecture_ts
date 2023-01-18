@@ -10,29 +10,8 @@ const contactStatusLifecycle_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: contactStatusLifecycle_ajv.id.api},	
-  },{
     required: ['lifecycleName'],
     properties: { apicolname: contactStatusLifecycle_ajv.lifecycleName.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: contactStatusLifecycle_ajv.createTime.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: contactStatusLifecycle_ajv.createRequest.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: contactStatusLifecycle_ajv.updatedBy.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: contactStatusLifecycle_ajv.updateTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: contactStatusLifecycle_ajv.updateRequest.api},	
-  },{
-    required: ['isDeleted'],
-    properties: { apicolname: contactStatusLifecycle_ajv.isDeleted.api},	
   },]
 };
 

@@ -13,7 +13,7 @@ const prismaMigrations_schema = {
     startedAt: prismaMigrations_ajv.startedAt.api,
     appliedStepsCount: prismaMigrations_ajv.appliedStepsCount.api,
   },
-  required: ['startedAt', 'checksum', 'appliedStepsCount', 'migrationName'],
+  required: ['startedAt', 'migrationName', 'checksum', 'appliedStepsCount'],
   additionalProperties: false,
 };
 

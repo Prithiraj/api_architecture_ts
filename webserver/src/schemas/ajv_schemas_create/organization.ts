@@ -13,7 +13,7 @@ const organization_schema = {
     nmlsId: organization_ajv.nmlsId.api,
     parentOrganizationId: organization_ajv.parentOrganizationId.api,
   },
-  required: ,
+  required: [],
   additionalProperties: false,
 };
 

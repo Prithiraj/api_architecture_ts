@@ -12,7 +12,7 @@ const eventType_schema = {
     eventCategoryId: eventType_ajv.eventCategoryId.api,
     dbAction: eventType_ajv.dbAction.api,
   },
-  required: ['eventCategoryId', 'createdAt', 'eventType'],
+  required: ['createdAt', 'eventType', 'eventCategoryId'],
   additionalProperties: false,
 };
 

@@ -10,9 +10,6 @@ const loLead_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: loLead_ajv.id.api},	
-  },{
     required: ['assignmentId'],
     properties: { apicolname: loLead_ajv.assignmentId.api},	
   },{
@@ -94,18 +91,6 @@ const loLead_schema = {
     required: ['loanTransactionType'],
     properties: { apicolname: loLead_ajv.loanTransactionType.api},	
   },{
-    required: ['createRequest'],
-    properties: { apicolname: loLead_ajv.createRequest.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: loLead_ajv.createTime.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: loLead_ajv.updatedBy.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: loLead_ajv.updateTime.api},	
-  },{
     required: ['loLeadRawId'],
     properties: { apicolname: loLead_ajv.loLeadRawId.api},	
   },{
@@ -120,9 +105,6 @@ const loLead_schema = {
   },{
     required: ['firstName'],
     properties: { apicolname: loLead_ajv.firstName.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: loLead_ajv.updateRequest.api},	
   },{
     required: ['addressState'],
     properties: { apicolname: loLead_ajv.addressState.api},	

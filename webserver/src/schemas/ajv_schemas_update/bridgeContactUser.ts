@@ -16,9 +16,6 @@ const bridgeContactUser_schema = {
     required: ['userId'],
     properties: { apicolname: bridgeContactUser_ajv.userId.api},	
   },{
-    required: ['accountId'],
-    properties: { apicolname: bridgeContactUser_ajv.accountId.api},	
-  },{
     required: ['assignedBy'],
     properties: { apicolname: bridgeContactUser_ajv.assignedBy.api},	
   },{

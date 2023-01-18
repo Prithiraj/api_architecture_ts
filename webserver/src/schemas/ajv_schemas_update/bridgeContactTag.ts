@@ -16,9 +16,6 @@ const bridgeContactTag_schema = {
     required: ['tagId'],
     properties: { apicolname: bridgeContactTag_ajv.tagId.api},	
   },{
-    required: ['accountId'],
-    properties: { apicolname: bridgeContactTag_ajv.accountId.api},	
-  },{
     required: ['assignedBy'],
     properties: { apicolname: bridgeContactTag_ajv.assignedBy.api},	
   },{

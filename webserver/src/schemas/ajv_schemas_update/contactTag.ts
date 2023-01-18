@@ -10,32 +10,11 @@ const contactTag_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: contactTag_ajv.id.api},	
-  },{
-    required: ['accountId'],
-    properties: { apicolname: contactTag_ajv.accountId.api},	
-  },{
     required: ['name'],
     properties: { apicolname: contactTag_ajv.name.api},	
   },{
     required: ['order'],
     properties: { apicolname: contactTag_ajv.order.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: contactTag_ajv.createTime.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: contactTag_ajv.createRequest.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: contactTag_ajv.updatedBy.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: contactTag_ajv.updateTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: contactTag_ajv.updateRequest.api},	
   },]
 };
 

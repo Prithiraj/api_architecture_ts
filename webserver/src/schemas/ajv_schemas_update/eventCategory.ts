@@ -10,9 +10,6 @@ const eventCategory_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: eventCategory_ajv.id.api},	
-  },{
     required: ['eventCategoryName'],
     properties: { apicolname: eventCategory_ajv.eventCategoryName.api},	
   },{

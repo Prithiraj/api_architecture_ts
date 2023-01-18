@@ -10,9 +10,6 @@ const workflow_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: workflow_ajv.id.api},	
-  },{
     required: ['sourceTemplate'],
     properties: { apicolname: workflow_ajv.sourceTemplate.api},	
   },{
@@ -42,21 +39,6 @@ const workflow_schema = {
   },{
     required: ['startTime'],
     properties: { apicolname: workflow_ajv.startTime.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: workflow_ajv.createTime.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: workflow_ajv.createRequest.api},	
-  },{
-    required: ['createdBy'],
-    properties: { apicolname: workflow_ajv.createdBy.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: workflow_ajv.updateRequest.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: workflow_ajv.updatedBy.api},	
   },{
     required: ['retry'],
     properties: { apicolname: workflow_ajv.retry.api},	

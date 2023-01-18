@@ -17,7 +17,7 @@ const workflow_schema = {
     startTime: workflow_ajv.startTime.api,
     retry: workflow_ajv.retry.api,
   },
-  required: ['firstStep', 'apiVersion', 'steps', 'name', 'status', 'flowType'],
+  required: ['firstStep', 'flowType', 'apiVersion', 'status', 'name', 'steps'],
   additionalProperties: false,
 };
 

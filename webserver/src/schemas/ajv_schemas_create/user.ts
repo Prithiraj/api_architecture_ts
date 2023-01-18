@@ -13,7 +13,7 @@ const user_schema = {
     phoneNumberVerified: user_ajv.phoneNumberVerified.api,
     profileImage: user_ajv.profileImage.api,
   },
-  required: ['emailVerified', 'phoneNumberVerified'],
+  required: ['phoneNumberVerified', 'emailVerified'],
   additionalProperties: false,
 };
 

@@ -13,9 +13,6 @@ const bridgeContactContact_schema = {
     required: ['contactId'],
     properties: { apicolname: bridgeContactContact_ajv.contactId.api},	
   },{
-    required: ['accountId'],
-    properties: { apicolname: bridgeContactContact_ajv.accountId.api},	
-  },{
     required: ['assignedTo'],
     properties: { apicolname: bridgeContactContact_ajv.assignedTo.api},	
   },{

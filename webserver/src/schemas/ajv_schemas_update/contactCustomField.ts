@@ -10,12 +10,6 @@ const contactCustomField_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: contactCustomField_ajv.id.api},	
-  },{
-    required: ['accountId'],
-    properties: { apicolname: contactCustomField_ajv.accountId.api},	
-  },{
     required: ['name'],
     properties: { apicolname: contactCustomField_ajv.name.api},	
   },{
@@ -28,26 +22,8 @@ const contactCustomField_schema = {
     required: ['purpose'],
     properties: { apicolname: contactCustomField_ajv.purpose.api},	
   },{
-    required: ['createTime'],
-    properties: { apicolname: contactCustomField_ajv.createTime.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: contactCustomField_ajv.createRequest.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: contactCustomField_ajv.updatedBy.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: contactCustomField_ajv.updateTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: contactCustomField_ajv.updateRequest.api},	
-  },{
     required: ['sectionId'],
     properties: { apicolname: contactCustomField_ajv.sectionId.api},	
-  },{
-    required: ['isDeleted'],
-    properties: { apicolname: contactCustomField_ajv.isDeleted.api},	
   },]
 };
 

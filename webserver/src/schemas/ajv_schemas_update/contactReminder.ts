@@ -10,12 +10,6 @@ const contactReminder_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: contactReminder_ajv.id.api},	
-  },{
-    required: ['accountId'],
-    properties: { apicolname: contactReminder_ajv.accountId.api},	
-  },{
     required: ['contactId'],
     properties: { apicolname: contactReminder_ajv.contactId.api},	
   },{
@@ -42,15 +36,6 @@ const contactReminder_schema = {
   },{
     required: ['active'],
     properties: { apicolname: contactReminder_ajv.active.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: contactReminder_ajv.createTime.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: contactReminder_ajv.updatedBy.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: contactReminder_ajv.updateTime.api},	
   },]
 };
 

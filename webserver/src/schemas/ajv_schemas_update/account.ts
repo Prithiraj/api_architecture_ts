@@ -9,25 +9,7 @@ const account_schema = {
   },
   required: ['id'],
   additionalProperties: false,
-  anyOf: [{
-    required: ['id'],
-    properties: { apicolname: account_ajv.id.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: account_ajv.createTime.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: account_ajv.createRequest.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: account_ajv.updatedBy.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: account_ajv.updateTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: account_ajv.updateRequest.api},	
-  },]
+  anyOf: []
 };
 
 export default ajvInstance.compile(account_schema);

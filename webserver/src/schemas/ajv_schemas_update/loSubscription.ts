@@ -10,9 +10,6 @@ const loSubscription_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: loSubscription_ajv.id.api},	
-  },{
     required: ['stripeStatus'],
     properties: { apicolname: loSubscription_ajv.stripeStatus.api},	
   },{
@@ -24,12 +21,6 @@ const loSubscription_schema = {
   },{
     required: ['cancelTime'],
     properties: { apicolname: loSubscription_ajv.cancelTime.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: loSubscription_ajv.createRequest.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: loSubscription_ajv.createTime.api},	
   },{
     required: ['dailyBudgetLimit'],
     properties: { apicolname: loSubscription_ajv.dailyBudgetLimit.api},	
@@ -51,12 +42,6 @@ const loSubscription_schema = {
   },{
     required: ['transferPrice'],
     properties: { apicolname: loSubscription_ajv.transferPrice.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: loSubscription_ajv.updatedBy.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: loSubscription_ajv.updateTime.api},	
   },{
     required: ['activeLeadTransfer'],
     properties: { apicolname: loSubscription_ajv.activeLeadTransfer.api},	

@@ -10,9 +10,6 @@ const activityLog_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: activityLog_ajv.id.api},	
-  },{
     required: ['eventId'],
     properties: { apicolname: activityLog_ajv.eventId.api},	
   },{
@@ -24,9 +21,6 @@ const activityLog_schema = {
   },{
     required: ['historyData'],
     properties: { apicolname: activityLog_ajv.historyData.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: activityLog_ajv.createTime.api},	
   },{
     required: ['eventClass'],
     properties: { apicolname: activityLog_ajv.eventClass.api},	

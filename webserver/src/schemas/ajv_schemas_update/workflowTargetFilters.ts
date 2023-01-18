@@ -10,9 +10,6 @@ const workflowTargetFilters_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: workflowTargetFilters_ajv.id.api},	
-  },{
     required: ['query'],
     properties: { apicolname: workflowTargetFilters_ajv.query.api},	
   },]

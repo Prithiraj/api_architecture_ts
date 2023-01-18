@@ -46,7 +46,7 @@ const loSubscription_schema = {
     loanType: loSubscription_ajv.loanType.api,
     preferredmeetingplaceStreet: loSubscription_ajv.preferredmeetingplaceStreet.api,
   },
-  required: ,
+  required: [],
   additionalProperties: false,
 };
 

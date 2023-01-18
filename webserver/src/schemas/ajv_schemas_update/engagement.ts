@@ -13,9 +13,6 @@ const engagement_schema = {
     required: ['parentId'],
     properties: { apicolname: engagement_ajv.parentId.api},	
   },{
-    required: ['eventId'],
-    properties: { apicolname: engagement_ajv.eventId.api},	
-  },{
     required: ['rawBucket'],
     properties: { apicolname: engagement_ajv.rawBucket.api},	
   },{
@@ -30,9 +27,6 @@ const engagement_schema = {
   },{
     required: ['eventTime'],
     properties: { apicolname: engagement_ajv.eventTime.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: engagement_ajv.createTime.api},	
   },{
     required: ['eventProvider'],
     properties: { apicolname: engagement_ajv.eventProvider.api},	

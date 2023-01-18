@@ -10,12 +10,6 @@ const bridgeContactPartner_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: bridgeContactPartner_ajv.id.api},	
-  },{
-    required: ['accountId'],
-    properties: { apicolname: bridgeContactPartner_ajv.accountId.api},	
-  },{
     required: ['contactId'],
     properties: { apicolname: bridgeContactPartner_ajv.contactId.api},	
   },{

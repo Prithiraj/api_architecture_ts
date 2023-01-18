@@ -20,7 +20,7 @@ const incomeSource_schema = {
     employerPhone: incomeSource_ajv.employerPhone.api,
     status: incomeSource_ajv.status.api,
   },
-  required: ,
+  required: [],
   additionalProperties: false,
 };
 

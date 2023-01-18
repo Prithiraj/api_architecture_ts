@@ -10,12 +10,6 @@ const partner_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: partner_ajv.id.api},	
-  },{
-    required: ['accountId'],
-    properties: { apicolname: partner_ajv.accountId.api},	
-  },{
     required: ['organizationId'],
     properties: { apicolname: partner_ajv.organizationId.api},	
   },{
@@ -40,23 +34,8 @@ const partner_schema = {
     required: ['workPhone'],
     properties: { apicolname: partner_ajv.workPhone.api},	
   },{
-    required: ['createTime'],
-    properties: { apicolname: partner_ajv.createTime.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: partner_ajv.createRequest.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: partner_ajv.updateTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: partner_ajv.updateRequest.api},	
-  },{
     required: ['addressId'],
     properties: { apicolname: partner_ajv.addressId.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: partner_ajv.updatedBy.api},	
   },]
 };
 

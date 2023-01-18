@@ -27,7 +27,7 @@ const activityLog_schema = {
     sourceType: activityLog_ajv.sourceType.api,
     endTime: activityLog_ajv.endTime.api,
   },
-  required: ['eventCategory', 'eventCategoryId', 'eventTime', 'eventTypeId', 'masterEventTime'],
+  required: ['eventCategory', 'masterEventTime', 'eventCategoryId', 'eventTypeId', 'eventTime'],
   additionalProperties: false,
 };
 

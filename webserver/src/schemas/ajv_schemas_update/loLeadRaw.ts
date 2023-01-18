@@ -10,9 +10,6 @@ const loLeadRaw_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: loLeadRaw_ajv.id.api},	
-  },{
     required: ['cost'],
     properties: { apicolname: loLeadRaw_ajv.cost.api},	
   },{
@@ -180,18 +177,6 @@ const loLeadRaw_schema = {
   },{
     required: ['status'],
     properties: { apicolname: loLeadRaw_ajv.status.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: loLeadRaw_ajv.createRequest.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: loLeadRaw_ajv.createTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: loLeadRaw_ajv.updateRequest.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: loLeadRaw_ajv.updatedBy.api},	
   },{
     required: ['reason'],
     properties: { apicolname: loLeadRaw_ajv.reason.api},	

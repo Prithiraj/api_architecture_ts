@@ -10,12 +10,6 @@ const loan_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: loan_ajv.id.api},	
-  },{
-    required: ['accountId'],
-    properties: { apicolname: loan_ajv.accountId.api},	
-  },{
     required: ['loanOfficerId'],
     properties: { apicolname: loan_ajv.loanOfficerId.api},	
   },{
@@ -54,21 +48,6 @@ const loan_schema = {
   },{
     required: ['closingDate'],
     properties: { apicolname: loan_ajv.closingDate.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: loan_ajv.createTime.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: loan_ajv.createRequest.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: loan_ajv.updatedBy.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: loan_ajv.updateTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: loan_ajv.updateRequest.api},	
   },{
     required: ['remainingValue'],
     properties: { apicolname: loan_ajv.remainingValue.api},	

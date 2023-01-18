@@ -10,12 +10,6 @@ const organization_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: organization_ajv.id.api},	
-  },{
-    required: ['accountId'],
-    properties: { apicolname: organization_ajv.accountId.api},	
-  },{
     required: ['addressId'],
     properties: { apicolname: organization_ajv.addressId.api},	
   },{
@@ -33,21 +27,6 @@ const organization_schema = {
   },{
     required: ['nmlsId'],
     properties: { apicolname: organization_ajv.nmlsId.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: organization_ajv.createTime.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: organization_ajv.createRequest.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: organization_ajv.updatedBy.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: organization_ajv.updateTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: organization_ajv.updateRequest.api},	
   },{
     required: ['parentOrganizationId'],
     properties: { apicolname: organization_ajv.parentOrganizationId.api},	

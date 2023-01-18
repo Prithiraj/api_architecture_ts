@@ -10,32 +10,11 @@ const routing_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['accountId'],
-    properties: { apicolname: routing_ajv.accountId.api},	
-  },{
     required: ['subdomain'],
     properties: { apicolname: routing_ajv.subdomain.api},	
   },{
-    required: ['path'],
-    properties: { apicolname: routing_ajv.path.api},	
-  },{
     required: ['resourceId'],
     properties: { apicolname: routing_ajv.resourceId.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: routing_ajv.createTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: routing_ajv.updateRequest.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: routing_ajv.updateTime.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: routing_ajv.updatedBy.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: routing_ajv.createRequest.api},	
   },]
 };
 

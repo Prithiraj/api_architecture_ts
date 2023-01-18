@@ -10,9 +10,6 @@ const persons_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['personid'],
-    properties: { apicolname: persons_ajv.personid.api},	
-  },{
     required: ['lastname'],
     properties: { apicolname: persons_ajv.lastname.api},	
   },{

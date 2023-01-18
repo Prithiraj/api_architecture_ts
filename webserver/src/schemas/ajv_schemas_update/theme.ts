@@ -10,29 +10,11 @@ const theme_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: theme_ajv.id.api},	
-  },{
     required: ['name'],
     properties: { apicolname: theme_ajv.name.api},	
   },{
     required: ['theme'],
     properties: { apicolname: theme_ajv.theme.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: theme_ajv.createTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: theme_ajv.updateRequest.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: theme_ajv.updateTime.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: theme_ajv.updatedBy.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: theme_ajv.createRequest.api},	
   },]
 };
 

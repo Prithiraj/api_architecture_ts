@@ -10,12 +10,6 @@ const property_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: property_ajv.id.api},	
-  },{
-    required: ['accountId'],
-    properties: { apicolname: property_ajv.accountId.api},	
-  },{
     required: ['type'],
     properties: { apicolname: property_ajv.type.api},	
   },{
@@ -54,21 +48,6 @@ const property_schema = {
   },{
     required: ['postal'],
     properties: { apicolname: property_ajv.postal.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: property_ajv.createTime.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: property_ajv.createRequest.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: property_ajv.updatedBy.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: property_ajv.updateTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: property_ajv.updateRequest.api},	
   },{
     required: ['actualValue'],
     properties: { apicolname: property_ajv.actualValue.api},	

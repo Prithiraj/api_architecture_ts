@@ -10,9 +10,6 @@ const eventType_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: eventType_ajv.id.api},	
-  },{
     required: ['eventType'],
     properties: { apicolname: eventType_ajv.eventType.api},	
   },{

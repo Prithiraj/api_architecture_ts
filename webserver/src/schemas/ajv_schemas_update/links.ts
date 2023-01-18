@@ -10,29 +10,11 @@ const links_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: links_ajv.id.api},	
-  },{
-    required: ['accountId'],
-    properties: { apicolname: links_ajv.accountId.api},	
-  },{
     required: ['sourceId'],
     properties: { apicolname: links_ajv.sourceId.api},	
   },{
     required: ['destinationId'],
     properties: { apicolname: links_ajv.destinationId.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: links_ajv.updateRequest.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: links_ajv.updateTime.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: links_ajv.updatedBy.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: links_ajv.createRequest.api},	
   },]
 };
 

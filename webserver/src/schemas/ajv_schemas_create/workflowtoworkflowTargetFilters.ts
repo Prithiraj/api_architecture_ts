@@ -6,7 +6,7 @@ const workflowtoworkflowTargetFilters_schema = {
   type: 'object',
   properties: {
   },
-  required: ,
+  required: [],
   additionalProperties: false,
 };
 

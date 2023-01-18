@@ -10,9 +10,6 @@ const loLeadSource_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: loLeadSource_ajv.id.api},	
-  },{
     required: ['color'],
     properties: { apicolname: loLeadSource_ajv.color.api},	
   },{
@@ -30,12 +27,6 @@ const loLeadSource_schema = {
   },{
     required: ['title'],
     properties: { apicolname: loLeadSource_ajv.title.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: loLeadSource_ajv.createTime.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: loLeadSource_ajv.updateTime.api},	
   },{
     required: ['active'],
     properties: { apicolname: loLeadSource_ajv.active.api},	

@@ -45,7 +45,7 @@ const loLead_schema = {
     creditedPrice: loLead_ajv.creditedPrice.api,
     creditStatus: loLead_ajv.creditStatus.api,
   },
-  required: ['creditedPrice', 'price', 'billed', 'refundedTransferPrice', 'creditedTransferPrice', 'subscriptionId', 'refundedPrice', 'transferPrice'],
+  required: ['price', 'billed', 'transferPrice', 'creditedTransferPrice', 'refundedTransferPrice', 'creditedPrice', 'refundedPrice', 'subscriptionId'],
   additionalProperties: false,
 };
 

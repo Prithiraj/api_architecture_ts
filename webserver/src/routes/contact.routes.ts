@@ -2,6 +2,7 @@ import { Request, Router, Response } from 'express';
 // import {Prisma, PrismaClient } from '@prisma/client';
 import validateDto from '../middleware/validate-dto';
 import contactSchema from '../schemas/ajv_schemas_create/contact';
+import contactUpdate from '../schemas/ajv_schemas_update/contact';
 // import 
 
 // const prisma = new PrismaClient()
@@ -12,6 +13,9 @@ contactRouter.get('/',  (request: Request, response: Response): any => {
 	return response.json("OK");
 });
   
+contactRouter.put('/', validateDto(contactUpdate), (request: Request, response: Response): any => {
+	return response.json({"message": "OK"})
+});
 contactRouter.post('/', validateDto(contactSchema), (request: Request, response: Response): any => {
 	return response.json({"message": "OK"});
 });

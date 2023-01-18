@@ -10,12 +10,6 @@ const page_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['accountId'],
-    properties: { apicolname: page_ajv.accountId.api},	
-  },{
-    required: ['id'],
-    properties: { apicolname: page_ajv.id.api},	
-  },{
     required: ['name'],
     properties: { apicolname: page_ajv.name.api},	
   },{
@@ -28,23 +22,8 @@ const page_schema = {
     required: ['path'],
     properties: { apicolname: page_ajv.path.api},	
   },{
-    required: ['createTime'],
-    properties: { apicolname: page_ajv.createTime.api},	
-  },{
     required: ['themeId'],
     properties: { apicolname: page_ajv.themeId.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: page_ajv.updateRequest.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: page_ajv.updateTime.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: page_ajv.updatedBy.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: page_ajv.createRequest.api},	
   },{
     required: ['category'],
     properties: { apicolname: page_ajv.category.api},	

@@ -10,12 +10,6 @@ const incomeSource_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: incomeSource_ajv.id.api},	
-  },{
-    required: ['accountId'],
-    properties: { apicolname: incomeSource_ajv.accountId.api},	
-  },{
     required: ['contactId'],
     properties: { apicolname: incomeSource_ajv.contactId.api},	
   },{
@@ -52,26 +46,11 @@ const incomeSource_schema = {
     required: ['description'],
     properties: { apicolname: incomeSource_ajv.description.api},	
   },{
-    required: ['createTime'],
-    properties: { apicolname: incomeSource_ajv.createTime.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: incomeSource_ajv.createRequest.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: incomeSource_ajv.updatedBy.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: incomeSource_ajv.updateRequest.api},	
-  },{
     required: ['employerPhone'],
     properties: { apicolname: incomeSource_ajv.employerPhone.api},	
   },{
     required: ['status'],
     properties: { apicolname: incomeSource_ajv.status.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: incomeSource_ajv.updateTime.api},	
   },]
 };
 

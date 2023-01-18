@@ -67,7 +67,7 @@ const loLeadRaw_schema = {
     firstMortgageRate: loLeadRaw_ajv.firstMortgageRate.api,
     loLeadId: loLeadRaw_ajv.loLeadId.api,
   },
-  required: ,
+  required: [],
   additionalProperties: false,
 };
 

@@ -47,7 +47,7 @@ const events_schema = {
     userType: events_ajv.userType.api,
     userId: events_ajv.userId.api,
   },
-  required: ,
+  required: [],
   additionalProperties: false,
 };
 

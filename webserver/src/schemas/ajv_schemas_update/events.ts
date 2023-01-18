@@ -28,9 +28,6 @@ const events_schema = {
     required: ['eventGroup'],
     properties: { apicolname: events_ajv.eventGroup.api},	
   },{
-    required: ['eventId'],
-    properties: { apicolname: events_ajv.eventId.api},	
-  },{
     required: ['eventName'],
     properties: { apicolname: events_ajv.eventName.api},	
   },{
@@ -57,9 +54,6 @@ const events_schema = {
   },{
     required: ['reason'],
     properties: { apicolname: events_ajv.reason.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: events_ajv.createTime.api},	
   },{
     required: ['endTime'],
     properties: { apicolname: events_ajv.endTime.api},	

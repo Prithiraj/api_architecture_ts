@@ -10,12 +10,6 @@ const template_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['accountId'],
-    properties: { apicolname: template_ajv.accountId.api},	
-  },{
-    required: ['id'],
-    properties: { apicolname: template_ajv.id.api},	
-  },{
     required: ['type'],
     properties: { apicolname: template_ajv.type.api},	
   },{
@@ -25,23 +19,8 @@ const template_schema = {
     required: ['data'],
     properties: { apicolname: template_ajv.data.api},	
   },{
-    required: ['createTime'],
-    properties: { apicolname: template_ajv.createTime.api},	
-  },{
     required: ['thumbnail'],
     properties: { apicolname: template_ajv.thumbnail.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: template_ajv.updateRequest.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: template_ajv.updateTime.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: template_ajv.updatedBy.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: template_ajv.createRequest.api},	
   },]
 };
 

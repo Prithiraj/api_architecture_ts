@@ -37,7 +37,7 @@ const engagement_schema = {
     testCol01: engagement_ajv.testCol01.api,
     userAgent: engagement_ajv.userAgent.api,
   },
-  required: ,
+  required: [],
   additionalProperties: false,
 };
 

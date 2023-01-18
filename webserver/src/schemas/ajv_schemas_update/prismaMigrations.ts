@@ -10,9 +10,6 @@ const prismaMigrations_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: prismaMigrations_ajv.id.api},	
-  },{
     required: ['checksum'],
     properties: { apicolname: prismaMigrations_ajv.checksum.api},	
   },{

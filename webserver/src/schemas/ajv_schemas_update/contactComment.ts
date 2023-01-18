@@ -10,12 +10,6 @@ const contactComment_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: contactComment_ajv.id.api},	
-  },{
-    required: ['accountId'],
-    properties: { apicolname: contactComment_ajv.accountId.api},	
-  },{
     required: ['contactId'],
     properties: { apicolname: contactComment_ajv.contactId.api},	
   },{
@@ -27,15 +21,6 @@ const contactComment_schema = {
   },{
     required: ['active'],
     properties: { apicolname: contactComment_ajv.active.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: contactComment_ajv.createTime.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: contactComment_ajv.updatedBy.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: contactComment_ajv.updateTime.api},	
   },]
 };
 

@@ -8,14 +8,7 @@ const contact_schema = {
     id: { type: 'string',}
   },
   required: ['id'],
-  additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: contact_ajv.id.api},	
-  },{
-    required: ['accountId'],
-    properties: { apicolname: contact_ajv.accountId.api},	
-  },{
     required: ['statusId'],
     properties: { apicolname: contact_ajv.statusId.api},	
   },{
@@ -79,26 +72,8 @@ const contact_schema = {
     required: ['leadSource'],
     properties: { apicolname: contact_ajv.leadSource.api},	
   },{
-    required: ['createTime'],
-    properties: { apicolname: contact_ajv.createTime.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: contact_ajv.createRequest.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: contact_ajv.updatedBy.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: contact_ajv.updateTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: contact_ajv.updateRequest.api},	
-  },{
     required: ['middleName'],
     properties: { apicolname: contact_ajv.middleName.api},	
-  },{
-    required: ['autoIncrementId'],
-    properties: { apicolname: contact_ajv.autoIncrementId.api},	
   },{
     required: ['locale'],
     properties: { apicolname: contact_ajv.locale.api},	
@@ -117,9 +92,6 @@ const contact_schema = {
   },{
     required: ['timezone'],
     properties: { apicolname: contact_ajv.timezone.api},	
-  },{
-    required: ['isDeleted'],
-    properties: { apicolname: contact_ajv.isDeleted.api},	
   },{
     required: ['isConverted'],
     properties: { apicolname: contact_ajv.isConverted.api},	

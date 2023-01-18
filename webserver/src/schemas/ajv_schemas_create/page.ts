@@ -16,7 +16,7 @@ const page_schema = {
     ownerId: page_ajv.ownerId.api,
     headerMeta: page_ajv.headerMeta.api,
   },
-  required: ['ownerId', 'themeId', 'type', 'name', 'body'],
+  required: ['type', 'body', 'themeId', 'ownerId', 'name'],
   additionalProperties: false,
 };
 

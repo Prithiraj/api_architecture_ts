@@ -10,9 +10,6 @@ const stripeSubscriptionItem_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: stripeSubscriptionItem_ajv.id.api},	
-  },{
     required: ['stripePrice'],
     properties: { apicolname: stripeSubscriptionItem_ajv.stripePrice.api},	
   },]

@@ -10,9 +10,6 @@ const eventsV2_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['eventId'],
-    properties: { apicolname: eventsV2_ajv.eventId.api},	
-  },{
     required: ['eventCategoryId'],
     properties: { apicolname: eventsV2_ajv.eventCategoryId.api},	
   },{
@@ -39,9 +36,6 @@ const eventsV2_schema = {
   },{
     required: ['reason'],
     properties: { apicolname: eventsV2_ajv.reason.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: eventsV2_ajv.createTime.api},	
   },{
     required: ['destinationLocation'],
     properties: { apicolname: eventsV2_ajv.destinationLocation.api},	

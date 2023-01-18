@@ -10,9 +10,6 @@ const workflowState_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: workflowState_ajv.id.api},	
-  },{
     required: ['workflowId'],
     properties: { apicolname: workflowState_ajv.workflowId.api},	
   },{
@@ -24,21 +21,6 @@ const workflowState_schema = {
   },{
     required: ['steps'],
     properties: { apicolname: workflowState_ajv.steps.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: workflowState_ajv.createTime.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: workflowState_ajv.createRequest.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: workflowState_ajv.updatedBy.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: workflowState_ajv.updateTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: workflowState_ajv.updateRequest.api},	
   },]
 };
 

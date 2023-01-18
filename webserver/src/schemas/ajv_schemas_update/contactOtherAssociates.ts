@@ -10,9 +10,6 @@ const contactOtherAssociates_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: contactOtherAssociates_ajv.id.api},	
-  },{
     required: ['contactId'],
     properties: { apicolname: contactOtherAssociates_ajv.contactId.api},	
   },{

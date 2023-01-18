@@ -7,7 +7,7 @@ const stripeSubscriptionItem_schema = {
   properties: {
     stripePrice: stripeSubscriptionItem_ajv.stripePrice.api,
   },
-  required: ,
+  required: [],
   additionalProperties: false,
 };
 

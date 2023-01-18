@@ -42,7 +42,7 @@ const eventsV2_schema = {
     timeZone: eventsV2_ajv.timeZone.api,
     message: eventsV2_ajv.message.api,
   },
-  required: ['eventTime', 'eventData'],
+  required: ['eventData', 'eventTime'],
   additionalProperties: false,
 };
 

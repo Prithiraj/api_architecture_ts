@@ -10,9 +10,6 @@ const elementVersion_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['accountId'],
-    properties: { apicolname: elementVersion_ajv.accountId.api},	
-  },{
     required: ['version'],
     properties: { apicolname: elementVersion_ajv.version.api},	
   },{
@@ -24,24 +21,6 @@ const elementVersion_schema = {
   },{
     required: ['data'],
     properties: { apicolname: elementVersion_ajv.data.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: elementVersion_ajv.createTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: elementVersion_ajv.updateRequest.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: elementVersion_ajv.updateTime.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: elementVersion_ajv.updatedBy.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: elementVersion_ajv.createRequest.api},	
-  },{
-    required: ['id'],
-    properties: { apicolname: elementVersion_ajv.id.api},	
   },]
 };
 

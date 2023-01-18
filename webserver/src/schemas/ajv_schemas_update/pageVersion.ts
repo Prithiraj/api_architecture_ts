@@ -10,9 +10,6 @@ const pageVersion_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['accountId'],
-    properties: { apicolname: pageVersion_ajv.accountId.api},	
-  },{
     required: ['version'],
     properties: { apicolname: pageVersion_ajv.version.api},	
   },{
@@ -24,24 +21,6 @@ const pageVersion_schema = {
   },{
     required: ['body'],
     properties: { apicolname: pageVersion_ajv.body.api},	
-  },{
-    required: ['createTime'],
-    properties: { apicolname: pageVersion_ajv.createTime.api},	
-  },{
-    required: ['updateRequest'],
-    properties: { apicolname: pageVersion_ajv.updateRequest.api},	
-  },{
-    required: ['updateTime'],
-    properties: { apicolname: pageVersion_ajv.updateTime.api},	
-  },{
-    required: ['updatedBy'],
-    properties: { apicolname: pageVersion_ajv.updatedBy.api},	
-  },{
-    required: ['createRequest'],
-    properties: { apicolname: pageVersion_ajv.createRequest.api},	
-  },{
-    required: ['id'],
-    properties: { apicolname: pageVersion_ajv.id.api},	
   },]
 };
 

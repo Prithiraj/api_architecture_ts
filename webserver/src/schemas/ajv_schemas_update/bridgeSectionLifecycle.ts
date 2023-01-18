@@ -10,12 +10,6 @@ const bridgeSectionLifecycle_schema = {
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
-    required: ['id'],
-    properties: { apicolname: bridgeSectionLifecycle_ajv.id.api},	
-  },{
-    required: ['accountId'],
-    properties: { apicolname: bridgeSectionLifecycle_ajv.accountId.api},	
-  },{
     required: ['customFieldSectionId'],
     properties: { apicolname: bridgeSectionLifecycle_ajv.customFieldSectionId.api},	
   },{
