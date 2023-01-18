@@ -11,6 +11,7 @@ const eventType_schema = {
     createdAt: eventType_ajv.createdAt.api,
     updatedAt: eventType_ajv.updatedAt.api,
     eventCategoryId: eventType_ajv.eventCategoryId.api,
+    dbAction: eventType_ajv.dbAction.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -24,6 +25,8 @@ const eventType_schema = {
     required: ['updatedAt'],
   },{
     required: ['eventCategoryId'],
+  },{
+    required: ['dbAction'],
   },]
 };
 

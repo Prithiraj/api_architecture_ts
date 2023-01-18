@@ -10,7 +10,7 @@ const template_schema = {
     data: template_ajv.data.api,
     thumbnail: template_ajv.thumbnail.api,
   },
-  required: ['name', 'thumbnail', 'data', 'type'],
+  required: ['data', 'name', 'type', 'thumbnail'],
   additionalProperties: false,
 };
 

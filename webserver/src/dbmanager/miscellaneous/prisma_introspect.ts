@@ -1,6 +1,6 @@
 import { exec } from 'node:child_process'
 import tunnel from 'tunnel-ssh'
-import { readJSONFile } from '../utils/utils'
+import { readJSONFile } from '../../utils/utils'
 
 function introspectDatabase(
   sshUsername: string,

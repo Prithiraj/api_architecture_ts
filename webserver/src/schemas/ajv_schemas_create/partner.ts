@@ -13,8 +13,9 @@ const partner_schema = {
     mobilePhone: partner_ajv.mobilePhone.api,
     workPhone: partner_ajv.workPhone.api,
     addressId: partner_ajv.addressId.api,
+    lastName: partner_ajv.lastName.api,
   },
-  required: ['lastName', 'firstName'],
+  required: ['firstName', 'lastName'],
   additionalProperties: false,
 };
 

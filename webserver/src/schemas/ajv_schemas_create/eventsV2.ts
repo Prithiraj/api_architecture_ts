@@ -27,7 +27,6 @@ const eventsV2_schema = {
     deviceType: eventsV2_ajv.deviceType.api,
     userPool: eventsV2_ajv.userPool.api,
     destinationId: eventsV2_ajv.destinationId.api,
-    endTime: eventsV2_ajv.endTime.api,
     eventClass: eventsV2_ajv.eventClass.api,
     eventCode: eventsV2_ajv.eventCode.api,
     eventTime: eventsV2_ajv.eventTime.api,
@@ -36,12 +35,12 @@ const eventsV2_schema = {
     startTime: eventsV2_ajv.startTime.api,
     resourceType: eventsV2_ajv.resourceType.api,
     sourceType: eventsV2_ajv.sourceType.api,
-    channelId: eventsV2_ajv.channelId.api,
     channelType: eventsV2_ajv.channelType.api,
-    message: eventsV2_ajv.message.api,
     eventSeverity: eventsV2_ajv.eventSeverity.api,
+    ownerId: eventsV2_ajv.ownerId.api,
+    timeZone: eventsV2_ajv.timeZone.api,
   },
-  required: ['eventData', 'eventTime'],
+  required: ['eventTime', 'eventData'],
   additionalProperties: false,
 };
 

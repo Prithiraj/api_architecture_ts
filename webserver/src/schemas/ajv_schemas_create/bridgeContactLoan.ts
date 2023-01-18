@@ -7,13 +7,12 @@ const bridgeContactLoan_schema = {
   properties: {
     contactId: bridgeContactLoan_ajv.contactId.api,
     loanId: bridgeContactLoan_ajv.loanId.api,
-    assignedBy: bridgeContactLoan_ajv.assignedBy.api,
     assignTime: bridgeContactLoan_ajv.assignTime.api,
     assignRequest: bridgeContactLoan_ajv.assignRequest.api,
     type: bridgeContactLoan_ajv.type.api,
     id: bridgeContactLoan_ajv.id.api,
   },
-  required: ['loanId', 'id', 'assignRequest', 'contactId', 'assignTime', 'type', 'assignedBy'],
+  required: ['assignedBy', 'loanId', 'type', 'contactId', 'assignTime', 'id', 'assignRequest'],
   additionalProperties: false,
 };
 

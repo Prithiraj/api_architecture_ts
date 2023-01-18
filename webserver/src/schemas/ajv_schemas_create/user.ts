@@ -12,6 +12,7 @@ const user_schema = {
     phoneNumberVerified: user_ajv.phoneNumberVerified.api,
     profileImage: user_ajv.profileImage.api,
     firstname: user_ajv.firstname.api,
+    email: user_ajv.email.api,
   },
   required: ['emailVerified', 'phoneNumberVerified'],
   additionalProperties: false,

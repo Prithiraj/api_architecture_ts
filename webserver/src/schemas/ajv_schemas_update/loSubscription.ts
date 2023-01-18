@@ -19,14 +19,9 @@ const loSubscription_schema = {
     addressCity: loSubscription_ajv.addressCity.api,
     addressState: loSubscription_ajv.addressState.api,
     addressStreet2: loSubscription_ajv.addressStreet2.api,
-    addressStreet3: loSubscription_ajv.addressStreet3.api,
-    preferredmeetingplaceCity: loSubscription_ajv.preferredmeetingplaceCity.api,
     preferredmeetingplaceStreet3: loSubscription_ajv.preferredmeetingplaceStreet3.api,
-    infoWebsite: loSubscription_ajv.infoWebsite.api,
-    transactionType: loSubscription_ajv.transactionType.api,
     preferredmeetingplaceCountry: loSubscription_ajv.preferredmeetingplaceCountry.api,
     primaryPhone: loSubscription_ajv.primaryPhone.api,
-    loanType: loSubscription_ajv.loanType.api,
     preferredmeetingplaceStreet: loSubscription_ajv.preferredmeetingplaceStreet.api,
     vendors: loSubscription_ajv.vendors.api,
     creditStatus: loSubscription_ajv.creditStatus.api,
@@ -46,6 +41,25 @@ const loSubscription_schema = {
     totalLeadsTransfered: loSubscription_ajv.totalLeadsTransfered.api,
     secondaryPhoneVerified: loSubscription_ajv.secondaryPhoneVerified.api,
     timeZone: loSubscription_ajv.timeZone.api,
+    primaryPhoneType: loSubscription_ajv.primaryPhoneType.api,
+    loanRanges: loSubscription_ajv.loanRanges.api,
+    boberdooId: loSubscription_ajv.boberdooId.api,
+    bundleTitle: loSubscription_ajv.bundleTitle.api,
+    callCenterService: loSubscription_ajv.callCenterService.api,
+    deactivateReason: loSubscription_ajv.deactivateReason.api,
+    productId: loSubscription_ajv.productId.api,
+    scheduleTo: loSubscription_ajv.scheduleTo.api,
+    alertList: loSubscription_ajv.alertList.api,
+    leadType: loSubscription_ajv.leadType.api,
+    dailyUnitLimit: loSubscription_ajv.dailyUnitLimit.api,
+    transferPriceSubscriptionItemId: loSubscription_ajv.transferPriceSubscriptionItemId.api,
+    inactive: loSubscription_ajv.inactive.api,
+    scheduleDays: loSubscription_ajv.scheduleDays.api,
+    stripePaymentIntent: loSubscription_ajv.stripePaymentIntent.api,
+    companyId: loSubscription_ajv.companyId.api,
+    secondaryPhone: loSubscription_ajv.secondaryPhone.api,
+    addressZip: loSubscription_ajv.addressZip.api,
+    userId: loSubscription_ajv.userId.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -76,21 +90,11 @@ const loSubscription_schema = {
   },{
     required: ['addressStreet2'],
   },{
-    required: ['addressStreet3'],
-  },{
-    required: ['preferredmeetingplaceCity'],
-  },{
     required: ['preferredmeetingplaceStreet3'],
-  },{
-    required: ['infoWebsite'],
-  },{
-    required: ['transactionType'],
   },{
     required: ['preferredmeetingplaceCountry'],
   },{
     required: ['primaryPhone'],
-  },{
-    required: ['loanType'],
   },{
     required: ['preferredmeetingplaceStreet'],
   },{
@@ -129,6 +133,44 @@ const loSubscription_schema = {
     required: ['secondaryPhoneVerified'],
   },{
     required: ['timeZone'],
+  },{
+    required: ['primaryPhoneType'],
+  },{
+    required: ['loanRanges'],
+  },{
+    required: ['boberdooId'],
+  },{
+    required: ['bundleTitle'],
+  },{
+    required: ['callCenterService'],
+  },{
+    required: ['deactivateReason'],
+  },{
+    required: ['productId'],
+  },{
+    required: ['scheduleTo'],
+  },{
+    required: ['alertList'],
+  },{
+    required: ['leadType'],
+  },{
+    required: ['dailyUnitLimit'],
+  },{
+    required: ['transferPriceSubscriptionItemId'],
+  },{
+    required: ['inactive'],
+  },{
+    required: ['scheduleDays'],
+  },{
+    required: ['stripePaymentIntent'],
+  },{
+    required: ['companyId'],
+  },{
+    required: ['secondaryPhone'],
+  },{
+    required: ['addressZip'],
+  },{
+    required: ['userId'],
   },]
 };
 

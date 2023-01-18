@@ -27,8 +27,10 @@ const activityLog_schema = {
     eventSeverity: activityLog_ajv.eventSeverity.api,
     eventType: activityLog_ajv.eventType.api,
     channelId: activityLog_ajv.channelId.api,
+    masterEventTime: activityLog_ajv.masterEventTime.api,
+    channelType: activityLog_ajv.channelType.api,
   },
-  required: ['masterEventTime', 'eventTypeId', 'eventCategoryId', 'eventType', 'eventCategory', 'eventTime'],
+  required: ['eventTypeId', 'eventType', 'eventCategoryId', 'eventCategory', 'masterEventTime', 'eventTime'],
   additionalProperties: false,
 };
 

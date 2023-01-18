@@ -15,6 +15,8 @@ const page_schema = {
     type: page_ajv.type.api,
     headerMeta: page_ajv.headerMeta.api,
     latestTemplateId: page_ajv.latestTemplateId.api,
+    status: page_ajv.status.api,
+    ownerId: page_ajv.ownerId.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -36,6 +38,10 @@ const page_schema = {
     required: ['headerMeta'],
   },{
     required: ['latestTemplateId'],
+  },{
+    required: ['status'],
+  },{
+    required: ['ownerId'],
   },]
 };
 

@@ -1,6 +1,6 @@
 // import {Client} from "pg";
 // import tunnel from "tunnel-ssh";
-import { readJSONFile } from "../utils/utils";
+import { readJSONFile } from "../../utils/utils";
 import { connectToDatabase } from "./database";
 
 const filePath = "src/dbmanager/dbconfig.json";

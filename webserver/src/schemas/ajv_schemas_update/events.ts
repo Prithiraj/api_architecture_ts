@@ -13,7 +13,6 @@ const events_schema = {
     eventGroup: events_ajv.eventGroup.api,
     eventId: events_ajv.eventId.api,
     eventName: events_ajv.eventName.api,
-    eventProvider: events_ajv.eventProvider.api,
     eventSeverity: events_ajv.eventSeverity.api,
     eventType: events_ajv.eventType.api,
     message: events_ajv.message.api,
@@ -36,19 +35,17 @@ const events_schema = {
     deviceLocationCountry: events_ajv.deviceLocationCountry.api,
     deviceLocationZip: events_ajv.deviceLocationZip.api,
     deviceType: events_ajv.deviceType.api,
-    referralId: events_ajv.referralId.api,
     referralType: events_ajv.referralType.api,
     resourceId: events_ajv.resourceId.api,
     sourceId: events_ajv.sourceId.api,
     sourceType: events_ajv.sourceType.api,
-    userAgent: events_ajv.userAgent.api,
     userPool: events_ajv.userPool.api,
     timezone: events_ajv.timezone.api,
     rawBucket: events_ajv.rawBucket.api,
-    userType: events_ajv.userType.api,
     resourceType: events_ajv.resourceType.api,
     deviceTimezone: events_ajv.deviceTimezone.api,
     deviceLocationCoordinatesLat: events_ajv.deviceLocationCoordinatesLat.api,
+    userId: events_ajv.userId.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -68,8 +65,6 @@ const events_schema = {
     required: ['eventId'],
   },{
     required: ['eventName'],
-  },{
-    required: ['eventProvider'],
   },{
     required: ['eventSeverity'],
   },{
@@ -115,8 +110,6 @@ const events_schema = {
   },{
     required: ['deviceType'],
   },{
-    required: ['referralId'],
-  },{
     required: ['referralType'],
   },{
     required: ['resourceId'],
@@ -125,21 +118,19 @@ const events_schema = {
   },{
     required: ['sourceType'],
   },{
-    required: ['userAgent'],
-  },{
     required: ['userPool'],
   },{
     required: ['timezone'],
   },{
     required: ['rawBucket'],
   },{
-    required: ['userType'],
-  },{
     required: ['resourceType'],
   },{
     required: ['deviceTimezone'],
   },{
     required: ['deviceLocationCoordinatesLat'],
+  },{
+    required: ['userId'],
   },]
 };
 

@@ -8,7 +8,7 @@ const contactTag_schema = {
     name: contactTag_ajv.name.api,
     order: contactTag_ajv.order.api,
   },
-  required: ['order', 'name'],
+  required: ['name', 'order'],
   additionalProperties: false,
 };
 

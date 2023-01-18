@@ -34,8 +34,8 @@ const engagement_schema = {
     userId: engagement_ajv.userId.api,
     userPool: engagement_ajv.userPool.api,
     userType: engagement_ajv.userType.api,
-    testCol01: engagement_ajv.testCol01.api,
     userAgent: engagement_ajv.userAgent.api,
+    outcome: engagement_ajv.outcome.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -98,9 +98,9 @@ const engagement_schema = {
   },{
     required: ['userType'],
   },{
-    required: ['testCol01'],
-  },{
     required: ['userAgent'],
+  },{
+    required: ['outcome'],
   },]
 };
 

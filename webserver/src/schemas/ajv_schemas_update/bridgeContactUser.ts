@@ -8,7 +8,6 @@ const bridgeContactUser_schema = {
     contactId: bridgeContactUser_ajv.contactId.api,
     userId: bridgeContactUser_ajv.userId.api,
     assignedBy: bridgeContactUser_ajv.assignedBy.api,
-    assignTime: bridgeContactUser_ajv.assignTime.api,
     assignRequest: bridgeContactUser_ajv.assignRequest.api,
     id: bridgeContactUser_ajv.id.api,
   },
@@ -20,8 +19,6 @@ const bridgeContactUser_schema = {
     required: ['userId'],
   },{
     required: ['assignedBy'],
-  },{
-    required: ['assignTime'],
   },{
     required: ['assignRequest'],
   },]

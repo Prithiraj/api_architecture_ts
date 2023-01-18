@@ -15,7 +15,7 @@ const contactReminder_schema = {
     reminderData: contactReminder_ajv.reminderData.api,
     active: contactReminder_ajv.active.api,
   },
-  required: ['dueDate', 'userId', 'active', 'contactId', 'executeAt', 'type'],
+  required: ['active', 'userId', 'type', 'executeAt', 'contactId', 'dueDate'],
   additionalProperties: false,
 };
 

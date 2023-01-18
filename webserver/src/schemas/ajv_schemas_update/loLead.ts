@@ -22,7 +22,6 @@ const loLead_schema = {
     subscriptionId: loLead_ajv.subscriptionId.api,
     price: loLead_ajv.price.api,
     transferStatus: loLead_ajv.transferStatus.api,
-    leadCategory: loLead_ajv.leadCategory.api,
     addressCity: loLead_ajv.addressCity.api,
     addressCountry: loLead_ajv.addressCountry.api,
     addressStreet: loLead_ajv.addressStreet.api,
@@ -44,6 +43,11 @@ const loLead_schema = {
     loanType: loLead_ajv.loanType.api,
     addressStreet3: loLead_ajv.addressStreet3.api,
     productId: loLead_ajv.productId.api,
+    loanRange: loLead_ajv.loanRange.api,
+    transferDate: loLead_ajv.transferDate.api,
+    loanDownPayment: loLead_ajv.loanDownPayment.api,
+    leadType: loLead_ajv.leadType.api,
+    ownerId: loLead_ajv.ownerId.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -79,8 +83,6 @@ const loLead_schema = {
     required: ['price'],
   },{
     required: ['transferStatus'],
-  },{
-    required: ['leadCategory'],
   },{
     required: ['addressCity'],
   },{
@@ -123,6 +125,16 @@ const loLead_schema = {
     required: ['addressStreet3'],
   },{
     required: ['productId'],
+  },{
+    required: ['loanRange'],
+  },{
+    required: ['transferDate'],
+  },{
+    required: ['loanDownPayment'],
+  },{
+    required: ['leadType'],
+  },{
+    required: ['ownerId'],
   },]
 };
 
