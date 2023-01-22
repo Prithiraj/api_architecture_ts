@@ -20,14 +20,16 @@ const loan_schema = {
     status: loan_ajv.status.api,
     closingDate: loan_ajv.closingDate.api,
     remainingValue: loan_ajv.remainingValue.api,
+    amortization: loan_ajv.amortization.api,
     desiredOrCurrent: loan_ajv.desiredOrCurrent.api,
     desiredCashOutAmount: loan_ajv.desiredCashOutAmount.api,
+    desiredDownPayment: loan_ajv.desiredDownPayment.api,
     loanPropertyType: loan_ajv.loanPropertyType.api,
     loanUnits: loan_ajv.loanUnits.api,
     timeline: loan_ajv.timeline.api,
     loanPropertyOccupancy: loan_ajv.loanPropertyOccupancy.api,
     loanPropertyValue: loan_ajv.loanPropertyValue.api,
-    amortization: loan_ajv.amortization.api,
+    loanType: loan_ajv.loanType.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -60,9 +62,13 @@ const loan_schema = {
   },{
     required: ['remainingValue'],
   },{
+    required: ['amortization'],
+  },{
     required: ['desiredOrCurrent'],
   },{
     required: ['desiredCashOutAmount'],
+  },{
+    required: ['desiredDownPayment'],
   },{
     required: ['loanPropertyType'],
   },{
@@ -74,7 +80,7 @@ const loan_schema = {
   },{
     required: ['loanPropertyValue'],
   },{
-    required: ['amortization'],
+    required: ['loanType'],
   },]
 };
 

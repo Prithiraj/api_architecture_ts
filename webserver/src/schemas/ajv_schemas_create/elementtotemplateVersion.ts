@@ -8,7 +8,7 @@ const elementtotemplateVersion_schema = {
     A: elementtotemplateVersion_ajv.A.api,
     B: elementtotemplateVersion_ajv.B.api,
   },
-  required: ['A', 'B'],
+  required: ['B', 'A'],
   additionalProperties: false,
 };
 

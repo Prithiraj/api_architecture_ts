@@ -37,7 +37,7 @@ class SerializerDeserializer:
                     if bool(item["foreignkey"]):
                         fk_list.append(item["foreignkey"])
                     table_info.append(colInfo)
-                    table_items.remove(item)
+                    # table_items.remove(item)
             columnInfoList = ColumnInfoList(table_info, fk_list, tablename)
             schema = SerializerDeserializer.deserialize_column_info(columnInfoList)
             schemas.append(schema) 

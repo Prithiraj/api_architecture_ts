@@ -6,13 +6,13 @@ const eventType_schema = {
   type: 'object',
   properties: {
     eventType: eventType_ajv.eventType.api,
+    eventCategoryId: eventType_ajv.eventCategoryId.api,
     eventTypeDescription: eventType_ajv.eventTypeDescription.api,
+    dbAction: eventType_ajv.dbAction.api,
     createdAt: eventType_ajv.createdAt.api,
     updatedAt: eventType_ajv.updatedAt.api,
-    eventCategoryId: eventType_ajv.eventCategoryId.api,
-    dbAction: eventType_ajv.dbAction.api,
   },
-  required: ['eventType', 'eventCategoryId', 'createdAt'],
+  required: ['eventType', 'createdAt', 'eventCategoryId'],
   additionalProperties: false,
 };
 

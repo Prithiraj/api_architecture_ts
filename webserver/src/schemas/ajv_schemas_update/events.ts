@@ -13,11 +13,13 @@ const events_schema = {
     eventGroup: events_ajv.eventGroup.api,
     eventId: events_ajv.eventId.api,
     eventName: events_ajv.eventName.api,
+    eventProvider: events_ajv.eventProvider.api,
     eventSeverity: events_ajv.eventSeverity.api,
     eventType: events_ajv.eventType.api,
     message: events_ajv.message.api,
     outcome: events_ajv.outcome.api,
     parentId: events_ajv.parentId.api,
+    rawBucket: events_ajv.rawBucket.api,
     rawPath: events_ajv.rawPath.api,
     reason: events_ajv.reason.api,
     endTime: events_ajv.endTime.api,
@@ -31,21 +33,23 @@ const events_schema = {
     deviceIp: events_ajv.deviceIp.api,
     deviceLocationCity: events_ajv.deviceLocationCity.api,
     deviceLocationContinent: events_ajv.deviceLocationContinent.api,
+    deviceLocationCoordinatesLat: events_ajv.deviceLocationCoordinatesLat.api,
     deviceLocationCoordinatesLon: events_ajv.deviceLocationCoordinatesLon.api,
     deviceLocationCountry: events_ajv.deviceLocationCountry.api,
     deviceLocationZip: events_ajv.deviceLocationZip.api,
+    deviceTimezone: events_ajv.deviceTimezone.api,
     deviceType: events_ajv.deviceType.api,
+    referralId: events_ajv.referralId.api,
     referralType: events_ajv.referralType.api,
     resourceId: events_ajv.resourceId.api,
+    resourceType: events_ajv.resourceType.api,
     sourceId: events_ajv.sourceId.api,
     sourceType: events_ajv.sourceType.api,
-    userPool: events_ajv.userPool.api,
-    timezone: events_ajv.timezone.api,
-    rawBucket: events_ajv.rawBucket.api,
-    resourceType: events_ajv.resourceType.api,
-    deviceTimezone: events_ajv.deviceTimezone.api,
-    deviceLocationCoordinatesLat: events_ajv.deviceLocationCoordinatesLat.api,
+    userAgent: events_ajv.userAgent.api,
     userId: events_ajv.userId.api,
+    userPool: events_ajv.userPool.api,
+    userType: events_ajv.userType.api,
+    timezone: events_ajv.timezone.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -66,6 +70,8 @@ const events_schema = {
   },{
     required: ['eventName'],
   },{
+    required: ['eventProvider'],
+  },{
     required: ['eventSeverity'],
   },{
     required: ['eventType'],
@@ -75,6 +81,8 @@ const events_schema = {
     required: ['outcome'],
   },{
     required: ['parentId'],
+  },{
+    required: ['rawBucket'],
   },{
     required: ['rawPath'],
   },{
@@ -102,35 +110,39 @@ const events_schema = {
   },{
     required: ['deviceLocationContinent'],
   },{
+    required: ['deviceLocationCoordinatesLat'],
+  },{
     required: ['deviceLocationCoordinatesLon'],
   },{
     required: ['deviceLocationCountry'],
   },{
     required: ['deviceLocationZip'],
   },{
+    required: ['deviceTimezone'],
+  },{
     required: ['deviceType'],
+  },{
+    required: ['referralId'],
   },{
     required: ['referralType'],
   },{
     required: ['resourceId'],
   },{
+    required: ['resourceType'],
+  },{
     required: ['sourceId'],
   },{
     required: ['sourceType'],
   },{
-    required: ['userPool'],
-  },{
-    required: ['timezone'],
-  },{
-    required: ['rawBucket'],
-  },{
-    required: ['resourceType'],
-  },{
-    required: ['deviceTimezone'],
-  },{
-    required: ['deviceLocationCoordinatesLat'],
+    required: ['userAgent'],
   },{
     required: ['userId'],
+  },{
+    required: ['userPool'],
+  },{
+    required: ['userType'],
+  },{
+    required: ['timezone'],
   },]
 };
 

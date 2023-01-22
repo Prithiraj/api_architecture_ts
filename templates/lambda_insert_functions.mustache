@@ -1,0 +1,16 @@
+import create_{{apitablename}} from '../../schemas/ajv_schemas_create/{{apitablename}}';
+import { insert_{{apitablename}} } from '../../dbmanager/db_insert_sl/{{apitablename}}.inesrt';
+
+
+export const post{{apitablename}} = async (request: any) => new Promise((resolve, reject) => {
+  // ---------Schema validation-----------
+  const valid = create_{{apitablename}}(request.body);
+  if (!valid) {
+    const { errors } = create_{{apitablename}};
+    reject(errors);
+  }
+  else {
+    const result = insert_{{apitablename}}(request);
+    resolve(result);
+  }
+});

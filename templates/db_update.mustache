@@ -1,0 +1,49 @@
+import dataKey from '../../utils/utils';
+import pool from '../dbconn';
+
+export async function update_{{apitablename}}(input: any) {
+	// processors
+	{{!
+		const input = request.body;
+	}}}
+
+  const table_cols: any = {
+    {{# columnInfoList }}
+    {{apicolname}}: '{{dbcolname}}'	
+	{{/ columnInfoList }}
+  };
+
+  const timestamp = new Date();
+
+  const additionals: any = {
+	updateTime: timestamp.toISOString(),
+	updateRequest: `request_${dataKey(6)}`,
+	updatedBy: 'request.decoded.user_id',
+  };
+
+  Object.assign(input, additionals)
+
+  let key_values: any[] = [];
+  let id = input.id
+  for (let [key, value] of Object.entries(input)) {
+    if (key in table_cols && key !== 'id') {
+        if (typeof(value) === 'string'){
+          value = "'"+value+"'";
+        }
+        key_values.push(`${table_cols[key]}=${value}`);
+      }
+  }
+
+  let all_cols: any[] = [];
+  for (let [key, value] of Object.entries(table_cols)) {
+    all_cols.push(value);
+  }
+  const key_value_str = key_values.join(', ');
+  const all_cols_str = all_cols.join(', ');
+
+  const update_query = `UPDATE public.{{apitablename}} SET ${key_value_str} WHERE id='${id}' returning ${all_cols_str}`;
+
+  const result = await pool.query(update_query);
+
+  return result;
+}

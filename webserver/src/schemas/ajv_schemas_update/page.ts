@@ -10,13 +10,14 @@ const page_schema = {
     body: page_ajv.body.api,
     templateId: page_ajv.templateId.api,
     path: page_ajv.path.api,
+    headerMeta: page_ajv.headerMeta.api,
     themeId: page_ajv.themeId.api,
     category: page_ajv.category.api,
-    type: page_ajv.type.api,
-    headerMeta: page_ajv.headerMeta.api,
-    latestTemplateId: page_ajv.latestTemplateId.api,
-    status: page_ajv.status.api,
     ownerId: page_ajv.ownerId.api,
+    type: page_ajv.type.api,
+    status: page_ajv.status.api,
+    latestTemplateId: page_ajv.latestTemplateId.api,
+    latestVersionId: page_ajv.latestVersionId.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -29,19 +30,21 @@ const page_schema = {
   },{
     required: ['path'],
   },{
+    required: ['headerMeta'],
+  },{
     required: ['themeId'],
   },{
     required: ['category'],
   },{
+    required: ['ownerId'],
+  },{
     required: ['type'],
-  },{
-    required: ['headerMeta'],
-  },{
-    required: ['latestTemplateId'],
   },{
     required: ['status'],
   },{
-    required: ['ownerId'],
+    required: ['latestTemplateId'],
+  },{
+    required: ['latestVersionId'],
   },]
 };
 

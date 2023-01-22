@@ -11,43 +11,44 @@ const loLead_schema = {
     boberdooId: loLead_ajv.boberdooId.api,
     callCenterService: loLead_ajv.callCenterService.api,
     companyId: loLead_ajv.companyId.api,
+    creditStatus: loLead_ajv.creditStatus.api,
     email: loLead_ajv.email.api,
+    firstName: loLead_ajv.firstName.api,
     language: loLead_ajv.language.api,
     lastName: loLead_ajv.lastName.api,
+    ownerId: loLead_ajv.ownerId.api,
     phone: loLead_ajv.phone.api,
+    productId: loLead_ajv.productId.api,
     provider: loLead_ajv.provider.api,
     vendor: loLead_ajv.vendor.api,
     secondaryPhone: loLead_ajv.secondaryPhone.api,
     source: loLead_ajv.source.api,
     subscriptionId: loLead_ajv.subscriptionId.api,
     price: loLead_ajv.price.api,
+    transferPrice: loLead_ajv.transferPrice.api,
     transferStatus: loLead_ajv.transferStatus.api,
+    leadType: loLead_ajv.leadType.api,
+    leadCategory: loLead_ajv.leadCategory.api,
     addressCity: loLead_ajv.addressCity.api,
     addressCountry: loLead_ajv.addressCountry.api,
+    addressState: loLead_ajv.addressState.api,
     addressStreet: loLead_ajv.addressStreet.api,
     addressStreet2: loLead_ajv.addressStreet2.api,
+    addressStreet3: loLead_ajv.addressStreet3.api,
+    addressZip: loLead_ajv.addressZip.api,
+    loanDownPayment: loLead_ajv.loanDownPayment.api,
     loanInterestRate: loLead_ajv.loanInterestRate.api,
     loanMonthlyPayment: loLead_ajv.loanMonthlyPayment.api,
+    loanPurchasePrice: loLead_ajv.loanPurchasePrice.api,
     loanTransactionType: loLead_ajv.loanTransactionType.api,
+    loanType: loLead_ajv.loanType.api,
     loLeadRawId: loLead_ajv.loLeadRawId.api,
+    loanRange: loLead_ajv.loanRange.api,
+    creditedPrice: loLead_ajv.creditedPrice.api,
     creditedTransferPrice: loLead_ajv.creditedTransferPrice.api,
     refundedPrice: loLead_ajv.refundedPrice.api,
-    firstName: loLead_ajv.firstName.api,
-    addressState: loLead_ajv.addressState.api,
     refundedTransferPrice: loLead_ajv.refundedTransferPrice.api,
-    addressZip: loLead_ajv.addressZip.api,
-    transferPrice: loLead_ajv.transferPrice.api,
-    loanPurchasePrice: loLead_ajv.loanPurchasePrice.api,
-    creditedPrice: loLead_ajv.creditedPrice.api,
-    creditStatus: loLead_ajv.creditStatus.api,
-    loanType: loLead_ajv.loanType.api,
-    addressStreet3: loLead_ajv.addressStreet3.api,
-    productId: loLead_ajv.productId.api,
-    loanRange: loLead_ajv.loanRange.api,
     transferDate: loLead_ajv.transferDate.api,
-    loanDownPayment: loLead_ajv.loanDownPayment.api,
-    leadType: loLead_ajv.leadType.api,
-    ownerId: loLead_ajv.ownerId.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -62,13 +63,21 @@ const loLead_schema = {
   },{
     required: ['companyId'],
   },{
+    required: ['creditStatus'],
+  },{
     required: ['email'],
+  },{
+    required: ['firstName'],
   },{
     required: ['language'],
   },{
     required: ['lastName'],
   },{
+    required: ['ownerId'],
+  },{
     required: ['phone'],
+  },{
+    required: ['productId'],
   },{
     required: ['provider'],
   },{
@@ -82,59 +91,53 @@ const loLead_schema = {
   },{
     required: ['price'],
   },{
+    required: ['transferPrice'],
+  },{
     required: ['transferStatus'],
+  },{
+    required: ['leadType'],
+  },{
+    required: ['leadCategory'],
   },{
     required: ['addressCity'],
   },{
     required: ['addressCountry'],
   },{
+    required: ['addressState'],
+  },{
     required: ['addressStreet'],
   },{
     required: ['addressStreet2'],
+  },{
+    required: ['addressStreet3'],
+  },{
+    required: ['addressZip'],
+  },{
+    required: ['loanDownPayment'],
   },{
     required: ['loanInterestRate'],
   },{
     required: ['loanMonthlyPayment'],
   },{
+    required: ['loanPurchasePrice'],
+  },{
     required: ['loanTransactionType'],
   },{
+    required: ['loanType'],
+  },{
     required: ['loLeadRawId'],
+  },{
+    required: ['loanRange'],
+  },{
+    required: ['creditedPrice'],
   },{
     required: ['creditedTransferPrice'],
   },{
     required: ['refundedPrice'],
   },{
-    required: ['firstName'],
-  },{
-    required: ['addressState'],
-  },{
     required: ['refundedTransferPrice'],
   },{
-    required: ['addressZip'],
-  },{
-    required: ['transferPrice'],
-  },{
-    required: ['loanPurchasePrice'],
-  },{
-    required: ['creditedPrice'],
-  },{
-    required: ['creditStatus'],
-  },{
-    required: ['loanType'],
-  },{
-    required: ['addressStreet3'],
-  },{
-    required: ['productId'],
-  },{
-    required: ['loanRange'],
-  },{
     required: ['transferDate'],
-  },{
-    required: ['loanDownPayment'],
-  },{
-    required: ['leadType'],
-  },{
-    required: ['ownerId'],
   },]
 };
 

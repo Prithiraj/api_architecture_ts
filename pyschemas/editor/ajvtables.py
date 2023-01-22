@@ -1,5 +1,6 @@
 from json_modifier.json_insert_modifier import JsonInsertModifier
 from json_modifier.json_update_modifier import JsonUpdateModifier
+from pyschemas.editor.ajv_props import AjvProps, AjvPropsSchema
 from pyschemas.editor.ajvmeta import AjvDelete, AjvDeleteSchema, AjvInsert, AjvInsertSchema, AjvQuery, AjvQuerySchema, AjvUpdate, AjvUpdateSchema
 from utils.utilities import remove_special_chars, to_camel_case, to_ajv_type
 from marshmallow import fields, Schema, post_load, pre_load
@@ -17,7 +18,7 @@ class ColumnInfoSchema(Schema):
     ajvtype = fields.String()
     primarykey = fields.String()
     foreignkey = fields.String()
-    ajv_properties = fields.Raw() 
+    ajv_properties = fields.Nested(AjvPropsSchema) 
     
     @pre_load()
     def fix_data_set(self, data, many, **kwargs):

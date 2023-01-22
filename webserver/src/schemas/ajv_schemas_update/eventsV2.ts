@@ -28,18 +28,23 @@ const eventsV2_schema = {
     deviceType: eventsV2_ajv.deviceType.api,
     userPool: eventsV2_ajv.userPool.api,
     destinationId: eventsV2_ajv.destinationId.api,
+    endTime: eventsV2_ajv.endTime.api,
     eventClass: eventsV2_ajv.eventClass.api,
     eventCode: eventsV2_ajv.eventCode.api,
+    eventSeverity: eventsV2_ajv.eventSeverity.api,
     eventTime: eventsV2_ajv.eventTime.api,
+    message: eventsV2_ajv.message.api,
+    ownerId: eventsV2_ajv.ownerId.api,
     referralId: eventsV2_ajv.referralId.api,
     referralType: eventsV2_ajv.referralType.api,
     startTime: eventsV2_ajv.startTime.api,
+    resourceId: eventsV2_ajv.resourceId.api,
     resourceType: eventsV2_ajv.resourceType.api,
+    sourceId: eventsV2_ajv.sourceId.api,
     sourceType: eventsV2_ajv.sourceType.api,
-    channelType: eventsV2_ajv.channelType.api,
-    eventSeverity: eventsV2_ajv.eventSeverity.api,
-    ownerId: eventsV2_ajv.ownerId.api,
     timeZone: eventsV2_ajv.timeZone.api,
+    channelId: eventsV2_ajv.channelId.api,
+    channelType: eventsV2_ajv.channelType.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -90,11 +95,19 @@ const eventsV2_schema = {
   },{
     required: ['destinationId'],
   },{
+    required: ['endTime'],
+  },{
     required: ['eventClass'],
   },{
     required: ['eventCode'],
   },{
+    required: ['eventSeverity'],
+  },{
     required: ['eventTime'],
+  },{
+    required: ['message'],
+  },{
+    required: ['ownerId'],
   },{
     required: ['referralId'],
   },{
@@ -102,17 +115,19 @@ const eventsV2_schema = {
   },{
     required: ['startTime'],
   },{
+    required: ['resourceId'],
+  },{
     required: ['resourceType'],
+  },{
+    required: ['sourceId'],
   },{
     required: ['sourceType'],
   },{
-    required: ['channelType'],
-  },{
-    required: ['eventSeverity'],
-  },{
-    required: ['ownerId'],
-  },{
     required: ['timeZone'],
+  },{
+    required: ['channelId'],
+  },{
+    required: ['channelType'],
   },]
 };
 

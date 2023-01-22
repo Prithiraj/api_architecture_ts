@@ -19,6 +19,7 @@ const engagement_schema = {
     eventCategory: engagement_ajv.eventCategory.api,
     eventCode: engagement_ajv.eventCode.api,
     eventSeverity: engagement_ajv.eventSeverity.api,
+    outcome: engagement_ajv.outcome.api,
     message: engagement_ajv.message.api,
     reason: engagement_ajv.reason.api,
     timezone: engagement_ajv.timezone.api,
@@ -31,11 +32,11 @@ const engagement_schema = {
     resourceType: engagement_ajv.resourceType.api,
     sourceId: engagement_ajv.sourceId.api,
     sourceType: engagement_ajv.sourceType.api,
+    userAgent: engagement_ajv.userAgent.api,
     userId: engagement_ajv.userId.api,
     userPool: engagement_ajv.userPool.api,
     userType: engagement_ajv.userType.api,
-    userAgent: engagement_ajv.userAgent.api,
-    outcome: engagement_ajv.outcome.api,
+    testCol01: engagement_ajv.testCol01.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -68,6 +69,8 @@ const engagement_schema = {
   },{
     required: ['eventSeverity'],
   },{
+    required: ['outcome'],
+  },{
     required: ['message'],
   },{
     required: ['reason'],
@@ -92,15 +95,15 @@ const engagement_schema = {
   },{
     required: ['sourceType'],
   },{
+    required: ['userAgent'],
+  },{
     required: ['userId'],
   },{
     required: ['userPool'],
   },{
     required: ['userType'],
   },{
-    required: ['userAgent'],
-  },{
-    required: ['outcome'],
+    required: ['testCol01'],
   },]
 };
 

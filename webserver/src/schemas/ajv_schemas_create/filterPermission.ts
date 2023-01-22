@@ -5,11 +5,11 @@ import { filterPermission_ajv } from '../mapper_ajv';
 const filterPermission_schema = {
   type: 'object',
   properties: {
-    sharedAccountId: filterPermission_ajv.sharedAccountId.api,
-    contactFilter: filterPermission_ajv.contactFilter.api,
     ownerAccountId: filterPermission_ajv.ownerAccountId.api,
+    sharedAccountId: filterPermission_ajv.sharedAccountId.api,
+    contactFilterId: filterPermission_ajv.contactFilterId.api,
   },
-  required: ['ownerAccountId', 'sharedAccountId', 'contactFilter'],
+  required: ['ownerAccountId', 'contactFilterId', 'sharedAccountId'],
   additionalProperties: false,
 };
 

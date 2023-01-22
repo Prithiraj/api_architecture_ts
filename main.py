@@ -2,6 +2,7 @@ import json
 import os
 import copy
 from json_modifier.json_update_modifier import JsonUpdateModifier
+from markdown_gen import MarkdownGen
 from pyschemas.editor.ajvtables import DataTableSchemas
 from pyschemas.editor.comparer import Comparer
 from serializer_deserializer import SerializerDeserializer
@@ -14,8 +15,17 @@ from typescript_gen import TypescriptGen
 
 if __name__ == "__main__":
     tableInfo = TableInfo('public')
+    
     tables = tableInfo.get_tables('public')
-    items = TableInfo.get_all_table_info('public')
+    
+    # ToDO: get rid of the below code once the SQL is fixed
+    # tables.remove('workflow')
+    
+    tables_str = "','".join(tables)
+    table_str = "'" + tables_str.strip(',') + "'"
+    # print(table_str)
+
+    items = TableInfo.get_all_table_info('public', table_str)
 
     db_schema = SerializerDeserializer.get_deserialized_schema(tables, items)
     
@@ -45,12 +55,28 @@ if __name__ == "__main__":
         f.write(json.dumps(sorted_schema, indent=4))	
     
     typescriptGen = TypescriptGen()
+    markdownGen = MarkdownGen()
     typescriptGen.genMapperTypeScript(sorted_schema)
 
-    # insert_schema = copy.deepcopy(sorted_schema)
+    # insert schema generation
     insert_schema = JsonInsertModifier().removeExcludedColumns(copy.deepcopy(sorted_schema))
     typescriptGen.genInsertTypeScript(insert_schema)
+    # insert_schema = JsonInsertModifier().minimizeTableName(insert_schema)
+    # markdownGen.genInsertMD(insert_schema)
 
+    # update schema generation
     update_schema = JsonUpdateModifier().removeExcludedColumns(copy.deepcopy(sorted_schema))
     typescriptGen.genUpdateTypeScript(update_schema)
-    # print(json.dumps(sorted_schema))
+
+    # insert db query generation
+    typescriptGen.genInsertQueryTypescript(sorted_schema)
+    
+    # insert db query generation for lambda
+    typescriptGen.genInsertQueryLambdaTypescript(sorted_schema)
+
+    # insert lambda functions
+    typescriptGen.genInsertLambdaFunction(sorted_schema)
+
+    # insert lambda cases
+    typescriptGen.genInsertLambdaCases(sorted_schema)
+    

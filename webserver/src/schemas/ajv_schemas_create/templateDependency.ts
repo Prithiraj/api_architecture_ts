@@ -6,9 +6,10 @@ const templateDependency_schema = {
   type: 'object',
   properties: {
     templateId: templateDependency_ajv.templateId.api,
+    resourceId: templateDependency_ajv.resourceId.api,
     versionId: templateDependency_ajv.versionId.api,
   },
-  required: ['versionId', 'templateId'],
+  required: ['versionId', 'resourceId', 'templateId'],
   additionalProperties: false,
 };
 

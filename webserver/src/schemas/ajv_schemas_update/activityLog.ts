@@ -8,28 +8,30 @@ const activityLog_schema = {
     id: activityLog_ajv.id.api,
     eventId: activityLog_ajv.eventId.api,
     eventCategoryId: activityLog_ajv.eventCategoryId.api,
+    eventCategory: activityLog_ajv.eventCategory.api,
     eventTypeId: activityLog_ajv.eventTypeId.api,
+    eventType: activityLog_ajv.eventType.api,
     historyData: activityLog_ajv.historyData.api,
+    endTime: activityLog_ajv.endTime.api,
     eventClass: activityLog_ajv.eventClass.api,
+    eventCode: activityLog_ajv.eventCode.api,
     eventData: activityLog_ajv.eventData.api,
+    eventSeverity: activityLog_ajv.eventSeverity.api,
     eventTime: activityLog_ajv.eventTime.api,
     message: activityLog_ajv.message.api,
     ownerId: activityLog_ajv.ownerId.api,
-    startTime: activityLog_ajv.startTime.api,
-    resourceType: activityLog_ajv.resourceType.api,
-    contactId: activityLog_ajv.contactId.api,
-    userId: activityLog_ajv.userId.api,
     reason: activityLog_ajv.reason.api,
+    startTime: activityLog_ajv.startTime.api,
     timeZone: activityLog_ajv.timeZone.api,
-    eventCode: activityLog_ajv.eventCode.api,
-    eventCategory: activityLog_ajv.eventCategory.api,
-    sourceType: activityLog_ajv.sourceType.api,
-    endTime: activityLog_ajv.endTime.api,
-    eventSeverity: activityLog_ajv.eventSeverity.api,
-    eventType: activityLog_ajv.eventType.api,
     channelId: activityLog_ajv.channelId.api,
-    masterEventTime: activityLog_ajv.masterEventTime.api,
     channelType: activityLog_ajv.channelType.api,
+    resourceId: activityLog_ajv.resourceId.api,
+    resourceType: activityLog_ajv.resourceType.api,
+    sourceId: activityLog_ajv.sourceId.api,
+    sourceType: activityLog_ajv.sourceType.api,
+    contactId: activityLog_ajv.contactId.api,
+    masterEventTime: activityLog_ajv.masterEventTime.api,
+    userId: activityLog_ajv.userId.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -38,13 +40,23 @@ const activityLog_schema = {
   },{
     required: ['eventCategoryId'],
   },{
+    required: ['eventCategory'],
+  },{
     required: ['eventTypeId'],
+  },{
+    required: ['eventType'],
   },{
     required: ['historyData'],
   },{
+    required: ['endTime'],
+  },{
     required: ['eventClass'],
   },{
+    required: ['eventCode'],
+  },{
     required: ['eventData'],
+  },{
+    required: ['eventSeverity'],
   },{
     required: ['eventTime'],
   },{
@@ -52,35 +64,29 @@ const activityLog_schema = {
   },{
     required: ['ownerId'],
   },{
-    required: ['startTime'],
-  },{
-    required: ['resourceType'],
-  },{
-    required: ['contactId'],
-  },{
-    required: ['userId'],
-  },{
     required: ['reason'],
+  },{
+    required: ['startTime'],
   },{
     required: ['timeZone'],
   },{
-    required: ['eventCode'],
+    required: ['channelId'],
   },{
-    required: ['eventCategory'],
+    required: ['channelType'],
+  },{
+    required: ['resourceId'],
+  },{
+    required: ['resourceType'],
+  },{
+    required: ['sourceId'],
   },{
     required: ['sourceType'],
   },{
-    required: ['endTime'],
-  },{
-    required: ['eventSeverity'],
-  },{
-    required: ['eventType'],
-  },{
-    required: ['channelId'],
+    required: ['contactId'],
   },{
     required: ['masterEventTime'],
   },{
-    required: ['channelType'],
+    required: ['userId'],
   },]
 };
 

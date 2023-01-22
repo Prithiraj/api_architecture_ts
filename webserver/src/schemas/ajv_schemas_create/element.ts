@@ -6,13 +6,13 @@ const element_schema = {
   type: 'object',
   properties: {
     templateId: element_ajv.templateId.api,
+    latestTemplate: element_ajv.latestTemplate.api,
+    name: element_ajv.name.api,
     data: element_ajv.data.api,
     type: element_ajv.type.api,
     latestVersionId: element_ajv.latestVersionId.api,
-    latestTemplate: element_ajv.latestTemplate.api,
-    name: element_ajv.name.api,
   },
-  required: ['latestVersionId', 'name', 'type', 'data'],
+  required: ['data', 'name', 'latestVersionId', 'type'],
   additionalProperties: false,
 };
 

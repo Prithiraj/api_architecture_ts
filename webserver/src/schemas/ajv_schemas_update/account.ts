@@ -6,10 +6,13 @@ const account_schema = {
   type: 'object',
   properties: {
     id: account_ajv.id.api,
+    subdomain: account_ajv.subdomain.api,
   },
   required: ['id'],
   additionalProperties: false,
-  anyOf: []
+  anyOf: [{
+    required: ['subdomain'],
+  },]
 };
 
 export default ajvInstance.compile(account_schema);

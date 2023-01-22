@@ -6,11 +6,12 @@ const templateVersion_schema = {
   type: 'object',
   properties: {
     version: templateVersion_ajv.version.api,
+    templateId: templateVersion_ajv.templateId.api,
     type: templateVersion_ajv.type.api,
     name: templateVersion_ajv.name.api,
     data: templateVersion_ajv.data.api,
   },
-  required: ['version'],
+  required: ['version', 'templateId'],
   additionalProperties: false,
 };
 

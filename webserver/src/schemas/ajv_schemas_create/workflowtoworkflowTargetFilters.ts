@@ -5,8 +5,10 @@ import { workflowtoworkflowTargetFilters_ajv } from '../mapper_ajv';
 const workflowtoworkflowTargetFilters_schema = {
   type: 'object',
   properties: {
+    A: workflowtoworkflowTargetFilters_ajv.A.api,
+    B: workflowtoworkflowTargetFilters_ajv.B.api,
   },
-  required: [],
+  required: ['B', 'A'],
   additionalProperties: false,
 };
 

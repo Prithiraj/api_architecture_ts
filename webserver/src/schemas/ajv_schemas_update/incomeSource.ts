@@ -15,6 +15,7 @@ const incomeSource_schema = {
     phone: incomeSource_ajv.phone.api,
     amount: incomeSource_ajv.amount.api,
     incomeAmountPeriod: incomeSource_ajv.incomeAmountPeriod.api,
+    startDate: incomeSource_ajv.startDate.api,
     endDate: incomeSource_ajv.endDate.api,
     description: incomeSource_ajv.description.api,
     employerPhone: incomeSource_ajv.employerPhone.api,
@@ -40,6 +41,8 @@ const incomeSource_schema = {
     required: ['amount'],
   },{
     required: ['incomeAmountPeriod'],
+  },{
+    required: ['startDate'],
   },{
     required: ['endDate'],
   },{

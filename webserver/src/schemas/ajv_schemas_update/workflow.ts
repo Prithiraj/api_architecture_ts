@@ -15,8 +15,8 @@ const workflow_schema = {
     flowType: workflow_ajv.flowType.api,
     name: workflow_ajv.name.api,
     recurring: workflow_ajv.recurring.api,
-    startTime: workflow_ajv.startTime.api,
     retry: workflow_ajv.retry.api,
+    startTime: workflow_ajv.startTime.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -39,9 +39,9 @@ const workflow_schema = {
   },{
     required: ['recurring'],
   },{
-    required: ['startTime'],
-  },{
     required: ['retry'],
+  },{
+    required: ['startTime'],
   },]
 };
 

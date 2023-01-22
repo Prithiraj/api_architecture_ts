@@ -11,6 +11,7 @@ const loLeadRaw_schema = {
     returnHashType: loLeadRaw_ajv.returnHashType.api,
     returnHashValueType: loLeadRaw_ajv.returnHashValueType.api,
     skipPartnerId: loLeadRaw_ajv.skipPartnerId.api,
+    returnBestPrice: loLeadRaw_ajv.returnBestPrice.api,
     srcId: loLeadRaw_ajv.srcId.api,
     type: loLeadRaw_ajv.type.api,
     testLead: loLeadRaw_ajv.testLead.api,
@@ -25,6 +26,7 @@ const loLeadRaw_schema = {
     optout: loLeadRaw_ajv.optout.api,
     uniqueIdentifier: loLeadRaw_ajv.uniqueIdentifier.api,
     userAgent: loLeadRaw_ajv.userAgent.api,
+    tcpaConsent: loLeadRaw_ajv.tcpaConsent.api,
     tcpaLanguage: loLeadRaw_ajv.tcpaLanguage.api,
     trustedFormUrl: loLeadRaw_ajv.trustedFormUrl.api,
     leadidToken: loLeadRaw_ajv.leadidToken.api,
@@ -49,22 +51,26 @@ const loLeadRaw_schema = {
     propertyType: loLeadRaw_ajv.propertyType.api,
     propertyUse: loLeadRaw_ajv.propertyUse.api,
     refiGoal: loLeadRaw_ajv.refiGoal.api,
+    workingWithAnAgent: loLeadRaw_ajv.workingWithAnAgent.api,
     bankruptcyLast7Years: loLeadRaw_ajv.bankruptcyLast7Years.api,
+    foreclosureLast7Years: loLeadRaw_ajv.foreclosureLast7Years.api,
+    creditStatus: loLeadRaw_ajv.creditStatus.api,
     loanValue: loLeadRaw_ajv.loanValue.api,
     homeValue: loLeadRaw_ajv.homeValue.api,
+    firstMortgageBalance: loLeadRaw_ajv.firstMortgageBalance.api,
+    firstMortgageRate: loLeadRaw_ajv.firstMortgageRate.api,
     secondMortgage: loLeadRaw_ajv.secondMortgage.api,
     secondMortgageBalance: loLeadRaw_ajv.secondMortgageBalance.api,
+    secondMortgageRate: loLeadRaw_ajv.secondMortgageRate.api,
+    ltv: loLeadRaw_ajv.ltv.api,
+    ssn: loLeadRaw_ajv.ssn.api,
     mode: loLeadRaw_ajv.mode.api,
     status: loLeadRaw_ajv.status.api,
-    billingStatus: loLeadRaw_ajv.billingStatus.api,
-    firstMortgageRate: loLeadRaw_ajv.firstMortgageRate.api,
-    loLeadId: loLeadRaw_ajv.loLeadId.api,
-    ltv: loLeadRaw_ajv.ltv.api,
-    creditStatus: loLeadRaw_ajv.creditStatus.api,
-    extraData: loLeadRaw_ajv.extraData.api,
     reason: loLeadRaw_ajv.reason.api,
+    loLeadId: loLeadRaw_ajv.loLeadId.api,
+    extraData: loLeadRaw_ajv.extraData.api,
     subscriptionId: loLeadRaw_ajv.subscriptionId.api,
-    returnBestPrice: loLeadRaw_ajv.returnBestPrice.api,
+    billingStatus: loLeadRaw_ajv.billingStatus.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -78,6 +84,8 @@ const loLeadRaw_schema = {
     required: ['returnHashValueType'],
   },{
     required: ['skipPartnerId'],
+  },{
+    required: ['returnBestPrice'],
   },{
     required: ['srcId'],
   },{
@@ -106,6 +114,8 @@ const loLeadRaw_schema = {
     required: ['uniqueIdentifier'],
   },{
     required: ['userAgent'],
+  },{
+    required: ['tcpaConsent'],
   },{
     required: ['tcpaLanguage'],
   },{
@@ -155,37 +165,45 @@ const loLeadRaw_schema = {
   },{
     required: ['refiGoal'],
   },{
+    required: ['workingWithAnAgent'],
+  },{
     required: ['bankruptcyLast7Years'],
+  },{
+    required: ['foreclosureLast7Years'],
+  },{
+    required: ['creditStatus'],
   },{
     required: ['loanValue'],
   },{
     required: ['homeValue'],
   },{
+    required: ['firstMortgageBalance'],
+  },{
+    required: ['firstMortgageRate'],
+  },{
     required: ['secondMortgage'],
   },{
     required: ['secondMortgageBalance'],
+  },{
+    required: ['secondMortgageRate'],
+  },{
+    required: ['ltv'],
+  },{
+    required: ['ssn'],
   },{
     required: ['mode'],
   },{
     required: ['status'],
   },{
-    required: ['billingStatus'],
-  },{
-    required: ['firstMortgageRate'],
+    required: ['reason'],
   },{
     required: ['loLeadId'],
   },{
-    required: ['ltv'],
-  },{
-    required: ['creditStatus'],
-  },{
     required: ['extraData'],
-  },{
-    required: ['reason'],
   },{
     required: ['subscriptionId'],
   },{
-    required: ['returnBestPrice'],
+    required: ['billingStatus'],
   },]
 };
 

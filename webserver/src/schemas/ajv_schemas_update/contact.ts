@@ -17,20 +17,29 @@ const contact_schema = {
     workEmail: contact_ajv.workEmail.api,
     mobilePhone: contact_ajv.mobilePhone.api,
     workPhone: contact_ajv.workPhone.api,
+    extraMail: contact_ajv.extraMail.api,
     extraPhone: contact_ajv.extraPhone.api,
+    jobTitle: contact_ajv.jobTitle.api,
     maritalStatus: contact_ajv.maritalStatus.api,
+    gender: contact_ajv.gender.api,
     dob: contact_ajv.dob.api,
+    creationSource: contact_ajv.creationSource.api,
     ssn: contact_ajv.ssn.api,
+    leadSourceType: contact_ajv.leadSourceType.api,
     leadSource: contact_ajv.leadSource.api,
     middleName: contact_ajv.middleName.api,
     locale: contact_ajv.locale.api,
     monthlyIncome: contact_ajv.monthlyIncome.api,
+    organizationId: contact_ajv.organizationId.api,
     origin: contact_ajv.origin.api,
     taygoSource: contact_ajv.taygoSource.api,
+    timezone: contact_ajv.timezone.api,
+    isConverted: contact_ajv.isConverted.api,
+    statusLifecycleId: contact_ajv.statusLifecycleId.api,
     homePhone: contact_ajv.homePhone.api,
     fico: contact_ajv.fico.api,
+    currentLoanId: contact_ajv.currentLoanId.api,
     desiredLoanId: contact_ajv.desiredLoanId.api,
-    statusLifecycleId: contact_ajv.statusLifecycleId.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -57,13 +66,23 @@ const contact_schema = {
   },{
     required: ['workPhone'],
   },{
+    required: ['extraMail'],
+  },{
     required: ['extraPhone'],
+  },{
+    required: ['jobTitle'],
   },{
     required: ['maritalStatus'],
   },{
+    required: ['gender'],
+  },{
     required: ['dob'],
   },{
+    required: ['creationSource'],
+  },{
     required: ['ssn'],
+  },{
+    required: ['leadSourceType'],
   },{
     required: ['leadSource'],
   },{
@@ -73,17 +92,25 @@ const contact_schema = {
   },{
     required: ['monthlyIncome'],
   },{
+    required: ['organizationId'],
+  },{
     required: ['origin'],
   },{
     required: ['taygoSource'],
+  },{
+    required: ['timezone'],
+  },{
+    required: ['isConverted'],
+  },{
+    required: ['statusLifecycleId'],
   },{
     required: ['homePhone'],
   },{
     required: ['fico'],
   },{
-    required: ['desiredLoanId'],
+    required: ['currentLoanId'],
   },{
-    required: ['statusLifecycleId'],
+    required: ['desiredLoanId'],
   },]
 };
 

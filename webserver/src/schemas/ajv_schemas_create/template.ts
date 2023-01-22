@@ -9,8 +9,9 @@ const template_schema = {
     name: template_ajv.name.api,
     data: template_ajv.data.api,
     thumbnail: template_ajv.thumbnail.api,
+    latestVersionId: template_ajv.latestVersionId.api,
   },
-  required: ['data', 'name', 'type', 'thumbnail'],
+  required: ['data', 'type', 'thumbnail', 'name', 'latestVersionId'],
   additionalProperties: false,
 };
 

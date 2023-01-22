@@ -1,0 +1,60 @@
+import dataKey from '../../utils/utils';
+import pool from '../dbconn';
+
+export async function insert_filterPermission(request: any) {
+  // procesor
+  const input = request.body;
+
+  const table_cols: any = {
+    id: 'id',
+    ownerAccountId: 'owner_account_id',
+    sharedAccountId: 'shared_account_id',
+    createRequest: 'create_request',
+    createTime: 'create_time',
+    createdBy: 'created_by',
+    updateRequest: 'update_request',
+    updateTime: 'update_time',
+    updatedBy: 'updated_by',
+    contactFilterId: 'contact_filter_id',
+  };
+
+  const timestamp = new Date();
+
+  const additionals: any = {
+    id: `filter_permission_${dataKey(6)}`,
+    createTime: timestamp.toISOString(),
+    updateTime: timestamp.toISOString(),
+    accountId: request.decoded.account_id,
+    createdBy: request.decoded.user_id,
+    createRequest: request.request_id,
+  };
+
+  Object.assign(input, additionals);
+
+  const cols: any[] = [];
+  const values: any[] = [];
+  for (let [key, value] of Object.entries(input)) {
+    if (key in table_cols) {
+      cols.push(table_cols[key]);
+        if (typeof(value) === 'string'){
+          value = "'"+value+"'";
+        }
+        values.push(value);
+      }
+  }
+
+  const all_cols: any[] = [];
+  for (const [key, value] of Object.entries(table_cols)) {
+    all_cols.push(value);
+  }
+
+  const cols_str = cols.join(', ');
+  const values_str = values.join(', ');
+  const all_cols_str = all_cols.join(', ');
+
+  const insert_query = `INSERT INTO filter_permission (${cols_str}) values (${values_str}) returning ${all_cols_str}`;
+  const result = await pool.query(insert_query);
+
+  return result.rows;
+}
+

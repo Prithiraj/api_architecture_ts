@@ -6,18 +6,18 @@ const filterPermission_schema = {
   type: 'object',
   properties: {
     id: filterPermission_ajv.id.api,
-    sharedAccountId: filterPermission_ajv.sharedAccountId.api,
-    contactFilter: filterPermission_ajv.contactFilter.api,
     ownerAccountId: filterPermission_ajv.ownerAccountId.api,
+    sharedAccountId: filterPermission_ajv.sharedAccountId.api,
+    contactFilterId: filterPermission_ajv.contactFilterId.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
+    required: ['ownerAccountId'],
+  },{
     required: ['sharedAccountId'],
   },{
-    required: ['contactFilter'],
-  },{
-    required: ['ownerAccountId'],
+    required: ['contactFilterId'],
   },]
 };
 

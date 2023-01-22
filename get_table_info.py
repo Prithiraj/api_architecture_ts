@@ -23,10 +23,10 @@ class TableInfo:
         return self.tables
     
     @staticmethod
-    def get_all_table_info(schemaname):
+    def get_all_table_info(schemaname, table_str):
         query = f"""select number, columname, name, attnum, notnullval, atttypmod,type, primarykey,uniquekey,foreignkey,foreignkey_fieldnum, foreignkey_connnum from
 			(select *, 
-				rank() over (partition by name order by foreignkey asc) as rnk from 
+				rank() over (partition by name, columname order by foreignkey asc) as rnk from 
 			(SELECT  
 				f.attnum AS number,
 				c.relname as columname,
@@ -61,7 +61,7 @@ class TableInfo:
 				LEFT JOIN pg_class AS g ON p.confrelid = g.oid  
 			WHERE c.relkind = 'r'::char  
 				AND n.nspname = 'public'  -- Replace with Schema name  
-				AND c.relname like '%%'  -- Replace with table name  # bridge_contact_loan
+				AND c.relname in ({table_str})  -- Replace with table name  # bridge_contact_loan
 				AND f.attnum > 0 ) src ) data
 			where rnk=1 ORDER BY number;"""
         engine = connect_sqlalc()

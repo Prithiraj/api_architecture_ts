@@ -7,20 +7,24 @@ const user_schema = {
   properties: {
     id: user_ajv.id.api,
     userType: user_ajv.userType.api,
+    email: user_ajv.email.api,
     emailVerified: user_ajv.emailVerified.api,
+    firstname: user_ajv.firstname.api,
     lastname: user_ajv.lastname.api,
     phone: user_ajv.phone.api,
     phoneNumberVerified: user_ajv.phoneNumberVerified.api,
     profileImage: user_ajv.profileImage.api,
-    firstname: user_ajv.firstname.api,
-    email: user_ajv.email.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['userType'],
   },{
+    required: ['email'],
+  },{
     required: ['emailVerified'],
+  },{
+    required: ['firstname'],
   },{
     required: ['lastname'],
   },{
@@ -29,10 +33,6 @@ const user_schema = {
     required: ['phoneNumberVerified'],
   },{
     required: ['profileImage'],
-  },{
-    required: ['firstname'],
-  },{
-    required: ['email'],
   },]
 };
 

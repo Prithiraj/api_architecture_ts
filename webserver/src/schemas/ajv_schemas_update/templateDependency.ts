@@ -7,12 +7,15 @@ const templateDependency_schema = {
   properties: {
     id: templateDependency_ajv.id.api,
     templateId: templateDependency_ajv.templateId.api,
+    resourceId: templateDependency_ajv.resourceId.api,
     versionId: templateDependency_ajv.versionId.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['templateId'],
+  },{
+    required: ['resourceId'],
   },{
     required: ['versionId'],
   },]
