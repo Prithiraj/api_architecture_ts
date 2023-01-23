@@ -1,5 +1,5 @@
 import create_contactStatusLifecycle from '../../schemas/ajv_schemas_create/contactStatusLifecycle';
-import { insert_contactStatusLifecycle } from '../../dbmanager/db_insert_sl/contactStatusLifecycle.inesrt';
+import { insert_contactStatusLifecycle } from '../../dbmanager/db_insert_sl/contactStatusLifecycle.insert';
 
 
 export const postcontactStatusLifecycle = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postcontactStatusLifecycle = async (request: any) => new Promise((r
     reject(errors);
   }
   else {
-    const result = insert_contactStatusLifecycle(request);
-    resolve(result);
+    try {    
+      const result = insert_contactStatusLifecycle(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

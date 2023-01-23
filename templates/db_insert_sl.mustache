@@ -24,31 +24,38 @@ export async function insert_{{apitablename}}(request: any) {
 
   Object.assign(input, additionals);
 
-  const cols: any[] = [];
-  const values: any[] = [];
+  const cols: any[] = []
+  const values: any[] = []
   for (let [key, value] of Object.entries(input)) {
     if (key in table_cols) {
       cols.push(table_cols[key]);
-        if (typeof(value) === 'string'){
-          value = "'"+value+"'";
-        }
-        values.push(value);
+      values.push(value);
       }
   }
 
+  const cols_str = cols.join(', ');
+  const placeholders = values.map((_, i) => `$${i + 1}`).join(', ');
   const all_cols: any[] = [];
-  for (const [key, value] of Object.entries(table_cols)) {
+  for (let [key, value] of Object.entries(table_cols)) {
     all_cols.push(value);
   }
 
-  const cols_str = cols.join(', ');
-  const values_str = values.join(', ');
   const all_cols_str = all_cols.join(', ');
+  const insert_query = {
+	  text: `INSERT INTO {{apitablename}} (${cols_str}) values (${placeholders}) returning ${all_cols_str}`,
+	  values: values
+  } 
 
-  const insert_query = `INSERT INTO {{dbtablename}} (${cols_str}) values (${values_str}) returning ${all_cols_str}`;
-  const result = await pool.query(insert_query);
-
-  return result.rows;
+  try{
+	  const result = await pool.query(insert_query);
+	  return result.rows;
+  } catch (err: any) {
+    if (err.code === 23503) {
+      throw 'account_id doesn\'t exist';}
+	  else {
+      throw err;
+    }
+  }
 }
 
 {{! insert_contact({

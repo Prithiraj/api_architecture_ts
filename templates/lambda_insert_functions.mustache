@@ -1,5 +1,5 @@
 import create_{{apitablename}} from '../../schemas/ajv_schemas_create/{{apitablename}}';
-import { insert_{{apitablename}} } from '../../dbmanager/db_insert_sl/{{apitablename}}.inesrt';
+import { insert_{{apitablename}} } from '../../dbmanager/db_insert_sl/{{apitablename}}.insert';
 
 
 export const post{{apitablename}} = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const post{{apitablename}} = async (request: any) => new Promise((resolve
     reject(errors);
   }
   else {
-    const result = insert_{{apitablename}}(request);
-    resolve(result);
+    try {    
+      const result = insert_{{apitablename}}(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

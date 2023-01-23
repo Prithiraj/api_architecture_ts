@@ -1,5 +1,5 @@
 import create_incomeSource from '../../schemas/ajv_schemas_create/incomeSource';
-import { insert_incomeSource } from '../../dbmanager/db_insert_sl/incomeSource.inesrt';
+import { insert_incomeSource } from '../../dbmanager/db_insert_sl/incomeSource.insert';
 
 
 export const postincomeSource = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postincomeSource = async (request: any) => new Promise((resolve, re
     reject(errors);
   }
   else {
-    const result = insert_incomeSource(request);
-    resolve(result);
+    try {    
+      const result = insert_incomeSource(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

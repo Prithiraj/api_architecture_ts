@@ -1,5 +1,5 @@
 import create_bridgeContactPrimaryIncome from '../../schemas/ajv_schemas_create/bridgeContactPrimaryIncome';
-import { insert_bridgeContactPrimaryIncome } from '../../dbmanager/db_insert_sl/bridgeContactPrimaryIncome.inesrt';
+import { insert_bridgeContactPrimaryIncome } from '../../dbmanager/db_insert_sl/bridgeContactPrimaryIncome.insert';
 
 
 export const postbridgeContactPrimaryIncome = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postbridgeContactPrimaryIncome = async (request: any) => new Promis
     reject(errors);
   }
   else {
-    const result = insert_bridgeContactPrimaryIncome(request);
-    resolve(result);
+    try {    
+      const result = insert_bridgeContactPrimaryIncome(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

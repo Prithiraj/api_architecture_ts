@@ -1,5 +1,5 @@
 import create_workflowTemplatePermission from '../../schemas/ajv_schemas_create/workflowTemplatePermission';
-import { insert_workflowTemplatePermission } from '../../dbmanager/db_insert_sl/workflowTemplatePermission.inesrt';
+import { insert_workflowTemplatePermission } from '../../dbmanager/db_insert_sl/workflowTemplatePermission.insert';
 
 
 export const postworkflowTemplatePermission = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postworkflowTemplatePermission = async (request: any) => new Promis
     reject(errors);
   }
   else {
-    const result = insert_workflowTemplatePermission(request);
-    resolve(result);
+    try {    
+      const result = insert_workflowTemplatePermission(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

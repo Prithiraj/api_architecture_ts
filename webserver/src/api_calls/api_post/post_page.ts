@@ -1,5 +1,5 @@
 import create_page from '../../schemas/ajv_schemas_create/page';
-import { insert_page } from '../../dbmanager/db_insert_sl/page.inesrt';
+import { insert_page } from '../../dbmanager/db_insert_sl/page.insert';
 
 
 export const postpage = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postpage = async (request: any) => new Promise((resolve, reject) =>
     reject(errors);
   }
   else {
-    const result = insert_page(request);
-    resolve(result);
+    try {    
+      const result = insert_page(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

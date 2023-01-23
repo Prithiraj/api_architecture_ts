@@ -1,5 +1,5 @@
 import create_bridgeContactContact from '../../schemas/ajv_schemas_create/bridgeContactContact';
-import { insert_bridgeContactContact } from '../../dbmanager/db_insert_sl/bridgeContactContact.inesrt';
+import { insert_bridgeContactContact } from '../../dbmanager/db_insert_sl/bridgeContactContact.insert';
 
 
 export const postbridgeContactContact = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postbridgeContactContact = async (request: any) => new Promise((res
     reject(errors);
   }
   else {
-    const result = insert_bridgeContactContact(request);
-    resolve(result);
+    try {    
+      const result = insert_bridgeContactContact(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

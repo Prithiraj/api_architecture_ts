@@ -1,5 +1,5 @@
 import create_eventsV2 from '../../schemas/ajv_schemas_create/eventsV2';
-import { insert_eventsV2 } from '../../dbmanager/db_insert_sl/eventsV2.inesrt';
+import { insert_eventsV2 } from '../../dbmanager/db_insert_sl/eventsV2.insert';
 
 
 export const posteventsV2 = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const posteventsV2 = async (request: any) => new Promise((resolve, reject
     reject(errors);
   }
   else {
-    const result = insert_eventsV2(request);
-    resolve(result);
+    try {    
+      const result = insert_eventsV2(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

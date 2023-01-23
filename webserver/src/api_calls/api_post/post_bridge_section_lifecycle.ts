@@ -1,5 +1,5 @@
 import create_bridgeSectionLifecycle from '../../schemas/ajv_schemas_create/bridgeSectionLifecycle';
-import { insert_bridgeSectionLifecycle } from '../../dbmanager/db_insert_sl/bridgeSectionLifecycle.inesrt';
+import { insert_bridgeSectionLifecycle } from '../../dbmanager/db_insert_sl/bridgeSectionLifecycle.insert';
 
 
 export const postbridgeSectionLifecycle = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postbridgeSectionLifecycle = async (request: any) => new Promise((r
     reject(errors);
   }
   else {
-    const result = insert_bridgeSectionLifecycle(request);
-    resolve(result);
+    try {    
+      const result = insert_bridgeSectionLifecycle(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

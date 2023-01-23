@@ -20,6 +20,7 @@ class TypescriptGen:
         delete_files_from_directory(self.sl_func_directory + '/api_post/')
         # sys.exit()
     
+    # Prepares types
     def genMapperTypeScript(self, schemas):
         with open('templates/template.mustache', 'r') as f:
             data = chevron.render(f, schemas)
@@ -33,6 +34,7 @@ class TypescriptGen:
             with open(f'{self.schemas_directory}/mapper_ajv.ts', 'w') as tsf:
                 tsf.write(data)
     
+    # Generate insert schema typescript
     def genInsertTypeScript(self, schemas):
         # Generating Create TypeScript files
         for schema in schemas["schemas"]:
@@ -43,7 +45,8 @@ class TypescriptGen:
                 
                 with open(f'{self.schemas_directory}/ajv_schemas_create/{schema["apitablename"]}.ts', 'w') as tsf:
                     tsf.write(data)
-            
+    
+    # Generate update schema typescript
     def genUpdateTypeScript(self, schemas):
         for schema in schemas["schemas"]:
             with open('templates/ajv_update.mustache', 'r') as asf:
@@ -51,25 +54,47 @@ class TypescriptGen:
                 
                 with open(f'{self.schemas_directory}/ajv_schemas_update/{schema["apitablename"]}.ts', 'w') as tsf:
                     tsf.write(data)
-            
+    
+    # Generate insert db query typescript
     def genInsertQueryTypescript(self, schemas):
         for schema in schemas["schemas"]:
             # Generating insert schemas
             with open('templates/db_insert.mustache', 'r') as dcf:
                 data = chevron.render(dcf, schema)
                 
-                with open(f'{self.db_directory}/db_insert/{schema["apitablename"]}.inesrt.ts', 'w') as dqf:
+                with open(f'{self.db_directory}/db_insert/{schema["apitablename"]}.insert.ts', 'w') as dqf:
                     dqf.write(data)
-                    
+    
+    def genUpdateQueryTypescript(self, schemas):
+        for schema in schemas["schemas"]:
+            # Generating update db functions
+            with open('templates/db_update.mustache', 'r') as uqt:
+                data = chevron.render(uqt, schema)
+                
+                with open(f'{self.db_directory}/db_update/{schema["apitablename"]}.update.ts', 'w') as dqf:
+                    dqf.write(data)
+                
+    # Generate insert db query lambda typescript          
     def genInsertQueryLambdaTypescript(self, schemas):
         for schema in schemas["schemas"]:
             # Generating insert schemas
             with open('templates/db_insert_sl.mustache', 'r') as dcf:
                 data = chevron.render(dcf, schema)
                 
-                with open(f'{self.db_directory}/db_insert_sl/{schema["apitablename"]}.inesrt.ts', 'w') as dqf:
+                with open(f'{self.db_directory}/db_insert_sl/{schema["apitablename"]}.insert.ts', 'w') as dqf:
                     dqf.write(data)
-    
+                    
+    # Generate update db query lambda typescript
+    def genUpdateQueryLambdaTypescript(self, schemas):
+        for schema in schemas["schemas"]:
+            # Generating insert schemas
+            with open('templates/db_update_sl.mustache', 'r') as dcf:
+                data = chevron.render(dcf, schema)
+                
+                with open(f'{self.db_directory}/db_update_sl/{schema["apitablename"]}.update.ts', 'w') as dqf:
+                    dqf.write(data)
+
+    # Generate insert lambda function
     def genInsertLambdaFunction(self, schemas):
         for schema in schemas["schemas"]:
             with open('templates/lambda_insert_functions.mustache', 'r') as lif:
@@ -78,6 +103,7 @@ class TypescriptGen:
                 with open(f'{self.sl_func_directory}/api_post/post_{schema["dbtablename"]}.ts', 'w') as dfq:
                     dfq.write(data)
 
+    # Generate insert lambda cases
     def genInsertLambdaCases(self, schemas):
         for schema in schemas["schemas"]:
             print("case '"+schema["apitablename"].lower()+"':")

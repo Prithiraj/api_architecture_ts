@@ -1,5 +1,5 @@
 import create_templateDependency from '../../schemas/ajv_schemas_create/templateDependency';
-import { insert_templateDependency } from '../../dbmanager/db_insert_sl/templateDependency.inesrt';
+import { insert_templateDependency } from '../../dbmanager/db_insert_sl/templateDependency.insert';
 
 
 export const posttemplateDependency = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const posttemplateDependency = async (request: any) => new Promise((resol
     reject(errors);
   }
   else {
-    const result = insert_templateDependency(request);
-    resolve(result);
+    try {    
+      const result = insert_templateDependency(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

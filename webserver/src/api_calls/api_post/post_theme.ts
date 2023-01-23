@@ -1,5 +1,5 @@
 import create_theme from '../../schemas/ajv_schemas_create/theme';
-import { insert_theme } from '../../dbmanager/db_insert_sl/theme.inesrt';
+import { insert_theme } from '../../dbmanager/db_insert_sl/theme.insert';
 
 
 export const posttheme = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const posttheme = async (request: any) => new Promise((resolve, reject) =
     reject(errors);
   }
   else {
-    const result = insert_theme(request);
-    resolve(result);
+    try {    
+      const result = insert_theme(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

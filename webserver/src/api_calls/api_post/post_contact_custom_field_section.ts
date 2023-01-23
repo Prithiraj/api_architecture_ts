@@ -1,5 +1,5 @@
 import create_contactCustomFieldSection from '../../schemas/ajv_schemas_create/contactCustomFieldSection';
-import { insert_contactCustomFieldSection } from '../../dbmanager/db_insert_sl/contactCustomFieldSection.inesrt';
+import { insert_contactCustomFieldSection } from '../../dbmanager/db_insert_sl/contactCustomFieldSection.insert';
 
 
 export const postcontactCustomFieldSection = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postcontactCustomFieldSection = async (request: any) => new Promise
     reject(errors);
   }
   else {
-    const result = insert_contactCustomFieldSection(request);
-    resolve(result);
+    try {    
+      const result = insert_contactCustomFieldSection(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

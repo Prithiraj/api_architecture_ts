@@ -1,5 +1,5 @@
 import create_activityLog from '../../schemas/ajv_schemas_create/activityLog';
-import { insert_activityLog } from '../../dbmanager/db_insert_sl/activityLog.inesrt';
+import { insert_activityLog } from '../../dbmanager/db_insert_sl/activityLog.insert';
 
 
 export const postactivityLog = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postactivityLog = async (request: any) => new Promise((resolve, rej
     reject(errors);
   }
   else {
-    const result = insert_activityLog(request);
-    resolve(result);
+    try {    
+      const result = insert_activityLog(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

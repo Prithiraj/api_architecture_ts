@@ -1,5 +1,5 @@
 import create_workflowTargetFilters from '../../schemas/ajv_schemas_create/workflowTargetFilters';
-import { insert_workflowTargetFilters } from '../../dbmanager/db_insert_sl/workflowTargetFilters.inesrt';
+import { insert_workflowTargetFilters } from '../../dbmanager/db_insert_sl/workflowTargetFilters.insert';
 
 
 export const postworkflowTargetFilters = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postworkflowTargetFilters = async (request: any) => new Promise((re
     reject(errors);
   }
   else {
-    const result = insert_workflowTargetFilters(request);
-    resolve(result);
+    try {    
+      const result = insert_workflowTargetFilters(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

@@ -49,7 +49,7 @@ const loLead_schema = {
     refundedTransferPrice: loLead_ajv.refundedTransferPrice.api,
     transferDate: loLead_ajv.transferDate.api,
   },
-  required: ['refundedPrice', 'creditedPrice', 'refundedTransferPrice', 'transferPrice', 'price', 'subscriptionId', 'creditedTransferPrice', 'billed'],
+  required: ['creditedTransferPrice', 'billed', 'creditedPrice', 'price', 'subscriptionId', 'transferPrice', 'refundedTransferPrice', 'refundedPrice'],
   additionalProperties: false,
 };
 

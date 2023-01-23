@@ -1,5 +1,5 @@
 import create_bridgeContactTag from '../../schemas/ajv_schemas_create/bridgeContactTag';
-import { insert_bridgeContactTag } from '../../dbmanager/db_insert_sl/bridgeContactTag.inesrt';
+import { insert_bridgeContactTag } from '../../dbmanager/db_insert_sl/bridgeContactTag.insert';
 
 
 export const postbridgeContactTag = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postbridgeContactTag = async (request: any) => new Promise((resolve
     reject(errors);
   }
   else {
-    const result = insert_bridgeContactTag(request);
-    resolve(result);
+    try {    
+      const result = insert_bridgeContactTag(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

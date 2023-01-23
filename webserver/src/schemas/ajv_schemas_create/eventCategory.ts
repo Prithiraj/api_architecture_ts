@@ -11,7 +11,7 @@ const eventCategory_schema = {
     createdAt: eventCategory_ajv.createdAt.api,
     updatedAt: eventCategory_ajv.updatedAt.api,
   },
-  required: ['eventCategoryName', 'createdAt'],
+  required: ['createdAt', 'eventCategoryName'],
   additionalProperties: false,
 };
 

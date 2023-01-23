@@ -1,5 +1,5 @@
 import create_partner from '../../schemas/ajv_schemas_create/partner';
-import { insert_partner } from '../../dbmanager/db_insert_sl/partner.inesrt';
+import { insert_partner } from '../../dbmanager/db_insert_sl/partner.insert';
 
 
 export const postpartner = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postpartner = async (request: any) => new Promise((resolve, reject)
     reject(errors);
   }
   else {
-    const result = insert_partner(request);
-    resolve(result);
+    try {    
+      const result = insert_partner(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

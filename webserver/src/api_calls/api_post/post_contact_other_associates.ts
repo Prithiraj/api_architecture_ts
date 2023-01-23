@@ -1,5 +1,5 @@
 import create_contactOtherAssociates from '../../schemas/ajv_schemas_create/contactOtherAssociates';
-import { insert_contactOtherAssociates } from '../../dbmanager/db_insert_sl/contactOtherAssociates.inesrt';
+import { insert_contactOtherAssociates } from '../../dbmanager/db_insert_sl/contactOtherAssociates.insert';
 
 
 export const postcontactOtherAssociates = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postcontactOtherAssociates = async (request: any) => new Promise((r
     reject(errors);
   }
   else {
-    const result = insert_contactOtherAssociates(request);
-    resolve(result);
+    try {    
+      const result = insert_contactOtherAssociates(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

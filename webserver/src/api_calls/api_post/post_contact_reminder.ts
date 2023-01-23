@@ -1,5 +1,5 @@
 import create_contactReminder from '../../schemas/ajv_schemas_create/contactReminder';
-import { insert_contactReminder } from '../../dbmanager/db_insert_sl/contactReminder.inesrt';
+import { insert_contactReminder } from '../../dbmanager/db_insert_sl/contactReminder.insert';
 
 
 export const postcontactReminder = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postcontactReminder = async (request: any) => new Promise((resolve,
     reject(errors);
   }
   else {
-    const result = insert_contactReminder(request);
-    resolve(result);
+    try {    
+      const result = insert_contactReminder(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

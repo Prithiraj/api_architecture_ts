@@ -1,5 +1,5 @@
 import create_organization from '../../schemas/ajv_schemas_create/organization';
-import { insert_organization } from '../../dbmanager/db_insert_sl/organization.inesrt';
+import { insert_organization } from '../../dbmanager/db_insert_sl/organization.insert';
 
 
 export const postorganization = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postorganization = async (request: any) => new Promise((resolve, re
     reject(errors);
   }
   else {
-    const result = insert_organization(request);
-    resolve(result);
+    try {    
+      const result = insert_organization(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

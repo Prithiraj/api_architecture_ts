@@ -1,5 +1,5 @@
 import create_prismaMigrations from '../../schemas/ajv_schemas_create/prismaMigrations';
-import { insert_prismaMigrations } from '../../dbmanager/db_insert_sl/prismaMigrations.inesrt';
+import { insert_prismaMigrations } from '../../dbmanager/db_insert_sl/prismaMigrations.insert';
 
 
 export const postprismaMigrations = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postprismaMigrations = async (request: any) => new Promise((resolve
     reject(errors);
   }
   else {
-    const result = insert_prismaMigrations(request);
-    resolve(result);
+    try {    
+      const result = insert_prismaMigrations(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

@@ -1,5 +1,5 @@
 import create_pageVersion from '../../schemas/ajv_schemas_create/pageVersion';
-import { insert_pageVersion } from '../../dbmanager/db_insert_sl/pageVersion.inesrt';
+import { insert_pageVersion } from '../../dbmanager/db_insert_sl/pageVersion.insert';
 
 
 export const postpageVersion = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postpageVersion = async (request: any) => new Promise((resolve, rej
     reject(errors);
   }
   else {
-    const result = insert_pageVersion(request);
-    resolve(result);
+    try {    
+      const result = insert_pageVersion(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

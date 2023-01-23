@@ -1,5 +1,5 @@
 import create_loSubscriptionDailyStats from '../../schemas/ajv_schemas_create/loSubscriptionDailyStats';
-import { insert_loSubscriptionDailyStats } from '../../dbmanager/db_insert_sl/loSubscriptionDailyStats.inesrt';
+import { insert_loSubscriptionDailyStats } from '../../dbmanager/db_insert_sl/loSubscriptionDailyStats.insert';
 
 
 export const postloSubscriptionDailyStats = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postloSubscriptionDailyStats = async (request: any) => new Promise(
     reject(errors);
   }
   else {
-    const result = insert_loSubscriptionDailyStats(request);
-    resolve(result);
+    try {    
+      const result = insert_loSubscriptionDailyStats(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

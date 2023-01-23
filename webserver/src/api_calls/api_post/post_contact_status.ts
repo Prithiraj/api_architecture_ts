@@ -1,5 +1,5 @@
 import create_contactStatus from '../../schemas/ajv_schemas_create/contactStatus';
-import { insert_contactStatus } from '../../dbmanager/db_insert_sl/contactStatus.inesrt';
+import { insert_contactStatus } from '../../dbmanager/db_insert_sl/contactStatus.insert';
 
 
 export const postcontactStatus = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postcontactStatus = async (request: any) => new Promise((resolve, r
     reject(errors);
   }
   else {
-    const result = insert_contactStatus(request);
-    resolve(result);
+    try {    
+      const result = insert_contactStatus(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

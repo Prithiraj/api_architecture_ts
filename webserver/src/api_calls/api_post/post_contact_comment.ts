@@ -1,5 +1,5 @@
 import create_contactComment from '../../schemas/ajv_schemas_create/contactComment';
-import { insert_contactComment } from '../../dbmanager/db_insert_sl/contactComment.inesrt';
+import { insert_contactComment } from '../../dbmanager/db_insert_sl/contactComment.insert';
 
 
 export const postcontactComment = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postcontactComment = async (request: any) => new Promise((resolve, 
     reject(errors);
   }
   else {
-    const result = insert_contactComment(request);
-    resolve(result);
+    try {    
+      const result = insert_contactComment(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

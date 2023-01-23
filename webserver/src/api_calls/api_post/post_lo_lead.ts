@@ -1,5 +1,5 @@
 import create_loLead from '../../schemas/ajv_schemas_create/loLead';
-import { insert_loLead } from '../../dbmanager/db_insert_sl/loLead.inesrt';
+import { insert_loLead } from '../../dbmanager/db_insert_sl/loLead.insert';
 
 
 export const postloLead = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postloLead = async (request: any) => new Promise((resolve, reject) 
     reject(errors);
   }
   else {
-    const result = insert_loLead(request);
-    resolve(result);
+    try {    
+      const result = insert_loLead(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

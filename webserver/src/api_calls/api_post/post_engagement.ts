@@ -1,5 +1,5 @@
 import create_engagement from '../../schemas/ajv_schemas_create/engagement';
-import { insert_engagement } from '../../dbmanager/db_insert_sl/engagement.inesrt';
+import { insert_engagement } from '../../dbmanager/db_insert_sl/engagement.insert';
 
 
 export const postengagement = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postengagement = async (request: any) => new Promise((resolve, reje
     reject(errors);
   }
   else {
-    const result = insert_engagement(request);
-    resolve(result);
+    try {    
+      const result = insert_engagement(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

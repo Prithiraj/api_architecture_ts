@@ -1,5 +1,5 @@
 import create_bridgeContactLoan from '../../schemas/ajv_schemas_create/bridgeContactLoan';
-import { insert_bridgeContactLoan } from '../../dbmanager/db_insert_sl/bridgeContactLoan.inesrt';
+import { insert_bridgeContactLoan } from '../../dbmanager/db_insert_sl/bridgeContactLoan.insert';
 
 
 export const postbridgeContactLoan = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postbridgeContactLoan = async (request: any) => new Promise((resolv
     reject(errors);
   }
   else {
-    const result = insert_bridgeContactLoan(request);
-    resolve(result);
+    try {    
+      const result = insert_bridgeContactLoan(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

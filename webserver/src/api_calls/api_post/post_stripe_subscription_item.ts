@@ -1,5 +1,5 @@
 import create_stripeSubscriptionItem from '../../schemas/ajv_schemas_create/stripeSubscriptionItem';
-import { insert_stripeSubscriptionItem } from '../../dbmanager/db_insert_sl/stripeSubscriptionItem.inesrt';
+import { insert_stripeSubscriptionItem } from '../../dbmanager/db_insert_sl/stripeSubscriptionItem.insert';
 
 
 export const poststripeSubscriptionItem = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const poststripeSubscriptionItem = async (request: any) => new Promise((r
     reject(errors);
   }
   else {
-    const result = insert_stripeSubscriptionItem(request);
-    resolve(result);
+    try {    
+      const result = insert_stripeSubscriptionItem(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

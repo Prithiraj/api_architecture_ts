@@ -1,5 +1,5 @@
 import create_workflowTemplate from '../../schemas/ajv_schemas_create/workflowTemplate';
-import { insert_workflowTemplate } from '../../dbmanager/db_insert_sl/workflowTemplate.inesrt';
+import { insert_workflowTemplate } from '../../dbmanager/db_insert_sl/workflowTemplate.insert';
 
 
 export const postworkflowTemplate = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postworkflowTemplate = async (request: any) => new Promise((resolve
     reject(errors);
   }
   else {
-    const result = insert_workflowTemplate(request);
-    resolve(result);
+    try {    
+      const result = insert_workflowTemplate(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

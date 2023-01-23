@@ -1,5 +1,5 @@
 import create_workflowState from '../../schemas/ajv_schemas_create/workflowState';
-import { insert_workflowState } from '../../dbmanager/db_insert_sl/workflowState.inesrt';
+import { insert_workflowState } from '../../dbmanager/db_insert_sl/workflowState.insert';
 
 
 export const postworkflowState = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postworkflowState = async (request: any) => new Promise((resolve, r
     reject(errors);
   }
   else {
-    const result = insert_workflowState(request);
-    resolve(result);
+    try {    
+      const result = insert_workflowState(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

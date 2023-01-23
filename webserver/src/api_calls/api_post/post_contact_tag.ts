@@ -1,5 +1,5 @@
 import create_contactTag from '../../schemas/ajv_schemas_create/contactTag';
-import { insert_contactTag } from '../../dbmanager/db_insert_sl/contactTag.inesrt';
+import { insert_contactTag } from '../../dbmanager/db_insert_sl/contactTag.insert';
 
 
 export const postcontactTag = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postcontactTag = async (request: any) => new Promise((resolve, reje
     reject(errors);
   }
   else {
-    const result = insert_contactTag(request);
-    resolve(result);
+    try {    
+      const result = insert_contactTag(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

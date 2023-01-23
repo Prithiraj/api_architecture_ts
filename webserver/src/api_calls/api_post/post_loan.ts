@@ -1,5 +1,5 @@
 import create_loan from '../../schemas/ajv_schemas_create/loan';
-import { insert_loan } from '../../dbmanager/db_insert_sl/loan.inesrt';
+import { insert_loan } from '../../dbmanager/db_insert_sl/loan.insert';
 
 
 export const postloan = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postloan = async (request: any) => new Promise((resolve, reject) =>
     reject(errors);
   }
   else {
-    const result = insert_loan(request);
-    resolve(result);
+    try {    
+      const result = insert_loan(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

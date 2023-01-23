@@ -1,5 +1,5 @@
 import create_filterPermission from '../../schemas/ajv_schemas_create/filterPermission';
-import { insert_filterPermission } from '../../dbmanager/db_insert_sl/filterPermission.inesrt';
+import { insert_filterPermission } from '../../dbmanager/db_insert_sl/filterPermission.insert';
 
 
 export const postfilterPermission = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postfilterPermission = async (request: any) => new Promise((resolve
     reject(errors);
   }
   else {
-    const result = insert_filterPermission(request);
-    resolve(result);
+    try {    
+      const result = insert_filterPermission(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

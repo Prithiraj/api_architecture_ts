@@ -12,7 +12,7 @@ const bridgeContactTag_schema = {
     assignRequest: bridgeContactTag_ajv.assignRequest.api,
     id: bridgeContactTag_ajv.id.api,
   },
-  required: ['assignTime', 'tagId', 'assignedBy', 'contactId', 'assignRequest', 'id'],
+  required: ['contactId', 'id', 'assignRequest', 'tagId', 'assignedBy', 'assignTime'],
   additionalProperties: false,
 };
 

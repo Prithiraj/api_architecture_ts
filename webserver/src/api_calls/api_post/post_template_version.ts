@@ -1,5 +1,5 @@
 import create_templateVersion from '../../schemas/ajv_schemas_create/templateVersion';
-import { insert_templateVersion } from '../../dbmanager/db_insert_sl/templateVersion.inesrt';
+import { insert_templateVersion } from '../../dbmanager/db_insert_sl/templateVersion.insert';
 
 
 export const posttemplateVersion = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const posttemplateVersion = async (request: any) => new Promise((resolve,
     reject(errors);
   }
   else {
-    const result = insert_templateVersion(request);
-    resolve(result);
+    try {    
+      const result = insert_templateVersion(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

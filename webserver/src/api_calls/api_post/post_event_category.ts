@@ -1,5 +1,5 @@
 import create_eventCategory from '../../schemas/ajv_schemas_create/eventCategory';
-import { insert_eventCategory } from '../../dbmanager/db_insert_sl/eventCategory.inesrt';
+import { insert_eventCategory } from '../../dbmanager/db_insert_sl/eventCategory.insert';
 
 
 export const posteventCategory = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const posteventCategory = async (request: any) => new Promise((resolve, r
     reject(errors);
   }
   else {
-    const result = insert_eventCategory(request);
-    resolve(result);
+    try {    
+      const result = insert_eventCategory(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

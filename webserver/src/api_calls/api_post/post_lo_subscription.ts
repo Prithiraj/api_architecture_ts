@@ -1,5 +1,5 @@
 import create_loSubscription from '../../schemas/ajv_schemas_create/loSubscription';
-import { insert_loSubscription } from '../../dbmanager/db_insert_sl/loSubscription.inesrt';
+import { insert_loSubscription } from '../../dbmanager/db_insert_sl/loSubscription.insert';
 
 
 export const postloSubscription = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postloSubscription = async (request: any) => new Promise((resolve, 
     reject(errors);
   }
   else {
-    const result = insert_loSubscription(request);
-    resolve(result);
+    try {    
+      const result = insert_loSubscription(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

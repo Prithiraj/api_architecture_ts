@@ -1,5 +1,5 @@
 import create_routing from '../../schemas/ajv_schemas_create/routing';
-import { insert_routing } from '../../dbmanager/db_insert_sl/routing.inesrt';
+import { insert_routing } from '../../dbmanager/db_insert_sl/routing.insert';
 
 
 export const postrouting = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postrouting = async (request: any) => new Promise((resolve, reject)
     reject(errors);
   }
   else {
-    const result = insert_routing(request);
-    resolve(result);
+    try {    
+      const result = insert_routing(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

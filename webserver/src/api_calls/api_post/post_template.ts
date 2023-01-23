@@ -1,5 +1,5 @@
 import create_template from '../../schemas/ajv_schemas_create/template';
-import { insert_template } from '../../dbmanager/db_insert_sl/template.inesrt';
+import { insert_template } from '../../dbmanager/db_insert_sl/template.insert';
 
 
 export const posttemplate = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const posttemplate = async (request: any) => new Promise((resolve, reject
     reject(errors);
   }
   else {
-    const result = insert_template(request);
-    resolve(result);
+    try {    
+      const result = insert_template(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

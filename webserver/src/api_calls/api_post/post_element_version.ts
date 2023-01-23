@@ -1,5 +1,5 @@
 import create_elementVersion from '../../schemas/ajv_schemas_create/elementVersion';
-import { insert_elementVersion } from '../../dbmanager/db_insert_sl/elementVersion.inesrt';
+import { insert_elementVersion } from '../../dbmanager/db_insert_sl/elementVersion.insert';
 
 
 export const postelementVersion = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postelementVersion = async (request: any) => new Promise((resolve, 
     reject(errors);
   }
   else {
-    const result = insert_elementVersion(request);
-    resolve(result);
+    try {    
+      const result = insert_elementVersion(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

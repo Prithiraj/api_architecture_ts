@@ -3,8 +3,8 @@ import { Request, Router, Response } from 'express';
 import validateDto from '../middleware/validate-dto';
 import contactSchema from '../schemas/ajv_schemas_create/contact';
 import contactUpdate from '../schemas/ajv_schemas_update/contact';
-import {insert_contact} from '../dbmanager/db_insert/contact.inesrt';
-import {update_contact} from '../dbmanager/db_update/contact.update';
+import {insert_contact} from '../dbmanager/db_insert/contact.insert';
+// import {update_contact} from '../dbmanager/db_update/contact.update';
 // import 
 
 // const prisma = new PrismaClient()
@@ -23,14 +23,26 @@ contactRouter.put('/', (request: Request, response: Response) => {
 		response.status(400).json(errors);
 	} else {
 		console.log(request.body);
-		const result = update_contact(request.body);
-		response.json({"message": result});
+		// const result = update_contact(request.body);
+		// response.json({"message": result});
 	}
 });
 contactRouter.post('/', validateDto(contactSchema), async (request: Request, response: Response): Promise<any> => {
-	console.log(request.body)
-	const result = await insert_contact(request.body);
-	return response.json({"message": result});
+	
+	const valid = contactSchema(request.body);
+	if (!valid) {
+		const errors = contactUpdate.errors;
+		response.status(400).json(errors);
+	} else {
+		try {
+			const result = await insert_contact(request.body);
+			response.json({"message": result});
+
+		} catch (err) {
+			response.status(400).json(err);
+		}
+	}
+
 });
 
 contactRouter.post('/create', async (request: Request, response: Response): Promise<any> => {

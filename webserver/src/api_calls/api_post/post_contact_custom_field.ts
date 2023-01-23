@@ -1,5 +1,5 @@
 import create_contactCustomField from '../../schemas/ajv_schemas_create/contactCustomField';
-import { insert_contactCustomField } from '../../dbmanager/db_insert_sl/contactCustomField.inesrt';
+import { insert_contactCustomField } from '../../dbmanager/db_insert_sl/contactCustomField.insert';
 
 
 export const postcontactCustomField = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postcontactCustomField = async (request: any) => new Promise((resol
     reject(errors);
   }
   else {
-    const result = insert_contactCustomField(request);
-    resolve(result);
+    try {    
+      const result = insert_contactCustomField(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

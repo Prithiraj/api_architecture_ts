@@ -8,7 +8,7 @@ const bridgeContactPrimaryIncome_schema = {
     contactId: bridgeContactPrimaryIncome_ajv.contactId.api,
     incomeSourceId: bridgeContactPrimaryIncome_ajv.incomeSourceId.api,
   },
-  required: ['incomeSourceId', 'contactId'],
+  required: ['contactId', 'incomeSourceId'],
   additionalProperties: false,
 };
 

@@ -1,5 +1,5 @@
 import create_links from '../../schemas/ajv_schemas_create/links';
-import { insert_links } from '../../dbmanager/db_insert_sl/links.inesrt';
+import { insert_links } from '../../dbmanager/db_insert_sl/links.insert';
 
 
 export const postlinks = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postlinks = async (request: any) => new Promise((resolve, reject) =
     reject(errors);
   }
   else {
-    const result = insert_links(request);
-    resolve(result);
+    try {    
+      const result = insert_links(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

@@ -1,0 +1,19 @@
+import update_{{apitablename}} from '../../schemas/ajv_schemas_update/{{apitablename}}';
+import { update_{{apitablename}} } from '../../dbmanager/db_update_sl/{{apitablename}}.inesrt';
+
+
+export const put{{apitablename}} = async (request: any) => new Promise((resolve, reject) => {
+  // ---------Schema validation-----------
+  const valid = update_{{apitablename}}(request.body);
+  if (!valid) {
+    const { errors } = update_{{apitablename}};
+    reject(errors);
+  }
+  else {
+    const result = update_{{apitablename}}(request);
+	if (result.rowCount === 0) {
+		reject("message", "the id does not exist");
+	}
+    resolve(result);
+  }
+});

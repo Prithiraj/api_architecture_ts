@@ -1,5 +1,5 @@
 import create_account from '../../schemas/ajv_schemas_create/account';
-import { insert_account } from '../../dbmanager/db_insert_sl/account.inesrt';
+import { insert_account } from '../../dbmanager/db_insert_sl/account.insert';
 
 
 export const postaccount = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postaccount = async (request: any) => new Promise((resolve, reject)
     reject(errors);
   }
   else {
-    const result = insert_account(request);
-    resolve(result);
+    try {    
+      const result = insert_account(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

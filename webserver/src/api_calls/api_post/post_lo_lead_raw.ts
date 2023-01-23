@@ -1,5 +1,5 @@
 import create_loLeadRaw from '../../schemas/ajv_schemas_create/loLeadRaw';
-import { insert_loLeadRaw } from '../../dbmanager/db_insert_sl/loLeadRaw.inesrt';
+import { insert_loLeadRaw } from '../../dbmanager/db_insert_sl/loLeadRaw.insert';
 
 
 export const postloLeadRaw = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postloLeadRaw = async (request: any) => new Promise((resolve, rejec
     reject(errors);
   }
   else {
-    const result = insert_loLeadRaw(request);
-    resolve(result);
+    try {    
+      const result = insert_loLeadRaw(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });

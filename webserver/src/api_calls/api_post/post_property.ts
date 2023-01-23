@@ -1,5 +1,5 @@
 import create_property from '../../schemas/ajv_schemas_create/property';
-import { insert_property } from '../../dbmanager/db_insert_sl/property.inesrt';
+import { insert_property } from '../../dbmanager/db_insert_sl/property.insert';
 
 
 export const postproperty = async (request: any) => new Promise((resolve, reject) => {
@@ -10,7 +10,12 @@ export const postproperty = async (request: any) => new Promise((resolve, reject
     reject(errors);
   }
   else {
-    const result = insert_property(request);
-    resolve(result);
+    try {    
+      const result = insert_property(request);
+      resolve(result);
+    } catch (err) { 
+      reject(err);
+    }
+
   }
 });
