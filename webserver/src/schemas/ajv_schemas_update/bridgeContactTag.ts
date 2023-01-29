@@ -24,6 +24,8 @@ const bridgeContactTag_schema = {
     required: ['assignTime'],
   },{
     required: ['assignRequest'],
+  },{
+    required: ['id'],
   },]
 };
 

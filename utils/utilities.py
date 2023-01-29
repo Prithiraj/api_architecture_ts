@@ -34,6 +34,9 @@ def to_ajv_type(_type):
     elif _type[:4].lower() == 'bool':
         return 'boolean'
     
+    elif _type[:4].lower() == 'json':
+        return 'object'
+
     else:
         return 'string'
 
@@ -46,11 +49,22 @@ def remove_dict(d, key, values):
 def set_difference(set1:set, set2:set):
     return set1.difference(set2)
 
-def delete_files_from_directory(directory):
-    for file in os.listdir(directory):
-        file_path = os.path.join(directory, file)
-        try:
-            if os.path.isfile(file_path):
-                os.unlink(file_path)
-        except Exception as e:
-            print(e)
+def delete_files_from_directory(directories: list):
+    if type(directories) != list:
+        raise "parameter is not list type"
+    for directory in directories:
+        if os.path.exists(directory):
+            for file in os.listdir(directory):
+                file_path = os.path.join(directory, file)
+                try:
+                    if os.path.isfile(file_path):
+                        os.unlink(file_path)
+                except Exception as e:
+                    print(e)
+
+def create_directory(directories: list):
+    if type(directories) is not list:
+        raise "parameter is not list type"
+    
+    for directory in directories:
+        os.makedirs(directory, exist_ok=True)

@@ -10,12 +10,12 @@ export const postorganization = async (request: any) => new Promise((resolve, re
     reject(errors);
   }
   else {
-    try {    
+    try {
       const result = insert_organization(request);
       resolve(result);
-    } catch (err) { 
+    }
+    catch (err) {
       reject(err);
     }
-
   }
 });

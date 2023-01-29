@@ -9,7 +9,7 @@ const {{apitablename}}_schema = {
     {{apicolname}}: {{apitablename}}_ajv.{{apicolname}}.api,
     {{/columnInfoList}}
   },
-  required: ['id'],
+  required: ['{{# primarykey}}{{primarykey}}{{/primarykey}}{{^primarykey}}id{{/primarykey}}'],
   additionalProperties: false,
   anyOf: [{{# columnInfoListAnyOf }}{
     required: ['{{apicolname}}'],

@@ -10,12 +10,12 @@ export const postlinks = async (request: any) => new Promise((resolve, reject) =
     reject(errors);
   }
   else {
-    try {    
+    try {
       const result = insert_links(request);
       resolve(result);
-    } catch (err) { 
+    }
+    catch (err) {
       reject(err);
     }
-
   }
 });

@@ -1,116 +1,232 @@
-case 'account':
-  return postaccount(request);
-case 'workflowtargetfilters':
-  return postworkflowTargetFilters(request);
-case 'theme':
-  return posttheme(request);
-case 'prismamigrations':
-  return postprismaMigrations(request);
-case 'eventcategory':
-  return posteventCategory(request);
-case 'persons':
-  return postpersons(request);
-case 'contactcustomfieldsection':
-  return postcontactCustomFieldSection(request);
-case 'loleadsource':
-  return postloLeadSource(request);
-case 'events':
-  return postevents(request);
-case 'engagement':
-  return postengagement(request);
-case 'contactstatuslifecycle':
-  return postcontactStatusLifecycle(request);
-case 'contacttag':
-  return postcontactTag(request);
-case 'eventtype':
-  return posteventType(request);
-case 'templateversion':
-  return posttemplateVersion(request);
-case 'elementversion':
-  return postelementVersion(request);
-case 'stripesubscriptionitem':
-  return poststripeSubscriptionItem(request);
-case 'pageversion':
-  return postpageVersion(request);
-case 'property':
-  return postproperty(request);
-case 'eventsv2':
-  return posteventsV2(request);
-case 'contactcustomfield':
-  return postcontactCustomField(request);
-case 'contactstatus':
-  return postcontactStatus(request);
-case 'template':
-  return posttemplate(request);
-case 'element':
-  return postelement(request);
-case 'contactfilter':
-  return postcontactFilter(request);
-case 'filterpermission':
-  return postfilterPermission(request);
-case 'bridgesectionlifecycle':
-  return postbridgeSectionLifecycle(request);
-case 'losubscription':
-  return postloSubscription(request);
-case 'losubscriptiondailystats':
-  return postloSubscriptionDailyStats(request);
-case 'page':
-  return postpage(request);
-case 'elementtotemplateversion':
-  return postelementtotemplateVersion(request);
-case 'templatedependency':
-  return posttemplateDependency(request);
-case 'routing':
-  return postrouting(request);
-case 'user':
-  return postuser(request);
-case 'organization':
-  return postorganization(request);
-case 'loleadraw':
-  return postloLeadRaw(request);
-case 'partner':
-  return postpartner(request);
-case 'workflow':
-  return postworkflow(request);
-case 'workflowtemplate':
-  return postworkflowTemplate(request);
-case 'workflowtoworkflowtargetfilters':
-  return postworkflowtoworkflowTargetFilters(request);
-case 'lolead':
-  return postloLead(request);
-case 'links':
-  return postlinks(request);
-case 'workflowstate':
-  return postworkflowState(request);
-case 'loan':
-  return postloan(request);
-case 'workflowtemplatepermission':
-  return postworkflowTemplatePermission(request);
-case 'contact':
-  return postcontact(request);
-case 'contactpermission':
-  return postcontactPermission(request);
-case 'incomesource':
-  return postincomeSource(request);
-case 'contactcomment':
-  return postcontactComment(request);
-case 'bridgecontactuser':
-  return postbridgeContactUser(request);
-case 'bridgecontacttag':
-  return postbridgeContactTag(request);
-case 'contactreminder':
-  return postcontactReminder(request);
-case 'bridgecontactpartner':
-  return postbridgeContactPartner(request);
-case 'contactotherassociates':
-  return postcontactOtherAssociates(request);
-case 'bridgecontactloan':
-  return postbridgeContactLoan(request);
-case 'activitylog':
-  return postactivityLog(request);
-case 'bridgecontactprimaryincome':
-  return postbridgeContactPrimaryIncome(request);
-case 'contactcustomfieldvalue':
-  return postcontactCustomFieldValue(request);
-case 'bridgecontactcontact':
-  return postbridgeContactContact(request);
+// case 'workflowtargetfilters':
+//   return putworkflowTargetFilters(request);
+// case 'contactstatuslifecycle':
+//   return putcontactStatusLifecycle(request);
+// case 'account':
+//   return putaccount(request);
+// case 'engagement':
+//   return putengagement(request);
+// case 'contactcustomfieldsection':
+//   return putcontactCustomFieldSection(request);
+// case 'eventcategory':
+//   return puteventCategory(request);
+// case 'theme':
+//   return puttheme(request);
+// case 'stripesubscriptionitem':
+//   return putstripeSubscriptionItem(request);
+// case 'contactfilter':
+//   return putcontactFilter(request);
+// case 'loleadsource':
+//   return putloLeadSource(request);
+// case 'prismamigrations':
+//   return putprismaMigrations(request);
+// case 'elementversion':
+//   return putelementVersion(request);
+// case 'templateversion':
+//   return puttemplateVersion(request);
+// case 'property':
+//   return putproperty(request);
+// case 'user':
+//   return putuser(request);
+// case 'workflow':
+//   return putworkflow(request);
+// case 'workflowtemplate':
+//   return putworkflowTemplate(request);
+// case 'workflowtemplatepermission':
+//   return putworkflowTemplatePermission(request);
+// case 'persons':
+//   return putpersons(request);
+// case 'contacttag':
+//   return putcontactTag(request);
+// case 'filterpermission':
+//   return putfilterPermission(request);
+// case 'bridgesectionlifecycle':
+//   return putbridgeSectionLifecycle(request);
+// case 'contactstatus':
+//   return putcontactStatus(request);
+// case 'organization':
+//   return putorganization(request);
+// case 'losubscription':
+//   return putloSubscription(request);
+// case 'partner':
+//   return putpartner(request);
+// case 'workflowstate':
+//   return putworkflowState(request);
+// case 'events':
+//   return putevents(request);
+// case 'pageversion':
+//   return putpageVersion(request);
+// case 'template':
+//   return puttemplate(request);
+// case 'element':
+//   return putelement(request);
+// case 'loan':
+//   return putloan(request);
+// case 'losubscriptiondailystats':
+//   return putloSubscriptionDailyStats(request);
+// case 'workflowtoworkflowtargetfilters':
+//   return putworkflowtoworkflowTargetFilters(request);
+// case 'eventtype':
+//   return puteventType(request);
+// case 'eventsv2':
+//   return puteventsV2(request);
+// case 'elementtotemplateversion':
+//   return putelementtotemplateVersion(request);
+// case 'templatedependency':
+//   return puttemplateDependency(request);
+// case 'contactcustomfield':
+//   return putcontactCustomField(request);
+// case 'loleadraw':
+//   return putloLeadRaw(request);
+// case 'contact':
+//   return putcontact(request);
+// case 'bridgecontactpartner':
+//   return putbridgeContactPartner(request);
+// case 'contactpermission':
+//   return putcontactPermission(request);
+// case 'incomesource':
+//   return putincomeSource(request);
+// case 'contactcomment':
+//   return putcontactComment(request);
+// case 'bridgecontacttag':
+//   return putbridgeContactTag(request);
+// case 'bridgecontactuser':
+//   return putbridgeContactUser(request);
+// case 'contactcustomfieldvalue':
+//   return putcontactCustomFieldValue(request);
+// case 'activitylog':
+//   return putactivityLog(request);
+// case 'contactreminder':
+//   return putcontactReminder(request);
+// case 'bridgecontactloan':
+//   return putbridgeContactLoan(request);
+// case 'page':
+//   return putpage(request);
+// case 'contactotherassociates':
+//   return putcontactOtherAssociates(request);
+// case 'bridgecontactprimaryincome':
+//   return putbridgeContactPrimaryIncome(request);
+// case 'routing':
+//   return putrouting(request);
+// case 'lolead':
+//   return putloLead(request);
+// case 'links':
+//   return putlinks(request);
+// case 'bridgecontactcontact':
+//   return putbridgeContactContact(request);
+// case 'admin/workflowtargetfilters':
+//   return putworkflowTargetFilters_admin(request);
+// case 'admin/contactstatuslifecycle':
+//   return putcontactStatusLifecycle_admin(request);
+// case 'admin/account':
+//   return putaccount_admin(request);
+// case 'admin/engagement':
+//   return putengagement_admin(request);
+// case 'admin/contactcustomfieldsection':
+//   return putcontactCustomFieldSection_admin(request);
+// case 'admin/eventcategory':
+//   return puteventCategory_admin(request);
+// case 'admin/theme':
+//   return puttheme_admin(request);
+// case 'admin/stripesubscriptionitem':
+//   return putstripeSubscriptionItem_admin(request);
+// case 'admin/contactfilter':
+//   return putcontactFilter_admin(request);
+// case 'admin/loleadsource':
+//   return putloLeadSource_admin(request);
+// case 'admin/prismamigrations':
+//   return putprismaMigrations_admin(request);
+// case 'admin/elementversion':
+//   return putelementVersion_admin(request);
+// case 'admin/templateversion':
+//   return puttemplateVersion_admin(request);
+// case 'admin/property':
+//   return putproperty_admin(request);
+// case 'admin/user':
+//   return putuser_admin(request);
+// case 'admin/workflow':
+//   return putworkflow_admin(request);
+// case 'admin/workflowtemplate':
+//   return putworkflowTemplate_admin(request);
+// case 'admin/workflowtemplatepermission':
+//   return putworkflowTemplatePermission_admin(request);
+// case 'admin/persons':
+//   return putpersons_admin(request);
+// case 'admin/contacttag':
+//   return putcontactTag_admin(request);
+// case 'admin/filterpermission':
+//   return putfilterPermission_admin(request);
+// case 'admin/bridgesectionlifecycle':
+//   return putbridgeSectionLifecycle_admin(request);
+// case 'admin/contactstatus':
+//   return putcontactStatus_admin(request);
+// case 'admin/organization':
+//   return putorganization_admin(request);
+// case 'admin/losubscription':
+//   return putloSubscription_admin(request);
+// case 'admin/partner':
+//   return putpartner_admin(request);
+// case 'admin/workflowstate':
+//   return putworkflowState_admin(request);
+// case 'admin/events':
+//   return putevents_admin(request);
+// case 'admin/pageversion':
+//   return putpageVersion_admin(request);
+// case 'admin/template':
+//   return puttemplate_admin(request);
+// case 'admin/element':
+//   return putelement_admin(request);
+// case 'admin/loan':
+//   return putloan_admin(request);
+// case 'admin/losubscriptiondailystats':
+//   return putloSubscriptionDailyStats_admin(request);
+// case 'admin/workflowtoworkflowtargetfilters':
+//   return putworkflowtoworkflowTargetFilters_admin(request);
+// case 'admin/eventtype':
+//   return puteventType_admin(request);
+// case 'admin/eventsv2':
+//   return puteventsV2_admin(request);
+// case 'admin/elementtotemplateversion':
+//   return putelementtotemplateVersion_admin(request);
+// case 'admin/templatedependency':
+//   return puttemplateDependency_admin(request);
+// case 'admin/contactcustomfield':
+//   return putcontactCustomField_admin(request);
+// case 'admin/loleadraw':
+//   return putloLeadRaw_admin(request);
+// case 'admin/contact':
+//   return putcontact_admin(request);
+// case 'admin/bridgecontactpartner':
+//   return putbridgeContactPartner_admin(request);
+// case 'admin/contactpermission':
+//   return putcontactPermission_admin(request);
+// case 'admin/incomesource':
+//   return putincomeSource_admin(request);
+// case 'admin/contactcomment':
+//   return putcontactComment_admin(request);
+// case 'admin/bridgecontacttag':
+//   return putbridgeContactTag_admin(request);
+// case 'admin/bridgecontactuser':
+//   return putbridgeContactUser_admin(request);
+// case 'admin/contactcustomfieldvalue':
+//   return putcontactCustomFieldValue_admin(request);
+// case 'admin/activitylog':
+//   return putactivityLog_admin(request);
+// case 'admin/contactreminder':
+//   return putcontactReminder_admin(request);
+// case 'admin/bridgecontactloan':
+//   return putbridgeContactLoan_admin(request);
+// case 'admin/page':
+//   return putpage_admin(request);
+// case 'admin/contactotherassociates':
+//   return putcontactOtherAssociates_admin(request);
+// case 'admin/bridgecontactprimaryincome':
+//   return putbridgeContactPrimaryIncome_admin(request);
+// case 'admin/routing':
+//   return putrouting_admin(request);
+// case 'admin/lolead':
+//   return putloLead_admin(request);
+// case 'admin/links':
+//   return putlinks_admin(request);
+// case 'admin/bridgecontactcontact':
+//   return putbridgeContactContact_admin(request);

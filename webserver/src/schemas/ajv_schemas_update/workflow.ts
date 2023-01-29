@@ -17,6 +17,7 @@ const workflow_schema = {
     recurring: workflow_ajv.recurring.api,
     retry: workflow_ajv.retry.api,
     startTime: workflow_ajv.startTime.api,
+    target: workflow_ajv.target.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -42,6 +43,8 @@ const workflow_schema = {
     required: ['retry'],
   },{
     required: ['startTime'],
+  },{
+    required: ['target'],
   },]
 };
 

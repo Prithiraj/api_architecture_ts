@@ -27,6 +27,8 @@ const bridgeContactLoan_schema = {
     required: ['assignRequest'],
   },{
     required: ['type'],
+  },{
+    required: ['id'],
   },]
 };
 

@@ -51,7 +51,7 @@ const events_schema = {
     userType: events_ajv.userType.api,
     timezone: events_ajv.timezone.api,
   },
-  required: ['id'],
+  required: ['eventId'],
   additionalProperties: false,
   anyOf: [{
     required: ['eventAction'],
@@ -65,8 +65,6 @@ const events_schema = {
     required: ['eventData'],
   },{
     required: ['eventGroup'],
-  },{
-    required: ['eventId'],
   },{
     required: ['eventName'],
   },{

@@ -13,7 +13,7 @@ const bridgeContactLoan_schema = {
     type: bridgeContactLoan_ajv.type.api,
     id: bridgeContactLoan_ajv.id.api,
   },
-  required: ['contactId', 'id', 'loanId', 'assignRequest', 'type', 'assignedBy', 'assignTime'],
+  required: ['id', 'type', 'assignedBy', 'assignTime', 'contactId', 'loanId', 'assignRequest'],
   additionalProperties: false,
 };
 

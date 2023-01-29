@@ -10,12 +10,12 @@ export const postengagement = async (request: any) => new Promise((resolve, reje
     reject(errors);
   }
   else {
-    try {    
+    try {
       const result = insert_engagement(request);
       resolve(result);
-    } catch (err) { 
+    }
+    catch (err) {
       reject(err);
     }
-
   }
 });

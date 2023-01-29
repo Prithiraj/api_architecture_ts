@@ -27,6 +27,8 @@ const bridgeContactContact_schema = {
     required: ['assignTime'],
   },{
     required: ['assignRequest'],
+  },{
+    required: ['id'],
   },]
 };
 

@@ -10,12 +10,12 @@ export const post{{apitablename}} = async (request: any) => new Promise((resolve
     reject(errors);
   }
   else {
-    try {    
+    try {
       const result = insert_{{apitablename}}(request);
       resolve(result);
-    } catch (err) { 
+    }
+    catch (err) {
       reject(err);
     }
-
   }
 });

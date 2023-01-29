@@ -7,11 +7,17 @@ const account_schema = {
   properties: {
     id: account_ajv.id.api,
     subdomain: account_ajv.subdomain.api,
+    parentAccountId: account_ajv.parentAccountId.api,
+    masterUserId: account_ajv.masterUserId.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
     required: ['subdomain'],
+  },{
+    required: ['parentAccountId'],
+  },{
+    required: ['masterUserId'],
   },]
 };
 

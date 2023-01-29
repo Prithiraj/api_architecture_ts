@@ -38,12 +38,10 @@ const engagement_schema = {
     userType: engagement_ajv.userType.api,
     testCol01: engagement_ajv.testCol01.api,
   },
-  required: ['id'],
+  required: ['eventId'],
   additionalProperties: false,
   anyOf: [{
     required: ['parentId'],
-  },{
-    required: ['eventId'],
   },{
     required: ['rawBucket'],
   },{

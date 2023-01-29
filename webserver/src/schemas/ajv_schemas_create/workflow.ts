@@ -16,8 +16,9 @@ const workflow_schema = {
     recurring: workflow_ajv.recurring.api,
     retry: workflow_ajv.retry.api,
     startTime: workflow_ajv.startTime.api,
+    target: workflow_ajv.target.api,
   },
-  required: ['apiVersion', 'flowType', 'firstStep', 'steps', 'status', 'name'],
+  required: ['apiVersion', 'firstStep', 'flowType', 'status', 'name', 'steps'],
   additionalProperties: false,
 };
 

@@ -10,12 +10,12 @@ export const postproperty = async (request: any) => new Promise((resolve, reject
     reject(errors);
   }
   else {
-    try {    
+    try {
       const result = insert_property(request);
       resolve(result);
-    } catch (err) { 
+    }
+    catch (err) {
       reject(err);
     }
-
   }
 });

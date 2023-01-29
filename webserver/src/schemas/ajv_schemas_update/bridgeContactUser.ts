@@ -24,6 +24,8 @@ const bridgeContactUser_schema = {
     required: ['assignTime'],
   },{
     required: ['assignRequest'],
+  },{
+    required: ['id'],
   },]
 };
 

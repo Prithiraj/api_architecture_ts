@@ -18,6 +18,8 @@ const contactCustomFieldValue_schema = {
     required: ['customFieldId'],
   },{
     required: ['value'],
+  },{
+    required: ['id'],
   },]
 };
 

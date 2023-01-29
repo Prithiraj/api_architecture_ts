@@ -4,7 +4,7 @@ import validateDto from '../middleware/validate-dto';
 import contactSchema from '../schemas/ajv_schemas_create/contact';
 import contactUpdate from '../schemas/ajv_schemas_update/contact';
 import {insert_contact} from '../dbmanager/db_insert/contact.insert';
-// import {update_contact} from '../dbmanager/db_update/contact.update';
+import {update_contact_admin} from '../dbmanager/db_update/admin/contact.update';
 // import 
 
 // const prisma = new PrismaClient()
@@ -15,7 +15,7 @@ contactRouter.get('/',  (request: Request, response: Response): any => {
 	return response.json("OK");
 });
   
-contactRouter.put('/', (request: Request, response: Response) => {
+contactRouter.put('/', async (request: Request, response: Response) => {
 	// contactInsert(request.body)
 	const valid = contactUpdate(request.body);
 	if (!valid) {
@@ -23,8 +23,13 @@ contactRouter.put('/', (request: Request, response: Response) => {
 		response.status(400).json(errors);
 	} else {
 		console.log(request.body);
-		// const result = update_contact(request.body);
-		// response.json({"message": result});
+		try{
+			const result = await update_contact_admin(request.body);
+			response.json({"message": result});
+		} catch (err) {
+			response.status(400).json(err);
+		}
+
 	}
 });
 contactRouter.post('/', validateDto(contactSchema), async (request: Request, response: Response): Promise<any> => {

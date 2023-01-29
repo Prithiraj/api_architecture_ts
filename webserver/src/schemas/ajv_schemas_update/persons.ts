@@ -11,11 +11,9 @@ const persons_schema = {
     address: persons_ajv.address.api,
     city: persons_ajv.city.api,
   },
-  required: ['id'],
+  required: ['personid'],
   additionalProperties: false,
   anyOf: [{
-    required: ['personid'],
-  },{
     required: ['lastname'],
   },{
     required: ['firstname'],

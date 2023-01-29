@@ -9,7 +9,7 @@ const contactPermission_schema = {
     ownerAccountId: contactPermission_ajv.ownerAccountId.api,
     sharedAccountId: contactPermission_ajv.sharedAccountId.api,
   },
-  required: ['sharedAccountId', 'contactId', 'ownerAccountId'],
+  required: ['ownerAccountId', 'contactId', 'sharedAccountId'],
   additionalProperties: false,
 };
 

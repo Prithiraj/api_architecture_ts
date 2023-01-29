@@ -46,11 +46,9 @@ const eventsV2_schema = {
     channelId: eventsV2_ajv.channelId.api,
     channelType: eventsV2_ajv.channelType.api,
   },
-  required: ['id'],
+  required: ['eventId'],
   additionalProperties: false,
   anyOf: [{
-    required: ['eventId'],
-  },{
     required: ['eventCategoryId'],
   },{
     required: ['eventCategory'],

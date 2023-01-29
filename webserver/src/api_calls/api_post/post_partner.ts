@@ -10,12 +10,12 @@ export const postpartner = async (request: any) => new Promise((resolve, reject)
     reject(errors);
   }
   else {
-    try {    
+    try {
       const result = insert_partner(request);
       resolve(result);
-    } catch (err) { 
+    }
+    catch (err) {
       reject(err);
     }
-
   }
 });

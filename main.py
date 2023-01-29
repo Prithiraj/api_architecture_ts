@@ -10,7 +10,7 @@ from json_modifier.json_insert_modifier import JsonInsertModifier
 
 from get_table_info import TableInfo
 from sort_schema import SortSchema
-from typescript_gen import TypescriptGen
+from typescript_gen.typescript_gen import TypescriptGen
 
 
 if __name__ == "__main__":
@@ -56,27 +56,55 @@ if __name__ == "__main__":
     
     typescriptGen = TypescriptGen()
     markdownGen = MarkdownGen()
-    typescriptGen.genMapperTypeScript(sorted_schema)
 
-    # insert schema generation
-    insert_schema = JsonInsertModifier().removeExcludedColumns(copy.deepcopy(sorted_schema))
-    typescriptGen.genInsertTypeScript(insert_schema)
-    # insert_schema = JsonInsertModifier().minimizeTableName(insert_schema)
-    # markdownGen.genInsertMD(insert_schema)
+    # Generate mappers
+    typescriptGen.handleMappersGen(sorted_schema)
 
-    # update schema generation
-    update_schema = JsonUpdateModifier().removeExcludedColumns(copy.deepcopy(sorted_schema))
-    typescriptGen.genUpdateTypeScript(update_schema)
+    # insert schema and schema doc generation
+    typescriptGen.handleInsertSchemaDocCode(sorted_schema)
 
-    # insert db query generation
-    typescriptGen.genInsertQueryTypescript(sorted_schema)
+    # update schema and schema doc generation
+    typescriptGen.handleUpdateSchemaDocCode(sorted_schema)
+
+    # create DML Query
+    typescriptGen.handleDMLQueryCodeGen(sorted_schema)
     
-    # insert db query generation for lambda
-    typescriptGen.genInsertQueryLambdaTypescript(sorted_schema)
+    # create server less functions
+    typescriptGen.handleSLFunctionGen(sorted_schema)
 
+    # create switch case gen
+    typescriptGen.handleSwitchCaseGen(sorted_schema)
+    # # insert db query generation
+    # typescriptGen.genInsertQueryTypescript(sorted_schema)
+    
+    # # update db query generation
+    # typescriptGen.genUpdateQueryTypescript(sorted_schema)
+    
+    # # insert db query generation for lambda
+    # typescriptGen.genInsertQueryLambdaTypescript(sorted_schema)
+    
+    # # update db query generation for lambda
+    # typescriptGen.genUpdateQueryLambdaTypescript(sorted_schema)
+    
+    # # update db query generation for admin lambda
+    # typescriptGen.genAdminUpdateQueryLambdaTypescript(sorted_schema)
+
+    # # update db query generation for admin
+    # typescriptGen.genAdminUpdateQueryTypescript(sorted_schema)
+
+    # typescriptGen.handleSLFunctionGen(sorted_schema)
     # insert lambda functions
-    typescriptGen.genInsertLambdaFunction(sorted_schema)
+    # typescriptGen.genInsertLambdaFunction(sorted_schema)
+    
+    # # update lambda functions
+    # typescriptGen.genUpdateLambdaFunction(sorted_schema)
 
     # insert lambda cases
-    typescriptGen.genInsertLambdaCases(sorted_schema)
+    # typescriptGen.genInsertLambdaCases(sorted_schema)
+    
+    # update lambda cases
+    # typescriptGen.genUpdateLambdaCases(sorted_schema)
+    
+    # genarate update amdin lambda cases
+    # typescriptGen.genAdminUpdateLambdaCases(sorted_schema)
     

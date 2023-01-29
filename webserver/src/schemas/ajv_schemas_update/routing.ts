@@ -9,12 +9,10 @@ const routing_schema = {
     path: routing_ajv.path.api,
     resourceId: routing_ajv.resourceId.api,
   },
-  required: ['id'],
+  required: ['path'],
   additionalProperties: false,
   anyOf: [{
     required: ['subdomain'],
-  },{
-    required: ['path'],
   },{
     required: ['resourceId'],
   },]

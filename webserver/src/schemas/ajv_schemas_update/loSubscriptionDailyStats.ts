@@ -12,7 +12,7 @@ const loSubscriptionDailyStats_schema = {
     totalLeadsTransfered: loSubscriptionDailyStats_ajv.totalLeadsTransfered.api,
     statsDate: loSubscriptionDailyStats_ajv.statsDate.api,
   },
-  required: ['id'],
+  required: ['statsDate'],
   additionalProperties: false,
   anyOf: [{
     required: ['loSubscriptionId'],
@@ -24,8 +24,6 @@ const loSubscriptionDailyStats_schema = {
     required: ['totalLeadsMatched'],
   },{
     required: ['totalLeadsTransfered'],
-  },{
-    required: ['statsDate'],
   },]
 };
 

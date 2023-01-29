@@ -1,0 +1,75 @@
+import dataKey from '../../../utils/utils';
+import pool from '../../dbconn';
+
+export async function update_loSubscriptionDailyStats(request: any) {
+	// processors
+	
+  const input = request.body;
+
+  const table_cols: Record<string, string> = {
+    loSubscriptionId: 'lo_subscription_id',
+	    totalMatchAmount: 'total_match_amount',
+	    totalTransferAmount: 'total_transfer_amount',
+	    totalLeadsMatched: 'total_leads_matched',
+	    totalLeadsTransfered: 'total_leads_transfered',
+	    createdBy: 'created_by',
+	    createRequest: 'create_request',
+	    createTime: 'create_time',
+	    updatedBy: 'updated_by',
+	    updateRequest: 'update_request',
+	    updateTime: 'update_time',
+	    statsDate: 'stats_date',
+	  };
+
+  const timestamp = new Date();
+
+  const additionals: any = {
+    updateTime: timestamp.toISOString(),
+    updateRequest: request.request_id,
+    updatedBy: request.decoded.user_id,
+  };
+
+  const pk = table_cols.statsDate
+
+  Object.assign(input, additionals);
+
+  const key_values: any[] = [];
+  const values: any[] = [];
+  const id = input.id;
+  let index = 0;
+  for (let [key, value] of Object.entries(input)) {
+    if (key in table_cols && key !== 'id') {
+      ++index;
+      key_values.push(`${table_cols[key]} = $${index}`);
+      values.push(value);
+    }
+  }
+
+  values.push(id);
+
+  const key_value_placeholders = key_values.join(', ');
+  const all_cols: any[] = [];
+  for (let [key, value] of Object.entries(table_cols)) {
+    all_cols.push(value);
+  }
+  
+  const all_cols_str = all_cols.join(', ');
+
+  let createdBy = '';
+  if ('createdBy' in table_cols) {
+    createdBy = `and ${table_cols['createdBy']}=$${index + 2}`;
+    values.push(request.decoded.user_id);
+  }
+
+  const update_query = {
+    text: `UPDATE public.lo_subscription_daily_stats SET ${key_value_placeholders} WHERE ${pk}=$${index + 1} ${createdBy} returning ${all_cols_str}`,
+    values: values
+  }; 
+
+  try {
+	  const result = await pool.query(update_query);
+	  return result.rows;
+  } catch (err: any) {
+	  throw err;
+  }
+}

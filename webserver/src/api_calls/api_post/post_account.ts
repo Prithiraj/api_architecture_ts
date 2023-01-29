@@ -10,12 +10,12 @@ export const postaccount = async (request: any) => new Promise((resolve, reject)
     reject(errors);
   }
   else {
-    try {    
+    try {
       const result = insert_account(request);
       resolve(result);
-    } catch (err) { 
+    }
+    catch (err) {
       reject(err);
     }
-
   }
 });

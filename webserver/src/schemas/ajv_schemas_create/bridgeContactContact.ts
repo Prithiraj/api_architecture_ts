@@ -13,7 +13,7 @@ const bridgeContactContact_schema = {
     assignRequest: bridgeContactContact_ajv.assignRequest.api,
     id: bridgeContactContact_ajv.id.api,
   },
-  required: ['assignedTo', 'contactId', 'id', 'assignRequest', 'relationship', 'assignedBy', 'assignTime'],
+  required: ['assignedTo', 'id', 'assignedBy', 'assignTime', 'relationship', 'contactId', 'assignRequest'],
   additionalProperties: false,
 };
 

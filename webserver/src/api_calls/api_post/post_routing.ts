@@ -10,12 +10,12 @@ export const postrouting = async (request: any) => new Promise((resolve, reject)
     reject(errors);
   }
   else {
-    try {    
+    try {
       const result = insert_routing(request);
       resolve(result);
-    } catch (err) { 
+    }
+    catch (err) {
       reject(err);
     }
-
   }
 });

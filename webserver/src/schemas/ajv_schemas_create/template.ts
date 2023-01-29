@@ -11,7 +11,7 @@ const template_schema = {
     thumbnail: template_ajv.thumbnail.api,
     latestVersionId: template_ajv.latestVersionId.api,
   },
-  required: ['data', 'latestVersionId', 'name', 'thumbnail', 'type'],
+  required: ['data', 'type', 'latestVersionId', 'name', 'thumbnail'],
   additionalProperties: false,
 };
 

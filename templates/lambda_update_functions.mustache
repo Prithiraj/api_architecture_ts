@@ -1,19 +1,40 @@
-import update_{{apitablename}} from '../../schemas/ajv_schemas_update/{{apitablename}}';
-import { update_{{apitablename}} } from '../../dbmanager/db_update_sl/{{apitablename}}.inesrt';
+import edit_{{apitablename}} from '../../schemas/ajv_schemas_update/{{apitablename}}';
+import { update_{{apitablename}} } from '../../dbmanager/db_update_sl/general/{{apitablename}}.update';
+import { update_{{apitablename}}_admin } from '../../dbmanager/db_update_sl/admin/{{apitablename}}.update';
 
 
 export const put{{apitablename}} = async (request: any) => new Promise((resolve, reject) => {
   // ---------Schema validation-----------
-  const valid = update_{{apitablename}}(request.body);
+  const valid = edit_{{apitablename}}(request.body);
   if (!valid) {
-    const { errors } = update_{{apitablename}};
+    const { errors } = edit_{{apitablename}};
     reject(errors);
   }
   else {
-    const result = update_{{apitablename}}(request);
-	if (result.rowCount === 0) {
-		reject("message", "the id does not exist");
-	}
-    resolve(result);
+    try {
+      const result = update_{{apitablename}}(request);
+      resolve(result);    
+    }
+    catch (err) {
+      reject(err);
+    }
   }
 });
+
+export const put{{apitablename}}_admin = async (request: any) => new Promise((resolve, reject) => {
+  // ---------Schema validation-----------
+  const valid = edit_{{apitablename}}(request.body);
+  if (!valid) {
+    const { errors } = edit_{{apitablename}};
+    reject(errors);
+  }
+  else {
+      try {
+        const result = update_{{apitablename}}_admin(request);
+        resolve(result);
+      }
+      catch (err) {
+        reject(err);
+      }
+  }
+  });
