@@ -1,3 +1,4 @@
+from typescript_gen.select_typescript_gen import SingleSelectTypescriptGen
 from typescript_gen.dml_query_typescript_gen import DMLQueryTypescriptGen
 from typescript_gen.insert_typescript_gen import InsertTypescriptGen
 from typescript_gen.lambda_function_gen import LambdaFunctionGen
@@ -52,6 +53,10 @@ class TypescriptGen:
         mapperTypescriptGen = MapperTypescriptGen()
         mapperTypescriptGen.genMapperTypescript(schemas)
     
+    def handleSelectByIDGen(self, schemas):
+        selectTypescriptGen = SingleSelectTypescriptGen()
+        selectTypescriptGen.generateTypescriptSelectByIDQueries(schemas)
+        
     # # Prepares types
     # def genMapperTypeScript(self, schemas):
     #     with open('templates/template.mustache', 'r') as f:

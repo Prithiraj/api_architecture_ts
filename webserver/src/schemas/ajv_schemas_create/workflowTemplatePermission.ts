@@ -11,7 +11,7 @@ const workflowTemplatePermission_schema = {
     sharedAccountId: workflowTemplatePermission_ajv.sharedAccountId.api,
     forceLatestVersion: workflowTemplatePermission_ajv.forceLatestVersion.api,
   },
-  required: ['ownerAccountId', 'workflowTemplateId', 'permission', 'sharedAccountId'],
+  required: ['permission', 'ownerAccountId', 'sharedAccountId', 'workflowTemplateId'],
   additionalProperties: false,
 };
 

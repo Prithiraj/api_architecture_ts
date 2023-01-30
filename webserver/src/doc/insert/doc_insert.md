@@ -1,27 +1,5 @@
 # API Documentation for POST
 
-## persons
-
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/persons
-
-Methods: `POST`
-
-Headers: 
-```
-x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
-Content-Type: application/json
-```
-
-*Request parameters:*
-| propeties | required? | details |
-| :--- | :--: | ---: |
-|lastname|No|string
-|firstname|No|string
-|address|No|string
-|city|No|string
-
-
-- - - - - - - - - - - - - - - - - -
 ## engagement
 
 URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/engagement
@@ -68,184 +46,6 @@ Content-Type: application/json
 |userPool|No|string
 |userType|No|string
 |testCol01|No|string
-
-
-- - - - - - - - - - - - - - - - - -
-## theme
-
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/theme
-
-Methods: `POST`
-
-Headers: 
-```
-x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
-Content-Type: application/json
-```
-
-*Request parameters:*
-| propeties | required? | details |
-| :--- | :--: | ---: |
-|name|No|string
-|theme|Yes|object
-
-
-- - - - - - - - - - - - - - - - - -
-## eventtype
-
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/eventtype
-
-Methods: `POST`
-
-Headers: 
-```
-x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
-Content-Type: application/json
-```
-
-*Request parameters:*
-| propeties | required? | details |
-| :--- | :--: | ---: |
-|eventType|Yes|string
-|eventCategoryId|Yes|integer
-|eventTypeDescription|No|string
-|dbAction|No|string
-|createdAt|Yes|string
-|updatedAt|No|string
-
-
-- - - - - - - - - - - - - - - - - -
-## contacttag
-
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/contacttag
-
-Methods: `POST`
-
-Headers: 
-```
-x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
-Content-Type: application/json
-```
-
-*Request parameters:*
-| propeties | required? | details |
-| :--- | :--: | ---: |
-|name|Yes|string
-|order|Yes|integer
-
-
-- - - - - - - - - - - - - - - - - -
-## property
-
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/property
-
-Methods: `POST`
-
-Headers: 
-```
-x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
-Content-Type: application/json
-```
-
-*Request parameters:*
-| propeties | required? | details |
-| :--- | :--: | ---: |
-|type|Yes|string
-|street1|No|string
-|street2|No|string
-|city|No|string
-|state|No|string
-|country|No|string
-|taxes|No|number
-|miscExp|No|number
-|rentalIncome|No|number
-|squareFootage|No|number
-|bedrooms|No|number
-|baths|No|number
-|postal|No|string
-|actualValue|No|number
-|estimatedValue|No|number
-|hazardInsurance|No|number
-|propertyUnits|No|number
-|propertyOccupancy|No|string
-
-
-- - - - - - - - - - - - - - - - - -
-## user
-
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/user
-
-Methods: `POST`
-
-Headers: 
-```
-x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
-Content-Type: application/json
-```
-
-*Request parameters:*
-| propeties | required? | details |
-| :--- | :--: | ---: |
-|userType|No|string
-|email|No|string
-|emailVerified|Yes|boolean
-|firstname|No|string
-|lastname|No|string
-|phone|No|string
-|phoneNumberVerified|Yes|boolean
-|profileImage|No|string
-
-
-- - - - - - - - - - - - - - - - - -
-## workflow
-
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/workflow
-
-Methods: `POST`
-
-Headers: 
-```
-x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
-Content-Type: application/json
-```
-
-*Request parameters:*
-| propeties | required? | details |
-| :--- | :--: | ---: |
-|sourceTemplate|No|string
-|status|Yes|string
-|steps|Yes|object
-|targetFilter|No|string
-|apiVersion|Yes|string
-|firstStep|Yes|string
-|flowType|Yes|string
-|name|Yes|string
-|recurring|No|object
-|retry|No|object
-|startTime|No|string
-|target|No|string
-
-
-- - - - - - - - - - - - - - - - - -
-## workflowstate
-
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/workflowstate
-
-Methods: `POST`
-
-Headers: 
-```
-x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
-Content-Type: application/json
-```
-
-*Request parameters:*
-| propeties | required? | details |
-| :--- | :--: | ---: |
-|workflowId|Yes|string
-|entityName|Yes|string
-|apiVersion|Yes|string
-|steps|Yes|object
 
 
 - - - - - - - - - - - - - - - - - -
@@ -311,6 +111,92 @@ Content-Type: application/json
 
 
 - - - - - - - - - - - - - - - - - -
+## theme
+
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/theme
+
+Methods: `POST`
+
+Headers: 
+```
+x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
+Content-Type: application/json
+```
+
+*Request parameters:*
+| propeties | required? | details |
+| :--- | :--: | ---: |
+|name|No|string
+|theme|Yes|object
+
+
+- - - - - - - - - - - - - - - - - -
+## persons
+
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/persons
+
+Methods: `POST`
+
+Headers: 
+```
+x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
+Content-Type: application/json
+```
+
+*Request parameters:*
+| propeties | required? | details |
+| :--- | :--: | ---: |
+|lastname|No|string
+|firstname|No|string
+|address|No|string
+|city|No|string
+
+
+- - - - - - - - - - - - - - - - - -
+## eventtype
+
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/eventtype
+
+Methods: `POST`
+
+Headers: 
+```
+x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
+Content-Type: application/json
+```
+
+*Request parameters:*
+| propeties | required? | details |
+| :--- | :--: | ---: |
+|eventType|Yes|string
+|eventCategoryId|Yes|integer
+|eventTypeDescription|No|string
+|dbAction|No|string
+|createdAt|Yes|string
+|updatedAt|No|string
+
+
+- - - - - - - - - - - - - - - - - -
+## contacttag
+
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/contacttag
+
+Methods: `POST`
+
+Headers: 
+```
+x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
+Content-Type: application/json
+```
+
+*Request parameters:*
+| propeties | required? | details |
+| :--- | :--: | ---: |
+|name|Yes|string
+|order|Yes|integer
+
+
+- - - - - - - - - - - - - - - - - -
 ## contactcustomfield
 
 URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/contactcustomfield
@@ -334,9 +220,35 @@ Content-Type: application/json
 
 
 - - - - - - - - - - - - - - - - - -
-## template
+## user
 
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/template
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/user
+
+Methods: `POST`
+
+Headers: 
+```
+x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
+Content-Type: application/json
+```
+
+*Request parameters:*
+| propeties | required? | details |
+| :--- | :--: | ---: |
+|userType|No|string
+|email|No|string
+|emailVerified|Yes|boolean
+|firstname|No|string
+|lastname|No|string
+|phone|No|string
+|phoneNumberVerified|Yes|boolean
+|profileImage|No|string
+
+
+- - - - - - - - - - - - - - - - - -
+## property
+
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/property
 
 Methods: `POST`
 
@@ -350,16 +262,29 @@ Content-Type: application/json
 | propeties | required? | details |
 | :--- | :--: | ---: |
 |type|Yes|string
-|name|Yes|string
-|data|Yes|object
-|thumbnail|Yes|string
-|latestVersionId|Yes|string
+|street1|No|string
+|street2|No|string
+|city|No|string
+|state|No|string
+|country|No|string
+|taxes|No|number
+|miscExp|No|number
+|rentalIncome|No|number
+|squareFootage|No|number
+|bedrooms|No|number
+|baths|No|number
+|postal|No|string
+|actualValue|No|number
+|estimatedValue|No|number
+|hazardInsurance|No|number
+|propertyUnits|No|number
+|propertyOccupancy|No|string
 
 
 - - - - - - - - - - - - - - - - - -
-## organization
+## workflow
 
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/organization
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/workflow
 
 Methods: `POST`
 
@@ -372,13 +297,40 @@ Content-Type: application/json
 *Request parameters:*
 | propeties | required? | details |
 | :--- | :--: | ---: |
-|addressId|No|string
-|name|No|string
-|type|No|string
-|phone|No|string
-|email|No|string
-|nmlsId|No|string
-|parentOrganizationId|No|string
+|sourceTemplate|No|string
+|status|Yes|string
+|steps|Yes|object
+|targetFilter|No|string
+|apiVersion|Yes|string
+|firstStep|Yes|string
+|flowType|Yes|string
+|name|Yes|string
+|recurring|No|object
+|retry|No|object
+|startTime|No|string
+|target|No|string
+
+
+- - - - - - - - - - - - - - - - - -
+## workflowstate
+
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/workflowstate
+
+Methods: `POST`
+
+Headers: 
+```
+x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
+Content-Type: application/json
+```
+
+*Request parameters:*
+| propeties | required? | details |
+| :--- | :--: | ---: |
+|workflowId|Yes|string
+|entityName|Yes|string
+|apiVersion|Yes|string
+|steps|Yes|object
 
 
 - - - - - - - - - - - - - - - - - -
@@ -433,6 +385,63 @@ Content-Type: application/json
 
 
 - - - - - - - - - - - - - - - - - -
+## eventsv2
+
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/eventsv2
+
+Methods: `POST`
+
+Headers: 
+```
+x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
+Content-Type: application/json
+```
+
+*Request parameters:*
+| propeties | required? | details |
+| :--- | :--: | ---: |
+|eventCategoryId|No|integer
+|eventCategory|No|string
+|eventTypeId|No|integer
+|eventType|No|string
+|eventData|Yes|object
+|eventProvider|No|string
+|rawBucket|No|string
+|rawPath|No|string
+|reason|No|string
+|destinationLocation|No|string
+|destinationType|No|string
+|deviceIp|No|string
+|deviceLocationCity|No|string
+|deviceLocationContinent|No|string
+|deviceLocationCoordinatesLat|No|string
+|deviceLocationCoordinatesLon|No|string
+|deviceLocationCountry|No|string
+|deviceLocationZip|No|string
+|deviceTimezone|No|string
+|deviceType|No|string
+|userPool|No|string
+|destinationId|No|string
+|endTime|No|string
+|eventClass|No|string
+|eventCode|No|string
+|eventSeverity|No|string
+|eventTime|Yes|string
+|message|No|string
+|ownerId|No|string
+|referralId|No|string
+|referralType|No|string
+|startTime|No|string
+|resourceId|No|string
+|resourceType|No|string
+|sourceId|No|string
+|sourceType|No|string
+|timeZone|No|string
+|channelId|No|string
+|channelType|No|string
+
+
+- - - - - - - - - - - - - - - - - -
 ## loan
 
 URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/loan
@@ -472,6 +481,54 @@ Content-Type: application/json
 |loanPropertyOccupancy|No|string
 |loanPropertyValue|No|number
 |loanType|No|string
+
+
+- - - - - - - - - - - - - - - - - -
+## template
+
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/template
+
+Methods: `POST`
+
+Headers: 
+```
+x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
+Content-Type: application/json
+```
+
+*Request parameters:*
+| propeties | required? | details |
+| :--- | :--: | ---: |
+|type|Yes|string
+|name|Yes|string
+|data|Yes|object
+|thumbnail|Yes|string
+|latestVersionId|Yes|string
+
+
+- - - - - - - - - - - - - - - - - -
+## organization
+
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/organization
+
+Methods: `POST`
+
+Headers: 
+```
+x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
+Content-Type: application/json
+```
+
+*Request parameters:*
+| propeties | required? | details |
+| :--- | :--: | ---: |
+|addressId|No|string
+|name|No|string
+|type|No|string
+|phone|No|string
+|email|No|string
+|nmlsId|No|string
+|parentOrganizationId|No|string
 
 
 - - - - - - - - - - - - - - - - - -
@@ -526,6 +583,105 @@ Content-Type: application/json
 |data|Yes|object
 |type|Yes|string
 |latestVersionId|Yes|string
+
+
+- - - - - - - - - - - - - - - - - -
+## contact
+
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/contact
+
+Methods: `POST`
+
+Headers: 
+```
+x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
+Content-Type: application/json
+```
+
+*Request parameters:*
+| propeties | required? | details |
+| :--- | :--: | ---: |
+|statusId|No|string
+|addressId|No|string
+|pictureUrl|No|string
+|nmlsId|No|string
+|type|Yes|string
+|firstName|Yes|string
+|lastName|Yes|string
+|personalEmail|No|string
+|workEmail|No|string
+|mobilePhone|No|string
+|workPhone|No|string
+|extraMail|No|array
+|extraPhone|No|array
+|jobTitle|No|string
+|maritalStatus|No|string
+|gender|No|string
+|dob|No|string
+|creationSource|Yes|string
+|ssn|No|string
+|leadSourceType|No|string
+|leadSource|No|string
+|middleName|No|string
+|locale|No|string
+|monthlyIncome|No|number
+|organizationId|No|string
+|origin|No|string
+|taygoSource|No|string
+|timezone|No|string
+|isConverted|Yes|boolean
+|statusLifecycleId|No|string
+|homePhone|No|string
+|fico|No|integer
+|currentLoanId|No|string
+|desiredLoanId|No|string
+
+
+- - - - - - - - - - - - - - - - - -
+## contactotherassociates
+
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/contactotherassociates
+
+Methods: `POST`
+
+Headers: 
+```
+x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
+Content-Type: application/json
+```
+
+*Request parameters:*
+| propeties | required? | details |
+| :--- | :--: | ---: |
+|contactId|Yes|string
+|associateName|Yes|string
+
+
+- - - - - - - - - - - - - - - - - -
+## contactreminder
+
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/contactreminder
+
+Methods: `POST`
+
+Headers: 
+```
+x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
+Content-Type: application/json
+```
+
+*Request parameters:*
+| propeties | required? | details |
+| :--- | :--: | ---: |
+|contactId|Yes|string
+|userId|Yes|string
+|type|Yes|string
+|title|No|string
+|description|No|string
+|dueDate|Yes|string
+|executeAt|Yes|string
+|reminderData|No|string
+|active|Yes|boolean
 
 
 - - - - - - - - - - - - - - - - - -
@@ -620,9 +776,9 @@ Content-Type: application/json
 
 
 - - - - - - - - - - - - - - - - - -
-## losubscriptiondailystats
+## activitylog
 
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/losubscriptiondailystats
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/activitylog
 
 Methods: `POST`
 
@@ -635,11 +791,32 @@ Content-Type: application/json
 *Request parameters:*
 | propeties | required? | details |
 | :--- | :--: | ---: |
-|loSubscriptionId|Yes|string
-|totalMatchAmount|No|number
-|totalTransferAmount|No|number
-|totalLeadsMatched|No|integer
-|totalLeadsTransfered|No|integer
+|eventId|No|string
+|eventCategoryId|Yes|integer
+|eventCategory|Yes|string
+|eventTypeId|Yes|integer
+|eventType|Yes|string
+|historyData|No|string
+|endTime|No|string
+|eventClass|No|string
+|eventCode|No|string
+|eventData|No|string
+|eventSeverity|No|string
+|eventTime|Yes|string
+|message|No|string
+|ownerId|No|string
+|reason|No|string
+|startTime|No|string
+|timeZone|No|string
+|channelId|No|string
+|channelType|No|string
+|resourceId|No|string
+|resourceType|No|string
+|sourceId|No|string
+|sourceType|No|string
+|contactId|No|string
+|masterEventTime|Yes|string
+|userId|No|string
 
 
 - - - - - - - - - - - - - - - - - -
@@ -726,9 +903,9 @@ Content-Type: application/json
 
 
 - - - - - - - - - - - - - - - - - -
-## contact
+## losubscriptiondailystats
 
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/contact
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/losubscriptiondailystats
 
 Methods: `POST`
 
@@ -741,40 +918,11 @@ Content-Type: application/json
 *Request parameters:*
 | propeties | required? | details |
 | :--- | :--: | ---: |
-|statusId|No|string
-|addressId|No|string
-|pictureUrl|No|string
-|nmlsId|No|string
-|type|Yes|string
-|firstName|Yes|string
-|lastName|Yes|string
-|personalEmail|No|string
-|workEmail|No|string
-|mobilePhone|No|string
-|workPhone|No|string
-|extraMail|No|array
-|extraPhone|No|array
-|jobTitle|No|string
-|maritalStatus|No|string
-|gender|No|string
-|dob|No|string
-|creationSource|Yes|string
-|ssn|No|string
-|leadSourceType|No|string
-|leadSource|No|string
-|middleName|No|string
-|locale|No|string
-|monthlyIncome|No|number
-|organizationId|No|string
-|origin|No|string
-|taygoSource|No|string
-|timezone|No|string
-|isConverted|Yes|boolean
-|statusLifecycleId|No|string
-|homePhone|No|string
-|fico|No|integer
-|currentLoanId|No|string
-|desiredLoanId|No|string
+|loSubscriptionId|Yes|string
+|totalMatchAmount|No|number
+|totalTransferAmount|No|number
+|totalLeadsMatched|No|integer
+|totalLeadsTransfered|No|integer
 
 
 - - - - - - - - - - - - - - - - - -
@@ -797,134 +945,6 @@ Content-Type: application/json
 |userId|Yes|string
 |comment|Yes|string
 |active|Yes|boolean
-
-
-- - - - - - - - - - - - - - - - - -
-## contactreminder
-
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/contactreminder
-
-Methods: `POST`
-
-Headers: 
-```
-x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
-Content-Type: application/json
-```
-
-*Request parameters:*
-| propeties | required? | details |
-| :--- | :--: | ---: |
-|contactId|Yes|string
-|userId|Yes|string
-|type|Yes|string
-|title|No|string
-|description|No|string
-|dueDate|Yes|string
-|executeAt|Yes|string
-|reminderData|No|string
-|active|Yes|boolean
-
-
-- - - - - - - - - - - - - - - - - -
-## eventsv2
-
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/eventsv2
-
-Methods: `POST`
-
-Headers: 
-```
-x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
-Content-Type: application/json
-```
-
-*Request parameters:*
-| propeties | required? | details |
-| :--- | :--: | ---: |
-|eventCategoryId|No|integer
-|eventCategory|No|string
-|eventTypeId|No|integer
-|eventType|No|string
-|eventData|Yes|object
-|eventProvider|No|string
-|rawBucket|No|string
-|rawPath|No|string
-|reason|No|string
-|destinationLocation|No|string
-|destinationType|No|string
-|deviceIp|No|string
-|deviceLocationCity|No|string
-|deviceLocationContinent|No|string
-|deviceLocationCoordinatesLat|No|string
-|deviceLocationCoordinatesLon|No|string
-|deviceLocationCountry|No|string
-|deviceLocationZip|No|string
-|deviceTimezone|No|string
-|deviceType|No|string
-|userPool|No|string
-|destinationId|No|string
-|endTime|No|string
-|eventClass|No|string
-|eventCode|No|string
-|eventSeverity|No|string
-|eventTime|Yes|string
-|message|No|string
-|ownerId|No|string
-|referralId|No|string
-|referralType|No|string
-|startTime|No|string
-|resourceId|No|string
-|resourceType|No|string
-|sourceId|No|string
-|sourceType|No|string
-|timeZone|No|string
-|channelId|No|string
-|channelType|No|string
-
-
-- - - - - - - - - - - - - - - - - -
-## activitylog
-
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/activitylog
-
-Methods: `POST`
-
-Headers: 
-```
-x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
-Content-Type: application/json
-```
-
-*Request parameters:*
-| propeties | required? | details |
-| :--- | :--: | ---: |
-|eventId|No|string
-|eventCategoryId|Yes|integer
-|eventCategory|Yes|string
-|eventTypeId|Yes|integer
-|eventType|Yes|string
-|historyData|No|string
-|endTime|No|string
-|eventClass|No|string
-|eventCode|No|string
-|eventData|No|string
-|eventSeverity|No|string
-|eventTime|Yes|string
-|message|No|string
-|ownerId|No|string
-|reason|No|string
-|startTime|No|string
-|timeZone|No|string
-|channelId|No|string
-|channelType|No|string
-|resourceId|No|string
-|resourceType|No|string
-|sourceId|No|string
-|sourceType|No|string
-|contactId|No|string
-|masterEventTime|Yes|string
-|userId|No|string
 
 
 - - - - - - - - - - - - - - - - - -
@@ -986,26 +1006,6 @@ Content-Type: application/json
 |refundedPrice|Yes|number
 |refundedTransferPrice|Yes|number
 |transferDate|No|string
-
-
-- - - - - - - - - - - - - - - - - -
-## contactotherassociates
-
-URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/contactotherassociates
-
-Methods: `POST`
-
-Headers: 
-```
-x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
-Content-Type: application/json
-```
-
-*Request parameters:*
-| propeties | required? | details |
-| :--- | :--: | ---: |
-|contactId|Yes|string
-|associateName|Yes|string
 
 
 - - - - - - - - - - - - - - - - - -

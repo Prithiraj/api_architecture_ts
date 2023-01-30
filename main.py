@@ -74,6 +74,9 @@ if __name__ == "__main__":
 
     # create switch case gen
     typescriptGen.handleSwitchCaseGen(sorted_schema)
+
+    # create select statement
+    typescriptGen.handleSelectByIDGen(sorted_schema)
     # # insert db query generation
     # typescriptGen.genInsertQueryTypescript(sorted_schema)
     

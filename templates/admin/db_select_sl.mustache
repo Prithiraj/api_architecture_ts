@@ -1,0 +1,27 @@
+import pool from '../../dbconn';
+
+export async function select_{{apitablename}}_by_id_admin(id: string|number) {
+  const values: any[] = [];
+
+  values.push(id);
+  const select_query = {
+    text: `SELECT row_to_json(t)
+        FROM (
+          SELECT {{dbtablename}}.*{{# fk_alias_list}}, {{.}}{{/fk_alias_list}}
+          from {{dbtablename}} 
+          {{# fk_info_list}}
+          LEFT JOIN {{fk_table}} {{fk_alias}}
+          ON {{dbtablename}}.{{fk_col}} = {{fk_alias}}.{{fk_pk}}
+          {{/fk_info_list}}
+          where {{dbtablename}}.{{primarykey}} = $1
+        ) t;`,
+    values: values,
+  };
+  try {
+    const result = await pool.query(select_query);
+    return result.rows[0].row_to_json;
+  }
+  catch (err: any) {
+    throw err;
+  }
+}

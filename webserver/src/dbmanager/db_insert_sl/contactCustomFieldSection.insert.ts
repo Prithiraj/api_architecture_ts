@@ -1,5 +1,6 @@
 import dataKey from '../../utils/utils';
 import pool from '../dbconn';
+import { contactCustomFieldSection_ajv } from '../../schemas/mapper_ajv'
 
 export async function insert_contactCustomFieldSection(request: any) {
   // procesor
@@ -20,8 +21,14 @@ export async function insert_contactCustomFieldSection(request: any) {
 
   const timestamp = new Date();
 
+  let pk_value: string|number = `contact_custom_field_section_${dataKey(6)}`;
+  const type_of_pk = contactCustomFieldSection_ajv.id.api.type;
+  if (type_of_pk === 'integer' || type_of_pk === 'number') {
+    pk_value = Math.floor(Math.random() * 100000);
+  }
+
   const additionals: any = {
-    id: `contact_custom_field_section_${dataKey(6)}`,
+    id: `${pk_value}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: request.decoded.account_id,

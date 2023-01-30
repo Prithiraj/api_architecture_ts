@@ -30,7 +30,7 @@ import json
 from marshmallow import Schema, fields, post_load, pre_load
 
 
-# from utils.utilities import create_directory, delete_directory, to_camel_case
+from utils.utilities import create_directory, delete_files_from_directory, to_camel_case
 
 class FkInfoSchema(Schema):
     fk_col = fields.String(required = True)
@@ -52,11 +52,6 @@ class FkInfo:
 class FkInfoListSchema(Schema):
     fk_info_list = fields.List(fields.Nested(FkInfoSchema))
     
-    @pre_load
-    def fix_fk_info_list(self, data, many, **kwargs):
-        a = data
-        return a
-    
     @post_load
     def make_fk_info_list(self, data, **kwargs):
         return FkInfoList(**data)
@@ -65,7 +60,7 @@ class FkInfoList:
     def __init__(self, fk_info_list):
         self.fk_info_list = fk_info_list
 
-class SingSelectTypescriptGen:
+class SingleSelectTypescriptGen:
     
     def __init__(self):
         pass
@@ -89,17 +84,26 @@ class SingSelectTypescriptGen:
         for select_schema in select_schemas["schemas"]:
             columns_from = select_schema["columnInfoList"]
             fk_info_list = []
+            fk_alias_list = []
+            pk = [x["apicolname"] for x in columns_from if x["primarykey"]=='t']
+            select_schema['primarykey'] = pk[0] if len(pk) > 0 else "id"
+            
             for column in columns_from: 
                 if bool(column["foreignkey"]) == True:
                     data = self._getIDandDBNameOfTable(column["foreignkey"], select_schemas)
+                    fk_alias = to_camel_case(column["dbcolname"]+data["db_table_name"])
+                    fk_alias_list.append(fk_alias)
                     fk_info_list.append(
 						{
 							"fk_col": column["dbcolname"],
 							"fk_table": data["db_table_name"],
 							"fk_pk": data["id"],
-							"fk_alias": column["dbcolname"] + data["db_table_name"]
+							"fk_alias": fk_alias
 						}
 					)
+
+            select_schema["fk_alias_list"] = fk_alias_list
+            
             if bool(fk_info_list) is True:
                 schema_obj = FkInfoListSchema().load({"fk_info_list":fk_info_list})
                 json_schema = FkInfoListSchema().dump(schema_obj)
@@ -107,22 +111,32 @@ class SingSelectTypescriptGen:
             else:
                 select_schema["fk_info_list"] = []
     
-    def _genSelectByIdQueryTypescript(self, select_schemas):
-        pass
-    
+    def _genSelectByIdQueryTypescript(self, select_schemas, template_filepath, destination_directory, destination_filename_suffix, message=None):
+        delete_files_from_directory([destination_directory])
+        create_directory([destination_directory])
+        for select_schema in select_schemas["schemas"]:
+            with open(template_filepath, 'r') as f:
+                data = chevron.render(f, select_schema)
+                
+                with open(f'{destination_directory}/{select_schema["apitablename"]}.{destination_filename_suffix}.ts', 'w') as dfq:
+                    dfq.write(data)
+
+        if bool(message) == True:
+            print(message)
+        
     def generateTypescriptSelectByIDQueries(self, schemas):
         
-        # TODO: 1. make a deepcopy of the select statement
-        select_schemas = copy.deepcopy(select_schemas)
+        # 1. make a deepcopy of the select statement
+        select_schemas = copy.deepcopy(schemas)
         
         # 2. preprocess the schema
         self._preprocess(select_schemas)
         
-
-if __name__ == "__main__":
-    with open("jsons/custom_json/custom.json", "r") as f:
-        d = json.load(f)
-        singleSelect = SingSelectTypescriptGen()
-        singleSelect._preprocess(d)
+        # 3. Generate code from template files.
+        self._genSelectByIdQueryTypescript(select_schemas, "templates/general/db_select_sl.mustache", 
+                                   "webserver/src/dbmanager/db_select_sl/general", "selectByID", "printed select queries")
         
-        
+        # 4. Generate code from template files for admin cases.
+        self._genSelectByIdQueryTypescript(select_schemas, "templates/admin/db_select_sl.mustache", 
+                                           "webserver/src/dbmanager/db_select_sl/admin", "selectByID", "printed admin select queries")
+             

@@ -79,7 +79,7 @@ const loSubscription_schema = {
     weight: loSubscription_ajv.weight.api,
     rmpptBuyerId: loSubscription_ajv.rmpptBuyerId.api,
   },
-  required: ['weight', 'loanRanges'],
+  required: ['loanRanges', 'weight'],
   additionalProperties: false,
 };
 

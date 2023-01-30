@@ -10,7 +10,7 @@ const contactStatus_schema = {
     isConverted: contactStatus_ajv.isConverted.api,
     statusLifecycleId: contactStatus_ajv.statusLifecycleId.api,
   },
-  required: ['name', 'order', 'isConverted'],
+  required: ['name', 'isConverted', 'order'],
   additionalProperties: false,
 };
 

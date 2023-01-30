@@ -35,7 +35,7 @@ class UpdateTypescriptGen:
 
         return update_schemas
     
-    def _genPostMarkDown(self, update_schemas):
+    def _genPutMarkDown(self, update_schemas):
         with open('templates/docs/doc_update.mustache', 'r') as mdf:
             data = chevron.render(mdf, update_schemas)
             
@@ -82,4 +82,4 @@ class UpdateTypescriptGen:
         # 5. Generate markdown for post
         accepted_names = ['theme', 'contactlifecycle', 'persons', 'loleadsource', 'eventtype', 'user', 'workflow', 'workflowstate', 'engagement', 'contacttag', 'eventsv2', 'contactstatus', 'events', 'property', 'organization', 'loan', 'losubscription', 'loleadraw', 'losubscriptiondailystats', 'contactcustomfield', 'lolead', 'template', 'element', 'page', 'contact', 'activitylog', 'contactreminder', 'contactotherassociates', 'contactcomment']
         update_schemas["schemas"] = [x for x in update_schemas["schemas"] if bool(x["primarykey"]) is True and x["apitablename"].lower() in accepted_names]
-        self._genPostMarkDown(update_schemas)
+        self._genPutMarkDown(update_schemas)

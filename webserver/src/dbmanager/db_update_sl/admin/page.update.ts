@@ -48,7 +48,13 @@ export async function update_page_admin(request: any) {
   for (let [key, value] of Object.entries(input)) {
     if (key in table_cols && key !== pk) {
       ++index;
-      key_values.push(`${table_cols[key]} = $${index}`);
+      const table_db_key = table_cols[key];
+      if (table_db_key.indexOf('.') > -1) {
+        key_values.push(`"${table_db_key}" = $${index}`);
+      }
+      else {
+        key_values.push(`${table_db_key} = $${index}`);
+      }
       values.push(value);
     }
   }

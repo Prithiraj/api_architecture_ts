@@ -1,5 +1,6 @@
 import dataKey from '../../utils/utils';
 import pool from '../dbconn';
+import { loSubscriptionDailyStats_ajv } from '../../schemas/mapper_ajv'
 
 export async function insert_loSubscriptionDailyStats(request: any) {
   // procesor
@@ -22,8 +23,14 @@ export async function insert_loSubscriptionDailyStats(request: any) {
 
   const timestamp = new Date();
 
+  let pk_value: string|number = `lo_subscription_daily_stats_${dataKey(6)}`;
+  const type_of_pk = loSubscriptionDailyStats_ajv.statsDate.api.type;
+  if (type_of_pk === 'integer' || type_of_pk === 'number') {
+    pk_value = Math.floor(Math.random() * 100000);
+  }
+
   const additionals: any = {
-    statsDate: `lo_subscription_daily_stats_${dataKey(6)}`,
+    statsDate: `${pk_value}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: request.decoded.account_id,

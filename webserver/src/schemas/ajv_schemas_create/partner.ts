@@ -15,7 +15,7 @@ const partner_schema = {
     workPhone: partner_ajv.workPhone.api,
     addressId: partner_ajv.addressId.api,
   },
-  required: ['firstName', 'lastName'],
+  required: ['lastName', 'firstName'],
   additionalProperties: false,
 };
 

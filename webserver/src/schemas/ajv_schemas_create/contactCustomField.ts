@@ -11,7 +11,7 @@ const contactCustomField_schema = {
     purpose: contactCustomField_ajv.purpose.api,
     sectionId: contactCustomField_ajv.sectionId.api,
   },
-  required: ['type', 'name', 'order'],
+  required: ['name', 'type', 'order'],
   additionalProperties: false,
 };
 

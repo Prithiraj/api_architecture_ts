@@ -1,5 +1,6 @@
 import dataKey from '../../utils/utils';
 import pool from '../dbconn';
+import { {{apitablename}}_ajv } from '../../schemas/mapper_ajv'
 
 export async function insert_{{apitablename}}(request: any) {
   // procesor
@@ -13,8 +14,14 @@ export async function insert_{{apitablename}}(request: any) {
 
   const timestamp = new Date();
 
+  let pk_value: string|number = `{{dbtablename}}_${dataKey(6)}`;
+  const type_of_pk = {{apitablename}}_ajv.{{# primarykey}}{{primarykey}}{{/ primarykey}}{{^primarykey}}id{{/ primarykey}}.api.type;
+  if (type_of_pk === 'integer' || type_of_pk === 'number') {
+    pk_value = Math.floor(Math.random() * 100000);
+  }
+
   const additionals: any = {
-    {{# primarykey}}{{primarykey}}{{/ primarykey}}{{^primarykey}}id{{/ primarykey}}: `{{dbtablename}}_${dataKey(6)}`,
+    {{# primarykey}}{{primarykey}}{{/ primarykey}}{{^primarykey}}id{{/ primarykey}}: `${pk_value}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: request.decoded.account_id,

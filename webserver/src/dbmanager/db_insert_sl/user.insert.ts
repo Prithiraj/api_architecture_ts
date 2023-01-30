@@ -1,5 +1,6 @@
 import dataKey from '../../utils/utils';
 import pool from '../dbconn';
+import { user_ajv } from '../../schemas/mapper_ajv'
 
 export async function insert_user(request: any) {
   // procesor
@@ -26,8 +27,14 @@ export async function insert_user(request: any) {
 
   const timestamp = new Date();
 
+  let pk_value: string|number = `user_${dataKey(6)}`;
+  const type_of_pk = user_ajv.id.api.type;
+  if (type_of_pk === 'integer' || type_of_pk === 'number') {
+    pk_value = Math.floor(Math.random() * 100000);
+  }
+
   const additionals: any = {
-    id: `user_${dataKey(6)}`,
+    id: `${pk_value}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: request.decoded.account_id,

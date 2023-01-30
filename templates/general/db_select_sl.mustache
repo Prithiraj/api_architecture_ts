@@ -1,26 +1,23 @@
-import pool from '../dbconn';
+import pool from '../../dbconn';
 
-export async function select_{{apitablename}}_by_id(id: String) {
+export async function select_{{apitablename}}_by_id(request: any) {
   const values: any[] = [];
+
+  const id = request.path.split('/').splice(-1)[0];
+  const created_by = request.decoded.user_id;
   values.push(id);
+  values.push(created_by);
+
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT {{dbtablename}}.*,  account, property, contact_status_lifecycle, contact_status, current_loan, desired_loan
-          from contact
-          LEFT JOIN account
-          ON contact.account_id = account.id
-          left join property
-          on contact.address_id = property.id
-          left join contact_status_lifecycle
-          on contact.status_lifecycle_id = contact_status_lifecycle.id
-          left join contact_status
-          on contact.status_id  = contact_status.id
-          left join loan current_loan
-          on contact.current_loan_id = current_loan.id
-          left join loan desired_loan
-          on contact.desired_loan_id = desired_loan.id
-          where contact.id = $1
+          SELECT {{dbtablename}}.*{{# fk_alias_list}}, {{.}}{{/fk_alias_list}}
+          from {{dbtablename}} 
+          {{# fk_info_list}}
+          LEFT JOIN {{fk_table}} {{fk_alias}}
+          ON {{dbtablename}}.{{fk_col}} = {{fk_alias}}.{{fk_pk}}
+          {{/fk_info_list}}
+          where {{dbtablename}}.{{primarykey}} = $1 and {{dbtablename}}.created_by = $2
         ) t;`,
     values: values,
   };

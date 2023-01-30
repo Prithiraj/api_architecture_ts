@@ -40,3 +40,8 @@ class LambdaFunctionGen:
         # 4. generate put lambda functions
         self._genLambdaFuncTypescript(sl_function_schemas, "templates/lambda_update_functions.mustache",
                                       "webserver/src/api_calls/api_put", "put", "PUT functions generated")
+        
+        # 5. generate select lambda functions
+        self._genLambdaFuncTypescript(sl_function_schemas, "templates/lambda_select_functions.mustache",
+                                      "webserver/src/api_calls/api_get", "get", "GET functions generated")
+        

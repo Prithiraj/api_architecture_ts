@@ -40,7 +40,7 @@ const contact_schema = {
     currentLoanId: contact_ajv.currentLoanId.api,
     desiredLoanId: contact_ajv.desiredLoanId.api,
   },
-  required: ['firstName', 'type', 'lastName', 'creationSource', 'isConverted'],
+  required: ['lastName', 'firstName', 'type', 'isConverted', 'creationSource'],
   additionalProperties: false,
 };
 
