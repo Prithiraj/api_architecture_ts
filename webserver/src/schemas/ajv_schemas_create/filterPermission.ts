@@ -9,7 +9,7 @@ const filterPermission_schema = {
     sharedAccountId: filterPermission_ajv.sharedAccountId.api,
     contactFilterId: filterPermission_ajv.contactFilterId.api,
   },
-  required: ['contactFilterId', 'ownerAccountId', 'sharedAccountId'],
+  required: ['sharedAccountId', 'contactFilterId', 'ownerAccountId'],
   additionalProperties: false,
 };
 

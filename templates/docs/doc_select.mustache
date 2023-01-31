@@ -1,0 +1,34 @@
+# API Documentation
+
+## GET by ID for normal users. Users are restricted to ids created by her/himself.
+
+{{# schemas}}
+## {{apitablename}}
+
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/{{apitablename}}/{id}
+
+Method: `GET`
+
+Headers:
+```
+x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
+Content-Type: application/json
+```
+{{/schemas}}
+
+
+## GET by ID for admin purpose. Admin is able to access any ids unrestricted.
+
+{{# schemas}}
+## {{apitablename}}
+
+URL: https://twofr0plj9.execute-api.us-east-1.amazonaws.com/dev/v2/rest/admin/{{apitablename}}/{id}
+
+Method: `GET`
+
+Headers:
+```
+x-api-key: ONnXurVUA4oIRX4fvtkI2YHvCJu16kla2d6oYNU4
+Content-Type: application/json
+```
+{{/schemas}}

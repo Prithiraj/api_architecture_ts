@@ -8,7 +8,7 @@ const contactOtherAssociates_schema = {
     contactId: contactOtherAssociates_ajv.contactId.api,
     associateName: contactOtherAssociates_ajv.associateName.api,
   },
-  required: ['contactId', 'associateName'],
+  required: ['associateName', 'contactId'],
   additionalProperties: false,
 };
 

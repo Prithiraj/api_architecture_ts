@@ -110,7 +110,16 @@ class SingleSelectTypescriptGen:
                 select_schema["fk_info_list"] = json_schema["fk_info_list"]
             else:
                 select_schema["fk_info_list"] = []
-    
+
+    def _genSelectMarkDown(self, update_schemas, doc_directory):
+        delete_files_from_directory([doc_directory])
+        create_directory([doc_directory])
+        with open('templates/docs/doc_select.mustache', 'r') as mdf:
+            data = chevron.render(mdf, update_schemas)
+            
+            with open(f'{doc_directory}/doc_select.md', 'w') as mwf:
+                mwf.write(data)
+                
     def _genSelectByIdQueryTypescript(self, select_schemas, template_filepath, destination_directory, destination_filename_suffix, message=None):
         delete_files_from_directory([destination_directory])
         create_directory([destination_directory])
@@ -139,4 +148,10 @@ class SingleSelectTypescriptGen:
         # 4. Generate code from template files for admin cases.
         self._genSelectByIdQueryTypescript(select_schemas, "templates/admin/db_select_sl.mustache", 
                                            "webserver/src/dbmanager/db_select_sl/admin", "selectByID", "printed admin select queries")
+        
+        accepted_names = ['theme', 'contactlifecycle', 'persons', 'loleadsource', 'eventtype', 'user', 'workflow', 'workflowstate', 'engagement', 'contacttag', 'eventsv2', 'contactstatus', 'events', 'property', 'organization', 'loan', 'losubscription', 'loleadraw', 'losubscriptiondailystats', 'contactcustomfield', 'lolead', 'template', 'element', 'page', 'contact', 'activitylog', 'contactreminder', 'contactotherassociates', 'contactcomment']
+        select_schemas["schemas"] = [x for x in select_schemas["schemas"] if bool(x["primarykey"]) is True and x["apitablename"].lower() in accepted_names]
+        self._genSelectMarkDown(select_schemas, doc_directory="webserver/src/doc/get")
+
+
              
