@@ -78,7 +78,6 @@ const loSubscription_schema = {
     totalRefunded: loSubscription_ajv.totalRefunded.api,
     leadCategory: loSubscription_ajv.leadCategory.api,
     weight: loSubscription_ajv.weight.api,
-    rmpptBuyerId: loSubscription_ajv.rmpptBuyerId.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -226,8 +225,6 @@ const loSubscription_schema = {
     required: ['leadCategory'],
   },{
     required: ['weight'],
-  },{
-    required: ['rmpptBuyerId'],
   },]
 };
 

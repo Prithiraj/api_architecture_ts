@@ -15,8 +15,6 @@ export async function update_account(request: any) {
 	    updateTime: 'update_time',
 	    updateRequest: 'update_request',
 	    subdomain: 'subdomain',
-	    parentAccountId: 'parent_account_id',
-	    masterUserId: 'master_user_id',
 	  };
 
   const timestamp = new Date();

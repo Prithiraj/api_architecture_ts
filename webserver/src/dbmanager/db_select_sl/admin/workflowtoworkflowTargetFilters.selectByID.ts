@@ -7,12 +7,12 @@ export async function select_workflowtoworkflowTargetFilters_by_id_admin(id: str
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT _workflowToworkflow_target_filters.*, Aworkflow, bworkflowTargetFilters
+          SELECT _workflowToworkflow_target_filters.*, aWorkflowToworkflowTargetFilters, bWorkflowToworkflowTargetFilters
           from _workflowToworkflow_target_filters 
-          LEFT JOIN workflow Aworkflow
-          ON _workflowToworkflow_target_filters.A = Aworkflow.id
-          LEFT JOIN workflow_target_filters bworkflowTargetFilters
-          ON _workflowToworkflow_target_filters.B = bworkflowTargetFilters.id
+          LEFT JOIN _workflowToworkflow_target_filters aWorkflowToworkflowTargetFilters
+          ON _workflowToworkflow_target_filters.A = aWorkflowToworkflowTargetFilters.id
+          LEFT JOIN _workflowToworkflow_target_filters bWorkflowToworkflowTargetFilters
+          ON _workflowToworkflow_target_filters.B = bWorkflowToworkflowTargetFilters.id
           where _workflowToworkflow_target_filters.id = $1
         ) t;`,
     values: values,

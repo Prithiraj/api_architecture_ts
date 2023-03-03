@@ -6,8 +6,6 @@ const account_schema = {
   type: 'object',
   properties: {
     subdomain: account_ajv.subdomain.api,
-    parentAccountId: account_ajv.parentAccountId.api,
-    masterUserId: account_ajv.masterUserId.api,
   },
   required: [],
   additionalProperties: false,

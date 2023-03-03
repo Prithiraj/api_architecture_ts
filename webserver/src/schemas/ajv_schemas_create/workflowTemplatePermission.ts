@@ -5,13 +5,11 @@ import { workflowTemplatePermission_ajv } from '../mapper_ajv';
 const workflowTemplatePermission_schema = {
   type: 'object',
   properties: {
+    userId: workflowTemplatePermission_ajv.userId.api,
     workflowTemplateId: workflowTemplatePermission_ajv.workflowTemplateId.api,
     permission: workflowTemplatePermission_ajv.permission.api,
-    ownerAccountId: workflowTemplatePermission_ajv.ownerAccountId.api,
-    sharedAccountId: workflowTemplatePermission_ajv.sharedAccountId.api,
-    forceLatestVersion: workflowTemplatePermission_ajv.forceLatestVersion.api,
   },
-  required: ['permission', 'sharedAccountId', 'ownerAccountId', 'workflowTemplateId'],
+  required: ['permission', 'userId', 'workflowTemplateId'],
   additionalProperties: false,
 };
 

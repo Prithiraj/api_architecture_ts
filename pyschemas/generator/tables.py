@@ -1,5 +1,5 @@
 from utils.utilities import remove_special_chars, to_camel_case, to_ajv_type
-from marshmallow import fields, Schema, post_load
+from marshmallow import fields, Schema, post_load, pre_load
 
 class ColumnInfoSchema(Schema):
     apicolname = fields.String()
@@ -9,6 +9,11 @@ class ColumnInfoSchema(Schema):
     ajvtype = fields.String()
     primarykey = fields.String()
     foreignkey = fields.String()
+    auto = fields.Boolean()
+
+    @pre_load
+    def make_pk(self, data, many, **kwargs):
+        print(data)
     
     @post_load
     def make_column_info(self, data, **kwargs):
@@ -33,13 +38,14 @@ class DataTableSchemas(Schema):
         return DataTable(**data)
 
 class ColumnInfo:
-    def __init__(self, columnname, notnull, type, primarykey, foreignkey):
+    def __init__(self, columnname, notnull, type, primarykey, foreignkey, auto):
         self.apicolname: str = to_camel_case(columnname)
         self.dbcolname: str = columnname
         self.notnull: bool = notnull
         self.type: str = type
         self.ajvtype: str = to_ajv_type(type) 
         self.primarykey = primarykey
+        self.auto = auto
         self.foreignkey = to_camel_case(foreignkey) if bool(foreignkey) else ""
         
 class ColumnInfoList:

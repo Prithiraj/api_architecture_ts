@@ -11,10 +11,10 @@ export async function select_contactTag_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT contact_tag.*, accountIdaccount
+          SELECT contact_tag.*, accountIdcontactTag
           from contact_tag 
-          LEFT JOIN account accountIdaccount
-          ON contact_tag.account_id = accountIdaccount.id
+          LEFT JOIN contact_tag accountIdcontactTag
+          ON contact_tag.account_id = accountIdcontactTag.id
           where contact_tag.id = $1 and contact_tag.created_by = $2
         ) t;`,
     values: values,

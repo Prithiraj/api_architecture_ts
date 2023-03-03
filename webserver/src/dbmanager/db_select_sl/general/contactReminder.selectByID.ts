@@ -11,14 +11,14 @@ export async function select_contactReminder_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT contact_reminder.*, accountIdaccount, contactIdcontact, userIduser
+          SELECT contact_reminder.*, accountIdcontactReminder, contactIdcontactReminder, userIdcontactReminder
           from contact_reminder 
-          LEFT JOIN account accountIdaccount
-          ON contact_reminder.account_id = accountIdaccount.id
-          LEFT JOIN contact contactIdcontact
-          ON contact_reminder.contact_id = contactIdcontact.id
-          LEFT JOIN user userIduser
-          ON contact_reminder.user_id = userIduser.id
+          LEFT JOIN contact_reminder accountIdcontactReminder
+          ON contact_reminder.account_id = accountIdcontactReminder.id
+          LEFT JOIN contact_reminder contactIdcontactReminder
+          ON contact_reminder.contact_id = contactIdcontactReminder.id
+          LEFT JOIN contact_reminder userIdcontactReminder
+          ON contact_reminder.user_id = userIdcontactReminder.id
           where contact_reminder.id = $1 and contact_reminder.created_by = $2
         ) t;`,
     values: values,

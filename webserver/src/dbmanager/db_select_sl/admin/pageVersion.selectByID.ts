@@ -7,10 +7,10 @@ export async function select_pageVersion_by_id_admin(id: string|number) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT page_version.*, accountIdaccount
+          SELECT page_version.*, accountIdpageVersion
           from page_version 
-          LEFT JOIN account accountIdaccount
-          ON page_version.account_id = accountIdaccount.id
+          LEFT JOIN page_version accountIdpageVersion
+          ON page_version.account_id = accountIdpageVersion.id
           where page_version.id = $1
         ) t;`,
     values: values,

@@ -22,7 +22,7 @@ export async function insert_loSubscriptionDailyStats(input: any) {
   const timestamp = new Date();
 
   const additionals: any = {
-    statsDate: `lo_subscription_daily_stats_${dataKey(6)}`,
+    loSubscriptionId: `lo_subscription_daily_stats_${dataKey(6)}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: "account_1607435487272_5nl561qt",
@@ -79,10 +79,3 @@ export async function insert_loSubscriptionDailyStats(input: any) {
   }
 }
 
-_${dataKey(6)}`,
-  createTime: timestamp.toISOString(),
-  updateTime: timestamp.toISOString(),
-  accountId: "account_1607435487272_5nl561qt",
-  createdBy: "request.decoded.user_id",
-  createRequest: `request_${dataKey(6)}`,
-} }}

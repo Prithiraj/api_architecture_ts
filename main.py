@@ -15,19 +15,17 @@ from typescript_gen.typescript_gen import TypescriptGen
 
 if __name__ == "__main__":
     tableInfo = TableInfo('public')
-    
-    tables = tableInfo.get_tables('public')
-    
-    # ToDO: get rid of the below code once the SQL is fixed
-    # tables.remove('workflow')
-    
-    tables_str = "','".join(tables)
-    table_str = "'" + tables_str.strip(',') + "'"
-    # print(table_str)
 
-    items = TableInfo.get_all_table_info('public', table_str)
+    items = TableInfo.get_all_table_info()
 
+    tables = TableInfo.get_table_names(items)
+    
+    table_pks = TableInfo.get_table_pks()
+    
     db_schema = SerializerDeserializer.get_deserialized_schema(tables, items)
+    
+    TableInfo.set_pks(table_pks, db_schema)
+
     
     # 1. Build schema objects for sorted_schema
     # sorted_schema
@@ -77,6 +75,9 @@ if __name__ == "__main__":
 
     # create select statement
     typescriptGen.handleSelectByIDGen(sorted_schema)
+    
+    # ----------------------------------------------------------------
+    
     # # insert db query generation
     # typescriptGen.genInsertQueryTypescript(sorted_schema)
     

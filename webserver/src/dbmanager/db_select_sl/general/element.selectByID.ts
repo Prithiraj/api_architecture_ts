@@ -11,14 +11,14 @@ export async function select_element_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT element.*, accountIdaccount, templateIdtemplate, latestVersionIdelementVersion
+          SELECT element.*, accountIdelement, templateIdelement, latestVersionIdelement
           from element 
-          LEFT JOIN account accountIdaccount
-          ON element.account_id = accountIdaccount.id
-          LEFT JOIN template templateIdtemplate
-          ON element.template_id = templateIdtemplate.id
-          LEFT JOIN element_version latestVersionIdelementVersion
-          ON element.latest_version_id = latestVersionIdelementVersion.id
+          LEFT JOIN element accountIdelement
+          ON element.account_id = accountIdelement.id
+          LEFT JOIN element templateIdelement
+          ON element.template_id = templateIdelement.id
+          LEFT JOIN element latestVersionIdelement
+          ON element.latest_version_id = latestVersionIdelement.id
           where element.id = $1 and element.created_by = $2
         ) t;`,
     values: values,

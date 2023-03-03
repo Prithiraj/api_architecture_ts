@@ -8,17 +8,16 @@ export async function update_workflowTemplatePermission(request: any) {
 
   const table_cols: Record<string, string> = {
     id: 'id',
-	    createdBy: 'created_by',
-	    createTime: 'create_time',
-	    createRequest: 'create_request',
-	    updatedBy: 'updated_by',
-	    updateTime: 'update_time',
-	    updateRequest: 'update_request',
+	    accountId: 'account_id',
+	    userId: 'user_id',
 	    workflowTemplateId: 'workflow_template_id',
 	    permission: 'permission',
-	    ownerAccountId: 'owner_account_id',
-	    sharedAccountId: 'shared_account_id',
-	    forceLatestVersion: 'force_latest_version',
+	    createRequest: 'create_request',
+	    createTime: 'create_time',
+	    createdBy: 'created_by',
+	    updateRequest: 'update_request',
+	    updateTime: 'update_time',
+	    updatedBy: 'updated_by',
 	  };
 
   const timestamp = new Date();

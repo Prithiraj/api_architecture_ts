@@ -11,14 +11,14 @@ export async function select_routing_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT routing.*, accountIdaccount, subdomainaccount, resourceIdpage
+          SELECT routing.*, accountIdrouting, subdomainrouting, resourceIdrouting
           from routing 
-          LEFT JOIN account accountIdaccount
-          ON routing.account_id = accountIdaccount.id
-          LEFT JOIN account subdomainaccount
-          ON routing.subdomain = subdomainaccount.id
-          LEFT JOIN page resourceIdpage
-          ON routing.resource_id = resourceIdpage.id
+          LEFT JOIN routing accountIdrouting
+          ON routing.account_id = accountIdrouting.path
+          LEFT JOIN routing subdomainrouting
+          ON routing.subdomain = subdomainrouting.path
+          LEFT JOIN routing resourceIdrouting
+          ON routing.resource_id = resourceIdrouting.path
           where routing.path = $1 and routing.created_by = $2
         ) t;`,
     values: values,

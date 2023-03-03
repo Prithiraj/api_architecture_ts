@@ -87,7 +87,6 @@ export async function insert_loSubscription(request: any) {
     totalRefunded: 'total_refunded',
     leadCategory: 'lead_category',
     weight: 'weight',
-    rmpptBuyerId: 'rmppt_buyer_id',
   };
 
   const timestamp = new Date();

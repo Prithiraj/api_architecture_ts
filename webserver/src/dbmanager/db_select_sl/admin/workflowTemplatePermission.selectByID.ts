@@ -7,10 +7,14 @@ export async function select_workflowTemplatePermission_by_id_admin(id: string|n
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT workflow_template_permission.*, workflowTemplateIdworkflowTemplate
+          SELECT workflow_template_permission.*, accountIdworkflowTemplatePermission, userIdworkflowTemplatePermission, workflowTemplateIdworkflowTemplatePermission
           from workflow_template_permission 
-          LEFT JOIN workflow_template workflowTemplateIdworkflowTemplate
-          ON workflow_template_permission.workflow_template_id = workflowTemplateIdworkflowTemplate.id
+          LEFT JOIN workflow_template_permission accountIdworkflowTemplatePermission
+          ON workflow_template_permission.account_id = accountIdworkflowTemplatePermission.id
+          LEFT JOIN workflow_template_permission userIdworkflowTemplatePermission
+          ON workflow_template_permission.user_id = userIdworkflowTemplatePermission.id
+          LEFT JOIN workflow_template_permission workflowTemplateIdworkflowTemplatePermission
+          ON workflow_template_permission.workflow_template_id = workflowTemplateIdworkflowTemplatePermission.id
           where workflow_template_permission.id = $1
         ) t;`,
     values: values,

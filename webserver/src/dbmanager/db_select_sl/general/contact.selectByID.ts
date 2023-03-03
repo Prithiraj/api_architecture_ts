@@ -11,22 +11,22 @@ export async function select_contact_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT contact.*, accountIdaccount, statusIdcontactStatus, addressIdproperty, organizationIdorganization, statusLifecycleIdcontactStatusLifecycle, currentLoanIdloan, desiredLoanIdloan
+          SELECT contact.*, accountIdcontact, statusIdcontact, addressIdcontact, organizationIdcontact, statusLifecycleIdcontact, currentLoanIdcontact, desiredLoanIdcontact
           from contact 
-          LEFT JOIN account accountIdaccount
-          ON contact.account_id = accountIdaccount.id
-          LEFT JOIN contact_status statusIdcontactStatus
-          ON contact.status_id = statusIdcontactStatus.id
-          LEFT JOIN property addressIdproperty
-          ON contact.address_id = addressIdproperty.id
-          LEFT JOIN organization organizationIdorganization
-          ON contact.organization_id = organizationIdorganization.id
-          LEFT JOIN contact_status_lifecycle statusLifecycleIdcontactStatusLifecycle
-          ON contact.status_lifecycle_id = statusLifecycleIdcontactStatusLifecycle.id
-          LEFT JOIN loan currentLoanIdloan
-          ON contact.current_loan_id = currentLoanIdloan.id
-          LEFT JOIN loan desiredLoanIdloan
-          ON contact.desired_loan_id = desiredLoanIdloan.id
+          LEFT JOIN contact accountIdcontact
+          ON contact.account_id = accountIdcontact.id
+          LEFT JOIN contact statusIdcontact
+          ON contact.status_id = statusIdcontact.id
+          LEFT JOIN contact addressIdcontact
+          ON contact.address_id = addressIdcontact.id
+          LEFT JOIN contact organizationIdcontact
+          ON contact.organization_id = organizationIdcontact.id
+          LEFT JOIN contact statusLifecycleIdcontact
+          ON contact.status_lifecycle_id = statusLifecycleIdcontact.id
+          LEFT JOIN contact currentLoanIdcontact
+          ON contact.current_loan_id = currentLoanIdcontact.id
+          LEFT JOIN contact desiredLoanIdcontact
+          ON contact.desired_loan_id = desiredLoanIdcontact.id
           where contact.id = $1 and contact.created_by = $2
         ) t;`,
     values: values,

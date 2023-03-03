@@ -30,7 +30,7 @@ const loan_schema = {
     loanPropertyValue: loan_ajv.loanPropertyValue.api,
     loanType: loan_ajv.loanType.api,
   },
-  required: ['desiredOrCurrent', 'status'],
+  required: ['status', 'desiredOrCurrent'],
   additionalProperties: false,
 };
 

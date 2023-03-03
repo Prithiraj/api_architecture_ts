@@ -7,12 +7,12 @@ export async function select_contactStatus_by_id_admin(id: string|number) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT contact_status.*, accountIdaccount, statusLifecycleIdcontactStatusLifecycle
+          SELECT contact_status.*, accountIdcontactStatus, statusLifecycleIdcontactStatus
           from contact_status 
-          LEFT JOIN account accountIdaccount
-          ON contact_status.account_id = accountIdaccount.id
-          LEFT JOIN contact_status_lifecycle statusLifecycleIdcontactStatusLifecycle
-          ON contact_status.status_lifecycle_id = statusLifecycleIdcontactStatusLifecycle.id
+          LEFT JOIN contact_status accountIdcontactStatus
+          ON contact_status.account_id = accountIdcontactStatus.id
+          LEFT JOIN contact_status statusLifecycleIdcontactStatus
+          ON contact_status.status_lifecycle_id = statusLifecycleIdcontactStatus.id
           where contact_status.id = $1
         ) t;`,
     values: values,

@@ -9,12 +9,12 @@ export async function insert_workflowTemplate(input: any) {
     workflowId: 'workflow_id',
     workflowData: 'workflow_data',
     version: 'version',
-    createdBy: 'created_by',
-    createTime: 'create_time',
     createRequest: 'create_request',
-    updatedBy: 'updated_by',
-    updateTime: 'update_time',
+    createTime: 'create_time',
+    createdBy: 'created_by',
     updateRequest: 'update_request',
+    updateTime: 'update_time',
+    updatedBy: 'updated_by',
   };
 
   const timestamp = new Date();
@@ -77,10 +77,3 @@ export async function insert_workflowTemplate(input: any) {
   }
 }
 
-_${dataKey(6)}`,
-  createTime: timestamp.toISOString(),
-  updateTime: timestamp.toISOString(),
-  accountId: "account_1607435487272_5nl561qt",
-  createdBy: "request.decoded.user_id",
-  createRequest: `request_${dataKey(6)}`,
-} }}

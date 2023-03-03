@@ -13,11 +13,9 @@ const bridgeContactLoan_schema = {
     type: bridgeContactLoan_ajv.type.api,
     id: bridgeContactLoan_ajv.id.api,
   },
-  required: ['id'],
+  required: ['contactId'],
   additionalProperties: false,
   anyOf: [{
-    required: ['contactId'],
-  },{
     required: ['loanId'],
   },{
     required: ['assignedBy'],

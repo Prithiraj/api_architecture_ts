@@ -11,15 +11,15 @@ export async function select_bridgeContactUser_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT bridge_contact_user.*, contactIdcontact, userIduser, accountIdaccount
+          SELECT bridge_contact_user.*, contactIdbridgeContactUser, userIdbridgeContactUser, accountIdbridgeContactUser
           from bridge_contact_user 
-          LEFT JOIN contact contactIdcontact
-          ON bridge_contact_user.contact_id = contactIdcontact.id
-          LEFT JOIN user userIduser
-          ON bridge_contact_user.user_id = userIduser.id
-          LEFT JOIN account accountIdaccount
-          ON bridge_contact_user.account_id = accountIdaccount.id
-          where bridge_contact_user.id = $1 and bridge_contact_user.created_by = $2
+          LEFT JOIN bridge_contact_user contactIdbridgeContactUser
+          ON bridge_contact_user.contact_id = contactIdbridgeContactUser.contact_id
+          LEFT JOIN bridge_contact_user userIdbridgeContactUser
+          ON bridge_contact_user.user_id = userIdbridgeContactUser.contact_id
+          LEFT JOIN bridge_contact_user accountIdbridgeContactUser
+          ON bridge_contact_user.account_id = accountIdbridgeContactUser.contact_id
+          where bridge_contact_user.contactId = $1 and bridge_contact_user.created_by = $2
         ) t;`,
     values: values,
   };

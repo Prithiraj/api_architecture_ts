@@ -11,12 +11,12 @@ export async function select_organization_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT organization.*, accountIdaccount, addressIdproperty, parentOrganizationIdorganization
+          SELECT organization.*, accountIdorganization, addressIdorganization, parentOrganizationIdorganization
           from organization 
-          LEFT JOIN account accountIdaccount
-          ON organization.account_id = accountIdaccount.id
-          LEFT JOIN property addressIdproperty
-          ON organization.address_id = addressIdproperty.id
+          LEFT JOIN organization accountIdorganization
+          ON organization.account_id = accountIdorganization.id
+          LEFT JOIN organization addressIdorganization
+          ON organization.address_id = addressIdorganization.id
           LEFT JOIN organization parentOrganizationIdorganization
           ON organization.parent_organization_id = parentOrganizationIdorganization.id
           where organization.id = $1 and organization.created_by = $2

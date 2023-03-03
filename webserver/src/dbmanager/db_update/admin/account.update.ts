@@ -13,8 +13,6 @@ export async function update_account_admin(input: any) {
 	    updateTime: 'update_time',	
 	    updateRequest: 'update_request',	
 	    subdomain: 'subdomain',	
-	    parentAccountId: 'parent_account_id',	
-	    masterUserId: 'master_user_id',	
 	  };
 
   const timestamp = new Date();

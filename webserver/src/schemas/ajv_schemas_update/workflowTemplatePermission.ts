@@ -6,24 +6,18 @@ const workflowTemplatePermission_schema = {
   type: 'object',
   properties: {
     id: workflowTemplatePermission_ajv.id.api,
+    userId: workflowTemplatePermission_ajv.userId.api,
     workflowTemplateId: workflowTemplatePermission_ajv.workflowTemplateId.api,
     permission: workflowTemplatePermission_ajv.permission.api,
-    ownerAccountId: workflowTemplatePermission_ajv.ownerAccountId.api,
-    sharedAccountId: workflowTemplatePermission_ajv.sharedAccountId.api,
-    forceLatestVersion: workflowTemplatePermission_ajv.forceLatestVersion.api,
   },
   required: ['id'],
   additionalProperties: false,
   anyOf: [{
+    required: ['userId'],
+  },{
     required: ['workflowTemplateId'],
   },{
     required: ['permission'],
-  },{
-    required: ['ownerAccountId'],
-  },{
-    required: ['sharedAccountId'],
-  },{
-    required: ['forceLatestVersion'],
   },]
 };
 

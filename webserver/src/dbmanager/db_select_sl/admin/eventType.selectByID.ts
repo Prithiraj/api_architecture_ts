@@ -7,10 +7,10 @@ export async function select_eventType_by_id_admin(id: string|number) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT event_type.*, eventCategoryIdeventCategory
+          SELECT event_type.*, eventCategoryIdeventType
           from event_type 
-          LEFT JOIN event_category eventCategoryIdeventCategory
-          ON event_type.event_category_id = eventCategoryIdeventCategory.id
+          LEFT JOIN event_type eventCategoryIdeventType
+          ON event_type.event_category_id = eventCategoryIdeventType.id
           where event_type.id = $1
         ) t;`,
     values: values,

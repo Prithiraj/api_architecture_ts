@@ -7,10 +7,10 @@ export async function select_property_by_id_admin(id: string|number) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT property.*, accountIdaccount
+          SELECT property.*, accountIdproperty
           from property 
-          LEFT JOIN account accountIdaccount
-          ON property.account_id = accountIdaccount.id
+          LEFT JOIN property accountIdproperty
+          ON property.account_id = accountIdproperty.id
           where property.id = $1
         ) t;`,
     values: values,

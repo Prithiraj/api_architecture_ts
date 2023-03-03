@@ -7,10 +7,10 @@ export async function select_workflowState_by_id_admin(id: string|number) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT workflow_state.*, workflowIdworkflow
+          SELECT workflow_state.*, workflowIdworkflowState
           from workflow_state 
-          LEFT JOIN workflow workflowIdworkflow
-          ON workflow_state.workflow_id = workflowIdworkflow.id
+          LEFT JOIN workflow_state workflowIdworkflowState
+          ON workflow_state.workflow_id = workflowIdworkflowState.id
           where workflow_state.id = $1
         ) t;`,
     values: values,

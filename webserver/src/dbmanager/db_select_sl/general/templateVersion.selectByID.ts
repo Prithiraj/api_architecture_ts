@@ -11,10 +11,10 @@ export async function select_templateVersion_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT template_version.*, accountIdaccount
+          SELECT template_version.*, accountIdtemplateVersion
           from template_version 
-          LEFT JOIN account accountIdaccount
-          ON template_version.account_id = accountIdaccount.id
+          LEFT JOIN template_version accountIdtemplateVersion
+          ON template_version.account_id = accountIdtemplateVersion.id
           where template_version.id = $1 and template_version.created_by = $2
         ) t;`,
     values: values,

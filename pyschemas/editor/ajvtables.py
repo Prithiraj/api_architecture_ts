@@ -19,6 +19,7 @@ class ColumnInfoSchema(Schema):
     primarykey = fields.String()
     foreignkey = fields.String()
     ajv_properties = fields.Nested(AjvPropsSchema) 
+    auto = fields.Boolean()
     
     @pre_load()
     def fix_data_set(self, data, many, **kwargs):
@@ -53,7 +54,7 @@ class ColumnInfoListSchema(Schema):
         return ColumnInfoList(**data)
 
 class ColumnInfo:
-    def __init__(self, apicolname, dbcolname, notnull, type, ajvtype, primarykey, foreignkey, ajv_properties = {}):
+    def __init__(self, apicolname, dbcolname, notnull, type, ajvtype, primarykey, foreignkey, auto, ajv_properties = {}):
         self.apicolname: str = apicolname
         self.dbcolname: str = dbcolname
         self.notnull: bool = notnull
@@ -62,6 +63,7 @@ class ColumnInfo:
         self.primarykey = primarykey
         self.foreignkey = foreignkey
         self.ajv_properties = ajv_properties
+        self.auto = auto
         
 class ColumnInfoList:
     def __init__(self, columnInfoList, fk_list, apitablename, dbtablename, ajv_insert:AjvInsert=None, ajv_update:AjvUpdate=None, ajv_delete:AjvDelete=None, ajv_query:AjvQuery=None):

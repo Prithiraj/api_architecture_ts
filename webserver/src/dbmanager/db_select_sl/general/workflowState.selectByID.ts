@@ -11,10 +11,10 @@ export async function select_workflowState_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT workflow_state.*, workflowIdworkflow
+          SELECT workflow_state.*, workflowIdworkflowState
           from workflow_state 
-          LEFT JOIN workflow workflowIdworkflow
-          ON workflow_state.workflow_id = workflowIdworkflow.id
+          LEFT JOIN workflow_state workflowIdworkflowState
+          ON workflow_state.workflow_id = workflowIdworkflowState.id
           where workflow_state.id = $1 and workflow_state.created_by = $2
         ) t;`,
     values: values,

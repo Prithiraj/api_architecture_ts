@@ -11,12 +11,12 @@ export async function select_eventsV2_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT events_v2.*, eventCategoryIdeventCategory, eventTypeIdeventType
+          SELECT events_v2.*, eventCategoryIdeventsV2, eventTypeIdeventsV2
           from events_v2 
-          LEFT JOIN event_category eventCategoryIdeventCategory
-          ON events_v2.event_category_id = eventCategoryIdeventCategory.id
-          LEFT JOIN event_type eventTypeIdeventType
-          ON events_v2.event_type_id = eventTypeIdeventType.id
+          LEFT JOIN events_v2 eventCategoryIdeventsV2
+          ON events_v2.event_category_id = eventCategoryIdeventsV2.event_id
+          LEFT JOIN events_v2 eventTypeIdeventsV2
+          ON events_v2.event_type_id = eventTypeIdeventsV2.event_id
           where events_v2.eventId = $1 and events_v2.created_by = $2
         ) t;`,
     values: values,

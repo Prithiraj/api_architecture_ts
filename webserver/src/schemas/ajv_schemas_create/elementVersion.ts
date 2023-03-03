@@ -10,7 +10,7 @@ const elementVersion_schema = {
     name: elementVersion_ajv.name.api,
     data: elementVersion_ajv.data.api,
   },
-  required: ['version', 'elementId'],
+  required: ['elementId', 'version'],
   additionalProperties: false,
 };
 

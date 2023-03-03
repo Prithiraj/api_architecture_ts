@@ -11,12 +11,12 @@ export async function select_loSubscription_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT lo_subscription.*, priceSubscriptionItemIdstripeSubscriptionItem, transferPriceSubscriptionItemIdstripeSubscriptionItem
+          SELECT lo_subscription.*, priceSubscriptionItemIdloSubscription, transferPriceSubscriptionItemIdloSubscription
           from lo_subscription 
-          LEFT JOIN stripe_subscription_item priceSubscriptionItemIdstripeSubscriptionItem
-          ON lo_subscription.price_subscription_item_id = priceSubscriptionItemIdstripeSubscriptionItem.id
-          LEFT JOIN stripe_subscription_item transferPriceSubscriptionItemIdstripeSubscriptionItem
-          ON lo_subscription.transfer_price_subscription_item_id = transferPriceSubscriptionItemIdstripeSubscriptionItem.id
+          LEFT JOIN lo_subscription priceSubscriptionItemIdloSubscription
+          ON lo_subscription.price_subscription_item_id = priceSubscriptionItemIdloSubscription.id
+          LEFT JOIN lo_subscription transferPriceSubscriptionItemIdloSubscription
+          ON lo_subscription.transfer_price_subscription_item_id = transferPriceSubscriptionItemIdloSubscription.id
           where lo_subscription.id = $1 and lo_subscription.created_by = $2
         ) t;`,
     values: values,

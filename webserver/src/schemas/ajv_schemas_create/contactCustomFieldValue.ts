@@ -5,12 +5,10 @@ import { contactCustomFieldValue_ajv } from '../mapper_ajv';
 const contactCustomFieldValue_schema = {
   type: 'object',
   properties: {
-    contactId: contactCustomFieldValue_ajv.contactId.api,
-    customFieldId: contactCustomFieldValue_ajv.customFieldId.api,
     value: contactCustomFieldValue_ajv.value.api,
     id: contactCustomFieldValue_ajv.id.api,
   },
-  required: ['customFieldId', 'contactId', 'id', 'value'],
+  required: ['value', 'id'],
   additionalProperties: false,
 };
 

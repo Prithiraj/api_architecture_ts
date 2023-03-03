@@ -7,12 +7,12 @@ export async function select_template_by_id_admin(id: string|number) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT template.*, accountIdaccount, latestVersionIdtemplateVersion
+          SELECT template.*, accountIdtemplate, latestVersionIdtemplate
           from template 
-          LEFT JOIN account accountIdaccount
-          ON template.account_id = accountIdaccount.id
-          LEFT JOIN template_version latestVersionIdtemplateVersion
-          ON template.latest_version_id = latestVersionIdtemplateVersion.id
+          LEFT JOIN template accountIdtemplate
+          ON template.account_id = accountIdtemplate.id
+          LEFT JOIN template latestVersionIdtemplate
+          ON template.latest_version_id = latestVersionIdtemplate.id
           where template.id = $1
         ) t;`,
     values: values,

@@ -10,7 +10,7 @@ const pageVersion_schema = {
     name: pageVersion_ajv.name.api,
     body: pageVersion_ajv.body.api,
   },
-  required: ['version', 'pageId'],
+  required: ['pageId', 'version'],
   additionalProperties: false,
 };
 

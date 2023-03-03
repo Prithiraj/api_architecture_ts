@@ -11,10 +11,10 @@ export async function select_loLeadRaw_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT lo_lead_raw.*, subscriptionIdloSubscription
+          SELECT lo_lead_raw.*, subscriptionIdloLeadRaw
           from lo_lead_raw 
-          LEFT JOIN lo_subscription subscriptionIdloSubscription
-          ON lo_lead_raw.subscription_id = subscriptionIdloSubscription.id
+          LEFT JOIN lo_lead_raw subscriptionIdloLeadRaw
+          ON lo_lead_raw.subscription_id = subscriptionIdloLeadRaw.id
           where lo_lead_raw.id = $1 and lo_lead_raw.created_by = $2
         ) t;`,
     values: values,

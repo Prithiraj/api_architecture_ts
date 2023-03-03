@@ -20,13 +20,13 @@ export async function insert_bridgeContactContact(request: any) {
   const timestamp = new Date();
 
   let pk_value: string|number = `bridge_contact_contact_${dataKey(6)}`;
-  const type_of_pk = bridgeContactContact_ajv.id.api.type;
+  const type_of_pk = bridgeContactContact_ajv.contactId.api.type;
   if (type_of_pk === 'integer' || type_of_pk === 'number') {
     pk_value = Math.floor(Math.random() * 100000);
   }
 
   const additionals: any = {
-    id: `${pk_value}`,
+    contactId: `${pk_value}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: request.decoded.account_id,

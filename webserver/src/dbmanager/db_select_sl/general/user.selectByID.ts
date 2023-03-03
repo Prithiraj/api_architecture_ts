@@ -11,10 +11,10 @@ export async function select_user_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT user.*, accountIdaccount
+          SELECT user.*, accountIduser
           from user 
-          LEFT JOIN account accountIdaccount
-          ON user.account_id = accountIdaccount.id
+          LEFT JOIN user accountIduser
+          ON user.account_id = accountIduser.id
           where user.id = $1 and user.created_by = $2
         ) t;`,
     values: values,

@@ -11,10 +11,10 @@ export async function select_workflowTemplate_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT workflow_template.*, workflowIdworkflow
+          SELECT workflow_template.*, workflowIdworkflowTemplate
           from workflow_template 
-          LEFT JOIN workflow workflowIdworkflow
-          ON workflow_template.workflow_id = workflowIdworkflow.id
+          LEFT JOIN workflow_template workflowIdworkflowTemplate
+          ON workflow_template.workflow_id = workflowIdworkflowTemplate.id
           where workflow_template.id = $1 and workflow_template.created_by = $2
         ) t;`,
     values: values,

@@ -15,7 +15,7 @@ export async function insert_contactCustomFieldValue(input: any) {
   const timestamp = new Date();
 
   const additionals: any = {
-    id: `contact_custom_field_value_${dataKey(6)}`,
+    contactId: `contact_custom_field_value_${dataKey(6)}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: "account_1607435487272_5nl561qt",
@@ -72,10 +72,3 @@ export async function insert_contactCustomFieldValue(input: any) {
   }
 }
 
-_${dataKey(6)}`,
-  createTime: timestamp.toISOString(),
-  updateTime: timestamp.toISOString(),
-  accountId: "account_1607435487272_5nl561qt",
-  createdBy: "request.decoded.user_id",
-  createRequest: `request_${dataKey(6)}`,
-} }}

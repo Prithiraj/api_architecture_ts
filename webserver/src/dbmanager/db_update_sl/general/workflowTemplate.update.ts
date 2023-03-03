@@ -11,12 +11,12 @@ export async function update_workflowTemplate(request: any) {
 	    workflowId: 'workflow_id',
 	    workflowData: 'workflow_data',
 	    version: 'version',
-	    createdBy: 'created_by',
-	    createTime: 'create_time',
 	    createRequest: 'create_request',
-	    updatedBy: 'updated_by',
-	    updateTime: 'update_time',
+	    createTime: 'create_time',
+	    createdBy: 'created_by',
 	    updateRequest: 'update_request',
+	    updateTime: 'update_time',
+	    updatedBy: 'updated_by',
 	  };
 
   const timestamp = new Date();

@@ -18,7 +18,7 @@ export async function insert_bridgeContactContact(input: any) {
   const timestamp = new Date();
 
   const additionals: any = {
-    id: `bridge_contact_contact_${dataKey(6)}`,
+    contactId: `bridge_contact_contact_${dataKey(6)}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: "account_1607435487272_5nl561qt",
@@ -75,10 +75,3 @@ export async function insert_bridgeContactContact(input: any) {
   }
 }
 
-_${dataKey(6)}`,
-  createTime: timestamp.toISOString(),
-  updateTime: timestamp.toISOString(),
-  accountId: "account_1607435487272_5nl561qt",
-  createdBy: "request.decoded.user_id",
-  createRequest: `request_${dataKey(6)}`,
-} }}

@@ -11,13 +11,13 @@ const workflow_schema = {
     steps: workflow_ajv.steps.api,
     targetFilter: workflow_ajv.targetFilter.api,
     apiVersion: workflow_ajv.apiVersion.api,
+    entityName: workflow_ajv.entityName.api,
     firstStep: workflow_ajv.firstStep.api,
     flowType: workflow_ajv.flowType.api,
     name: workflow_ajv.name.api,
     recurring: workflow_ajv.recurring.api,
-    retry: workflow_ajv.retry.api,
     startTime: workflow_ajv.startTime.api,
-    target: workflow_ajv.target.api,
+    retry: workflow_ajv.retry.api,
   },
   required: ['id'],
   additionalProperties: false,
@@ -32,6 +32,8 @@ const workflow_schema = {
   },{
     required: ['apiVersion'],
   },{
+    required: ['entityName'],
+  },{
     required: ['firstStep'],
   },{
     required: ['flowType'],
@@ -40,11 +42,9 @@ const workflow_schema = {
   },{
     required: ['recurring'],
   },{
-    required: ['retry'],
-  },{
     required: ['startTime'],
   },{
-    required: ['target'],
+    required: ['retry'],
   },]
 };
 

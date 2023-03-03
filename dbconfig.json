@@ -1,11 +1,11 @@
 {
 	"SSH_UN": "ec2-user",
-	"PG_UN": "pguser_prith",
+	"PG_UN": "postgres",
 	"PG_DB_NAME": "mydatabase",
-	"PG_DB_PW": "tCt4rfuaAY",
+	"PG_DB_PW": "Superpost!1",
 	"SSH_PKEY": "/Users/nime/clients/taygo/taygodev-aws.pem",
 	"SSH_HOST": "44.204.82.125",
-	"DB_HOST": "database-crm-2.cluster-cqgoktb7f5aa.us-east-1.rds.amazonaws.com",
+	"DB_HOST": "localhost",
 	"LOCALHOST": "127.0.0.1",
 	"PORT": "5432"
 }

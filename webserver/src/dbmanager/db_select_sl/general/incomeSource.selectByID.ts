@@ -11,16 +11,16 @@ export async function select_incomeSource_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT income_source.*, accountIdaccount, contactIdcontact, addressIdproperty, organizationIdorganization
+          SELECT income_source.*, accountIdincomeSource, contactIdincomeSource, addressIdincomeSource, organizationIdincomeSource
           from income_source 
-          LEFT JOIN account accountIdaccount
-          ON income_source.account_id = accountIdaccount.id
-          LEFT JOIN contact contactIdcontact
-          ON income_source.contact_id = contactIdcontact.id
-          LEFT JOIN property addressIdproperty
-          ON income_source.address_id = addressIdproperty.id
-          LEFT JOIN organization organizationIdorganization
-          ON income_source.organization_id = organizationIdorganization.id
+          LEFT JOIN income_source accountIdincomeSource
+          ON income_source.account_id = accountIdincomeSource.id
+          LEFT JOIN income_source contactIdincomeSource
+          ON income_source.contact_id = contactIdincomeSource.id
+          LEFT JOIN income_source addressIdincomeSource
+          ON income_source.address_id = addressIdincomeSource.id
+          LEFT JOIN income_source organizationIdincomeSource
+          ON income_source.organization_id = organizationIdincomeSource.id
           where income_source.id = $1 and income_source.created_by = $2
         ) t;`,
     values: values,

@@ -29,13 +29,13 @@ export async function update_loSubscriptionDailyStats(request: any) {
     updatedBy: request.decoded.user_id,
   };
 
-  const pk = table_cols.statsDate
+  const pk = table_cols.loSubscriptionId
 
   Object.assign(input, additionals);
 
   const key_values: any[] = [];
   const values: any[] = [];
-  const id = input.statsDate;
+  const id = input.loSubscriptionId;
   let index = 0;
   for (let [key, value] of Object.entries(input)) {
     if (key in table_cols && key !== 'id') {

@@ -10,15 +10,15 @@ const workflow_schema = {
     steps: workflow_ajv.steps.api,
     targetFilter: workflow_ajv.targetFilter.api,
     apiVersion: workflow_ajv.apiVersion.api,
+    entityName: workflow_ajv.entityName.api,
     firstStep: workflow_ajv.firstStep.api,
     flowType: workflow_ajv.flowType.api,
     name: workflow_ajv.name.api,
     recurring: workflow_ajv.recurring.api,
-    retry: workflow_ajv.retry.api,
     startTime: workflow_ajv.startTime.api,
-    target: workflow_ajv.target.api,
+    retry: workflow_ajv.retry.api,
   },
-  required: ['steps', 'flowType', 'apiVersion', 'firstStep', 'name', 'status'],
+  required: ['flowType', 'startTime', 'steps', 'apiVersion', 'name', 'status', 'firstStep', 'targetFilter', 'entityName'],
   additionalProperties: false,
 };
 

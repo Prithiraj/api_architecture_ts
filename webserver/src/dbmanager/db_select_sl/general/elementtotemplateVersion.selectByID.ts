@@ -11,12 +11,12 @@ export async function select_elementtotemplateVersion_by_id(request: any) {
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT _elementTotemplate_version.*, Aelement, btemplateVersion
+          SELECT _elementTotemplate_version.*, aElementTotemplateVersion, bElementTotemplateVersion
           from _elementTotemplate_version 
-          LEFT JOIN element Aelement
-          ON _elementTotemplate_version.A = Aelement.id
-          LEFT JOIN template_version btemplateVersion
-          ON _elementTotemplate_version.B = btemplateVersion.id
+          LEFT JOIN _elementTotemplate_version aElementTotemplateVersion
+          ON _elementTotemplate_version.A = aElementTotemplateVersion.id
+          LEFT JOIN _elementTotemplate_version bElementTotemplateVersion
+          ON _elementTotemplate_version.B = bElementTotemplateVersion.id
           where _elementTotemplate_version.id = $1 and _elementTotemplate_version.created_by = $2
         ) t;`,
     values: values,

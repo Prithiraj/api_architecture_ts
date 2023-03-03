@@ -7,11 +7,11 @@ export async function select_loSubscriptionDailyStats_by_id_admin(id: string|num
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT lo_subscription_daily_stats.*, loSubscriptionIdloSubscription
+          SELECT lo_subscription_daily_stats.*, loSubscriptionIdloSubscriptionDailyStats
           from lo_subscription_daily_stats 
-          LEFT JOIN lo_subscription loSubscriptionIdloSubscription
-          ON lo_subscription_daily_stats.lo_subscription_id = loSubscriptionIdloSubscription.id
-          where lo_subscription_daily_stats.statsDate = $1
+          LEFT JOIN lo_subscription_daily_stats loSubscriptionIdloSubscriptionDailyStats
+          ON lo_subscription_daily_stats.lo_subscription_id = loSubscriptionIdloSubscriptionDailyStats.lo_subscription_id
+          where lo_subscription_daily_stats.loSubscriptionId = $1
         ) t;`,
     values: values,
   };

@@ -7,15 +7,13 @@ export async function select_bridgeContactContact_by_id_admin(id: string|number)
   const select_query = {
     text: `SELECT row_to_json(t)
         FROM (
-          SELECT bridge_contact_contact.*, contactIdcontact, accountIdaccount, assignedTocontact
+          SELECT bridge_contact_contact.*, contactIdbridgeContactContact, accountIdbridgeContactContact
           from bridge_contact_contact 
-          LEFT JOIN contact contactIdcontact
-          ON bridge_contact_contact.contact_id = contactIdcontact.id
-          LEFT JOIN account accountIdaccount
-          ON bridge_contact_contact.account_id = accountIdaccount.id
-          LEFT JOIN contact assignedTocontact
-          ON bridge_contact_contact.assigned_to = assignedTocontact.id
-          where bridge_contact_contact.id = $1
+          LEFT JOIN bridge_contact_contact contactIdbridgeContactContact
+          ON bridge_contact_contact.contact_id = contactIdbridgeContactContact.contact_id
+          LEFT JOIN bridge_contact_contact accountIdbridgeContactContact
+          ON bridge_contact_contact.account_id = accountIdbridgeContactContact.contact_id
+          where bridge_contact_contact.contactId = $1
         ) t;`,
     values: values,
   };

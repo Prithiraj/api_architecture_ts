@@ -33,7 +33,7 @@ class JsonInsertModifier:
         
         # DESC: for both excluded and required, 
         # check if the fields are existing in the ColumnInfoList. 
-        # Delete all non exitent columns from the excluded and required fields
+        # Delete all non existent columns from the excluded and required fields
         
         # Steps:
         # 1. Get the set of columns from the colinfolist. 

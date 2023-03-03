@@ -5,7 +5,7 @@ class SerializerDeserializer:
     
     def __init__(self):
         pass
-    
+
     @staticmethod
     def deserialize_column_info(cols):
         schema = ColumnInfoListSchema()
@@ -27,12 +27,14 @@ class SerializerDeserializer:
                     _type = item["type"]
                     primarykey = item["primarykey"]
                     foreignkey = item["foreignkey"]
+                    auto = item["auto"]
                     colInfo = ColumnInfo(
                         name,
                         notnull,
                         _type,
                         primarykey,
-                        foreignkey
+                        foreignkey,
+                        auto
                     )
                     if bool(item["foreignkey"]):
                         fk_list.append(item["foreignkey"])
