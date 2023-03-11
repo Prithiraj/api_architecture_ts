@@ -14,14 +14,26 @@ export async function insert_{{apitablename}}(request: any) {
 
   const timestamp = new Date();
 
+  {{# primarykey}}
+  {{^auto}}
+  {{^foreignkey}}
   let pk_value: string|number = `{{dbtablename}}_${dataKey(6)}`;
-  const type_of_pk = {{apitablename}}_ajv.{{# primarykey}}{{primarykey}}{{/ primarykey}}{{^primarykey}}id{{/ primarykey}}.api.type;
+  const type_of_pk = {{apitablename}}_ajv.{{apicolname}}.api.type;
   if (type_of_pk === 'integer' || type_of_pk === 'number') {
     pk_value = Math.floor(Math.random() * 100000);
   }
+  {{/foreignkey}}
+  {{/auto}}
+  {{/primarykey}}
 
   const additionals: any = {
-    {{# primarykey}}{{primarykey}}{{/ primarykey}}{{^primarykey}}id{{/ primarykey}}: `${pk_value}`,
+    {{# primarykey}}
+    {{^auto}}
+    {{^foreignkey}}
+    {{apicolname}}: `${pk_value}`,
+    {{/foreignkey}}
+    {{/auto}}
+    {{/primarykey}}
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: request.decoded.account_id,

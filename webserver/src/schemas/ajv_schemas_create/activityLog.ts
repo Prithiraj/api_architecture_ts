@@ -32,7 +32,7 @@ const activityLog_schema = {
     masterEventTime: activityLog_ajv.masterEventTime.api,
     userId: activityLog_ajv.userId.api,
   },
-  required: ['eventCategory', 'eventCategoryId', 'masterEventTime', 'eventTime', 'eventTypeId', 'eventType'],
+  required: ['masterEventTime', 'eventTime', 'eventCategory', 'eventType', 'eventTypeId', 'eventCategoryId'],
   additionalProperties: false,
 };
 

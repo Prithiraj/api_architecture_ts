@@ -78,7 +78,7 @@ const loSubscription_schema = {
     leadCategory: loSubscription_ajv.leadCategory.api,
     weight: loSubscription_ajv.weight.api,
   },
-  required: ['weight', 'loanRanges'],
+  required: ['loanRanges', 'weight'],
   additionalProperties: false,
 };
 

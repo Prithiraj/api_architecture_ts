@@ -11,9 +11,12 @@ class DMLQueryTypescriptGen:
         pk = []
         for query_schema in query_schemas["schemas"]:
             columns_from = query_schema['columnInfoList']
-            pk = [x["apicolname"] for x in columns_from if x["primarykey"]=='t']
+            # pk = [x["apicolname"] for x in columns_from if x["primarykey"]=='t']
             
-            query_schema["primarykey"] = pk[0] if len(pk) > 0 else None
+            pk = [x for x in columns_from if x["primarykey"]=='t']
+            
+            query_schema["primarykey"] = pk # pk[0] if len(pk) > 0 else None
+            # query_schema["primarykey"] = pk[0] if len(pk) > 0 else None
             
         return query_schemas
     
@@ -40,6 +43,10 @@ class DMLQueryTypescriptGen:
         # 2. Process schemas
         self._processSchemaPreDBQuery(query_schemas)
         
+        # TODO: 
+        # A) For insert if the pk is not auto generated then only generate the PK via codes
+        # B) For composite PK value insertions, if the PK is foreign key we don't generate the value else we would generate the other PK
+        # 
         # 3. Generate query for normal insert
         self._genDBQueryTypescript(query_schemas, "templates/db_insert.mustache", 
                                    "webserver/src/dbmanager/db_insert", "insert", "printed normal insert queries")
@@ -64,5 +71,4 @@ class DMLQueryTypescriptGen:
         self._genDBQueryTypescript(query_schemas, "templates/admin/db_update_sl.mustache",
                                    "webserver/src/dbmanager/db_update_sl/admin", "update", "printed sl update queries for admin")
 							
-	
     

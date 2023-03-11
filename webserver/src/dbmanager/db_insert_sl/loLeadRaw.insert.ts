@@ -84,14 +84,8 @@ export async function insert_loLeadRaw(request: any) {
 
   const timestamp = new Date();
 
-  let pk_value: string|number = `lo_lead_raw_${dataKey(6)}`;
-  const type_of_pk = loLeadRaw_ajv.id.api.type;
-  if (type_of_pk === 'integer' || type_of_pk === 'number') {
-    pk_value = Math.floor(Math.random() * 100000);
-  }
 
   const additionals: any = {
-    id: `${pk_value}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: request.decoded.account_id,

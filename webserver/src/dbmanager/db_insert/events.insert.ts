@@ -1,5 +1,6 @@
 import dataKey from '../../utils/utils';
 import pool from '../dbconn';
+import { events_ajv } from '../../schemas/mapper_ajv'
 
 export async function insert_events(input: any) {
   // procesor
@@ -55,8 +56,14 @@ export async function insert_events(input: any) {
 
   const timestamp = new Date();
 
+  let pk_value: string|number = `events_${dataKey(6)}`;
+  const type_of_pk = events_ajv.eventId.api.type;
+  if (type_of_pk === 'integer' || type_of_pk === 'number') {
+    pk_value = Math.floor(Math.random() * 100000);
+  }
+
   const additionals: any = {
-    eventId: `events_${dataKey(6)}`,
+    eventId: `${pk_value}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: "account_1607435487272_5nl561qt",

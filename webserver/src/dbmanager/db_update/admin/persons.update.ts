@@ -20,7 +20,7 @@ export async function update_persons_admin(input: any) {
     updatedBy: 'request.request_id',
   };
 
-  const pk = table_cols.personid
+  const pk = table_cols.t
 
   Object.assign(input, additionals);
 

@@ -25,7 +25,7 @@ export async function update_routing_admin(input: any) {
     updatedBy: 'request.request_id',
   };
 
-  const pk = table_cols.path
+  const pk = table_cols.t
 
   Object.assign(input, additionals);
 

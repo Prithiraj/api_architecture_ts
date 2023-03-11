@@ -1,5 +1,6 @@
 import dataKey from '../../utils/utils';
 import pool from '../dbconn';
+import { contactCustomFieldValue_ajv } from '../../schemas/mapper_ajv'
 
 export async function insert_contactCustomFieldValue(input: any) {
   // procesor
@@ -14,8 +15,8 @@ export async function insert_contactCustomFieldValue(input: any) {
 
   const timestamp = new Date();
 
+
   const additionals: any = {
-    contactId: `contact_custom_field_value_${dataKey(6)}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: "account_1607435487272_5nl561qt",

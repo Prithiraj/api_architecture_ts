@@ -10,11 +10,9 @@ const contactCustomFieldValue_schema = {
     value: contactCustomFieldValue_ajv.value.api,
     id: contactCustomFieldValue_ajv.id.api,
   },
-  required: ['contactId'],
+  required: ['contactId', 'customFieldId'],
   additionalProperties: false,
   anyOf: [{
-    required: ['customFieldId'],
-  },{
     required: ['value'],
   },{
     required: ['id'],

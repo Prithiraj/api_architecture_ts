@@ -1,5 +1,6 @@
 import dataKey from '../../utils/utils';
 import pool from '../dbconn';
+import { workflowtoworkflowTargetFilters_ajv } from '../../schemas/mapper_ajv'
 
 export async function insert_workflowtoworkflowTargetFilters(input: any) {
   // procesor
@@ -11,8 +12,8 @@ export async function insert_workflowtoworkflowTargetFilters(input: any) {
 
   const timestamp = new Date();
 
+
   const additionals: any = {
-    id: `_workflowToworkflow_target_filters_${dataKey(6)}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: "account_1607435487272_5nl561qt",

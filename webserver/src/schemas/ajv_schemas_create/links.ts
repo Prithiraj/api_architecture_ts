@@ -8,7 +8,7 @@ const links_schema = {
     sourceId: links_ajv.sourceId.api,
     destinationId: links_ajv.destinationId.api,
   },
-  required: ['sourceId', 'destinationId'],
+  required: ['destinationId', 'sourceId'],
   additionalProperties: false,
 };
 

@@ -27,7 +27,7 @@ export async function update_loSubscriptionDailyStats(input: any) {
     updatedBy: 'request.request_id',
   };
 
-  const pk = table_cols.loSubscriptionId
+  const pk = table_cols.tt
 
   Object.assign(input, additionals);
 

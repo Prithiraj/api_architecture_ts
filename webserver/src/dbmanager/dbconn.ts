@@ -27,7 +27,7 @@ const dbconfig_taygo = {
 	"TUNNELING": false
 }
 
-const dbconfig = {
+const dbconfig_local = {
 	"SSH_UN": "ec2-user",
 	"PG_UN": "postgres",
 	"PG_DB_NAME": "mydatabase",
@@ -41,11 +41,11 @@ const dbconfig = {
 }
 
 const pool = new Pool({
-    host: dbconfig.DB_HOST,
-    port: dbconfig.PORT,
-    user: dbconfig.PG_UN,
-    password: dbconfig.PG_DB_PW,
-    database: dbconfig.PG_DB_NAME
+    host: dbconfig_local.DB_HOST,
+    port: dbconfig_local.PORT,
+    user: dbconfig_local.PG_UN,
+    password: dbconfig_local.PG_DB_PW,
+    database: dbconfig_local.PG_DB_NAME
   });
 
 export default pool;

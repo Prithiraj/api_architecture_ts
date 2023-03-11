@@ -1,5 +1,6 @@
 import dataKey from '../../utils/utils';
 import pool from '../dbconn';
+import { loLeadSource_ajv } from '../../schemas/mapper_ajv'
 
 export async function insert_loLeadSource(input: any) {
   // procesor
@@ -23,8 +24,14 @@ export async function insert_loLeadSource(input: any) {
 
   const timestamp = new Date();
 
+  let pk_value: string|number = `lo_lead_source_${dataKey(6)}`;
+  const type_of_pk = loLeadSource_ajv.id.api.type;
+  if (type_of_pk === 'integer' || type_of_pk === 'number') {
+    pk_value = Math.floor(Math.random() * 100000);
+  }
+
   const additionals: any = {
-    id: `lo_lead_source_${dataKey(6)}`,
+    id: `${pk_value}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: "account_1607435487272_5nl561qt",

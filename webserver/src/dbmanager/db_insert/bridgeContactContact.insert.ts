@@ -1,5 +1,6 @@
 import dataKey from '../../utils/utils';
 import pool from '../dbconn';
+import { bridgeContactContact_ajv } from '../../schemas/mapper_ajv'
 
 export async function insert_bridgeContactContact(input: any) {
   // procesor
@@ -17,8 +18,14 @@ export async function insert_bridgeContactContact(input: any) {
 
   const timestamp = new Date();
 
+  let pk_value: string|number = `bridge_contact_contact_${dataKey(6)}`;
+  const type_of_pk = bridgeContactContact_ajv.assignedTo.api.type;
+  if (type_of_pk === 'integer' || type_of_pk === 'number') {
+    pk_value = Math.floor(Math.random() * 100000);
+  }
+
   const additionals: any = {
-    contactId: `bridge_contact_contact_${dataKey(6)}`,
+    assignedTo: `${pk_value}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: "account_1607435487272_5nl561qt",

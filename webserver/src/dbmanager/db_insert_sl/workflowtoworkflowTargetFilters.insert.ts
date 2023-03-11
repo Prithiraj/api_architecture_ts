@@ -13,14 +13,8 @@ export async function insert_workflowtoworkflowTargetFilters(request: any) {
 
   const timestamp = new Date();
 
-  let pk_value: string|number = `_workflowToworkflow_target_filters_${dataKey(6)}`;
-  const type_of_pk = workflowtoworkflowTargetFilters_ajv.id.api.type;
-  if (type_of_pk === 'integer' || type_of_pk === 'number') {
-    pk_value = Math.floor(Math.random() * 100000);
-  }
 
   const additionals: any = {
-    id: `${pk_value}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: request.decoded.account_id,

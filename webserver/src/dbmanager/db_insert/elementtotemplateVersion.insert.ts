@@ -1,5 +1,6 @@
 import dataKey from '../../utils/utils';
 import pool from '../dbconn';
+import { elementtotemplateVersion_ajv } from '../../schemas/mapper_ajv'
 
 export async function insert_elementtotemplateVersion(input: any) {
   // procesor
@@ -11,8 +12,8 @@ export async function insert_elementtotemplateVersion(input: any) {
 
   const timestamp = new Date();
 
+
   const additionals: any = {
-    id: `_elementTotemplate_version_${dataKey(6)}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: "account_1607435487272_5nl561qt",

@@ -1,5 +1,6 @@
 import dataKey from '../../utils/utils';
 import pool from '../dbconn';
+import { eventType_ajv } from '../../schemas/mapper_ajv'
 
 export async function insert_eventType(input: any) {
   // procesor
@@ -16,8 +17,8 @@ export async function insert_eventType(input: any) {
 
   const timestamp = new Date();
 
+
   const additionals: any = {
-    id: `event_type_${dataKey(6)}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: "account_1607435487272_5nl561qt",

@@ -9,7 +9,7 @@ const workflowTemplatePermission_schema = {
     workflowTemplateId: workflowTemplatePermission_ajv.workflowTemplateId.api,
     permission: workflowTemplatePermission_ajv.permission.api,
   },
-  required: ['permission', 'userId', 'workflowTemplateId'],
+  required: ['userId', 'permission', 'workflowTemplateId'],
   additionalProperties: false,
 };
 

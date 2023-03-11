@@ -22,13 +22,13 @@ export async function update_persons(request: any) {
     updatedBy: request.decoded.user_id,
   };
 
-  const pk = table_cols.personid
+  const pk = table_cols.t
 
   Object.assign(input, additionals);
 
   const key_values: any[] = [];
   const values: any[] = [];
-  const id = input.personid;
+  const id = input.t;
   let index = 0;
   for (let [key, value] of Object.entries(input)) {
     if (key in table_cols && key !== 'id') {

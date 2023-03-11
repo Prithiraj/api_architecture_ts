@@ -25,12 +25,13 @@ class UpdateTypescriptGen:
             columns_from = update_schema['columnInfoList']
             
             pk = [x["apicolname"] for x in columns_from if x['primarykey']=='t']
-            update_schema["primarykey"] = pk[0] if len(pk) > 0 else None
+            update_schema["primarykey"] = pk # pk[0] if len(pk) > 0 else None
             update_schema['columnInfoList'] = [x for x in columns_from if x['apicolname'] not in columns_to_remove]
             
             
-            if update_schema["primarykey"] not in columns_to_remove:
-                columns_to_remove.append(update_schema["primarykey"])
+            columns_to_remove = list(set(columns_to_remove) | set(update_schema["primarykey"]))
+            # if update_schema["primarykey"] not in columns_to_remove:
+            #     columns_to_remove.append(update_schema["primarykey"])
             update_schema['columnInfoListAnyOf'] = [x for x in columns_from if x['apicolname'] not in columns_to_remove]
 
         return update_schemas

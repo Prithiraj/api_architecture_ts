@@ -1,5 +1,6 @@
 import dataKey from '../../utils/utils';
 import pool from '../dbconn';
+import { workflowTemplate_ajv } from '../../schemas/mapper_ajv'
 
 export async function insert_workflowTemplate(input: any) {
   // procesor
@@ -19,8 +20,14 @@ export async function insert_workflowTemplate(input: any) {
 
   const timestamp = new Date();
 
+  let pk_value: string|number = `workflow_template_${dataKey(6)}`;
+  const type_of_pk = workflowTemplate_ajv.id.api.type;
+  if (type_of_pk === 'integer' || type_of_pk === 'number') {
+    pk_value = Math.floor(Math.random() * 100000);
+  }
+
   const additionals: any = {
-    id: `workflow_template_${dataKey(6)}`,
+    id: `${pk_value}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: "account_1607435487272_5nl561qt",

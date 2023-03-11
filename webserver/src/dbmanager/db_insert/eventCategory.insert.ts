@@ -1,5 +1,6 @@
 import dataKey from '../../utils/utils';
 import pool from '../dbconn';
+import { eventCategory_ajv } from '../../schemas/mapper_ajv'
 
 export async function insert_eventCategory(input: any) {
   // procesor
@@ -15,8 +16,8 @@ export async function insert_eventCategory(input: any) {
 
   const timestamp = new Date();
 
+
   const additionals: any = {
-    id: `event_category_${dataKey(6)}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: "account_1607435487272_5nl561qt",

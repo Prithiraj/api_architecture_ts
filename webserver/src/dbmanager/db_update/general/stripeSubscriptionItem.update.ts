@@ -18,7 +18,7 @@ export async function update_stripeSubscriptionItem(input: any) {
     updatedBy: 'request.request_id',
   };
 
-  const pk = table_cols.id
+  const pk = table_cols.t
 
   Object.assign(input, additionals);
 

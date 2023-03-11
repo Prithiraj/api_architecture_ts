@@ -8,7 +8,7 @@ const workflowtoworkflowTargetFilters_schema = {
     A: workflowtoworkflowTargetFilters_ajv.A.api,
     B: workflowtoworkflowTargetFilters_ajv.B.api,
   },
-  required: ['A', 'B'],
+  required: ['B', 'A'],
   additionalProperties: false,
 };
 

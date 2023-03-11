@@ -24,13 +24,13 @@ export async function update_bridgeContactUser(request: any) {
     updatedBy: request.decoded.user_id,
   };
 
-  const pk = table_cols.contactId
+  const pk = table_cols.tt
 
   Object.assign(input, additionals);
 
   const key_values: any[] = [];
   const values: any[] = [];
-  const id = input.contactId;
+  const id = input.tt;
   let index = 0;
   for (let [key, value] of Object.entries(input)) {
     if (key in table_cols && key !== 'id') {

@@ -11,7 +11,7 @@ const templateVersion_schema = {
     name: templateVersion_ajv.name.api,
     data: templateVersion_ajv.data.api,
   },
-  required: ['templateId', 'version'],
+  required: ['version', 'templateId'],
   additionalProperties: false,
 };
 

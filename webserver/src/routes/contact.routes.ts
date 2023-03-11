@@ -1,7 +1,7 @@
 import { Request, Router, Response } from 'express';
 // import {Prisma, PrismaClient } from '@prisma/client';
 import validateDto from '../middleware/validate-dto';
-import contactSchema from '../schemas/ajv_schemas_create/contact';
+import contactCreate from '../schemas/ajv_schemas_create/contact';
 import contactUpdate from '../schemas/ajv_schemas_update/contact';
 import {insert_contact} from '../dbmanager/db_insert/contact.insert';
 import {update_contact_admin} from '../dbmanager/db_update/admin/contact.update';
@@ -15,39 +15,23 @@ contactRouter.get('/',  (request: Request, response: Response): any => {
 	return response.json("OK");
 });
   
-contactRouter.put('/', async (request: Request, response: Response) => {
-	// contactInsert(request.body)
-	const valid = contactUpdate(request.body);
-	if (!valid) {
-		const errors = contactUpdate.errors;
-		response.status(400).json(errors);
-	} else {
-		console.log(request.body);
-		try{
-			const result = await update_contact_admin(request.body);
-			response.json({"message": result});
-		} catch (err) {
-			response.status(400).json(err);
-		}
-
+contactRouter.put('/', validateDto(contactUpdate), async (request: Request, response: Response): Promise<any> => {
+	try{
+		const result = await update_contact_admin(request.body);
+		response.json({"message": result});
+	} catch (err) {
+		response.status(400).json(err);
 	}
+
 });
-contactRouter.post('/', validateDto(contactSchema), async (request: Request, response: Response): Promise<any> => {
-	
-	const valid = contactSchema(request.body);
-	if (!valid) {
-		const errors = contactUpdate.errors;
-		response.status(400).json(errors);
-	} else {
-		try {
-			const result = await insert_contact(request.body);
-			response.json({"message": result});
+contactRouter.post('/', validateDto(contactCreate), async (request: Request, response: Response): Promise<any> => {
+	try {
+		const result = await insert_contact(request.body);
+		response.json({"message": result});
 
-		} catch (err) {
-			response.status(400).json(err);
-		}
+	} catch (err) {
+		response.status(400).json(err);
 	}
-
 });
 
 contactRouter.post('/create', async (request: Request, response: Response): Promise<any> => {

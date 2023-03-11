@@ -1,5 +1,6 @@
 import dataKey from '../../utils/utils';
 import pool from '../dbconn';
+import { bridgeContactUser_ajv } from '../../schemas/mapper_ajv'
 
 export async function insert_bridgeContactUser(input: any) {
   // procesor
@@ -16,8 +17,8 @@ export async function insert_bridgeContactUser(input: any) {
 
   const timestamp = new Date();
 
+
   const additionals: any = {
-    contactId: `bridge_contact_user_${dataKey(6)}`,
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: "account_1607435487272_5nl561qt",

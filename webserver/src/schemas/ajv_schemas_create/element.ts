@@ -12,7 +12,7 @@ const element_schema = {
     type: element_ajv.type.api,
     latestVersionId: element_ajv.latestVersionId.api,
   },
-  required: ['latestVersionId', 'data', 'name', 'type'],
+  required: ['data', 'name', 'latestVersionId', 'type'],
   additionalProperties: false,
 };
 
