@@ -14,10 +14,10 @@ export async function select_elementtotemplateVersion_by_id(request: any) {
           SELECT _elementTotemplate_version.*, aElementTotemplateVersion, bElementTotemplateVersion
           from _elementTotemplate_version 
           LEFT JOIN _elementTotemplate_version aElementTotemplateVersion
-          ON _elementTotemplate_version.A = aElementTotemplateVersion.id
+          ON _elementTotemplate_version.A = aElementTotemplateVersion.
           LEFT JOIN _elementTotemplate_version bElementTotemplateVersion
-          ON _elementTotemplate_version.B = bElementTotemplateVersion.id
-          where _elementTotemplate_version.id = $1 and _elementTotemplate_version.created_by = $2
+          ON _elementTotemplate_version.B = bElementTotemplateVersion.
+          where _elementTotemplate_version. = $1 and _elementTotemplate_version.created_by = $2
         ) t;`,
     values: values,
   };

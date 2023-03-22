@@ -10,14 +10,14 @@ export async function select_incomeSource_by_id_admin(id: string|number) {
           SELECT income_source.*, accountIdincomeSource, contactIdincomeSource, addressIdincomeSource, organizationIdincomeSource
           from income_source 
           LEFT JOIN income_source accountIdincomeSource
-          ON income_source.account_id = accountIdincomeSource.id
+          ON income_source.account_id = accountIdincomeSource.['id']
           LEFT JOIN income_source contactIdincomeSource
-          ON income_source.contact_id = contactIdincomeSource.id
+          ON income_source.contact_id = contactIdincomeSource.['id']
           LEFT JOIN income_source addressIdincomeSource
-          ON income_source.address_id = addressIdincomeSource.id
+          ON income_source.address_id = addressIdincomeSource.['id']
           LEFT JOIN income_source organizationIdincomeSource
-          ON income_source.organization_id = organizationIdincomeSource.id
-          where income_source.id = $1
+          ON income_source.organization_id = organizationIdincomeSource.['id']
+          where income_source.['id'] = $1
         ) t;`,
     values: values,
   };

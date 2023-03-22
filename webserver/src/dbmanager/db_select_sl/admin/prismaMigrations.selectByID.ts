@@ -9,7 +9,7 @@ export async function select_prismaMigrations_by_id_admin(id: string|number) {
         FROM (
           SELECT _prisma_migrations.*
           from _prisma_migrations 
-          where _prisma_migrations.id = $1
+          where _prisma_migrations.['id'] = $1
         ) t;`,
     values: values,
   };

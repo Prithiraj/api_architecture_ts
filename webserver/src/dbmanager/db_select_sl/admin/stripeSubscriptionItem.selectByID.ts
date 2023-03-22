@@ -9,7 +9,7 @@ export async function select_stripeSubscriptionItem_by_id_admin(id: string|numbe
         FROM (
           SELECT stripe_subscription_item.*
           from stripe_subscription_item 
-          where stripe_subscription_item.id = $1
+          where stripe_subscription_item.['id'] = $1
         ) t;`,
     values: values,
   };

@@ -10,8 +10,8 @@ export async function select_workflow_by_id_admin(id: string|number) {
           SELECT workflow.*, createdByworkflow
           from workflow 
           LEFT JOIN workflow createdByworkflow
-          ON workflow.created_by = createdByworkflow.id
-          where workflow.id = $1
+          ON workflow.created_by = createdByworkflow.['id']
+          where workflow.['id'] = $1
         ) t;`,
     values: values,
   };

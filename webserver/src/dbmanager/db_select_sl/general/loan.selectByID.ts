@@ -14,12 +14,12 @@ export async function select_loan_by_id(request: any) {
           SELECT loan.*, accountIdloan, loanOfficerIdloan, addressIdloan
           from loan 
           LEFT JOIN loan accountIdloan
-          ON loan.account_id = accountIdloan.id
+          ON loan.account_id = accountIdloan.['id']
           LEFT JOIN loan loanOfficerIdloan
-          ON loan.loan_officer_id = loanOfficerIdloan.id
+          ON loan.loan_officer_id = loanOfficerIdloan.['id']
           LEFT JOIN loan addressIdloan
-          ON loan.address_id = addressIdloan.id
-          where loan.id = $1 and loan.created_by = $2
+          ON loan.address_id = addressIdloan.['id']
+          where loan.['id'] = $1 and loan.created_by = $2
         ) t;`,
     values: values,
   };

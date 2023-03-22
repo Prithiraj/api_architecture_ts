@@ -13,7 +13,7 @@ export async function select_workflowTargetFilters_by_id(request: any) {
         FROM (
           SELECT workflow_target_filters.*
           from workflow_target_filters 
-          where workflow_target_filters.id = $1 and workflow_target_filters.created_by = $2
+          where workflow_target_filters.['id'] = $1 and workflow_target_filters.created_by = $2
         ) t;`,
     values: values,
   };

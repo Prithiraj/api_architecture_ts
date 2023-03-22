@@ -10,8 +10,8 @@ export async function select_pageVersion_by_id_admin(id: string|number) {
           SELECT page_version.*, accountIdpageVersion
           from page_version 
           LEFT JOIN page_version accountIdpageVersion
-          ON page_version.account_id = accountIdpageVersion.id
-          where page_version.id = $1
+          ON page_version.account_id = accountIdpageVersion.['id']
+          where page_version.['id'] = $1
         ) t;`,
     values: values,
   };

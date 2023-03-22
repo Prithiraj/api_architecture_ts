@@ -14,10 +14,10 @@ export async function select_contactStatus_by_id(request: any) {
           SELECT contact_status.*, accountIdcontactStatus, statusLifecycleIdcontactStatus
           from contact_status 
           LEFT JOIN contact_status accountIdcontactStatus
-          ON contact_status.account_id = accountIdcontactStatus.id
+          ON contact_status.account_id = accountIdcontactStatus.['id']
           LEFT JOIN contact_status statusLifecycleIdcontactStatus
-          ON contact_status.status_lifecycle_id = statusLifecycleIdcontactStatus.id
-          where contact_status.id = $1 and contact_status.created_by = $2
+          ON contact_status.status_lifecycle_id = statusLifecycleIdcontactStatus.['id']
+          where contact_status.['id'] = $1 and contact_status.created_by = $2
         ) t;`,
     values: values,
   };

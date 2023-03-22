@@ -14,8 +14,8 @@ export async function select_user_by_id(request: any) {
           SELECT user.*, accountIduser
           from user 
           LEFT JOIN user accountIduser
-          ON user.account_id = accountIduser.id
-          where user.id = $1 and user.created_by = $2
+          ON user.account_id = accountIduser.['id']
+          where user.['id'] = $1 and user.created_by = $2
         ) t;`,
     values: values,
   };

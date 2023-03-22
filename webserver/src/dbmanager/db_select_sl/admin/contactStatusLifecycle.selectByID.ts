@@ -9,7 +9,7 @@ export async function select_contactStatusLifecycle_by_id_admin(id: string|numbe
         FROM (
           SELECT contact_status_lifecycle.*
           from contact_status_lifecycle 
-          where contact_status_lifecycle.id = $1
+          where contact_status_lifecycle.['id'] = $1
         ) t;`,
     values: values,
   };

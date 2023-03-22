@@ -14,12 +14,12 @@ export async function select_contactReminder_by_id(request: any) {
           SELECT contact_reminder.*, accountIdcontactReminder, contactIdcontactReminder, userIdcontactReminder
           from contact_reminder 
           LEFT JOIN contact_reminder accountIdcontactReminder
-          ON contact_reminder.account_id = accountIdcontactReminder.id
+          ON contact_reminder.account_id = accountIdcontactReminder.['id']
           LEFT JOIN contact_reminder contactIdcontactReminder
-          ON contact_reminder.contact_id = contactIdcontactReminder.id
+          ON contact_reminder.contact_id = contactIdcontactReminder.['id']
           LEFT JOIN contact_reminder userIdcontactReminder
-          ON contact_reminder.user_id = userIdcontactReminder.id
-          where contact_reminder.id = $1 and contact_reminder.created_by = $2
+          ON contact_reminder.user_id = userIdcontactReminder.['id']
+          where contact_reminder.['id'] = $1 and contact_reminder.created_by = $2
         ) t;`,
     values: values,
   };

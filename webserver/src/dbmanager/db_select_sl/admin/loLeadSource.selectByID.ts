@@ -9,7 +9,7 @@ export async function select_loLeadSource_by_id_admin(id: string|number) {
         FROM (
           SELECT lo_lead_source.*
           from lo_lead_source 
-          where lo_lead_source.id = $1
+          where lo_lead_source.['id'] = $1
         ) t;`,
     values: values,
   };

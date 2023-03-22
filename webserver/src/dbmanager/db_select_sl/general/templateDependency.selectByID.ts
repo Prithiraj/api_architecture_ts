@@ -14,14 +14,14 @@ export async function select_templateDependency_by_id(request: any) {
           SELECT template_dependency.*, accountIdtemplateDependency, templateIdtemplateDependency, resourceIdtemplateDependency, versionIdtemplateDependency
           from template_dependency 
           LEFT JOIN template_dependency accountIdtemplateDependency
-          ON template_dependency.account_id = accountIdtemplateDependency.id
+          ON template_dependency.account_id = accountIdtemplateDependency.['id']
           LEFT JOIN template_dependency templateIdtemplateDependency
-          ON template_dependency.template_id = templateIdtemplateDependency.id
+          ON template_dependency.template_id = templateIdtemplateDependency.['id']
           LEFT JOIN template_dependency resourceIdtemplateDependency
-          ON template_dependency.resource_id = resourceIdtemplateDependency.id
+          ON template_dependency.resource_id = resourceIdtemplateDependency.['id']
           LEFT JOIN template_dependency versionIdtemplateDependency
-          ON template_dependency.version_id = versionIdtemplateDependency.id
-          where template_dependency.id = $1 and template_dependency.created_by = $2
+          ON template_dependency.version_id = versionIdtemplateDependency.['id']
+          where template_dependency.['id'] = $1 and template_dependency.created_by = $2
         ) t;`,
     values: values,
   };

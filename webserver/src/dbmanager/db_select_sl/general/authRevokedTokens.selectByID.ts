@@ -13,7 +13,7 @@ export async function select_authRevokedTokens_by_id(request: any) {
         FROM (
           SELECT auth_revoked_tokens.*
           from auth_revoked_tokens 
-          where auth_revoked_tokens.id = $1 and auth_revoked_tokens.created_by = $2
+          where auth_revoked_tokens.['id'] = $1 and auth_revoked_tokens.created_by = $2
         ) t;`,
     values: values,
   };

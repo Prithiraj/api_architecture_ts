@@ -13,7 +13,7 @@ export async function select_eventCategory_by_id(request: any) {
         FROM (
           SELECT event_category.*
           from event_category 
-          where event_category.id = $1 and event_category.created_by = $2
+          where event_category.['id'] = $1 and event_category.created_by = $2
         ) t;`,
     values: values,
   };

@@ -35,7 +35,7 @@ from utils.utilities import create_directory, delete_files_from_directory, to_ca
 class FkInfoSchema(Schema):
     fk_col = fields.String(required = True)
     fk_table = fields.String(required = True)
-    fk_pk = fields.String(required = True)
+    fk_pk = fields.List(fields.String(required = True))
     fk_alias = fields.Raw(required = True)
     
     @post_load
@@ -72,7 +72,7 @@ class SingleSelectTypescriptGen:
                 pk = [x["dbcolname"] for x in select_schema["columnInfoList"] if x["primarykey"]=='t']
                 return {
                     "db_table_name": db_table_name,
-                    "id": pk[0] if len(pk) > 0 else "id"
+                    "id": pk
                 }
         return {
             "db_table_name": api_table_name,
@@ -86,7 +86,7 @@ class SingleSelectTypescriptGen:
             fk_info_list = []
             fk_alias_list = []
             pk = [x["apicolname"] for x in columns_from if x["primarykey"]=='t']
-            select_schema['primarykey'] = pk[0] if len(pk) > 0 else "id"
+            select_schema['primarykey'] = pk
             
             for column in columns_from: 
                 if bool(column["foreignkey"]) == True:

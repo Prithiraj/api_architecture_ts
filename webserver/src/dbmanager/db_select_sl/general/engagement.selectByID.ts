@@ -13,7 +13,7 @@ export async function select_engagement_by_id(request: any) {
         FROM (
           SELECT engagement.*
           from engagement 
-          where engagement.eventId = $1 and engagement.created_by = $2
+          where engagement.['eventId'] = $1 and engagement.created_by = $2
         ) t;`,
     values: values,
   };

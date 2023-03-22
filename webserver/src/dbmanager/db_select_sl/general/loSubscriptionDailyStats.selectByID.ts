@@ -14,8 +14,8 @@ export async function select_loSubscriptionDailyStats_by_id(request: any) {
           SELECT lo_subscription_daily_stats.*, loSubscriptionIdloSubscriptionDailyStats
           from lo_subscription_daily_stats 
           LEFT JOIN lo_subscription_daily_stats loSubscriptionIdloSubscriptionDailyStats
-          ON lo_subscription_daily_stats.lo_subscription_id = loSubscriptionIdloSubscriptionDailyStats.lo_subscription_id
-          where lo_subscription_daily_stats.loSubscriptionId = $1 and lo_subscription_daily_stats.created_by = $2
+          ON lo_subscription_daily_stats.lo_subscription_id = loSubscriptionIdloSubscriptionDailyStats.['lo_subscription_id', 'stats_date']
+          where lo_subscription_daily_stats.['loSubscriptionId', 'statsDate'] = $1 and lo_subscription_daily_stats.created_by = $2
         ) t;`,
     values: values,
   };

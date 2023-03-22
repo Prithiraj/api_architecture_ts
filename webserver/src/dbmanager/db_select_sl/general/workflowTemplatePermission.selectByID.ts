@@ -14,12 +14,12 @@ export async function select_workflowTemplatePermission_by_id(request: any) {
           SELECT workflow_template_permission.*, accountIdworkflowTemplatePermission, userIdworkflowTemplatePermission, workflowTemplateIdworkflowTemplatePermission
           from workflow_template_permission 
           LEFT JOIN workflow_template_permission accountIdworkflowTemplatePermission
-          ON workflow_template_permission.account_id = accountIdworkflowTemplatePermission.id
+          ON workflow_template_permission.account_id = accountIdworkflowTemplatePermission.['id']
           LEFT JOIN workflow_template_permission userIdworkflowTemplatePermission
-          ON workflow_template_permission.user_id = userIdworkflowTemplatePermission.id
+          ON workflow_template_permission.user_id = userIdworkflowTemplatePermission.['id']
           LEFT JOIN workflow_template_permission workflowTemplateIdworkflowTemplatePermission
-          ON workflow_template_permission.workflow_template_id = workflowTemplateIdworkflowTemplatePermission.id
-          where workflow_template_permission.id = $1 and workflow_template_permission.created_by = $2
+          ON workflow_template_permission.workflow_template_id = workflowTemplateIdworkflowTemplatePermission.['id']
+          where workflow_template_permission.['id'] = $1 and workflow_template_permission.created_by = $2
         ) t;`,
     values: values,
   };

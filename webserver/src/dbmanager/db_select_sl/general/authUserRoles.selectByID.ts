@@ -14,10 +14,10 @@ export async function select_authUserRoles_by_id(request: any) {
           SELECT auth_user_roles.*, roleIdauthUserRoles, userIdauthUserRoles
           from auth_user_roles 
           LEFT JOIN auth_user_roles roleIdauthUserRoles
-          ON auth_user_roles.role_id = roleIdauthUserRoles.id
+          ON auth_user_roles.role_id = roleIdauthUserRoles.['id']
           LEFT JOIN auth_user_roles userIdauthUserRoles
-          ON auth_user_roles.user_id = userIdauthUserRoles.id
-          where auth_user_roles.id = $1 and auth_user_roles.created_by = $2
+          ON auth_user_roles.user_id = userIdauthUserRoles.['id']
+          where auth_user_roles.['id'] = $1 and auth_user_roles.created_by = $2
         ) t;`,
     values: values,
   };

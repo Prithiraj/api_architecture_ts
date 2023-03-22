@@ -13,7 +13,7 @@ export async function select_contactCustomFieldSection_by_id(request: any) {
         FROM (
           SELECT contact_custom_field_section.*
           from contact_custom_field_section 
-          where contact_custom_field_section.id = $1 and contact_custom_field_section.created_by = $2
+          where contact_custom_field_section.['id'] = $1 and contact_custom_field_section.created_by = $2
         ) t;`,
     values: values,
   };

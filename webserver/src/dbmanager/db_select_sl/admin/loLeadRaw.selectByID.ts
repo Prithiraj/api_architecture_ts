@@ -10,8 +10,8 @@ export async function select_loLeadRaw_by_id_admin(id: string|number) {
           SELECT lo_lead_raw.*, subscriptionIdloLeadRaw
           from lo_lead_raw 
           LEFT JOIN lo_lead_raw subscriptionIdloLeadRaw
-          ON lo_lead_raw.subscription_id = subscriptionIdloLeadRaw.id
-          where lo_lead_raw.id = $1
+          ON lo_lead_raw.subscription_id = subscriptionIdloLeadRaw.['id']
+          where lo_lead_raw.['id'] = $1
         ) t;`,
     values: values,
   };

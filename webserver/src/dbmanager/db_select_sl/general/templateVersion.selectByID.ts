@@ -14,8 +14,8 @@ export async function select_templateVersion_by_id(request: any) {
           SELECT template_version.*, accountIdtemplateVersion
           from template_version 
           LEFT JOIN template_version accountIdtemplateVersion
-          ON template_version.account_id = accountIdtemplateVersion.id
-          where template_version.id = $1 and template_version.created_by = $2
+          ON template_version.account_id = accountIdtemplateVersion.['id']
+          where template_version.['id'] = $1 and template_version.created_by = $2
         ) t;`,
     values: values,
   };

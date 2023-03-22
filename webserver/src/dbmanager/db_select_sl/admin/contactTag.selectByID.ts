@@ -10,8 +10,8 @@ export async function select_contactTag_by_id_admin(id: string|number) {
           SELECT contact_tag.*, accountIdcontactTag
           from contact_tag 
           LEFT JOIN contact_tag accountIdcontactTag
-          ON contact_tag.account_id = accountIdcontactTag.id
-          where contact_tag.id = $1
+          ON contact_tag.account_id = accountIdcontactTag.['id']
+          where contact_tag.['id'] = $1
         ) t;`,
     values: values,
   };

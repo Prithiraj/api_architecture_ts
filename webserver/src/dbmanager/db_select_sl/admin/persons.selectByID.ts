@@ -9,7 +9,7 @@ export async function select_persons_by_id_admin(id: string|number) {
         FROM (
           SELECT persons.*
           from persons 
-          where persons.personid = $1
+          where persons.['personid'] = $1
         ) t;`,
     values: values,
   };

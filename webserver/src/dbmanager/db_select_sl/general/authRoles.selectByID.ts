@@ -13,7 +13,7 @@ export async function select_authRoles_by_id(request: any) {
         FROM (
           SELECT auth_roles.*
           from auth_roles 
-          where auth_roles.id = $1 and auth_roles.created_by = $2
+          where auth_roles.['id'] = $1 and auth_roles.created_by = $2
         ) t;`,
     values: values,
   };

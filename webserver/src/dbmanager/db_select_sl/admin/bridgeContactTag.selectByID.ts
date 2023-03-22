@@ -10,12 +10,12 @@ export async function select_bridgeContactTag_by_id_admin(id: string|number) {
           SELECT bridge_contact_tag.*, contactIdbridgeContactTag, tagIdbridgeContactTag, accountIdbridgeContactTag
           from bridge_contact_tag 
           LEFT JOIN bridge_contact_tag contactIdbridgeContactTag
-          ON bridge_contact_tag.contact_id = contactIdbridgeContactTag.contact_id
+          ON bridge_contact_tag.contact_id = contactIdbridgeContactTag.['contact_id', 'tag_id']
           LEFT JOIN bridge_contact_tag tagIdbridgeContactTag
-          ON bridge_contact_tag.tag_id = tagIdbridgeContactTag.contact_id
+          ON bridge_contact_tag.tag_id = tagIdbridgeContactTag.['contact_id', 'tag_id']
           LEFT JOIN bridge_contact_tag accountIdbridgeContactTag
-          ON bridge_contact_tag.account_id = accountIdbridgeContactTag.contact_id
-          where bridge_contact_tag.contactId = $1
+          ON bridge_contact_tag.account_id = accountIdbridgeContactTag.['contact_id', 'tag_id']
+          where bridge_contact_tag.['contactId', 'tagId'] = $1
         ) t;`,
     values: values,
   };

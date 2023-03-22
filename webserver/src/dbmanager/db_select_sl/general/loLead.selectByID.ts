@@ -14,10 +14,10 @@ export async function select_loLead_by_id(request: any) {
           SELECT lo_lead.*, subscriptionIdloLead, loLeadRawIdloLead
           from lo_lead 
           LEFT JOIN lo_lead subscriptionIdloLead
-          ON lo_lead.subscription_id = subscriptionIdloLead.id
+          ON lo_lead.subscription_id = subscriptionIdloLead.['id']
           LEFT JOIN lo_lead loLeadRawIdloLead
-          ON lo_lead.lo_lead_raw_id = loLeadRawIdloLead.id
-          where lo_lead.id = $1 and lo_lead.created_by = $2
+          ON lo_lead.lo_lead_raw_id = loLeadRawIdloLead.['id']
+          where lo_lead.['id'] = $1 and lo_lead.created_by = $2
         ) t;`,
     values: values,
   };

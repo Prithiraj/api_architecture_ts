@@ -10,12 +10,12 @@ export async function select_contactComment_by_id_admin(id: string|number) {
           SELECT contact_comment.*, accountIdcontactComment, contactIdcontactComment, userIdcontactComment
           from contact_comment 
           LEFT JOIN contact_comment accountIdcontactComment
-          ON contact_comment.account_id = accountIdcontactComment.id
+          ON contact_comment.account_id = accountIdcontactComment.['id']
           LEFT JOIN contact_comment contactIdcontactComment
-          ON contact_comment.contact_id = contactIdcontactComment.id
+          ON contact_comment.contact_id = contactIdcontactComment.['id']
           LEFT JOIN contact_comment userIdcontactComment
-          ON contact_comment.user_id = userIdcontactComment.id
-          where contact_comment.id = $1
+          ON contact_comment.user_id = userIdcontactComment.['id']
+          where contact_comment.['id'] = $1
         ) t;`,
     values: values,
   };

@@ -14,10 +14,10 @@ export async function select_template_by_id(request: any) {
           SELECT template.*, accountIdtemplate, latestVersionIdtemplate
           from template 
           LEFT JOIN template accountIdtemplate
-          ON template.account_id = accountIdtemplate.id
+          ON template.account_id = accountIdtemplate.['id']
           LEFT JOIN template latestVersionIdtemplate
-          ON template.latest_version_id = latestVersionIdtemplate.id
-          where template.id = $1 and template.created_by = $2
+          ON template.latest_version_id = latestVersionIdtemplate.['id']
+          where template.['id'] = $1 and template.created_by = $2
         ) t;`,
     values: values,
   };

@@ -10,10 +10,10 @@ export async function select_template_by_id_admin(id: string|number) {
           SELECT template.*, accountIdtemplate, latestVersionIdtemplate
           from template 
           LEFT JOIN template accountIdtemplate
-          ON template.account_id = accountIdtemplate.id
+          ON template.account_id = accountIdtemplate.['id']
           LEFT JOIN template latestVersionIdtemplate
-          ON template.latest_version_id = latestVersionIdtemplate.id
-          where template.id = $1
+          ON template.latest_version_id = latestVersionIdtemplate.['id']
+          where template.['id'] = $1
         ) t;`,
     values: values,
   };

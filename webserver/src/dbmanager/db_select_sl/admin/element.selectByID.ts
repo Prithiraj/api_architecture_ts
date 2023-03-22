@@ -10,12 +10,12 @@ export async function select_element_by_id_admin(id: string|number) {
           SELECT element.*, accountIdelement, templateIdelement, latestVersionIdelement
           from element 
           LEFT JOIN element accountIdelement
-          ON element.account_id = accountIdelement.id
+          ON element.account_id = accountIdelement.['id']
           LEFT JOIN element templateIdelement
-          ON element.template_id = templateIdelement.id
+          ON element.template_id = templateIdelement.['id']
           LEFT JOIN element latestVersionIdelement
-          ON element.latest_version_id = latestVersionIdelement.id
-          where element.id = $1
+          ON element.latest_version_id = latestVersionIdelement.['id']
+          where element.['id'] = $1
         ) t;`,
     values: values,
   };

@@ -13,7 +13,7 @@ export async function select_contactStatusLifecycle_by_id(request: any) {
         FROM (
           SELECT contact_status_lifecycle.*
           from contact_status_lifecycle 
-          where contact_status_lifecycle.id = $1 and contact_status_lifecycle.created_by = $2
+          where contact_status_lifecycle.['id'] = $1 and contact_status_lifecycle.created_by = $2
         ) t;`,
     values: values,
   };

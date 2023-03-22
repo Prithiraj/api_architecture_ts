@@ -10,8 +10,8 @@ export async function select_user_by_id_admin(id: string|number) {
           SELECT user.*, accountIduser
           from user 
           LEFT JOIN user accountIduser
-          ON user.account_id = accountIduser.id
-          where user.id = $1
+          ON user.account_id = accountIduser.['id']
+          where user.['id'] = $1
         ) t;`,
     values: values,
   };

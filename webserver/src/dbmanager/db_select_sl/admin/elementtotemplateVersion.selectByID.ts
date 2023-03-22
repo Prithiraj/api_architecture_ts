@@ -10,10 +10,10 @@ export async function select_elementtotemplateVersion_by_id_admin(id: string|num
           SELECT _elementTotemplate_version.*, aElementTotemplateVersion, bElementTotemplateVersion
           from _elementTotemplate_version 
           LEFT JOIN _elementTotemplate_version aElementTotemplateVersion
-          ON _elementTotemplate_version.A = aElementTotemplateVersion.id
+          ON _elementTotemplate_version.A = aElementTotemplateVersion.
           LEFT JOIN _elementTotemplate_version bElementTotemplateVersion
-          ON _elementTotemplate_version.B = bElementTotemplateVersion.id
-          where _elementTotemplate_version.id = $1
+          ON _elementTotemplate_version.B = bElementTotemplateVersion.
+          where _elementTotemplate_version. = $1
         ) t;`,
     values: values,
   };

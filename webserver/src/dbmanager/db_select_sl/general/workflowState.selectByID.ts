@@ -14,8 +14,8 @@ export async function select_workflowState_by_id(request: any) {
           SELECT workflow_state.*, workflowIdworkflowState
           from workflow_state 
           LEFT JOIN workflow_state workflowIdworkflowState
-          ON workflow_state.workflow_id = workflowIdworkflowState.id
-          where workflow_state.id = $1 and workflow_state.created_by = $2
+          ON workflow_state.workflow_id = workflowIdworkflowState.['id']
+          where workflow_state.['id'] = $1 and workflow_state.created_by = $2
         ) t;`,
     values: values,
   };

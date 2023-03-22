@@ -9,7 +9,7 @@ export async function select_workflowTargetFilters_by_id_admin(id: string|number
         FROM (
           SELECT workflow_target_filters.*
           from workflow_target_filters 
-          where workflow_target_filters.id = $1
+          where workflow_target_filters.['id'] = $1
         ) t;`,
     values: values,
   };

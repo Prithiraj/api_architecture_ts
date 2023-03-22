@@ -48,4 +48,13 @@ const pool = new Pool({
     database: dbconfig_local.PG_DB_NAME
   });
 
+const pool_demo = new Pool({
+    host: dbconfig_demo.DB_HOST,
+    port: dbconfig_demo.PORT,
+    user: dbconfig_demo.PG_UN,
+    password: dbconfig_demo.PG_DB_PW,
+    database: dbconfig_demo.PG_DB_NAME
+  });
+
+// export default pool_demo;
 export default pool;

@@ -14,8 +14,8 @@ export async function select_eventType_by_id(request: any) {
           SELECT event_type.*, eventCategoryIdeventType
           from event_type 
           LEFT JOIN event_type eventCategoryIdeventType
-          ON event_type.event_category_id = eventCategoryIdeventType.id
-          where event_type.id = $1 and event_type.created_by = $2
+          ON event_type.event_category_id = eventCategoryIdeventType.['id']
+          where event_type.['id'] = $1 and event_type.created_by = $2
         ) t;`,
     values: values,
   };

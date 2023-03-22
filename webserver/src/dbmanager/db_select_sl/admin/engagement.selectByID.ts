@@ -9,7 +9,7 @@ export async function select_engagement_by_id_admin(id: string|number) {
         FROM (
           SELECT engagement.*
           from engagement 
-          where engagement.eventId = $1
+          where engagement.['eventId'] = $1
         ) t;`,
     values: values,
   };

@@ -10,8 +10,8 @@ export async function select_property_by_id_admin(id: string|number) {
           SELECT property.*, accountIdproperty
           from property 
           LEFT JOIN property accountIdproperty
-          ON property.account_id = accountIdproperty.id
-          where property.id = $1
+          ON property.account_id = accountIdproperty.['id']
+          where property.['id'] = $1
         ) t;`,
     values: values,
   };

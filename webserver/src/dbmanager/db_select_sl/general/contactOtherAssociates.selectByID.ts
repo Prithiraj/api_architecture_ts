@@ -14,8 +14,8 @@ export async function select_contactOtherAssociates_by_id(request: any) {
           SELECT contact_other_associates.*, contactIdcontactOtherAssociates
           from contact_other_associates 
           LEFT JOIN contact_other_associates contactIdcontactOtherAssociates
-          ON contact_other_associates.contact_id = contactIdcontactOtherAssociates.id
-          where contact_other_associates.id = $1 and contact_other_associates.created_by = $2
+          ON contact_other_associates.contact_id = contactIdcontactOtherAssociates.['id']
+          where contact_other_associates.['id'] = $1 and contact_other_associates.created_by = $2
         ) t;`,
     values: values,
   };

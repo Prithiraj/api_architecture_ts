@@ -14,8 +14,8 @@ export async function select_property_by_id(request: any) {
           SELECT property.*, accountIdproperty
           from property 
           LEFT JOIN property accountIdproperty
-          ON property.account_id = accountIdproperty.id
-          where property.id = $1 and property.created_by = $2
+          ON property.account_id = accountIdproperty.['id']
+          where property.['id'] = $1 and property.created_by = $2
         ) t;`,
     values: values,
   };

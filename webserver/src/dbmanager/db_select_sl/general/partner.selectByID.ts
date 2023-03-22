@@ -14,12 +14,12 @@ export async function select_partner_by_id(request: any) {
           SELECT partner.*, accountIdpartner, organizationIdpartner, addressIdpartner
           from partner 
           LEFT JOIN partner accountIdpartner
-          ON partner.account_id = accountIdpartner.id
+          ON partner.account_id = accountIdpartner.['id']
           LEFT JOIN partner organizationIdpartner
-          ON partner.organization_id = organizationIdpartner.id
+          ON partner.organization_id = organizationIdpartner.['id']
           LEFT JOIN partner addressIdpartner
-          ON partner.address_id = addressIdpartner.id
-          where partner.id = $1 and partner.created_by = $2
+          ON partner.address_id = addressIdpartner.['id']
+          where partner.['id'] = $1 and partner.created_by = $2
         ) t;`,
     values: values,
   };

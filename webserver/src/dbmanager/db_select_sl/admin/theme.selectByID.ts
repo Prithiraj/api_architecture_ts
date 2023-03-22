@@ -9,7 +9,7 @@ export async function select_theme_by_id_admin(id: string|number) {
         FROM (
           SELECT theme.*
           from theme 
-          where theme.id = $1
+          where theme.['id'] = $1
         ) t;`,
     values: values,
   };

@@ -10,8 +10,8 @@ export async function select_templateVersion_by_id_admin(id: string|number) {
           SELECT template_version.*, accountIdtemplateVersion
           from template_version 
           LEFT JOIN template_version accountIdtemplateVersion
-          ON template_version.account_id = accountIdtemplateVersion.id
-          where template_version.id = $1
+          ON template_version.account_id = accountIdtemplateVersion.['id']
+          where template_version.['id'] = $1
         ) t;`,
     values: values,
   };

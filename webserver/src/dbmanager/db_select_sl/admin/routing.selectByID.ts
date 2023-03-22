@@ -10,12 +10,12 @@ export async function select_routing_by_id_admin(id: string|number) {
           SELECT routing.*, accountIdrouting, subdomainrouting, resourceIdrouting
           from routing 
           LEFT JOIN routing accountIdrouting
-          ON routing.account_id = accountIdrouting.path
+          ON routing.account_id = accountIdrouting.['path']
           LEFT JOIN routing subdomainrouting
-          ON routing.subdomain = subdomainrouting.path
+          ON routing.subdomain = subdomainrouting.['path']
           LEFT JOIN routing resourceIdrouting
-          ON routing.resource_id = resourceIdrouting.path
-          where routing.path = $1
+          ON routing.resource_id = resourceIdrouting.['path']
+          where routing.['path'] = $1
         ) t;`,
     values: values,
   };

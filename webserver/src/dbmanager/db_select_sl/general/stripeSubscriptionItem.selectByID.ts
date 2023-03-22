@@ -13,7 +13,7 @@ export async function select_stripeSubscriptionItem_by_id(request: any) {
         FROM (
           SELECT stripe_subscription_item.*
           from stripe_subscription_item 
-          where stripe_subscription_item.id = $1 and stripe_subscription_item.created_by = $2
+          where stripe_subscription_item.['id'] = $1 and stripe_subscription_item.created_by = $2
         ) t;`,
     values: values,
   };

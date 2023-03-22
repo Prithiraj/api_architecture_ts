@@ -9,7 +9,7 @@ export async function select_authUsers_by_id_admin(id: string|number) {
         FROM (
           SELECT auth_users.*
           from auth_users 
-          where auth_users.id = $1
+          where auth_users.['id'] = $1
         ) t;`,
     values: values,
   };

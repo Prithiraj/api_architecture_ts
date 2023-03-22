@@ -14,8 +14,8 @@ export async function select_pageVersion_by_id(request: any) {
           SELECT page_version.*, accountIdpageVersion
           from page_version 
           LEFT JOIN page_version accountIdpageVersion
-          ON page_version.account_id = accountIdpageVersion.id
-          where page_version.id = $1 and page_version.created_by = $2
+          ON page_version.account_id = accountIdpageVersion.['id']
+          where page_version.['id'] = $1 and page_version.created_by = $2
         ) t;`,
     values: values,
   };

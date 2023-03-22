@@ -10,12 +10,12 @@ export async function select_links_by_id_admin(id: string|number) {
           SELECT links.*, accountIdlinks, sourceIdlinks, destinationIdlinks
           from links 
           LEFT JOIN links accountIdlinks
-          ON links.account_id = accountIdlinks.id
+          ON links.account_id = accountIdlinks.['id']
           LEFT JOIN links sourceIdlinks
-          ON links.source_id = sourceIdlinks.id
+          ON links.source_id = sourceIdlinks.['id']
           LEFT JOIN links destinationIdlinks
-          ON links.destination_id = destinationIdlinks.id
-          where links.id = $1
+          ON links.destination_id = destinationIdlinks.['id']
+          where links.['id'] = $1
         ) t;`,
     values: values,
   };

@@ -29,16 +29,15 @@ export async function update_loSubscriptionDailyStats_admin(request: any) {
     updatedBy: request.decoded.user_id,
   };
 
-  const pk = table_cols.tt
+  const pk: string[] = [table_cols.loSubscriptionId, table_cols.statsDate, ]
 
   Object.assign(input, additionals);
 
   const key_values: any[] = [];
-  const values: any[] = [];
-  const id = input.tt;
+  let values: any[] = [];
   let index = 0;
   for (let [key, value] of Object.entries(input)) {
-    if (key in table_cols && key !== pk) {
+    if (key in table_cols && !pk.includes(key)) {
       ++index;
       const table_db_key = table_cols[key];
       if (table_db_key.indexOf('.') > -1) {
@@ -51,7 +50,7 @@ export async function update_loSubscriptionDailyStats_admin(request: any) {
     }
   }
 
-  values.push(id);
+  values = values.concat([input.loSubscriptionId, input.statsDate, ])
 
   const key_value_placeholders = key_values.join(', ');
   const all_cols: any[] = [];

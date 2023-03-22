@@ -13,7 +13,7 @@ export async function select_account_by_id(request: any) {
         FROM (
           SELECT account.*
           from account 
-          where account.id = $1 and account.created_by = $2
+          where account.['id'] = $1 and account.created_by = $2
         ) t;`,
     values: values,
   };

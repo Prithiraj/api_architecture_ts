@@ -8,7 +8,7 @@ class DMLQueryTypescriptGen:
         pass
     
     def _processSchemaPreDBQuery(self, query_schemas):
-        pk = []
+        # pk = []
         for query_schema in query_schemas["schemas"]:
             columns_from = query_schema['columnInfoList']
             # pk = [x["apicolname"] for x in columns_from if x["primarykey"]=='t']
@@ -43,10 +43,6 @@ class DMLQueryTypescriptGen:
         # 2. Process schemas
         self._processSchemaPreDBQuery(query_schemas)
         
-        # TODO: 
-        # A) For insert if the pk is not auto generated then only generate the PK via codes
-        # B) For composite PK value insertions, if the PK is foreign key we don't generate the value else we would generate the other PK
-        # 
         # 3. Generate query for normal insert
         self._genDBQueryTypescript(query_schemas, "templates/db_insert.mustache", 
                                    "webserver/src/dbmanager/db_insert", "insert", "printed normal insert queries")

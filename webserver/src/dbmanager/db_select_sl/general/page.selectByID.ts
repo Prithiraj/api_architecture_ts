@@ -14,14 +14,14 @@ export async function select_page_by_id(request: any) {
           SELECT page.*, accountIdpage, templateIdpage, latestTemplateIdpage, latestVersionIdpage
           from page 
           LEFT JOIN page accountIdpage
-          ON page.account_id = accountIdpage.id
+          ON page.account_id = accountIdpage.['id']
           LEFT JOIN page templateIdpage
-          ON page.template_id = templateIdpage.id
+          ON page.template_id = templateIdpage.['id']
           LEFT JOIN page latestTemplateIdpage
-          ON page.latest_template_id = latestTemplateIdpage.id
+          ON page.latest_template_id = latestTemplateIdpage.['id']
           LEFT JOIN page latestVersionIdpage
-          ON page.latest_version_id = latestVersionIdpage.id
-          where page.id = $1 and page.created_by = $2
+          ON page.latest_version_id = latestVersionIdpage.['id']
+          where page.['id'] = $1 and page.created_by = $2
         ) t;`,
     values: values,
   };

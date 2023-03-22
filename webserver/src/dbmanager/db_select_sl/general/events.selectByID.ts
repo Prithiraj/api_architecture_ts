@@ -13,7 +13,7 @@ export async function select_events_by_id(request: any) {
         FROM (
           SELECT events.*
           from events 
-          where events.eventId = $1 and events.created_by = $2
+          where events.['eventId'] = $1 and events.created_by = $2
         ) t;`,
     values: values,
   };

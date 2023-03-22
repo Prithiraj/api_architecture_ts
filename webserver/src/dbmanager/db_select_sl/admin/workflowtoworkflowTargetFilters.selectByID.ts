@@ -10,10 +10,10 @@ export async function select_workflowtoworkflowTargetFilters_by_id_admin(id: str
           SELECT _workflowToworkflow_target_filters.*, aWorkflowToworkflowTargetFilters, bWorkflowToworkflowTargetFilters
           from _workflowToworkflow_target_filters 
           LEFT JOIN _workflowToworkflow_target_filters aWorkflowToworkflowTargetFilters
-          ON _workflowToworkflow_target_filters.A = aWorkflowToworkflowTargetFilters.id
+          ON _workflowToworkflow_target_filters.A = aWorkflowToworkflowTargetFilters.
           LEFT JOIN _workflowToworkflow_target_filters bWorkflowToworkflowTargetFilters
-          ON _workflowToworkflow_target_filters.B = bWorkflowToworkflowTargetFilters.id
-          where _workflowToworkflow_target_filters.id = $1
+          ON _workflowToworkflow_target_filters.B = bWorkflowToworkflowTargetFilters.
+          where _workflowToworkflow_target_filters. = $1
         ) t;`,
     values: values,
   };

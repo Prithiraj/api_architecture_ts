@@ -10,12 +10,12 @@ export async function select_bridgeContactLoan_by_id_admin(id: string|number) {
           SELECT bridge_contact_loan.*, contactIdbridgeContactLoan, loanIdbridgeContactLoan, accountIdbridgeContactLoan
           from bridge_contact_loan 
           LEFT JOIN bridge_contact_loan contactIdbridgeContactLoan
-          ON bridge_contact_loan.contact_id = contactIdbridgeContactLoan.contact_id
+          ON bridge_contact_loan.contact_id = contactIdbridgeContactLoan.['contact_id', 'loan_id']
           LEFT JOIN bridge_contact_loan loanIdbridgeContactLoan
-          ON bridge_contact_loan.loan_id = loanIdbridgeContactLoan.contact_id
+          ON bridge_contact_loan.loan_id = loanIdbridgeContactLoan.['contact_id', 'loan_id']
           LEFT JOIN bridge_contact_loan accountIdbridgeContactLoan
-          ON bridge_contact_loan.account_id = accountIdbridgeContactLoan.contact_id
-          where bridge_contact_loan.contactId = $1
+          ON bridge_contact_loan.account_id = accountIdbridgeContactLoan.['contact_id', 'loan_id']
+          where bridge_contact_loan.['contactId', 'loanId'] = $1
         ) t;`,
     values: values,
   };

@@ -10,10 +10,10 @@ export async function select_contactCustomField_by_id_admin(id: string|number) {
           SELECT contact_custom_field.*, accountIdcontactCustomField, sectionIdcontactCustomField
           from contact_custom_field 
           LEFT JOIN contact_custom_field accountIdcontactCustomField
-          ON contact_custom_field.account_id = accountIdcontactCustomField.id
+          ON contact_custom_field.account_id = accountIdcontactCustomField.['id']
           LEFT JOIN contact_custom_field sectionIdcontactCustomField
-          ON contact_custom_field.section_id = sectionIdcontactCustomField.id
-          where contact_custom_field.id = $1
+          ON contact_custom_field.section_id = sectionIdcontactCustomField.['id']
+          where contact_custom_field.['id'] = $1
         ) t;`,
     values: values,
   };

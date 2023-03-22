@@ -13,7 +13,7 @@ export async function select_authUsers_by_id(request: any) {
         FROM (
           SELECT auth_users.*
           from auth_users 
-          where auth_users.id = $1 and auth_users.created_by = $2
+          where auth_users.['id'] = $1 and auth_users.created_by = $2
         ) t;`,
     values: values,
   };

@@ -13,7 +13,7 @@ export async function select_loLeadSource_by_id(request: any) {
         FROM (
           SELECT lo_lead_source.*
           from lo_lead_source 
-          where lo_lead_source.id = $1 and lo_lead_source.created_by = $2
+          where lo_lead_source.['id'] = $1 and lo_lead_source.created_by = $2
         ) t;`,
     values: values,
   };

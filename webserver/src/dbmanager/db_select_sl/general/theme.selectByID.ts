@@ -13,7 +13,7 @@ export async function select_theme_by_id(request: any) {
         FROM (
           SELECT theme.*
           from theme 
-          where theme.id = $1 and theme.created_by = $2
+          where theme.['id'] = $1 and theme.created_by = $2
         ) t;`,
     values: values,
   };

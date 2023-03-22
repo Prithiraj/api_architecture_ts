@@ -10,8 +10,8 @@ export async function select_workflowTemplate_by_id_admin(id: string|number) {
           SELECT workflow_template.*, workflowIdworkflowTemplate
           from workflow_template 
           LEFT JOIN workflow_template workflowIdworkflowTemplate
-          ON workflow_template.workflow_id = workflowIdworkflowTemplate.id
-          where workflow_template.id = $1
+          ON workflow_template.workflow_id = workflowIdworkflowTemplate.['id']
+          where workflow_template.['id'] = $1
         ) t;`,
     values: values,
   };

@@ -10,12 +10,12 @@ export async function select_contactCustomFieldValue_by_id_admin(id: string|numb
           SELECT contact_custom_field_value.*, accountIdcontactCustomFieldValue, contactIdcontactCustomFieldValue, customFieldIdcontactCustomFieldValue
           from contact_custom_field_value 
           LEFT JOIN contact_custom_field_value accountIdcontactCustomFieldValue
-          ON contact_custom_field_value.account_id = accountIdcontactCustomFieldValue.contact_id
+          ON contact_custom_field_value.account_id = accountIdcontactCustomFieldValue.['contact_id', 'custom_field_id']
           LEFT JOIN contact_custom_field_value contactIdcontactCustomFieldValue
-          ON contact_custom_field_value.contact_id = contactIdcontactCustomFieldValue.contact_id
+          ON contact_custom_field_value.contact_id = contactIdcontactCustomFieldValue.['contact_id', 'custom_field_id']
           LEFT JOIN contact_custom_field_value customFieldIdcontactCustomFieldValue
-          ON contact_custom_field_value.custom_field_id = customFieldIdcontactCustomFieldValue.contact_id
-          where contact_custom_field_value.contactId = $1
+          ON contact_custom_field_value.custom_field_id = customFieldIdcontactCustomFieldValue.['contact_id', 'custom_field_id']
+          where contact_custom_field_value.['contactId', 'customFieldId'] = $1
         ) t;`,
     values: values,
   };

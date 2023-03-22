@@ -10,8 +10,8 @@ export async function select_loSubscriptionDailyStats_by_id_admin(id: string|num
           SELECT lo_subscription_daily_stats.*, loSubscriptionIdloSubscriptionDailyStats
           from lo_subscription_daily_stats 
           LEFT JOIN lo_subscription_daily_stats loSubscriptionIdloSubscriptionDailyStats
-          ON lo_subscription_daily_stats.lo_subscription_id = loSubscriptionIdloSubscriptionDailyStats.lo_subscription_id
-          where lo_subscription_daily_stats.loSubscriptionId = $1
+          ON lo_subscription_daily_stats.lo_subscription_id = loSubscriptionIdloSubscriptionDailyStats.['lo_subscription_id', 'stats_date']
+          where lo_subscription_daily_stats.['loSubscriptionId', 'statsDate'] = $1
         ) t;`,
     values: values,
   };

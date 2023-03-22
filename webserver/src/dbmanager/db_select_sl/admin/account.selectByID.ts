@@ -9,7 +9,7 @@ export async function select_account_by_id_admin(id: string|number) {
         FROM (
           SELECT account.*
           from account 
-          where account.id = $1
+          where account.['id'] = $1
         ) t;`,
     values: values,
   };

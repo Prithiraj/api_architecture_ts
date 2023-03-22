@@ -9,7 +9,7 @@ export async function select_eventCategory_by_id_admin(id: string|number) {
         FROM (
           SELECT event_category.*
           from event_category 
-          where event_category.id = $1
+          where event_category.['id'] = $1
         ) t;`,
     values: values,
   };

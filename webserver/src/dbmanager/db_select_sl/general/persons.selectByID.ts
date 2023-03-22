@@ -13,7 +13,7 @@ export async function select_persons_by_id(request: any) {
         FROM (
           SELECT persons.*
           from persons 
-          where persons.personid = $1 and persons.created_by = $2
+          where persons.['personid'] = $1 and persons.created_by = $2
         ) t;`,
     values: values,
   };

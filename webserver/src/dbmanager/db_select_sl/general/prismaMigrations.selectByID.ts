@@ -13,7 +13,7 @@ export async function select_prismaMigrations_by_id(request: any) {
         FROM (
           SELECT _prisma_migrations.*
           from _prisma_migrations 
-          where _prisma_migrations.id = $1 and _prisma_migrations.created_by = $2
+          where _prisma_migrations.['id'] = $1 and _prisma_migrations.created_by = $2
         ) t;`,
     values: values,
   };

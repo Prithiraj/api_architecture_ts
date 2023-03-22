@@ -9,7 +9,7 @@ export async function select_contactCustomFieldSection_by_id_admin(id: string|nu
         FROM (
           SELECT contact_custom_field_section.*
           from contact_custom_field_section 
-          where contact_custom_field_section.id = $1
+          where contact_custom_field_section.['id'] = $1
         ) t;`,
     values: values,
   };
