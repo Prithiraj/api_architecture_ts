@@ -24,35 +24,6 @@ export const prismaMigrations = {
     key: 'appliedStepsCount', dbKey: 'applied_steps_count', type: 'integer', required: true, foreignkey: '',
   },
 };
-export const theme = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  name: {
-    key: 'name', dbKey: 'name', type: 'text', required: false, foreignkey: '',
-  },
-  theme: {
-    key: 'theme', dbKey: 'theme', type: 'jsonb', required: true, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
-  },
-};
 export const loLeadSource = {
   id: {
     key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
@@ -97,113 +68,146 @@ export const loLeadSource = {
     key: 'order', dbKey: 'order', type: 'integer', required: false, foreignkey: '',
   },
 };
-export const engagement = {
-  parentId: {
-    key: 'parentId', dbKey: 'parent_id', type: 'text', required: false, foreignkey: '',
-  },
-  eventId: {
-    key: 'eventId', dbKey: 'event_id', type: 'text', required: true, foreignkey: '',
-  },
-  rawBucket: {
-    key: 'rawBucket', dbKey: 'raw_bucket', type: 'text', required: false, foreignkey: '',
-  },
-  rawPath: {
-    key: 'rawPath', dbKey: 'raw_path', type: 'text', required: false, foreignkey: '',
-  },
-  eventClass: {
-    key: 'eventClass', dbKey: 'event_class', type: 'text', required: false, foreignkey: '',
-  },
-  eventType: {
-    key: 'eventType', dbKey: 'event_type', type: 'text', required: false, foreignkey: '',
-  },
-  eventTime: {
-    key: 'eventTime', dbKey: 'event_time', type: 'text', required: false, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'text', required: false, foreignkey: '',
-  },
-  eventProvider: {
-    key: 'eventProvider', dbKey: 'event_provider', type: 'text', required: false, foreignkey: '',
-  },
-  eventAction: {
-    key: 'eventAction', dbKey: 'event_action', type: 'text', required: false, foreignkey: '',
-  },
-  eventName: {
-    key: 'eventName', dbKey: 'event_name', type: 'text', required: false, foreignkey: '',
-  },
-  eventGroup: {
-    key: 'eventGroup', dbKey: 'event_group', type: 'text', required: false, foreignkey: '',
-  },
-  eventCategory: {
-    key: 'eventCategory', dbKey: 'event_category', type: 'text', required: false, foreignkey: '',
-  },
-  eventCode: {
-    key: 'eventCode', dbKey: 'event_code', type: 'text', required: false, foreignkey: '',
-  },
-  eventSeverity: {
-    key: 'eventSeverity', dbKey: 'event_severity', type: 'text', required: false, foreignkey: '',
-  },
-  outcome: {
-    key: 'outcome', dbKey: 'outcome', type: 'text', required: false, foreignkey: '',
-  },
-  message: {
-    key: 'message', dbKey: 'message', type: 'text', required: false, foreignkey: '',
-  },
-  reason: {
-    key: 'reason', dbKey: 'reason', type: 'text', required: false, foreignkey: '',
-  },
-  timezone: {
-    key: 'timezone', dbKey: 'timezone', type: 'text', required: false, foreignkey: '',
-  },
-  startTime: {
-    key: 'startTime', dbKey: 'start_time', type: 'text', required: false, foreignkey: '',
-  },
-  endTime: {
-    key: 'endTime', dbKey: 'end_time', type: 'text', required: false, foreignkey: '',
-  },
-  eventData: {
-    key: 'eventData', dbKey: 'event_data', type: 'jsonb', required: false, foreignkey: '',
-  },
-  channelId: {
-    key: 'channelId', dbKey: 'channel.id', type: 'text', required: false, foreignkey: '',
-  },
-  channelType: {
-    key: 'channelType', dbKey: 'channel.type', type: 'text', required: false, foreignkey: '',
-  },
-  resourceId: {
-    key: 'resourceId', dbKey: 'resource.id', type: 'text', required: false, foreignkey: '',
-  },
-  resourceType: {
-    key: 'resourceType', dbKey: 'resource.type', type: 'text', required: false, foreignkey: '',
-  },
-  sourceId: {
-    key: 'sourceId', dbKey: 'source.id', type: 'text', required: false, foreignkey: '',
-  },
-  sourceType: {
-    key: 'sourceType', dbKey: 'source.type', type: 'text', required: false, foreignkey: '',
-  },
-  userAgent: {
-    key: 'userAgent', dbKey: 'user.agent', type: 'text', required: false, foreignkey: '',
-  },
-  userId: {
-    key: 'userId', dbKey: 'user.id', type: 'text', required: false, foreignkey: '',
-  },
-  userPool: {
-    key: 'userPool', dbKey: 'user.pool', type: 'text', required: false, foreignkey: '',
-  },
-  userType: {
-    key: 'userType', dbKey: 'user.type', type: 'text', required: false, foreignkey: '',
-  },
-  testCol01: {
-    key: 'testCol01', dbKey: 'test_col_01', type: 'text', required: false, foreignkey: '',
-  },
-};
 export const authRevokedTokens = {
   id: {
     key: 'id', dbKey: 'id', type: 'integer', required: true, foreignkey: '',
   },
   jti: {
     key: 'jti', dbKey: 'jti', type: 'character varying', required: false, foreignkey: '',
+  },
+};
+export const authRoles = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'integer', required: true, foreignkey: '',
+  },
+  roleName: {
+    key: 'roleName', dbKey: 'role_name', type: 'character varying', required: false, foreignkey: '',
+  },
+  roleDescription: {
+    key: 'roleDescription', dbKey: 'role_description', type: 'character varying', required: false, foreignkey: '',
+  },
+};
+export const persons = {
+  personid: {
+    key: 'personid', dbKey: 'personid', type: 'integer', required: true, foreignkey: '',
+  },
+  lastname: {
+    key: 'lastname', dbKey: 'lastname', type: 'text', required: false, foreignkey: '',
+  },
+  firstname: {
+    key: 'firstname', dbKey: 'firstname', type: 'text', required: false, foreignkey: '',
+  },
+  address: {
+    key: 'address', dbKey: 'address', type: 'text', required: false, foreignkey: '',
+  },
+  city: {
+    key: 'city', dbKey: 'city', type: 'text', required: false, foreignkey: '',
+  },
+};
+export const account = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
+  },
+  subdomain: {
+    key: 'subdomain', dbKey: 'subdomain', type: 'text', required: false, foreignkey: '',
+  },
+};
+export const workflowTargetFilters = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  query: {
+    key: 'query', dbKey: 'query', type: 'jsonb', required: true, foreignkey: '',
+  },
+};
+export const contactCustomFieldSection = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'character varying(100)', required: true, foreignkey: '',
+  },
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'character varying(100)', required: true, foreignkey: '',
+  },
+  sectionName: {
+    key: 'sectionName', dbKey: 'section_name', type: 'character varying(255)', required: true, foreignkey: '',
+  },
+  isDeleted: {
+    key: 'isDeleted', dbKey: 'is_deleted', type: 'boolean', required: true, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'character varying(100)', required: true, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'character varying(100)', required: true, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'character varying(100)', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'character varying(100)', required: false, foreignkey: '',
+  },
+};
+export const stripeSubscriptionItem = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  stripePrice: {
+    key: 'stripePrice', dbKey: 'stripe_price', type: 'text', required: false, foreignkey: '',
+  },
+  isTransferPrice: {
+    key: 'isTransferPrice', dbKey: 'is_transfer_price', type: 'boolean', required: false, foreignkey: '',
+  },
+};
+export const theme = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  name: {
+    key: 'name', dbKey: 'name', type: 'text', required: false, foreignkey: '',
+  },
+  theme: {
+    key: 'theme', dbKey: 'theme', type: 'jsonb', required: true, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
   },
 };
 export const eventCategory = {
@@ -224,174 +228,6 @@ export const eventCategory = {
   },
   updatedAt: {
     key: 'updatedAt', dbKey: 'updated_at', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-};
-export const authRoles = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'integer', required: true, foreignkey: '',
-  },
-  roleName: {
-    key: 'roleName', dbKey: 'role_name', type: 'character varying', required: false, foreignkey: '',
-  },
-  roleDescription: {
-    key: 'roleDescription', dbKey: 'role_description', type: 'character varying', required: false, foreignkey: '',
-  },
-};
-export const events = {
-  eventAction: {
-    key: 'eventAction', dbKey: 'event_action', type: 'text', required: false, foreignkey: '',
-  },
-  eventCategory: {
-    key: 'eventCategory', dbKey: 'event_category', type: 'text', required: false, foreignkey: '',
-  },
-  eventClass: {
-    key: 'eventClass', dbKey: 'event_class', type: 'text', required: false, foreignkey: '',
-  },
-  eventCode: {
-    key: 'eventCode', dbKey: 'event_code', type: 'text', required: false, foreignkey: '',
-  },
-  eventData: {
-    key: 'eventData', dbKey: 'event_data', type: 'jsonb', required: false, foreignkey: '',
-  },
-  eventGroup: {
-    key: 'eventGroup', dbKey: 'event_group', type: 'text', required: false, foreignkey: '',
-  },
-  eventId: {
-    key: 'eventId', dbKey: 'event_id', type: 'text', required: true, foreignkey: '',
-  },
-  eventName: {
-    key: 'eventName', dbKey: 'event_name', type: 'text', required: false, foreignkey: '',
-  },
-  eventProvider: {
-    key: 'eventProvider', dbKey: 'event_provider', type: 'text', required: false, foreignkey: '',
-  },
-  eventSeverity: {
-    key: 'eventSeverity', dbKey: 'event_severity', type: 'text', required: false, foreignkey: '',
-  },
-  eventType: {
-    key: 'eventType', dbKey: 'event_type', type: 'text', required: false, foreignkey: '',
-  },
-  message: {
-    key: 'message', dbKey: 'message', type: 'text', required: false, foreignkey: '',
-  },
-  outcome: {
-    key: 'outcome', dbKey: 'outcome', type: 'text', required: false, foreignkey: '',
-  },
-  parentId: {
-    key: 'parentId', dbKey: 'parent_id', type: 'text', required: false, foreignkey: '',
-  },
-  rawBucket: {
-    key: 'rawBucket', dbKey: 'raw_bucket', type: 'text', required: false, foreignkey: '',
-  },
-  rawPath: {
-    key: 'rawPath', dbKey: 'raw_path', type: 'text', required: false, foreignkey: '',
-  },
-  reason: {
-    key: 'reason', dbKey: 'reason', type: 'text', required: false, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  endTime: {
-    key: 'endTime', dbKey: 'end_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  eventTime: {
-    key: 'eventTime', dbKey: 'event_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  startTime: {
-    key: 'startTime', dbKey: 'start_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  destinationId: {
-    key: 'destinationId', dbKey: 'destination.id', type: 'text', required: false, foreignkey: '',
-  },
-  channelId: {
-    key: 'channelId', dbKey: 'channel.id', type: 'text', required: false, foreignkey: '',
-  },
-  channelType: {
-    key: 'channelType', dbKey: 'channel.type', type: 'text', required: false, foreignkey: '',
-  },
-  destinationLocation: {
-    key: 'destinationLocation', dbKey: 'destination.location', type: 'text', required: false, foreignkey: '',
-  },
-  destinationType: {
-    key: 'destinationType', dbKey: 'destination.type', type: 'text', required: false, foreignkey: '',
-  },
-  deviceIp: {
-    key: 'deviceIp', dbKey: 'device.ip', type: 'text', required: false, foreignkey: '',
-  },
-  deviceLocationCity: {
-    key: 'deviceLocationCity', dbKey: 'device.location.city', type: 'text', required: false, foreignkey: '',
-  },
-  deviceLocationContinent: {
-    key: 'deviceLocationContinent', dbKey: 'device.location.continent', type: 'text', required: false, foreignkey: '',
-  },
-  deviceLocationCoordinatesLat: {
-    key: 'deviceLocationCoordinatesLat', dbKey: 'device.location.coordinates.lat', type: 'text', required: false, foreignkey: '',
-  },
-  deviceLocationCoordinatesLon: {
-    key: 'deviceLocationCoordinatesLon', dbKey: 'device.location.coordinates.lon', type: 'text', required: false, foreignkey: '',
-  },
-  deviceLocationCountry: {
-    key: 'deviceLocationCountry', dbKey: 'device.location.country', type: 'text', required: false, foreignkey: '',
-  },
-  deviceLocationZip: {
-    key: 'deviceLocationZip', dbKey: 'device.location.zip', type: 'text', required: false, foreignkey: '',
-  },
-  deviceTimezone: {
-    key: 'deviceTimezone', dbKey: 'device.timezone', type: 'text', required: false, foreignkey: '',
-  },
-  deviceType: {
-    key: 'deviceType', dbKey: 'device.type', type: 'text', required: false, foreignkey: '',
-  },
-  referralId: {
-    key: 'referralId', dbKey: 'referral.id', type: 'text', required: false, foreignkey: '',
-  },
-  referralType: {
-    key: 'referralType', dbKey: 'referral.type', type: 'text', required: false, foreignkey: '',
-  },
-  resourceId: {
-    key: 'resourceId', dbKey: 'resource.id', type: 'text', required: false, foreignkey: '',
-  },
-  resourceType: {
-    key: 'resourceType', dbKey: 'resource.type', type: 'text', required: false, foreignkey: '',
-  },
-  sourceId: {
-    key: 'sourceId', dbKey: 'source.id', type: 'text', required: false, foreignkey: '',
-  },
-  sourceType: {
-    key: 'sourceType', dbKey: 'source.type', type: 'text', required: false, foreignkey: '',
-  },
-  userAgent: {
-    key: 'userAgent', dbKey: 'user.agent', type: 'text', required: false, foreignkey: '',
-  },
-  userId: {
-    key: 'userId', dbKey: 'user.id', type: 'text', required: false, foreignkey: '',
-  },
-  userPool: {
-    key: 'userPool', dbKey: 'user.pool', type: 'text', required: false, foreignkey: '',
-  },
-  userType: {
-    key: 'userType', dbKey: 'user.type', type: 'text', required: false, foreignkey: '',
-  },
-  timezone: {
-    key: 'timezone', dbKey: 'timezone', type: 'text', required: false, foreignkey: '',
-  },
-};
-export const persons = {
-  personid: {
-    key: 'personid', dbKey: 'personid', type: 'integer', required: true, foreignkey: '',
-  },
-  lastname: {
-    key: 'lastname', dbKey: 'lastname', type: 'text', required: false, foreignkey: '',
-  },
-  firstname: {
-    key: 'firstname', dbKey: 'firstname', type: 'text', required: false, foreignkey: '',
-  },
-  address: {
-    key: 'address', dbKey: 'address', type: 'text', required: false, foreignkey: '',
-  },
-  city: {
-    key: 'city', dbKey: 'city', type: 'text', required: false, foreignkey: '',
   },
 };
 export const authUsers = {
@@ -421,73 +257,6 @@ export const authUsers = {
   },
   isAdmin: {
     key: 'isAdmin', dbKey: 'is_admin', type: 'character varying', required: true, foreignkey: '',
-  },
-};
-export const account = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
-  },
-  subdomain: {
-    key: 'subdomain', dbKey: 'subdomain', type: 'text', required: false, foreignkey: '',
-  },
-};
-export const templateVersion = {
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'templateVersion',
-  },
-  version: {
-    key: 'version', dbKey: 'version', type: 'text', required: true, foreignkey: '',
-  },
-  templateId: {
-    key: 'templateId', dbKey: 'template_id', type: 'text', required: true, foreignkey: '',
-  },
-  type: {
-    key: 'type', dbKey: 'type', type: 'text', required: false, foreignkey: '',
-  },
-  name: {
-    key: 'name', dbKey: 'name', type: 'text', required: false, foreignkey: '',
-  },
-  data: {
-    key: 'data', dbKey: 'data', type: 'jsonb', required: false, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
-  },
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
   },
 };
 export const workflowState = {
@@ -523,38 +292,6 @@ export const workflowState = {
   },
   updateRequest: {
     key: 'updateRequest', dbKey: 'update_request', type: 'character varying(100)', required: false, foreignkey: '',
-  },
-};
-export const contactTag = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'contactTag',
-  },
-  name: {
-    key: 'name', dbKey: 'name', type: 'text', required: true, foreignkey: '',
-  },
-  order: {
-    key: 'order', dbKey: 'order', type: 'integer', required: true, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
   },
 };
 export const loSubscriptionDailyStats = {
@@ -593,37 +330,6 @@ export const loSubscriptionDailyStats = {
   },
   statsDate: {
     key: 'statsDate', dbKey: 'stats_date', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-};
-export const workflowTargetFilters = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  query: {
-    key: 'query', dbKey: 'query', type: 'jsonb', required: true, foreignkey: '',
-  },
-};
-export const eventType = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'integer', required: true, foreignkey: '',
-  },
-  eventType: {
-    key: 'eventType', dbKey: 'event_type', type: 'text', required: true, foreignkey: '',
-  },
-  eventCategoryId: {
-    key: 'eventCategoryId', dbKey: 'event_category_id', type: 'integer', required: true, foreignkey: 'eventType',
-  },
-  eventTypeDescription: {
-    key: 'eventTypeDescription', dbKey: 'event_type_description', type: 'text', required: false, foreignkey: '',
-  },
-  dbAction: {
-    key: 'dbAction', dbKey: 'db_action', type: 'text', required: false, foreignkey: '',
-  },
-  createdAt: {
-    key: 'createdAt', dbKey: 'created_at', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  updatedAt: {
-    key: 'updatedAt', dbKey: 'updated_at', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
   },
 };
 export const loLeadRaw = {
@@ -847,44 +553,6 @@ export const loLeadRaw = {
     key: 'billingStatus', dbKey: 'billing_status', type: 'text', required: false, foreignkey: '',
   },
 };
-export const elementVersion = {
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'elementVersion',
-  },
-  version: {
-    key: 'version', dbKey: 'version', type: 'text', required: true, foreignkey: '',
-  },
-  elementId: {
-    key: 'elementId', dbKey: 'element_id', type: 'text', required: true, foreignkey: '',
-  },
-  name: {
-    key: 'name', dbKey: 'name', type: 'text', required: false, foreignkey: '',
-  },
-  data: {
-    key: 'data', dbKey: 'data', type: 'jsonb', required: false, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
-  },
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-};
 export const workflowTemplate = {
   id: {
     key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
@@ -915,70 +583,6 @@ export const workflowTemplate = {
   },
   updatedBy: {
     key: 'updatedBy', dbKey: 'updated_by', type: 'character varying(100)', required: false, foreignkey: '',
-  },
-};
-export const contactCustomFieldSection = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'character varying(100)', required: true, foreignkey: '',
-  },
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'character varying(100)', required: true, foreignkey: '',
-  },
-  sectionName: {
-    key: 'sectionName', dbKey: 'section_name', type: 'character varying(255)', required: true, foreignkey: '',
-  },
-  isDeleted: {
-    key: 'isDeleted', dbKey: 'is_deleted', type: 'boolean', required: true, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'character varying(100)', required: true, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'character varying(100)', required: true, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'character varying(100)', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'character varying(100)', required: false, foreignkey: '',
-  },
-};
-export const contactStatusLifecycle = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  lifecycleName: {
-    key: 'lifecycleName', dbKey: 'lifecycle_name', type: 'text', required: true, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
-  },
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: '',
-  },
-  isDeleted: {
-    key: 'isDeleted', dbKey: 'is_deleted', type: 'boolean', required: true, foreignkey: '',
   },
 };
 export const user = {
@@ -1031,51 +635,291 @@ export const user = {
     key: 'profileImage', dbKey: 'profile_image', type: 'text', required: false, foreignkey: '',
   },
 };
-export const property = {
+export const workflow = {
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: '',
+  },
   id: {
     key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
   },
+  sourceTemplate: {
+    key: 'sourceTemplate', dbKey: 'source_template', type: 'text', required: false, foreignkey: '',
+  },
+  status: {
+    key: 'status', dbKey: 'status', type: 'workflow_status', required: true, foreignkey: '',
+  },
+  steps: {
+    key: 'steps', dbKey: 'steps', type: 'jsonb', required: true, foreignkey: '',
+  },
+  targetFilter: {
+    key: 'targetFilter', dbKey: 'target_filter', type: 'text', required: true, foreignkey: '',
+  },
+  apiVersion: {
+    key: 'apiVersion', dbKey: 'api_version', type: 'text', required: true, foreignkey: '',
+  },
+  entityName: {
+    key: 'entityName', dbKey: 'entity_name', type: 'text', required: true, foreignkey: '',
+  },
+  firstStep: {
+    key: 'firstStep', dbKey: 'first_step', type: 'text', required: true, foreignkey: '',
+  },
+  flowType: {
+    key: 'flowType', dbKey: 'flow_type', type: 'text', required: true, foreignkey: '',
+  },
+  name: {
+    key: 'name', dbKey: 'name', type: 'text', required: true, foreignkey: '',
+  },
+  recurring: {
+    key: 'recurring', dbKey: 'recurring', type: 'jsonb', required: false, foreignkey: '',
+  },
+  startTime: {
+    key: 'startTime', dbKey: 'start_time', type: 'text', required: true, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'character varying(100)', required: true, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'character varying(100)', required: true, foreignkey: 'workflow',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'character varying(100)', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'character varying(100)', required: false, foreignkey: '',
+  },
+  retry: {
+    key: 'retry', dbKey: 'retry', type: 'jsonb', required: false, foreignkey: '',
+  },
+};
+export const pageVersion = {
   accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'property',
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'pageVersion',
+  },
+  version: {
+    key: 'version', dbKey: 'version', type: 'text', required: true, foreignkey: '',
+  },
+  pageId: {
+    key: 'pageId', dbKey: 'page_id', type: 'text', required: true, foreignkey: '',
+  },
+  name: {
+    key: 'name', dbKey: 'name', type: 'text', required: false, foreignkey: '',
+  },
+  body: {
+    key: 'body', dbKey: 'body', type: 'jsonb', required: false, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
+  },
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+};
+export const contactOtherAssociates = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'character varying(100)', required: true, foreignkey: '',
+  },
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'character varying(100)', required: true, foreignkey: '',
+  },
+  contactId: {
+    key: 'contactId', dbKey: 'contact_id', type: 'character varying(100)', required: true, foreignkey: 'contactOtherAssociates',
+  },
+  associateName: {
+    key: 'associateName', dbKey: 'associate_name', type: 'character varying(255)', required: true, foreignkey: '',
+  },
+};
+export const engagement = {
+  parentId: {
+    key: 'parentId', dbKey: 'parent_id', type: 'text', required: false, foreignkey: '',
+  },
+  eventId: {
+    key: 'eventId', dbKey: 'event_id', type: 'text', required: true, foreignkey: '',
+  },
+  rawBucket: {
+    key: 'rawBucket', dbKey: 'raw_bucket', type: 'text', required: false, foreignkey: '',
+  },
+  rawPath: {
+    key: 'rawPath', dbKey: 'raw_path', type: 'text', required: false, foreignkey: '',
+  },
+  eventClass: {
+    key: 'eventClass', dbKey: 'event_class', type: 'text', required: false, foreignkey: '',
+  },
+  eventType: {
+    key: 'eventType', dbKey: 'event_type', type: 'text', required: false, foreignkey: '',
+  },
+  eventTime: {
+    key: 'eventTime', dbKey: 'event_time', type: 'text', required: false, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'text', required: false, foreignkey: '',
+  },
+  eventProvider: {
+    key: 'eventProvider', dbKey: 'event_provider', type: 'text', required: false, foreignkey: '',
+  },
+  eventAction: {
+    key: 'eventAction', dbKey: 'event_action', type: 'text', required: false, foreignkey: '',
+  },
+  eventName: {
+    key: 'eventName', dbKey: 'event_name', type: 'text', required: false, foreignkey: '',
+  },
+  eventGroup: {
+    key: 'eventGroup', dbKey: 'event_group', type: 'text', required: false, foreignkey: '',
+  },
+  eventCategory: {
+    key: 'eventCategory', dbKey: 'event_category', type: 'text', required: false, foreignkey: '',
+  },
+  eventCode: {
+    key: 'eventCode', dbKey: 'event_code', type: 'text', required: false, foreignkey: '',
+  },
+  eventSeverity: {
+    key: 'eventSeverity', dbKey: 'event_severity', type: 'text', required: false, foreignkey: '',
+  },
+  outcome: {
+    key: 'outcome', dbKey: 'outcome', type: 'text', required: false, foreignkey: '',
+  },
+  message: {
+    key: 'message', dbKey: 'message', type: 'text', required: false, foreignkey: '',
+  },
+  reason: {
+    key: 'reason', dbKey: 'reason', type: 'text', required: false, foreignkey: '',
+  },
+  timezone: {
+    key: 'timezone', dbKey: 'timezone', type: 'text', required: false, foreignkey: '',
+  },
+  startTime: {
+    key: 'startTime', dbKey: 'start_time', type: 'text', required: false, foreignkey: '',
+  },
+  endTime: {
+    key: 'endTime', dbKey: 'end_time', type: 'text', required: false, foreignkey: '',
+  },
+  eventData: {
+    key: 'eventData', dbKey: 'event_data', type: 'jsonb', required: false, foreignkey: '',
+  },
+  channelId: {
+    key: 'channelId', dbKey: 'channel.id', type: 'text', required: false, foreignkey: '',
+  },
+  channelType: {
+    key: 'channelType', dbKey: 'channel.type', type: 'text', required: false, foreignkey: '',
+  },
+  resourceId: {
+    key: 'resourceId', dbKey: 'resource.id', type: 'text', required: false, foreignkey: '',
+  },
+  resourceType: {
+    key: 'resourceType', dbKey: 'resource.type', type: 'text', required: false, foreignkey: '',
+  },
+  sourceId: {
+    key: 'sourceId', dbKey: 'source.id', type: 'text', required: false, foreignkey: '',
+  },
+  sourceType: {
+    key: 'sourceType', dbKey: 'source.type', type: 'text', required: false, foreignkey: '',
+  },
+  userAgent: {
+    key: 'userAgent', dbKey: 'user.agent', type: 'text', required: false, foreignkey: '',
+  },
+  userId: {
+    key: 'userId', dbKey: 'user.id', type: 'text', required: false, foreignkey: '',
+  },
+  userPool: {
+    key: 'userPool', dbKey: 'user.pool', type: 'text', required: false, foreignkey: '',
+  },
+  userType: {
+    key: 'userType', dbKey: 'user.type', type: 'text', required: false, foreignkey: '',
+  },
+  testCol01: {
+    key: 'testCol01', dbKey: 'test_col_01', type: 'text', required: false, foreignkey: '',
+  },
+};
+export const templateVersion = {
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'templateVersion',
+  },
+  version: {
+    key: 'version', dbKey: 'version', type: 'text', required: true, foreignkey: '',
+  },
+  templateId: {
+    key: 'templateId', dbKey: 'template_id', type: 'text', required: true, foreignkey: '',
   },
   type: {
-    key: 'type', dbKey: 'type', type: 'text', required: true, foreignkey: '',
+    key: 'type', dbKey: 'type', type: 'text', required: false, foreignkey: '',
   },
-  street1: {
-    key: 'street1', dbKey: 'street_1', type: 'text', required: false, foreignkey: '',
+  name: {
+    key: 'name', dbKey: 'name', type: 'text', required: false, foreignkey: '',
   },
-  street2: {
-    key: 'street2', dbKey: 'street_2', type: 'text', required: false, foreignkey: '',
+  data: {
+    key: 'data', dbKey: 'data', type: 'jsonb', required: false, foreignkey: '',
   },
-  city: {
-    key: 'city', dbKey: 'city', type: 'text', required: false, foreignkey: '',
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
   },
-  state: {
-    key: 'state', dbKey: 'state', type: 'text', required: false, foreignkey: '',
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
   },
-  country: {
-    key: 'country', dbKey: 'country', type: 'text', required: false, foreignkey: '',
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
   },
-  taxes: {
-    key: 'taxes', dbKey: 'taxes', type: 'double precision', required: false, foreignkey: '',
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
   },
-  miscExp: {
-    key: 'miscExp', dbKey: 'misc_exp', type: 'double precision', required: false, foreignkey: '',
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
   },
-  rentalIncome: {
-    key: 'rentalIncome', dbKey: 'rental_income', type: 'double precision', required: false, foreignkey: '',
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
   },
-  squareFootage: {
-    key: 'squareFootage', dbKey: 'square_footage', type: 'double precision', required: false, foreignkey: '',
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
   },
-  bedrooms: {
-    key: 'bedrooms', dbKey: 'bedrooms', type: 'double precision', required: false, foreignkey: '',
+};
+export const eventType = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'integer', required: true, foreignkey: '',
   },
-  baths: {
-    key: 'baths', dbKey: 'baths', type: 'double precision', required: false, foreignkey: '',
+  eventType: {
+    key: 'eventType', dbKey: 'event_type', type: 'text', required: true, foreignkey: '',
   },
-  postal: {
-    key: 'postal', dbKey: 'postal', type: 'text', required: false, foreignkey: '',
+  eventCategoryId: {
+    key: 'eventCategoryId', dbKey: 'event_category_id', type: 'integer', required: true, foreignkey: 'eventType',
+  },
+  eventTypeDescription: {
+    key: 'eventTypeDescription', dbKey: 'event_type_description', type: 'text', required: false, foreignkey: '',
+  },
+  dbAction: {
+    key: 'dbAction', dbKey: 'db_action', type: 'text', required: false, foreignkey: '',
+  },
+  createdAt: {
+    key: 'createdAt', dbKey: 'created_at', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  updatedAt: {
+    key: 'updatedAt', dbKey: 'updated_at', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+};
+export const contactStatusLifecycle = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  lifecycleName: {
+    key: 'lifecycleName', dbKey: 'lifecycle_name', type: 'text', required: true, foreignkey: '',
   },
   createdBy: {
     key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
@@ -1095,20 +939,11 @@ export const property = {
   updateRequest: {
     key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
   },
-  actualValue: {
-    key: 'actualValue', dbKey: 'actual_value', type: 'double precision', required: false, foreignkey: '',
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: '',
   },
-  estimatedValue: {
-    key: 'estimatedValue', dbKey: 'estimated_value', type: 'double precision', required: false, foreignkey: '',
-  },
-  hazardInsurance: {
-    key: 'hazardInsurance', dbKey: 'hazard_insurance', type: 'double precision', required: false, foreignkey: '',
-  },
-  propertyUnits: {
-    key: 'propertyUnits', dbKey: 'property_units', type: 'double precision', required: false, foreignkey: '',
-  },
-  propertyOccupancy: {
-    key: 'propertyOccupancy', dbKey: 'property_occupancy', type: 'character varying(50)', required: false, foreignkey: '',
+  isDeleted: {
+    key: 'isDeleted', dbKey: 'is_deleted', type: 'boolean', required: true, foreignkey: '',
   },
 };
 export const contactCustomField = {
@@ -1153,50 +988,6 @@ export const contactCustomField = {
   },
   isDeleted: {
     key: 'isDeleted', dbKey: 'is_deleted', type: 'boolean', required: true, foreignkey: '',
-  },
-};
-export const element = {
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'element',
-  },
-  templateId: {
-    key: 'templateId', dbKey: 'template_id', type: 'text', required: false, foreignkey: 'element',
-  },
-  latestTemplate: {
-    key: 'latestTemplate', dbKey: 'latest_template', type: 'text', required: false, foreignkey: '',
-  },
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  name: {
-    key: 'name', dbKey: 'name', type: 'text', required: true, foreignkey: '',
-  },
-  data: {
-    key: 'data', dbKey: 'data', type: 'jsonb', required: true, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  type: {
-    key: 'type', dbKey: 'type', type: 'text', required: true, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
-  },
-  latestVersionId: {
-    key: 'latestVersionId', dbKey: 'latest_version_id', type: 'text', required: true, foreignkey: 'element',
   },
 };
 export const loSubscription = {
@@ -1441,59 +1232,6 @@ export const loSubscription = {
     key: 'weight', dbKey: 'weight', type: 'integer', required: true, foreignkey: '',
   },
 };
-export const partner = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'partner',
-  },
-  organizationId: {
-    key: 'organizationId', dbKey: 'organization_id', type: 'text', required: false, foreignkey: 'partner',
-  },
-  type: {
-    key: 'type', dbKey: 'type', type: 'text', required: false, foreignkey: '',
-  },
-  firstName: {
-    key: 'firstName', dbKey: 'first_name', type: 'text', required: true, foreignkey: '',
-  },
-  lastName: {
-    key: 'lastName', dbKey: 'last_name', type: 'text', required: true, foreignkey: '',
-  },
-  personalEmail: {
-    key: 'personalEmail', dbKey: 'personal_email', type: 'text', required: false, foreignkey: '',
-  },
-  workEmail: {
-    key: 'workEmail', dbKey: 'work_email', type: 'text', required: false, foreignkey: '',
-  },
-  mobilePhone: {
-    key: 'mobilePhone', dbKey: 'mobile_phone', type: 'text', required: false, foreignkey: '',
-  },
-  workPhone: {
-    key: 'workPhone', dbKey: 'work_phone', type: 'text', required: false, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
-  },
-  addressId: {
-    key: 'addressId', dbKey: 'address_id', type: 'text', required: false, foreignkey: 'partner',
-  },
-};
 export const contactComment = {
   id: {
     key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
@@ -1526,104 +1264,6 @@ export const contactComment = {
     key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
   },
 };
-export const loan = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'loan',
-  },
-  loanOfficerId: {
-    key: 'loanOfficerId', dbKey: 'loan_officer_id', type: 'text', required: false, foreignkey: 'loan',
-  },
-  addressId: {
-    key: 'addressId', dbKey: 'address_id', type: 'text', required: false, foreignkey: 'loan',
-  },
-  purpose: {
-    key: 'purpose', dbKey: 'purpose', type: 'text', required: false, foreignkey: '',
-  },
-  product: {
-    key: 'product', dbKey: 'product', type: 'text', required: false, foreignkey: '',
-  },
-  amount: {
-    key: 'amount', dbKey: 'amount', type: 'double precision', required: false, foreignkey: '',
-  },
-  interestRate: {
-    key: 'interestRate', dbKey: 'interest_rate', type: 'double precision', required: false, foreignkey: '',
-  },
-  term: {
-    key: 'term', dbKey: 'term', type: 'text', required: false, foreignkey: '',
-  },
-  downPayment: {
-    key: 'downPayment', dbKey: 'down_payment', type: 'double precision', required: false, foreignkey: '',
-  },
-  remainingTerm: {
-    key: 'remainingTerm', dbKey: 'remaining_term', type: 'text', required: false, foreignkey: '',
-  },
-  notes: {
-    key: 'notes', dbKey: 'notes', type: 'text', required: false, foreignkey: '',
-  },
-  mortgageInsurance: {
-    key: 'mortgageInsurance', dbKey: 'mortgage_insurance', type: 'double precision', required: false, foreignkey: '',
-  },
-  status: {
-    key: 'status', dbKey: 'status', type: 'text', required: true, foreignkey: '',
-  },
-  closingDate: {
-    key: 'closingDate', dbKey: 'closing_date', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
-  },
-  remainingValue: {
-    key: 'remainingValue', dbKey: 'remaining_value', type: 'double precision', required: false, foreignkey: '',
-  },
-  amortization: {
-    key: 'amortization', dbKey: 'amortization', type: 'text', required: false, foreignkey: '',
-  },
-  desiredOrCurrent: {
-    key: 'desiredOrCurrent', dbKey: 'desired_or_current', type: 'text', required: true, foreignkey: '',
-  },
-  desiredCashOutAmount: {
-    key: 'desiredCashOutAmount', dbKey: 'desired_cash_out_amount', type: 'double precision', required: false, foreignkey: '',
-  },
-  desiredDownPayment: {
-    key: 'desiredDownPayment', dbKey: 'desired_down_payment', type: 'double precision', required: false, foreignkey: '',
-  },
-  loanPropertyType: {
-    key: 'loanPropertyType', dbKey: 'loan_property_type', type: 'character varying(255)', required: false, foreignkey: '',
-  },
-  loanUnits: {
-    key: 'loanUnits', dbKey: 'loan_units', type: 'double precision', required: false, foreignkey: '',
-  },
-  timeline: {
-    key: 'timeline', dbKey: 'timeline', type: 'character varying(80)', required: false, foreignkey: '',
-  },
-  loanPropertyOccupancy: {
-    key: 'loanPropertyOccupancy', dbKey: 'loan_property_occupancy', type: 'text', required: false, foreignkey: '',
-  },
-  loanPropertyValue: {
-    key: 'loanPropertyValue', dbKey: 'loan_property_value', type: 'double precision', required: false, foreignkey: '',
-  },
-  loanType: {
-    key: 'loanType', dbKey: 'loan_type', type: 'text', required: false, foreignkey: '',
-  },
-};
 export const bridgeContactTag = {
   contactId: {
     key: 'contactId', dbKey: 'contact_id', type: 'text', required: true, foreignkey: 'bridgeContactTag',
@@ -1633,29 +1273,6 @@ export const bridgeContactTag = {
   },
   accountId: {
     key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'bridgeContactTag',
-  },
-  assignedBy: {
-    key: 'assignedBy', dbKey: 'assigned_by', type: 'text', required: true, foreignkey: '',
-  },
-  assignTime: {
-    key: 'assignTime', dbKey: 'assign_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  assignRequest: {
-    key: 'assignRequest', dbKey: 'assign_request', type: 'text', required: true, foreignkey: '',
-  },
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-};
-export const bridgeContactUser = {
-  contactId: {
-    key: 'contactId', dbKey: 'contact_id', type: 'text', required: true, foreignkey: 'bridgeContactUser',
-  },
-  userId: {
-    key: 'userId', dbKey: 'user_id', type: 'text', required: true, foreignkey: 'bridgeContactUser',
-  },
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'bridgeContactUser',
   },
   assignedBy: {
     key: 'assignedBy', dbKey: 'assigned_by', type: 'text', required: true, foreignkey: '',
@@ -1795,20 +1412,6 @@ export const eventsV2 = {
     key: 'channelType', dbKey: 'channel_type', type: 'text', required: false, foreignkey: '',
   },
 };
-export const bridgeSectionLifecycle = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'character varying(100)', required: true, foreignkey: '',
-  },
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'character varying(100)', required: true, foreignkey: 'bridgeSectionLifecycle',
-  },
-  customFieldSectionId: {
-    key: 'customFieldSectionId', dbKey: 'custom_field_section_id', type: 'character varying(100)', required: true, foreignkey: 'bridgeSectionLifecycle',
-  },
-  lifecycleId: {
-    key: 'lifecycleId', dbKey: 'lifecycle_id', type: 'character varying(100)', required: true, foreignkey: 'bridgeSectionLifecycle',
-  },
-};
 export const bridgeContactLoan = {
   contactId: {
     key: 'contactId', dbKey: 'contact_id', type: 'text', required: true, foreignkey: 'bridgeContactLoan',
@@ -1835,143 +1438,12 @@ export const bridgeContactLoan = {
     key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
   },
 };
-export const contactCustomFieldValue = {
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'contactCustomFieldValue',
-  },
-  contactId: {
-    key: 'contactId', dbKey: 'contact_id', type: 'text', required: true, foreignkey: 'contactCustomFieldValue',
-  },
-  customFieldId: {
-    key: 'customFieldId', dbKey: 'custom_field_id', type: 'text', required: true, foreignkey: 'contactCustomFieldValue',
-  },
-  value: {
-    key: 'value', dbKey: 'value', type: 'text', required: true, foreignkey: '',
-  },
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-};
 export const elementtotemplateVersion = {
   A: {
     key: 'A', dbKey: 'A', type: 'text', required: true, foreignkey: 'elementtotemplateVersion',
   },
   B: {
     key: 'B', dbKey: 'B', type: 'text', required: true, foreignkey: 'elementtotemplateVersion',
-  },
-};
-export const stripeSubscriptionItem = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  stripePrice: {
-    key: 'stripePrice', dbKey: 'stripe_price', type: 'text', required: false, foreignkey: '',
-  },
-  isTransferPrice: {
-    key: 'isTransferPrice', dbKey: 'is_transfer_price', type: 'boolean', required: false, foreignkey: '',
-  },
-};
-export const workflow = {
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: '',
-  },
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  sourceTemplate: {
-    key: 'sourceTemplate', dbKey: 'source_template', type: 'text', required: false, foreignkey: '',
-  },
-  status: {
-    key: 'status', dbKey: 'status', type: 'workflow_status', required: true, foreignkey: '',
-  },
-  steps: {
-    key: 'steps', dbKey: 'steps', type: 'jsonb', required: true, foreignkey: '',
-  },
-  targetFilter: {
-    key: 'targetFilter', dbKey: 'target_filter', type: 'text', required: true, foreignkey: '',
-  },
-  apiVersion: {
-    key: 'apiVersion', dbKey: 'api_version', type: 'text', required: true, foreignkey: '',
-  },
-  entityName: {
-    key: 'entityName', dbKey: 'entity_name', type: 'text', required: true, foreignkey: '',
-  },
-  firstStep: {
-    key: 'firstStep', dbKey: 'first_step', type: 'text', required: true, foreignkey: '',
-  },
-  flowType: {
-    key: 'flowType', dbKey: 'flow_type', type: 'text', required: true, foreignkey: '',
-  },
-  name: {
-    key: 'name', dbKey: 'name', type: 'text', required: true, foreignkey: '',
-  },
-  recurring: {
-    key: 'recurring', dbKey: 'recurring', type: 'jsonb', required: false, foreignkey: '',
-  },
-  startTime: {
-    key: 'startTime', dbKey: 'start_time', type: 'text', required: true, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'character varying(100)', required: true, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'character varying(100)', required: true, foreignkey: 'workflow',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'character varying(100)', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'character varying(100)', required: false, foreignkey: '',
-  },
-  retry: {
-    key: 'retry', dbKey: 'retry', type: 'jsonb', required: false, foreignkey: '',
-  },
-};
-export const template = {
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'template',
-  },
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  type: {
-    key: 'type', dbKey: 'type', type: 'text', required: true, foreignkey: '',
-  },
-  name: {
-    key: 'name', dbKey: 'name', type: 'text', required: true, foreignkey: '',
-  },
-  data: {
-    key: 'data', dbKey: 'data', type: 'jsonb', required: true, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  thumbnail: {
-    key: 'thumbnail', dbKey: 'thumbnail', type: 'text', required: true, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
-  },
-  latestVersionId: {
-    key: 'latestVersionId', dbKey: 'latest_version_id', type: 'text', required: true, foreignkey: 'template',
   },
 };
 export const bridgeContactPartner = {
@@ -1998,38 +1470,6 @@ export const bridgeContactPartner = {
   },
   assignRequest: {
     key: 'assignRequest', dbKey: 'assign_request', type: 'character varying(100)', required: true, foreignkey: '',
-  },
-};
-export const links = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'links',
-  },
-  sourceId: {
-    key: 'sourceId', dbKey: 'source_id', type: 'text', required: true, foreignkey: 'links',
-  },
-  destinationId: {
-    key: 'destinationId', dbKey: 'destination_id', type: 'text', required: true, foreignkey: 'links',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
   },
 };
 export const contactReminder = {
@@ -2079,94 +1519,6 @@ export const contactReminder = {
     key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
   },
 };
-export const bridgeContactContact = {
-  contactId: {
-    key: 'contactId', dbKey: 'contact_id', type: 'text', required: true, foreignkey: 'bridgeContactContact',
-  },
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'bridgeContactContact',
-  },
-  assignedTo: {
-    key: 'assignedTo', dbKey: 'assigned_to', type: 'text', required: true, foreignkey: '',
-  },
-  relationship: {
-    key: 'relationship', dbKey: 'relationship', type: 'text', required: true, foreignkey: '',
-  },
-  assignedBy: {
-    key: 'assignedBy', dbKey: 'assigned_by', type: 'text', required: true, foreignkey: '',
-  },
-  assignTime: {
-    key: 'assignTime', dbKey: 'assign_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  assignRequest: {
-    key: 'assignRequest', dbKey: 'assign_request', type: 'text', required: true, foreignkey: '',
-  },
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-};
-export const page = {
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'page',
-  },
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  name: {
-    key: 'name', dbKey: 'name', type: 'text', required: true, foreignkey: '',
-  },
-  body: {
-    key: 'body', dbKey: 'body', type: 'jsonb', required: true, foreignkey: '',
-  },
-  templateId: {
-    key: 'templateId', dbKey: 'template_id', type: 'text', required: false, foreignkey: 'page',
-  },
-  path: {
-    key: 'path', dbKey: 'path', type: 'text', required: false, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  headerMeta: {
-    key: 'headerMeta', dbKey: 'header_meta', type: 'jsonb', required: false, foreignkey: '',
-  },
-  themeId: {
-    key: 'themeId', dbKey: 'theme_id', type: 'text', required: true, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
-  },
-  category: {
-    key: 'category', dbKey: 'category', type: 'page_category', required: false, foreignkey: '',
-  },
-  ownerId: {
-    key: 'ownerId', dbKey: 'owner_id', type: 'text', required: true, foreignkey: '',
-  },
-  type: {
-    key: 'type', dbKey: 'type', type: 'page_type', required: true, foreignkey: '',
-  },
-  status: {
-    key: 'status', dbKey: 'status', type: 'page_status', required: false, foreignkey: '',
-  },
-  latestTemplateId: {
-    key: 'latestTemplateId', dbKey: 'latest_template_id', type: 'text', required: false, foreignkey: 'page',
-  },
-  latestVersionId: {
-    key: 'latestVersionId', dbKey: 'latest_version_id', type: 'text', required: true, foreignkey: 'page',
-  },
-};
 export const contactStatus = {
   id: {
     key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
@@ -2208,300 +1560,12 @@ export const contactStatus = {
     key: 'isDeleted', dbKey: 'is_deleted', type: 'boolean', required: true, foreignkey: '',
   },
 };
-export const pageVersion = {
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'pageVersion',
-  },
-  version: {
-    key: 'version', dbKey: 'version', type: 'text', required: true, foreignkey: '',
-  },
-  pageId: {
-    key: 'pageId', dbKey: 'page_id', type: 'text', required: true, foreignkey: '',
-  },
-  name: {
-    key: 'name', dbKey: 'name', type: 'text', required: false, foreignkey: '',
-  },
-  body: {
-    key: 'body', dbKey: 'body', type: 'jsonb', required: false, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
-  },
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-};
-export const workflowTemplatePermission = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'workflowTemplatePermission',
-  },
-  userId: {
-    key: 'userId', dbKey: 'user_id', type: 'text', required: true, foreignkey: 'workflowTemplatePermission',
-  },
-  workflowTemplateId: {
-    key: 'workflowTemplateId', dbKey: 'workflow_template_id', type: 'text', required: true, foreignkey: 'workflowTemplatePermission',
-  },
-  permission: {
-    key: 'permission', dbKey: 'permission', type: 'permission', required: true, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'character varying(100)', required: true, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'character varying(100)', required: true, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'character varying(100)', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'character varying(100)', required: false, foreignkey: '',
-  },
-};
 export const workflowtoworkflowTargetFilters = {
   A: {
     key: 'A', dbKey: 'A', type: 'text', required: true, foreignkey: 'workflowtoworkflowTargetFilters',
   },
   B: {
     key: 'B', dbKey: 'B', type: 'text', required: true, foreignkey: 'workflowtoworkflowTargetFilters',
-  },
-};
-export const incomeSource = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'incomeSource',
-  },
-  contactId: {
-    key: 'contactId', dbKey: 'contact_id', type: 'text', required: false, foreignkey: 'incomeSource',
-  },
-  addressId: {
-    key: 'addressId', dbKey: 'address_id', type: 'text', required: false, foreignkey: 'incomeSource',
-  },
-  organizationId: {
-    key: 'organizationId', dbKey: 'organization_id', type: 'text', required: false, foreignkey: 'incomeSource',
-  },
-  type: {
-    key: 'type', dbKey: 'type', type: 'text', required: false, foreignkey: '',
-  },
-  employerName: {
-    key: 'employerName', dbKey: 'employer_name', type: 'text', required: false, foreignkey: '',
-  },
-  title: {
-    key: 'title', dbKey: 'title', type: 'text', required: false, foreignkey: '',
-  },
-  phone: {
-    key: 'phone', dbKey: 'phone', type: 'text', required: false, foreignkey: '',
-  },
-  amount: {
-    key: 'amount', dbKey: 'amount', type: 'double precision', required: false, foreignkey: '',
-  },
-  incomeAmountPeriod: {
-    key: 'incomeAmountPeriod', dbKey: 'income_amount_period', type: 'text', required: false, foreignkey: '',
-  },
-  startDate: {
-    key: 'startDate', dbKey: 'start_date', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  endDate: {
-    key: 'endDate', dbKey: 'end_date', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  description: {
-    key: 'description', dbKey: 'description', type: 'text', required: false, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
-  },
-  employerPhone: {
-    key: 'employerPhone', dbKey: 'employer_phone', type: 'character varying(25)', required: false, foreignkey: '',
-  },
-  status: {
-    key: 'status', dbKey: 'status', type: 'character varying(50)', required: false, foreignkey: '',
-  },
-};
-export const activityLog = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  eventId: {
-    key: 'eventId', dbKey: 'event_id', type: 'text', required: false, foreignkey: '',
-  },
-  eventCategoryId: {
-    key: 'eventCategoryId', dbKey: 'event_category_id', type: 'integer', required: true, foreignkey: 'activityLog',
-  },
-  eventCategory: {
-    key: 'eventCategory', dbKey: 'event_category', type: 'text', required: true, foreignkey: '',
-  },
-  eventTypeId: {
-    key: 'eventTypeId', dbKey: 'event_type_id', type: 'integer', required: true, foreignkey: 'activityLog',
-  },
-  eventType: {
-    key: 'eventType', dbKey: 'event_type', type: 'text', required: true, foreignkey: '',
-  },
-  historyData: {
-    key: 'historyData', dbKey: 'history_data', type: 'text', required: false, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  endTime: {
-    key: 'endTime', dbKey: 'end_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  eventClass: {
-    key: 'eventClass', dbKey: 'event_class', type: 'text', required: false, foreignkey: '',
-  },
-  eventCode: {
-    key: 'eventCode', dbKey: 'event_code', type: 'text', required: false, foreignkey: '',
-  },
-  eventData: {
-    key: 'eventData', dbKey: 'event_data', type: 'text', required: false, foreignkey: '',
-  },
-  eventSeverity: {
-    key: 'eventSeverity', dbKey: 'event_severity', type: 'text', required: false, foreignkey: '',
-  },
-  eventTime: {
-    key: 'eventTime', dbKey: 'event_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  message: {
-    key: 'message', dbKey: 'message', type: 'text', required: false, foreignkey: '',
-  },
-  ownerId: {
-    key: 'ownerId', dbKey: 'owner_id', type: 'text', required: false, foreignkey: '',
-  },
-  reason: {
-    key: 'reason', dbKey: 'reason', type: 'text', required: false, foreignkey: '',
-  },
-  startTime: {
-    key: 'startTime', dbKey: 'start_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  timeZone: {
-    key: 'timeZone', dbKey: 'time_zone', type: 'text', required: false, foreignkey: '',
-  },
-  channelId: {
-    key: 'channelId', dbKey: 'channel_id', type: 'text', required: false, foreignkey: '',
-  },
-  channelType: {
-    key: 'channelType', dbKey: 'channel_type', type: 'text', required: false, foreignkey: '',
-  },
-  resourceId: {
-    key: 'resourceId', dbKey: 'resource_id', type: 'text', required: false, foreignkey: '',
-  },
-  resourceType: {
-    key: 'resourceType', dbKey: 'resource_type', type: 'text', required: false, foreignkey: '',
-  },
-  sourceId: {
-    key: 'sourceId', dbKey: 'source_id', type: 'text', required: false, foreignkey: '',
-  },
-  sourceType: {
-    key: 'sourceType', dbKey: 'source_type', type: 'text', required: false, foreignkey: '',
-  },
-  contactId: {
-    key: 'contactId', dbKey: 'contact_id', type: 'text', required: false, foreignkey: 'activityLog',
-  },
-  masterEventTime: {
-    key: 'masterEventTime', dbKey: 'master_event_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  userId: {
-    key: 'userId', dbKey: 'user_id', type: 'text', required: false, foreignkey: 'activityLog',
-  },
-};
-export const contactOtherAssociates = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'character varying(100)', required: true, foreignkey: '',
-  },
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'character varying(100)', required: true, foreignkey: '',
-  },
-  contactId: {
-    key: 'contactId', dbKey: 'contact_id', type: 'character varying(100)', required: true, foreignkey: 'contactOtherAssociates',
-  },
-  associateName: {
-    key: 'associateName', dbKey: 'associate_name', type: 'character varying(255)', required: true, foreignkey: '',
-  },
-};
-export const organization = {
-  id: {
-    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
-  },
-  accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'organization',
-  },
-  addressId: {
-    key: 'addressId', dbKey: 'address_id', type: 'text', required: false, foreignkey: 'organization',
-  },
-  name: {
-    key: 'name', dbKey: 'name', type: 'text', required: false, foreignkey: '',
-  },
-  type: {
-    key: 'type', dbKey: 'type', type: 'text', required: false, foreignkey: '',
-  },
-  phone: {
-    key: 'phone', dbKey: 'phone', type: 'text', required: false, foreignkey: '',
-  },
-  email: {
-    key: 'email', dbKey: 'email', type: 'text', required: false, foreignkey: '',
-  },
-  nmlsId: {
-    key: 'nmlsId', dbKey: 'nmls_id', type: 'text', required: false, foreignkey: '',
-  },
-  createdBy: {
-    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
-  },
-  createTime: {
-    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
-  },
-  createRequest: {
-    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
-  },
-  updatedBy: {
-    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
-  },
-  updateTime: {
-    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
-  },
-  updateRequest: {
-    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
-  },
-  parentOrganizationId: {
-    key: 'parentOrganizationId', dbKey: 'parent_organization_id', type: 'text', required: false, foreignkey: 'organization',
   },
 };
 export const loLead = {
@@ -2659,6 +1723,759 @@ export const loLead = {
     key: 'transferDate', dbKey: 'transfer_date', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
   },
 };
+export const authUserRoles = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'character varying', required: true, foreignkey: '',
+  },
+  roleId: {
+    key: 'roleId', dbKey: 'role_id', type: 'integer', required: false, foreignkey: 'authUserRoles',
+  },
+  userId: {
+    key: 'userId', dbKey: 'user_id', type: 'integer', required: false, foreignkey: 'authUserRoles',
+  },
+};
+export const events = {
+  eventAction: {
+    key: 'eventAction', dbKey: 'event_action', type: 'text', required: false, foreignkey: '',
+  },
+  eventCategory: {
+    key: 'eventCategory', dbKey: 'event_category', type: 'text', required: false, foreignkey: '',
+  },
+  eventClass: {
+    key: 'eventClass', dbKey: 'event_class', type: 'text', required: false, foreignkey: '',
+  },
+  eventCode: {
+    key: 'eventCode', dbKey: 'event_code', type: 'text', required: false, foreignkey: '',
+  },
+  eventData: {
+    key: 'eventData', dbKey: 'event_data', type: 'jsonb', required: false, foreignkey: '',
+  },
+  eventGroup: {
+    key: 'eventGroup', dbKey: 'event_group', type: 'text', required: false, foreignkey: '',
+  },
+  eventId: {
+    key: 'eventId', dbKey: 'event_id', type: 'text', required: true, foreignkey: '',
+  },
+  eventName: {
+    key: 'eventName', dbKey: 'event_name', type: 'text', required: false, foreignkey: '',
+  },
+  eventProvider: {
+    key: 'eventProvider', dbKey: 'event_provider', type: 'text', required: false, foreignkey: '',
+  },
+  eventSeverity: {
+    key: 'eventSeverity', dbKey: 'event_severity', type: 'text', required: false, foreignkey: '',
+  },
+  eventType: {
+    key: 'eventType', dbKey: 'event_type', type: 'text', required: false, foreignkey: '',
+  },
+  message: {
+    key: 'message', dbKey: 'message', type: 'text', required: false, foreignkey: '',
+  },
+  outcome: {
+    key: 'outcome', dbKey: 'outcome', type: 'text', required: false, foreignkey: '',
+  },
+  parentId: {
+    key: 'parentId', dbKey: 'parent_id', type: 'text', required: false, foreignkey: '',
+  },
+  rawBucket: {
+    key: 'rawBucket', dbKey: 'raw_bucket', type: 'text', required: false, foreignkey: '',
+  },
+  rawPath: {
+    key: 'rawPath', dbKey: 'raw_path', type: 'text', required: false, foreignkey: '',
+  },
+  reason: {
+    key: 'reason', dbKey: 'reason', type: 'text', required: false, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  endTime: {
+    key: 'endTime', dbKey: 'end_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  eventTime: {
+    key: 'eventTime', dbKey: 'event_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  startTime: {
+    key: 'startTime', dbKey: 'start_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  destinationId: {
+    key: 'destinationId', dbKey: 'destination.id', type: 'text', required: false, foreignkey: '',
+  },
+  channelId: {
+    key: 'channelId', dbKey: 'channel.id', type: 'text', required: false, foreignkey: '',
+  },
+  channelType: {
+    key: 'channelType', dbKey: 'channel.type', type: 'text', required: false, foreignkey: '',
+  },
+  destinationLocation: {
+    key: 'destinationLocation', dbKey: 'destination.location', type: 'text', required: false, foreignkey: '',
+  },
+  destinationType: {
+    key: 'destinationType', dbKey: 'destination.type', type: 'text', required: false, foreignkey: '',
+  },
+  deviceIp: {
+    key: 'deviceIp', dbKey: 'device.ip', type: 'text', required: false, foreignkey: '',
+  },
+  deviceLocationCity: {
+    key: 'deviceLocationCity', dbKey: 'device.location.city', type: 'text', required: false, foreignkey: '',
+  },
+  deviceLocationContinent: {
+    key: 'deviceLocationContinent', dbKey: 'device.location.continent', type: 'text', required: false, foreignkey: '',
+  },
+  deviceLocationCoordinatesLat: {
+    key: 'deviceLocationCoordinatesLat', dbKey: 'device.location.coordinates.lat', type: 'text', required: false, foreignkey: '',
+  },
+  deviceLocationCoordinatesLon: {
+    key: 'deviceLocationCoordinatesLon', dbKey: 'device.location.coordinates.lon', type: 'text', required: false, foreignkey: '',
+  },
+  deviceLocationCountry: {
+    key: 'deviceLocationCountry', dbKey: 'device.location.country', type: 'text', required: false, foreignkey: '',
+  },
+  deviceLocationZip: {
+    key: 'deviceLocationZip', dbKey: 'device.location.zip', type: 'text', required: false, foreignkey: '',
+  },
+  deviceTimezone: {
+    key: 'deviceTimezone', dbKey: 'device.timezone', type: 'text', required: false, foreignkey: '',
+  },
+  deviceType: {
+    key: 'deviceType', dbKey: 'device.type', type: 'text', required: false, foreignkey: '',
+  },
+  referralId: {
+    key: 'referralId', dbKey: 'referral.id', type: 'text', required: false, foreignkey: '',
+  },
+  referralType: {
+    key: 'referralType', dbKey: 'referral.type', type: 'text', required: false, foreignkey: '',
+  },
+  resourceId: {
+    key: 'resourceId', dbKey: 'resource.id', type: 'text', required: false, foreignkey: '',
+  },
+  resourceType: {
+    key: 'resourceType', dbKey: 'resource.type', type: 'text', required: false, foreignkey: '',
+  },
+  sourceId: {
+    key: 'sourceId', dbKey: 'source.id', type: 'text', required: false, foreignkey: '',
+  },
+  sourceType: {
+    key: 'sourceType', dbKey: 'source.type', type: 'text', required: false, foreignkey: '',
+  },
+  userAgent: {
+    key: 'userAgent', dbKey: 'user.agent', type: 'text', required: false, foreignkey: '',
+  },
+  userId: {
+    key: 'userId', dbKey: 'user.id', type: 'text', required: false, foreignkey: '',
+  },
+  userPool: {
+    key: 'userPool', dbKey: 'user.pool', type: 'text', required: false, foreignkey: '',
+  },
+  userType: {
+    key: 'userType', dbKey: 'user.type', type: 'text', required: false, foreignkey: '',
+  },
+  timezone: {
+    key: 'timezone', dbKey: 'timezone', type: 'text', required: false, foreignkey: '',
+  },
+};
+export const elementVersion = {
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'elementVersion',
+  },
+  version: {
+    key: 'version', dbKey: 'version', type: 'text', required: true, foreignkey: '',
+  },
+  elementId: {
+    key: 'elementId', dbKey: 'element_id', type: 'text', required: true, foreignkey: '',
+  },
+  name: {
+    key: 'name', dbKey: 'name', type: 'text', required: false, foreignkey: '',
+  },
+  data: {
+    key: 'data', dbKey: 'data', type: 'jsonb', required: false, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
+  },
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+};
+export const element = {
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'element',
+  },
+  templateId: {
+    key: 'templateId', dbKey: 'template_id', type: 'text', required: false, foreignkey: 'element',
+  },
+  latestTemplate: {
+    key: 'latestTemplate', dbKey: 'latest_template', type: 'text', required: false, foreignkey: '',
+  },
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  name: {
+    key: 'name', dbKey: 'name', type: 'text', required: true, foreignkey: '',
+  },
+  data: {
+    key: 'data', dbKey: 'data', type: 'jsonb', required: true, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  type: {
+    key: 'type', dbKey: 'type', type: 'text', required: true, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
+  },
+  latestVersionId: {
+    key: 'latestVersionId', dbKey: 'latest_version_id', type: 'text', required: true, foreignkey: 'element',
+  },
+};
+export const loan = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'loan',
+  },
+  loanOfficerId: {
+    key: 'loanOfficerId', dbKey: 'loan_officer_id', type: 'text', required: false, foreignkey: 'loan',
+  },
+  addressId: {
+    key: 'addressId', dbKey: 'address_id', type: 'text', required: false, foreignkey: 'loan',
+  },
+  purpose: {
+    key: 'purpose', dbKey: 'purpose', type: 'text', required: false, foreignkey: '',
+  },
+  product: {
+    key: 'product', dbKey: 'product', type: 'text', required: false, foreignkey: '',
+  },
+  amount: {
+    key: 'amount', dbKey: 'amount', type: 'double precision', required: false, foreignkey: '',
+  },
+  interestRate: {
+    key: 'interestRate', dbKey: 'interest_rate', type: 'double precision', required: false, foreignkey: '',
+  },
+  term: {
+    key: 'term', dbKey: 'term', type: 'text', required: false, foreignkey: '',
+  },
+  downPayment: {
+    key: 'downPayment', dbKey: 'down_payment', type: 'double precision', required: false, foreignkey: '',
+  },
+  remainingTerm: {
+    key: 'remainingTerm', dbKey: 'remaining_term', type: 'text', required: false, foreignkey: '',
+  },
+  notes: {
+    key: 'notes', dbKey: 'notes', type: 'text', required: false, foreignkey: '',
+  },
+  mortgageInsurance: {
+    key: 'mortgageInsurance', dbKey: 'mortgage_insurance', type: 'double precision', required: false, foreignkey: '',
+  },
+  status: {
+    key: 'status', dbKey: 'status', type: 'text', required: true, foreignkey: '',
+  },
+  closingDate: {
+    key: 'closingDate', dbKey: 'closing_date', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
+  },
+  remainingValue: {
+    key: 'remainingValue', dbKey: 'remaining_value', type: 'double precision', required: false, foreignkey: '',
+  },
+  amortization: {
+    key: 'amortization', dbKey: 'amortization', type: 'text', required: false, foreignkey: '',
+  },
+  desiredOrCurrent: {
+    key: 'desiredOrCurrent', dbKey: 'desired_or_current', type: 'text', required: true, foreignkey: '',
+  },
+  desiredCashOutAmount: {
+    key: 'desiredCashOutAmount', dbKey: 'desired_cash_out_amount', type: 'double precision', required: false, foreignkey: '',
+  },
+  desiredDownPayment: {
+    key: 'desiredDownPayment', dbKey: 'desired_down_payment', type: 'double precision', required: false, foreignkey: '',
+  },
+  loanPropertyType: {
+    key: 'loanPropertyType', dbKey: 'loan_property_type', type: 'character varying(255)', required: false, foreignkey: '',
+  },
+  loanUnits: {
+    key: 'loanUnits', dbKey: 'loan_units', type: 'double precision', required: false, foreignkey: '',
+  },
+  timeline: {
+    key: 'timeline', dbKey: 'timeline', type: 'character varying(80)', required: false, foreignkey: '',
+  },
+  loanPropertyOccupancy: {
+    key: 'loanPropertyOccupancy', dbKey: 'loan_property_occupancy', type: 'text', required: false, foreignkey: '',
+  },
+  loanPropertyValue: {
+    key: 'loanPropertyValue', dbKey: 'loan_property_value', type: 'double precision', required: false, foreignkey: '',
+  },
+  loanType: {
+    key: 'loanType', dbKey: 'loan_type', type: 'text', required: false, foreignkey: '',
+  },
+};
+export const bridgeSectionLifecycle = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'character varying(100)', required: true, foreignkey: '',
+  },
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'character varying(100)', required: true, foreignkey: 'bridgeSectionLifecycle',
+  },
+  customFieldSectionId: {
+    key: 'customFieldSectionId', dbKey: 'custom_field_section_id', type: 'character varying(100)', required: true, foreignkey: 'bridgeSectionLifecycle',
+  },
+  lifecycleId: {
+    key: 'lifecycleId', dbKey: 'lifecycle_id', type: 'character varying(100)', required: true, foreignkey: 'bridgeSectionLifecycle',
+  },
+};
+export const links = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'links',
+  },
+  sourceId: {
+    key: 'sourceId', dbKey: 'source_id', type: 'text', required: true, foreignkey: 'links',
+  },
+  destinationId: {
+    key: 'destinationId', dbKey: 'destination_id', type: 'text', required: true, foreignkey: 'links',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
+  },
+};
+export const page = {
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'page',
+  },
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  name: {
+    key: 'name', dbKey: 'name', type: 'text', required: true, foreignkey: '',
+  },
+  body: {
+    key: 'body', dbKey: 'body', type: 'jsonb', required: true, foreignkey: '',
+  },
+  templateId: {
+    key: 'templateId', dbKey: 'template_id', type: 'text', required: false, foreignkey: 'page',
+  },
+  path: {
+    key: 'path', dbKey: 'path', type: 'text', required: false, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  headerMeta: {
+    key: 'headerMeta', dbKey: 'header_meta', type: 'jsonb', required: false, foreignkey: '',
+  },
+  themeId: {
+    key: 'themeId', dbKey: 'theme_id', type: 'text', required: true, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
+  },
+  category: {
+    key: 'category', dbKey: 'category', type: 'page_category', required: false, foreignkey: '',
+  },
+  ownerId: {
+    key: 'ownerId', dbKey: 'owner_id', type: 'text', required: true, foreignkey: '',
+  },
+  type: {
+    key: 'type', dbKey: 'type', type: 'page_type', required: true, foreignkey: '',
+  },
+  status: {
+    key: 'status', dbKey: 'status', type: 'page_status', required: false, foreignkey: '',
+  },
+  latestTemplateId: {
+    key: 'latestTemplateId', dbKey: 'latest_template_id', type: 'text', required: false, foreignkey: 'page',
+  },
+  latestVersionId: {
+    key: 'latestVersionId', dbKey: 'latest_version_id', type: 'text', required: true, foreignkey: 'page',
+  },
+};
+export const activityLog = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  eventId: {
+    key: 'eventId', dbKey: 'event_id', type: 'text', required: false, foreignkey: '',
+  },
+  eventCategoryId: {
+    key: 'eventCategoryId', dbKey: 'event_category_id', type: 'integer', required: true, foreignkey: 'activityLog',
+  },
+  eventCategory: {
+    key: 'eventCategory', dbKey: 'event_category', type: 'text', required: true, foreignkey: '',
+  },
+  eventTypeId: {
+    key: 'eventTypeId', dbKey: 'event_type_id', type: 'integer', required: true, foreignkey: 'activityLog',
+  },
+  eventType: {
+    key: 'eventType', dbKey: 'event_type', type: 'text', required: true, foreignkey: '',
+  },
+  historyData: {
+    key: 'historyData', dbKey: 'history_data', type: 'text', required: false, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  endTime: {
+    key: 'endTime', dbKey: 'end_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  eventClass: {
+    key: 'eventClass', dbKey: 'event_class', type: 'text', required: false, foreignkey: '',
+  },
+  eventCode: {
+    key: 'eventCode', dbKey: 'event_code', type: 'text', required: false, foreignkey: '',
+  },
+  eventData: {
+    key: 'eventData', dbKey: 'event_data', type: 'text', required: false, foreignkey: '',
+  },
+  eventSeverity: {
+    key: 'eventSeverity', dbKey: 'event_severity', type: 'text', required: false, foreignkey: '',
+  },
+  eventTime: {
+    key: 'eventTime', dbKey: 'event_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  message: {
+    key: 'message', dbKey: 'message', type: 'text', required: false, foreignkey: '',
+  },
+  ownerId: {
+    key: 'ownerId', dbKey: 'owner_id', type: 'text', required: false, foreignkey: '',
+  },
+  reason: {
+    key: 'reason', dbKey: 'reason', type: 'text', required: false, foreignkey: '',
+  },
+  startTime: {
+    key: 'startTime', dbKey: 'start_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  timeZone: {
+    key: 'timeZone', dbKey: 'time_zone', type: 'text', required: false, foreignkey: '',
+  },
+  channelId: {
+    key: 'channelId', dbKey: 'channel_id', type: 'text', required: false, foreignkey: '',
+  },
+  channelType: {
+    key: 'channelType', dbKey: 'channel_type', type: 'text', required: false, foreignkey: '',
+  },
+  resourceId: {
+    key: 'resourceId', dbKey: 'resource_id', type: 'text', required: false, foreignkey: '',
+  },
+  resourceType: {
+    key: 'resourceType', dbKey: 'resource_type', type: 'text', required: false, foreignkey: '',
+  },
+  sourceId: {
+    key: 'sourceId', dbKey: 'source_id', type: 'text', required: false, foreignkey: '',
+  },
+  sourceType: {
+    key: 'sourceType', dbKey: 'source_type', type: 'text', required: false, foreignkey: '',
+  },
+  contactId: {
+    key: 'contactId', dbKey: 'contact_id', type: 'text', required: false, foreignkey: 'activityLog',
+  },
+  masterEventTime: {
+    key: 'masterEventTime', dbKey: 'master_event_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  userId: {
+    key: 'userId', dbKey: 'user_id', type: 'text', required: false, foreignkey: 'activityLog',
+  },
+};
+export const routing = {
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'routing',
+  },
+  subdomain: {
+    key: 'subdomain', dbKey: 'subdomain', type: 'text', required: false, foreignkey: 'routing',
+  },
+  path: {
+    key: 'path', dbKey: 'path', type: 'text', required: true, foreignkey: '',
+  },
+  resourceId: {
+    key: 'resourceId', dbKey: 'resource_id', type: 'text', required: true, foreignkey: 'routing',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
+  },
+};
+export const contactTag = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'contactTag',
+  },
+  name: {
+    key: 'name', dbKey: 'name', type: 'text', required: true, foreignkey: '',
+  },
+  order: {
+    key: 'order', dbKey: 'order', type: 'integer', required: true, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
+  },
+};
+export const partner = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'partner',
+  },
+  organizationId: {
+    key: 'organizationId', dbKey: 'organization_id', type: 'text', required: false, foreignkey: 'partner',
+  },
+  type: {
+    key: 'type', dbKey: 'type', type: 'text', required: false, foreignkey: '',
+  },
+  firstName: {
+    key: 'firstName', dbKey: 'first_name', type: 'text', required: true, foreignkey: '',
+  },
+  lastName: {
+    key: 'lastName', dbKey: 'last_name', type: 'text', required: true, foreignkey: '',
+  },
+  personalEmail: {
+    key: 'personalEmail', dbKey: 'personal_email', type: 'text', required: false, foreignkey: '',
+  },
+  workEmail: {
+    key: 'workEmail', dbKey: 'work_email', type: 'text', required: false, foreignkey: '',
+  },
+  mobilePhone: {
+    key: 'mobilePhone', dbKey: 'mobile_phone', type: 'text', required: false, foreignkey: '',
+  },
+  workPhone: {
+    key: 'workPhone', dbKey: 'work_phone', type: 'text', required: false, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
+  },
+  addressId: {
+    key: 'addressId', dbKey: 'address_id', type: 'text', required: false, foreignkey: 'partner',
+  },
+};
+export const contactCustomFieldValue = {
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'contactCustomFieldValue',
+  },
+  contactId: {
+    key: 'contactId', dbKey: 'contact_id', type: 'text', required: true, foreignkey: 'contactCustomFieldValue',
+  },
+  customFieldId: {
+    key: 'customFieldId', dbKey: 'custom_field_id', type: 'text', required: true, foreignkey: 'contactCustomFieldValue',
+  },
+  value: {
+    key: 'value', dbKey: 'value', type: 'text', required: true, foreignkey: '',
+  },
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+};
+export const bridgeContactContact = {
+  contactId: {
+    key: 'contactId', dbKey: 'contact_id', type: 'text', required: true, foreignkey: 'bridgeContactContact',
+  },
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'bridgeContactContact',
+  },
+  assignedTo: {
+    key: 'assignedTo', dbKey: 'assigned_to', type: 'text', required: true, foreignkey: '',
+  },
+  relationship: {
+    key: 'relationship', dbKey: 'relationship', type: 'text', required: true, foreignkey: '',
+  },
+  assignedBy: {
+    key: 'assignedBy', dbKey: 'assigned_by', type: 'text', required: true, foreignkey: '',
+  },
+  assignTime: {
+    key: 'assignTime', dbKey: 'assign_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  assignRequest: {
+    key: 'assignRequest', dbKey: 'assign_request', type: 'text', required: true, foreignkey: '',
+  },
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+};
+export const incomeSource = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'incomeSource',
+  },
+  contactId: {
+    key: 'contactId', dbKey: 'contact_id', type: 'text', required: false, foreignkey: 'incomeSource',
+  },
+  addressId: {
+    key: 'addressId', dbKey: 'address_id', type: 'text', required: false, foreignkey: 'incomeSource',
+  },
+  organizationId: {
+    key: 'organizationId', dbKey: 'organization_id', type: 'text', required: false, foreignkey: 'incomeSource',
+  },
+  type: {
+    key: 'type', dbKey: 'type', type: 'text', required: false, foreignkey: '',
+  },
+  employerName: {
+    key: 'employerName', dbKey: 'employer_name', type: 'text', required: false, foreignkey: '',
+  },
+  title: {
+    key: 'title', dbKey: 'title', type: 'text', required: false, foreignkey: '',
+  },
+  phone: {
+    key: 'phone', dbKey: 'phone', type: 'text', required: false, foreignkey: '',
+  },
+  amount: {
+    key: 'amount', dbKey: 'amount', type: 'double precision', required: false, foreignkey: '',
+  },
+  incomeAmountPeriod: {
+    key: 'incomeAmountPeriod', dbKey: 'income_amount_period', type: 'text', required: false, foreignkey: '',
+  },
+  startDate: {
+    key: 'startDate', dbKey: 'start_date', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  endDate: {
+    key: 'endDate', dbKey: 'end_date', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  description: {
+    key: 'description', dbKey: 'description', type: 'text', required: false, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
+  },
+  employerPhone: {
+    key: 'employerPhone', dbKey: 'employer_phone', type: 'character varying(25)', required: false, foreignkey: '',
+  },
+  status: {
+    key: 'status', dbKey: 'status', type: 'character varying(50)', required: false, foreignkey: '',
+  },
+};
 export const contact = {
   id: {
     key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
@@ -2793,32 +2610,107 @@ export const contact = {
     key: 'desiredLoanId', dbKey: 'desired_loan_id', type: 'text', required: false, foreignkey: 'contact',
   },
 };
-export const authUserRoles = {
+export const property = {
   id: {
-    key: 'id', dbKey: 'id', type: 'character varying', required: true, foreignkey: '',
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
   },
-  roleId: {
-    key: 'roleId', dbKey: 'role_id', type: 'integer', required: false, foreignkey: 'authUserRoles',
-  },
-  userId: {
-    key: 'userId', dbKey: 'user_id', type: 'integer', required: false, foreignkey: 'authUserRoles',
-  },
-};
-export const routing = {
   accountId: {
-    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'routing',
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'property',
   },
-  subdomain: {
-    key: 'subdomain', dbKey: 'subdomain', type: 'text', required: false, foreignkey: 'routing',
+  type: {
+    key: 'type', dbKey: 'type', type: 'text', required: true, foreignkey: '',
   },
-  path: {
-    key: 'path', dbKey: 'path', type: 'text', required: true, foreignkey: '',
+  street1: {
+    key: 'street1', dbKey: 'street_1', type: 'text', required: false, foreignkey: '',
   },
-  resourceId: {
-    key: 'resourceId', dbKey: 'resource_id', type: 'text', required: true, foreignkey: 'routing',
+  street2: {
+    key: 'street2', dbKey: 'street_2', type: 'text', required: false, foreignkey: '',
+  },
+  city: {
+    key: 'city', dbKey: 'city', type: 'text', required: false, foreignkey: '',
+  },
+  state: {
+    key: 'state', dbKey: 'state', type: 'text', required: false, foreignkey: '',
+  },
+  country: {
+    key: 'country', dbKey: 'country', type: 'text', required: false, foreignkey: '',
+  },
+  taxes: {
+    key: 'taxes', dbKey: 'taxes', type: 'double precision', required: false, foreignkey: '',
+  },
+  miscExp: {
+    key: 'miscExp', dbKey: 'misc_exp', type: 'double precision', required: false, foreignkey: '',
+  },
+  rentalIncome: {
+    key: 'rentalIncome', dbKey: 'rental_income', type: 'double precision', required: false, foreignkey: '',
+  },
+  squareFootage: {
+    key: 'squareFootage', dbKey: 'square_footage', type: 'double precision', required: false, foreignkey: '',
+  },
+  bedrooms: {
+    key: 'bedrooms', dbKey: 'bedrooms', type: 'double precision', required: false, foreignkey: '',
+  },
+  baths: {
+    key: 'baths', dbKey: 'baths', type: 'double precision', required: false, foreignkey: '',
+  },
+  postal: {
+    key: 'postal', dbKey: 'postal', type: 'text', required: false, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
   },
   createTime: {
     key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
+  },
+  actualValue: {
+    key: 'actualValue', dbKey: 'actual_value', type: 'double precision', required: false, foreignkey: '',
+  },
+  estimatedValue: {
+    key: 'estimatedValue', dbKey: 'estimated_value', type: 'double precision', required: false, foreignkey: '',
+  },
+  hazardInsurance: {
+    key: 'hazardInsurance', dbKey: 'hazard_insurance', type: 'double precision', required: false, foreignkey: '',
+  },
+  propertyUnits: {
+    key: 'propertyUnits', dbKey: 'property_units', type: 'double precision', required: false, foreignkey: '',
+  },
+  propertyOccupancy: {
+    key: 'propertyOccupancy', dbKey: 'property_occupancy', type: 'character varying(50)', required: false, foreignkey: '',
+  },
+};
+export const template = {
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'template',
+  },
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  type: {
+    key: 'type', dbKey: 'type', type: 'text', required: true, foreignkey: '',
+  },
+  name: {
+    key: 'name', dbKey: 'name', type: 'text', required: true, foreignkey: '',
+  },
+  data: {
+    key: 'data', dbKey: 'data', type: 'jsonb', required: true, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  thumbnail: {
+    key: 'thumbnail', dbKey: 'thumbnail', type: 'text', required: true, foreignkey: '',
   },
   createdBy: {
     key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
@@ -2834,6 +2726,79 @@ export const routing = {
   },
   createRequest: {
     key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
+  },
+  latestVersionId: {
+    key: 'latestVersionId', dbKey: 'latest_version_id', type: 'text', required: true, foreignkey: 'template',
+  },
+};
+export const organization = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'organization',
+  },
+  addressId: {
+    key: 'addressId', dbKey: 'address_id', type: 'text', required: false, foreignkey: 'organization',
+  },
+  name: {
+    key: 'name', dbKey: 'name', type: 'text', required: false, foreignkey: '',
+  },
+  type: {
+    key: 'type', dbKey: 'type', type: 'text', required: false, foreignkey: '',
+  },
+  phone: {
+    key: 'phone', dbKey: 'phone', type: 'text', required: false, foreignkey: '',
+  },
+  email: {
+    key: 'email', dbKey: 'email', type: 'text', required: false, foreignkey: '',
+  },
+  nmlsId: {
+    key: 'nmlsId', dbKey: 'nmls_id', type: 'text', required: false, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'text', required: true, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'text', required: true, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'text', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'text', required: false, foreignkey: '',
+  },
+  parentOrganizationId: {
+    key: 'parentOrganizationId', dbKey: 'parent_organization_id', type: 'text', required: false, foreignkey: 'organization',
+  },
+};
+export const bridgeContactUser = {
+  contactId: {
+    key: 'contactId', dbKey: 'contact_id', type: 'text', required: true, foreignkey: 'bridgeContactUser',
+  },
+  userId: {
+    key: 'userId', dbKey: 'user_id', type: 'text', required: true, foreignkey: 'bridgeContactUser',
+  },
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'bridgeContactUser',
+  },
+  assignedBy: {
+    key: 'assignedBy', dbKey: 'assigned_by', type: 'text', required: true, foreignkey: '',
+  },
+  assignTime: {
+    key: 'assignTime', dbKey: 'assign_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  assignRequest: {
+    key: 'assignRequest', dbKey: 'assign_request', type: 'text', required: true, foreignkey: '',
+  },
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
   },
 };
 export const templateDependency = {
@@ -2869,5 +2834,40 @@ export const templateDependency = {
   },
   versionId: {
     key: 'versionId', dbKey: 'version_id', type: 'text', required: true, foreignkey: 'templateDependency',
+  },
+};
+export const workflowTemplatePermission = {
+  id: {
+    key: 'id', dbKey: 'id', type: 'text', required: true, foreignkey: '',
+  },
+  accountId: {
+    key: 'accountId', dbKey: 'account_id', type: 'text', required: true, foreignkey: 'workflowTemplatePermission',
+  },
+  userId: {
+    key: 'userId', dbKey: 'user_id', type: 'text', required: true, foreignkey: 'workflowTemplatePermission',
+  },
+  workflowTemplateId: {
+    key: 'workflowTemplateId', dbKey: 'workflow_template_id', type: 'text', required: true, foreignkey: 'workflowTemplatePermission',
+  },
+  permission: {
+    key: 'permission', dbKey: 'permission', type: 'permission', required: true, foreignkey: '',
+  },
+  createRequest: {
+    key: 'createRequest', dbKey: 'create_request', type: 'character varying(100)', required: true, foreignkey: '',
+  },
+  createTime: {
+    key: 'createTime', dbKey: 'create_time', type: 'timestamp(6) with time zone', required: true, foreignkey: '',
+  },
+  createdBy: {
+    key: 'createdBy', dbKey: 'created_by', type: 'character varying(100)', required: true, foreignkey: '',
+  },
+  updateRequest: {
+    key: 'updateRequest', dbKey: 'update_request', type: 'character varying(100)', required: false, foreignkey: '',
+  },
+  updateTime: {
+    key: 'updateTime', dbKey: 'update_time', type: 'timestamp(6) with time zone', required: false, foreignkey: '',
+  },
+  updatedBy: {
+    key: 'updatedBy', dbKey: 'updated_by', type: 'character varying(100)', required: false, foreignkey: '',
   },
 };

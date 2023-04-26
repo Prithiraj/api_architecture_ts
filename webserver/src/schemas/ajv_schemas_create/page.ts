@@ -18,7 +18,7 @@ const page_schema = {
     latestTemplateId: page_ajv.latestTemplateId.api,
     latestVersionId: page_ajv.latestVersionId.api,
   },
-  required: ['body', 'name', 'latestVersionId', 'themeId', 'ownerId', 'type'],
+  required: ['latestVersionId', 'ownerId', 'name', 'type', 'body', 'themeId'],
   additionalProperties: false,
 };
 

@@ -9,7 +9,7 @@ const workflowTemplate_schema = {
     workflowData: workflowTemplate_ajv.workflowData.api,
     version: workflowTemplate_ajv.version.api,
   },
-  required: ['version', 'workflowId', 'workflowData'],
+  required: ['workflowData', 'workflowId', 'version'],
   additionalProperties: false,
 };
 

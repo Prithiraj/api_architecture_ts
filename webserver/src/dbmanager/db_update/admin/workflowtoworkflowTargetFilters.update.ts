@@ -22,7 +22,6 @@ export async function update_workflowtoworkflowTargetFilters_admin(request: any)
   const pk: string[] = []
 
   Object.assign(input, additionals);
-
   const key_values: any[] = [];
   let values: any[] = [];
   let index = 0;

@@ -27,7 +27,6 @@ export async function update_bridgeContactUser_admin(request: any) {
   const pk: string[] = [table_cols.contactId, table_cols.userId, ]
 
   Object.assign(input, additionals);
-
   const key_values: any[] = [];
   let values: any[] = [];
   let index = 0;

@@ -33,7 +33,6 @@ export async function update_template_admin(request: any) {
   const pk: string[] = [table_cols.id, ]
 
   Object.assign(input, additionals);
-
   const key_values: any[] = [];
   let values: any[] = [];
   let index = 0;

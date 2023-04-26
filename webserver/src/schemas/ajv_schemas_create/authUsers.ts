@@ -14,7 +14,7 @@ const authUsers_schema = {
     isActive: authUsers_ajv.isActive.api,
     isAdmin: authUsers_ajv.isAdmin.api,
   },
-  required: ['isActive', 'createdOn', 'name', 'isAdmin', 'username'],
+  required: ['name', 'isAdmin', 'createdOn', 'isActive', 'username'],
   additionalProperties: false,
 };
 

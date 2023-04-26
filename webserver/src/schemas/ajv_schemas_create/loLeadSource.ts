@@ -17,7 +17,7 @@ const loLeadSource_schema = {
     notificationEmails: loLeadSource_ajv.notificationEmails.api,
     order: loLeadSource_ajv.order.api,
   },
-  required: ['tileColor', 'title', 'callcenter', 'dedicatedCallcenter', 'active', 'color', 'tileDescription'],
+  required: ['dedicatedCallcenter', 'title', 'color', 'active', 'tileColor', 'tileDescription', 'callcenter'],
   additionalProperties: false,
 };
 

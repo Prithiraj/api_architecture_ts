@@ -25,7 +25,6 @@ export async function update_persons_admin(request: any) {
   const pk: string[] = [table_cols.personid, ]
 
   Object.assign(input, additionals);
-
   const key_values: any[] = [];
   let values: any[] = [];
   let index = 0;
