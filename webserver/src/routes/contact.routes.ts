@@ -1,5 +1,4 @@
 import { Request, Router, Response } from 'express';
-// import {Prisma, PrismaClient } from '@prisma/client';
 import validateDto from '../middleware/validate-dto';
 import contactCreate from '../schemas/ajv_schemas_create/contact';
 import contactUpdate from '../schemas/ajv_schemas_update/contact';
@@ -37,15 +36,15 @@ contactRouter.post('/', validateDto(contactCreate), async (request: Request, res
 	}
 });
 
-contactRouter.post('/create', async (request: Request, response: Response): Promise<any> => {
-//   const { first_name, last_name } = request.body
-//   const result = await prisma.contact.create({
-// 	  data: {
-// 		first_name,
-// 		last_name,
-// 	  },
-// 	})
-// 	response.json(result)	
-})
+// contactRouter.post('/create', async (request: Request, response: Response): Promise<any> => {
+// //   const { first_name, last_name } = request.body
+// //   const result = await prisma.contact.create({
+// // 	  data: {
+// // 		first_name,
+// // 		last_name,
+// // 	  },
+// // 	})
+// // 	response.json(result)	
+// })
 
 export default contactRouter;
