@@ -10,6 +10,9 @@ export async function readJSONFile(filePath: string): Promise<any> {
   }
 }
 
+export async function get_pk_value(pk_type: string, table_names: string) {
+
+}
 
 export default function dataKey(length: any) {
   const options: any = {
@@ -17,4 +20,8 @@ export default function dataKey(length: any) {
     capitalization: 'lowercase',
   };
   return `${Date.now()}_${random.generate(options)}`;
+}
+
+export async function getCurrentDate() {
+  return new Date().toISOString();
 }

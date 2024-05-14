@@ -13,27 +13,34 @@ export async function insert_{{apitablename}}(input: any) {
   };
 
   const timestamp = new Date();
+{{! allow only composite pks, no foreign keys or autogen keys allowed
+also, if it's not auto-generated in the db don't auto-generate in the code}}
 
+  {{^ isPKComposite}}
   {{# primarykey}}
   {{^auto}}
   {{^foreignkey}}
-  let pk_value: string|number = `{{dbtablename}}_${dataKey(6)}`;
-  const type_of_pk = {{apitablename}}_ajv.{{apicolname}}.api.type;
-  if (type_of_pk === 'integer' || type_of_pk === 'number') {
-    pk_value = Math.floor(Math.random() * 100000);
+  let pk_value_{{dbcolname}}: string|number = `{{dbtablename}}_${dataKey(6)}`;
+  const type_of_pk_{{dbcolname}} = {{apitablename}}_ajv.{{apicolname}}.api.type;
+  if (type_of_pk_{{dbcolname}} === 'integer' || type_of_pk_{{dbcolname}} === 'number') {
+    pk_value_{{dbcolname}} = Math.floor(Math.random() * 100000);
   }
   {{/foreignkey}}
   {{/auto}}
   {{/primarykey}}
+  {{/isPKComposite}}
 
   const additionals: any = {
+    {{^ isPKComposite}}
     {{# primarykey}}
     {{^auto}}
     {{^foreignkey}}
-    {{apicolname}}: `${pk_value}`,
+    {{apicolname}}: `${pk_value_{{dbcolname}}}`,
     {{/foreignkey}}
     {{/auto}}
     {{/primarykey}}
+    {{/isPKComposite}}
+
     createTime: timestamp.toISOString(),
     updateTime: timestamp.toISOString(),
     accountId: "account_1607435487272_5nl561qt",

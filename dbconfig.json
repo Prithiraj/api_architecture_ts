@@ -1,7 +1,7 @@
 {
 	"SSH_UN": "ec2-user",
 	"PG_UN": "postgres",
-	"PG_DB_NAME": "mydatabase",
+	"PG_DB_NAME": "rkmlib",
 	"PG_DB_PW": "Superpost!1",
 	"SSH_PKEY": "/Users/nime/clients/taygo/taygodev-aws.pem",
 	"SSH_HOST": "44.204.82.125",

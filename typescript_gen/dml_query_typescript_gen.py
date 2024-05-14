@@ -13,8 +13,10 @@ class DMLQueryTypescriptGen:
             columns_from = query_schema['columnInfoList']
             # pk = [x["apicolname"] for x in columns_from if x["primarykey"]=='t']
             
+            # pk = [(index, item) for index, item in enumerate(columns_from) if x["primarykey"]=='t']
             pk = [x for x in columns_from if x["primarykey"]=='t']
             
+            query_schema["isPKComposite"] = True if len(pk) > 1 else False
             query_schema["primarykey"] = pk # pk[0] if len(pk) > 0 else None
             # query_schema["primarykey"] = pk[0] if len(pk) > 0 else None
             

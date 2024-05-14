@@ -4,7 +4,7 @@ import Ajv from 'ajv';
 
 import addFormats from 'ajv-formats';
 
-const ajvInstance = new Ajv({ allErrors: true });
+const ajvInstance = new Ajv({ allErrors: true, useDefaults: true });
 addFormats(ajvInstance);
 
 // module.exports = ajvInstance;

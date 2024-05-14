@@ -4,7 +4,8 @@
 			"system": ["createdBy", "createTime", "createRequest", "updatedBy", "updateTime", "updateRequest", "isDeleted", "autoIncrementId"],
 			"dependency": ["accountId"],
 			"extras": [],
-			"primaryKey": true
+			"primaryKey": true,
+			"notes": "exclude only non-composite single pks"
 		}	
 	},
 	"update":{

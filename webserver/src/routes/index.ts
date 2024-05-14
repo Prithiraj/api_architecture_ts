@@ -1,12 +1,10 @@
 import { Router } from 'express';
-import contactRouter from './contact.routes';
-import propertyRouter from './address.routes';
-import bridgeContactRouter from './bridgecontactcontact.routes';
+import booksRouter from './books.routes';
+import membersRouter from './members.routes';
 
 const routes = Router();
 
-routes.use('/contact', contactRouter);
-routes.use('/property', propertyRouter);
-routes.use('/bridgecontact', bridgeContactRouter);
+routes.use('/books', booksRouter);
+routes.use('/members', membersRouter);
 
 export default routes;

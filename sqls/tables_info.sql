@@ -1,4 +1,4 @@
-select number, columname, name, attnum, notnullval, atttypmod,type, primarykey,uniquekey,foreignkey,foreignkey_fieldnum, foreignkey_connnum, auto from
+select number, columname, name, attnum, notnullval, atttypmod,type, primarykey,uniquekey,foreignkey,foreignkey_fieldnum, foreignkey_connnum, auto, column_default from
     (select *, 
 		rank() over (partition by name, columname order by foreignkey asc) as rnk from 
 		(SELECT  
@@ -9,7 +9,8 @@ select number, columname, name, attnum, notnullval, atttypmod,type, primarykey,u
 			f.attnotnull AS notnullval,  
 			f.atttypmod,
 			p.conkey,
-			pg_catalog.format_type(f.atttypid,f.atttypmod) AS type, 
+			pg_catalog.format_type(f.atttypid,f.atttypmod) AS type,
+			d.adbin AS column_default, 
 			CASE  
 					WHEN p.contype = 'p' THEN 't'  
 					ELSE 'f'  
